@@ -4,6 +4,7 @@ export interface AgeResult {
   days: number;
   hours: number;
   minutes: number;
+  seconds: number;
   totalDays: number;
   nextBirthdayDays: number;
 }
@@ -27,6 +28,7 @@ export function calculateAge(dob: Date): AgeResult {
 
   const hours = now.getHours();
   const minutes = now.getMinutes();
+  const seconds = now.getSeconds();
 
   const diffMs = now.getTime() - dob.getTime();
   const totalDays = Math.floor(diffMs / (1000 * 60 * 60 * 24));
@@ -38,5 +40,5 @@ export function calculateAge(dob: Date): AgeResult {
   }
   const nextBirthdayDays = Math.ceil((nextBirthday.getTime() - now.getTime()) / (1000 * 60 * 60 * 24));
 
-  return { years, months, days, hours, minutes, totalDays, nextBirthdayDays };
+  return { years, months, days, hours, minutes, seconds, totalDays, nextBirthdayDays };
 }

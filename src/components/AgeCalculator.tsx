@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { calculateAge, type AgeResult } from "@/lib/ageCalculator";
 
 const AgeCalculator = () => {
@@ -6,21 +6,41 @@ const AgeCalculator = () => {
   const [dob, setDob] = useState("");
   const [result, setResult] = useState<AgeResult | null>(null);
   const [country, setCountry] = useState<string | null>(null);
+  const [timezone, setTimezone] = useState<string>("");
   const [error, setError] = useState("");
+  const dobRef = useRef<string>("");
+  const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   useEffect(() => {
+    setTimezone(Intl.DateTimeFormat().resolvedOptions().timeZone);
     fetch("https://ipapi.co/json/")
       .then((r) => r.json())
       .then((data) => {
         if (data?.country_name) setCountry(data.country_name);
+        if (data?.timezone) setTimezone(data.timezone);
       })
       .catch(() => {});
+  }, []);
+
+  const startLiveUpdate = (dobStr: string) => {
+    if (intervalRef.current) clearInterval(intervalRef.current);
+    dobRef.current = dobStr;
+    const tick = () => setResult(calculateAge(new Date(dobStr)));
+    tick();
+    intervalRef.current = setInterval(tick, 1000);
+  };
+
+  useEffect(() => {
+    return () => {
+      if (intervalRef.current) clearInterval(intervalRef.current);
+    };
   }, []);
 
   const handleCalculate = (e: React.FormEvent) => {
     e.preventDefault();
     setError("");
     setResult(null);
+    if (intervalRef.current) clearInterval(intervalRef.current);
 
     if (!dob) {
       setError("Please enter your date of birth.");
@@ -39,7 +59,7 @@ const AgeCalculator = () => {
       return;
     }
 
-    setResult(calculateAge(dobDate));
+    startLiveUpdate(dob);
   };
 
   const greeting = name.trim() ? name.trim() : "You";
@@ -93,6 +113,11 @@ const AgeCalculator = () => {
               <span className="text-muted-foreground text-lg font-body"> — from {country}</span>
             )}
           </p>
+          {timezone && (
+            <p className="text-center text-xs text-muted-foreground/70 mb-1">
+              Timezone: {timezone}
+            </p>
+          )}
           <p className="text-center text-sm text-muted-foreground mb-8">
             🎂 {result.nextBirthdayDays === 0
               ? "Happy Birthday!"
@@ -121,8 +146,12 @@ const AgeCalculator = () => {
               <div className="age-stat-label">Minutes</div>
             </div>
             <div className="age-stat-card">
-              <div className="age-stat-value">{result.totalDays.toLocaleString()}</div>
-              <div className="age-stat-label">Total Days</div>
+              <div className="age-stat-value animate-pulse">{result.seconds}</div>
+              <div className="age-stat-label">Seconds</div>
+            </div>
+            <div className="age-stat-card col-span-2 sm:col-span-3">
+              <div className="age-stat-value text-lg">{result.totalDays.toLocaleString()}</div>
+              <div className="age-stat-label">Total Days Alive</div>
             </div>
           </div>
         </div>
