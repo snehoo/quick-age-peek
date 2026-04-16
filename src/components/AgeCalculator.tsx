@@ -1,5 +1,8 @@
 import { useState, useEffect, useRef } from "react";
 import { calculateAge, type AgeResult } from "@/lib/ageCalculator";
+import NameInsights from "./NameInsights";
+import FamousBirthdaysList from "./FamousBirthdaysList";
+import BirthSongPlayer from "./BirthSongPlayer";
 
 const AgeCalculator = () => {
   const [name, setName] = useState("");
@@ -154,6 +157,20 @@ const AgeCalculator = () => {
               <div className="age-stat-label">Total Days Alive</div>
             </div>
           </div>
+
+          {name.trim() && (
+            <NameInsights name={name} birthYear={new Date(dob).getFullYear()} />
+          )}
+
+          <FamousBirthdaysList
+            month={new Date(dob).getMonth() + 1}
+            day={new Date(dob).getDate()}
+          />
+
+          <BirthSongPlayer
+            year={new Date(dob).getFullYear()}
+            month={new Date(dob).getMonth() + 1}
+          />
         </div>
       )}
     </div>
