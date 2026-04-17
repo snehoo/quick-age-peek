@@ -3,6 +3,7 @@ import { calculateAge, type AgeResult } from "@/lib/ageCalculator";
 import NameInsights from "./NameInsights";
 import FamousBirthdaysList from "./FamousBirthdaysList";
 import BirthSongPlayer from "./BirthSongPlayer";
+import NameTwins from "./NameTwins";
 
 const AgeCalculator = () => {
   const [name, setName] = useState("");
@@ -39,30 +40,60 @@ const AgeCalculator = () => {
     };
   }, []);
 
-  const handleCalculate = (e: React.FormEvent) => {
-    e.preventDefault();
+  const validateAndStart = (dobStr: string) => {
     setError("");
-    setResult(null);
     if (intervalRef.current) clearInterval(intervalRef.current);
 
-    if (!dob) {
-      setError("Please enter your date of birth.");
+    if (!dobStr) {
+      setResult(null);
       return;
     }
 
-    const dobDate = new Date(dob);
+    const dobDate = new Date(dobStr);
     const now = new Date();
 
+    if (isNaN(dobDate.getTime())) {
+      setResult(null);
+      return;
+    }
     if (dobDate > now) {
       setError("Date of birth can't be in the future.");
+      setResult(null);
       return;
     }
     if (dobDate.getFullYear() < 1900) {
       setError("Please enter a valid date of birth.");
+      setResult(null);
       return;
     }
 
-    startLiveUpdate(dob);
+    startLiveUpdate(dobStr);
+  };
+
+  // Live recalculation as soon as a valid date is entered
+  useEffect(() => {
+    validateAndStart(dob);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [dob]);
+
+  const handleCalculate = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!dob) {
+      setError("Please enter your date of birth.");
+      return;
+    }
+    validateAndStart(dob);
+  };
+
+  const handleDobFieldClick = (e: React.MouseEvent<HTMLInputElement>) => {
+    const el = e.currentTarget as HTMLInputElement & { showPicker?: () => void };
+    if (typeof el.showPicker === "function") {
+      try {
+        el.showPicker();
+      } catch {
+        /* no-op */
+      }
+    }
   };
 
   const greeting = name.trim() ? name.trim() : "You";
