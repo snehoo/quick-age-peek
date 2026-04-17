@@ -67,6 +67,15 @@ const BirthSongPlayer = ({ year, month }: BirthSongProps) => {
         </div>
       </div>
 
+      {preview && (
+        <div className="mt-4">
+          <audio controls preload="none" src={preview} className="w-full h-10">
+            Your browser does not support audio playback.
+          </audio>
+          <p className="text-[11px] text-muted-foreground/70 mt-1">30-second preview · courtesy iTunes</p>
+        </div>
+      )}
+
       <div className="mt-5 flex flex-wrap gap-2">
         <a
           href={spotifyUrl}
