@@ -197,7 +197,7 @@ const AgeCalculator = () => {
           </div>
 
           {name.trim() && (
-            <NameInsights name={name} birthYear={new Date(dob).getFullYear()} />
+            <NameInsights name={name} birthYear={new Date(dob).getFullYear()} country={country} />
           )}
 
           <FamousBirthdaysList
