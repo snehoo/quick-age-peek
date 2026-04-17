@@ -85,7 +85,9 @@ const AgeCalculator = () => {
     validateAndStart(dob);
   };
 
-  const handleDobFieldClick = (e: React.MouseEvent<HTMLInputElement>) => {
+  const handleDobFieldClick = (
+    e: React.MouseEvent<HTMLInputElement> | React.FocusEvent<HTMLInputElement>,
+  ) => {
     const el = e.currentTarget as HTMLInputElement & { showPicker?: () => void };
     if (typeof el.showPicker === "function") {
       try {
