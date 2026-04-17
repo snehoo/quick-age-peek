@@ -83,8 +83,7 @@ const NameTwins = ({ name, year, country }: NameTwinsProps) => {
       </h2>
       <p className="text-sm text-muted-foreground mb-5">
         You don't just share a name — you share a "start date" with these icons and characters
-        who shaped culture the year you were born
-        {country ? ` in ${country}` : ""}.
+        who shaped culture the year you were born.
       </p>
 
       <ul className="space-y-4">

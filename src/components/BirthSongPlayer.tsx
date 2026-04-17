@@ -17,9 +17,13 @@ const BirthSongPlayer = ({ year, month }: BirthSongProps) => {
   const song = getBirthSong(year, month);
   const [art, setArt] = useState<string | null>(null);
   const [album, setAlbum] = useState<string | null>(null);
+  const [preview, setPreview] = useState<string | null>(null);
 
   useEffect(() => {
     if (!song) return;
+    setPreview(null);
+    setArt(null);
+    setAlbum(null);
     const ctrl = new AbortController();
     const q = encodeURIComponent(`${song.title} ${song.artist}`);
     fetch(`https://itunes.apple.com/search?term=${q}&media=music&limit=1`, { signal: ctrl.signal })
@@ -28,6 +32,7 @@ const BirthSongPlayer = ({ year, month }: BirthSongProps) => {
         const r: ITunesResult | undefined = data?.results?.[0];
         if (r?.artworkUrl100) setArt(r.artworkUrl100.replace("100x100", "300x300"));
         if (r?.collectionName) setAlbum(r.collectionName);
+        if (r?.previewUrl) setPreview(r.previewUrl);
       })
       .catch(() => {});
     return () => ctrl.abort();
@@ -61,6 +66,15 @@ const BirthSongPlayer = ({ year, month }: BirthSongProps) => {
           {album && <p className="text-xs text-muted-foreground/70 truncate mt-0.5">{album}</p>}
         </div>
       </div>
+
+      {preview && (
+        <div className="mt-4">
+          <audio controls preload="none" src={preview} className="w-full h-10">
+            Your browser does not support audio playback.
+          </audio>
+          <p className="text-[11px] text-muted-foreground/70 mt-1">30-second preview · courtesy iTunes</p>
+        </div>
+      )}
 
       <div className="mt-5 flex flex-wrap gap-2">
         <a
