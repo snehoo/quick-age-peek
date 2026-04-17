@@ -205,6 +205,14 @@ const AgeCalculator = () => {
             day={new Date(dob).getDate()}
           />
 
+          {name.trim() && (
+            <NameTwins
+              name={name}
+              year={new Date(dob).getFullYear()}
+              country={country}
+            />
+          )}
+
           <BirthSongPlayer
             year={new Date(dob).getFullYear()}
             month={new Date(dob).getMonth() + 1}
