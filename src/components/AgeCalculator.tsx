@@ -124,9 +124,14 @@ const AgeCalculator = () => {
             type="date"
             value={dob}
             onChange={(e) => setDob(e.target.value)}
+            onClick={handleDobFieldClick}
+            onFocus={handleDobFieldClick}
             max={new Date().toISOString().split("T")[0]}
-            className="w-full rounded-lg border border-input bg-card px-4 py-3 text-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-colors"
+            className="w-full rounded-lg border border-input bg-card px-4 py-3 text-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-colors cursor-pointer [&::-webkit-calendar-picker-indicator]:cursor-pointer"
           />
+          <p className="mt-1.5 text-xs text-muted-foreground/70">
+            Tap anywhere in the field to open the calendar
+          </p>
         </div>
 
         {error && <p className="text-destructive text-sm">{error}</p>}
