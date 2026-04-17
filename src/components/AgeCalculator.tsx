@@ -3,6 +3,7 @@ import { calculateAge, type AgeResult } from "@/lib/ageCalculator";
 import NameInsights from "./NameInsights";
 import FamousBirthdaysList from "./FamousBirthdaysList";
 import BirthSongPlayer from "./BirthSongPlayer";
+import NameTwins from "./NameTwins";
 
 const AgeCalculator = () => {
   const [name, setName] = useState("");
@@ -39,30 +40,62 @@ const AgeCalculator = () => {
     };
   }, []);
 
-  const handleCalculate = (e: React.FormEvent) => {
-    e.preventDefault();
+  const validateAndStart = (dobStr: string) => {
     setError("");
-    setResult(null);
     if (intervalRef.current) clearInterval(intervalRef.current);
 
-    if (!dob) {
-      setError("Please enter your date of birth.");
+    if (!dobStr) {
+      setResult(null);
       return;
     }
 
-    const dobDate = new Date(dob);
+    const dobDate = new Date(dobStr);
     const now = new Date();
 
+    if (isNaN(dobDate.getTime())) {
+      setResult(null);
+      return;
+    }
     if (dobDate > now) {
       setError("Date of birth can't be in the future.");
+      setResult(null);
       return;
     }
     if (dobDate.getFullYear() < 1900) {
       setError("Please enter a valid date of birth.");
+      setResult(null);
       return;
     }
 
-    startLiveUpdate(dob);
+    startLiveUpdate(dobStr);
+  };
+
+  // Live recalculation as soon as a valid date is entered
+  useEffect(() => {
+    validateAndStart(dob);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [dob]);
+
+  const handleCalculate = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!dob) {
+      setError("Please enter your date of birth.");
+      return;
+    }
+    validateAndStart(dob);
+  };
+
+  const handleDobFieldClick = (
+    e: React.MouseEvent<HTMLInputElement> | React.FocusEvent<HTMLInputElement>,
+  ) => {
+    const el = e.currentTarget as HTMLInputElement & { showPicker?: () => void };
+    if (typeof el.showPicker === "function") {
+      try {
+        el.showPicker();
+      } catch {
+        /* no-op */
+      }
+    }
   };
 
   const greeting = name.trim() ? name.trim() : "You";
@@ -93,9 +126,14 @@ const AgeCalculator = () => {
             type="date"
             value={dob}
             onChange={(e) => setDob(e.target.value)}
+            onClick={handleDobFieldClick}
+            onFocus={handleDobFieldClick}
             max={new Date().toISOString().split("T")[0]}
-            className="w-full rounded-lg border border-input bg-card px-4 py-3 text-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-colors"
+            className="w-full rounded-lg border border-input bg-card px-4 py-3 text-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-colors cursor-pointer [&::-webkit-calendar-picker-indicator]:cursor-pointer"
           />
+          <p className="mt-1.5 text-xs text-muted-foreground/70">
+            Tap anywhere in the field to open the calendar
+          </p>
         </div>
 
         {error && <p className="text-destructive text-sm">{error}</p>}
@@ -166,6 +204,14 @@ const AgeCalculator = () => {
             month={new Date(dob).getMonth() + 1}
             day={new Date(dob).getDate()}
           />
+
+          {name.trim() && (
+            <NameTwins
+              name={name}
+              year={new Date(dob).getFullYear()}
+              country={country}
+            />
+          )}
 
           <BirthSongPlayer
             year={new Date(dob).getFullYear()}
