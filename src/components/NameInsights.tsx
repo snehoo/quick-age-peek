@@ -1,13 +1,72 @@
-import { getNameInfo } from "@/lib/nameData";
+import { useEffect, useState } from "react";
+import { supabase } from "@/integrations/supabase/client";
 
 interface NameInsightsProps {
   name: string;
   birthYear: number;
+  country?: string | null;
 }
 
-const NameInsights = ({ name, birthYear }: NameInsightsProps) => {
-  const info = getNameInfo(name, birthYear);
+interface Insights {
+  meaning?: string;
+  origin?: string;
+  vibe?: string;
+  popularity?: string;
+}
+
+const NameInsights = ({ name, birthYear, country }: NameInsightsProps) => {
+  const [data, setData] = useState<Insights | null>(null);
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    const trimmed = name.trim();
+    if (!trimmed || !birthYear) {
+      setData(null);
+      return;
+    }
+
+    let cancelled = false;
+    setLoading(true);
+    setData(null);
+
+    const t = setTimeout(async () => {
+      try {
+        const { data: res, error } = await supabase.functions.invoke("name-insights", {
+          body: { name: trimmed, year: birthYear, country: country || null },
+        });
+        if (cancelled) return;
+        if (!error && res) setData(res as Insights);
+      } catch (e) {
+        if (!cancelled) console.error(e);
+      } finally {
+        if (!cancelled) setLoading(false);
+      }
+    }, 400);
+
+    return () => {
+      cancelled = true;
+      clearTimeout(t);
+    };
+  }, [name, birthYear, country]);
+
   if (!name.trim()) return null;
+
+  if (loading) {
+    return (
+      <div className="mt-8 rounded-xl border border-border bg-card p-6">
+        <h2 className="text-xl text-foreground mb-4">
+          The name <span className="text-primary">{name.trim()}</span>
+        </h2>
+        <div className="space-y-3">
+          <div className="h-4 w-3/4 bg-muted/60 rounded animate-pulse" />
+          <div className="h-4 w-2/3 bg-muted/60 rounded animate-pulse" />
+          <div className="h-4 w-1/2 bg-muted/60 rounded animate-pulse" />
+        </div>
+      </div>
+    );
+  }
+
+  if (!data) return null;
 
   return (
     <div className="mt-8 rounded-xl border border-border bg-card p-6 animate-fade-in-up">
@@ -15,18 +74,22 @@ const NameInsights = ({ name, birthYear }: NameInsightsProps) => {
         The name <span className="text-primary">{name.trim()}</span>
       </h2>
       <div className="space-y-3 text-sm text-muted-foreground leading-relaxed">
-        {info.meaning && (
+        {data.meaning && (
           <p>
-            <span className="font-semibold text-foreground">Meaning:</span> {info.meaning}
-            {info.origin && <span> — from {info.origin}</span>}
+            <span className="font-semibold text-foreground">Meaning:</span> {data.meaning}
+            {data.origin && <span> — from {data.origin}</span>}
           </p>
         )}
-        <p>
-          <span className="font-semibold text-foreground">Vibe:</span> {info.vibe}
-        </p>
-        <p>
-          <span className="font-semibold text-foreground">Popularity:</span> {info.popularity}
-        </p>
+        {data.vibe && (
+          <p>
+            <span className="font-semibold text-foreground">Vibe:</span> {data.vibe}
+          </p>
+        )}
+        {data.popularity && (
+          <p>
+            <span className="font-semibold text-foreground">Popularity:</span> {data.popularity}
+          </p>
+        )}
       </div>
     </div>
   );

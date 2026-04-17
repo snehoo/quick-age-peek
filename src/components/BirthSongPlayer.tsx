@@ -17,9 +17,13 @@ const BirthSongPlayer = ({ year, month }: BirthSongProps) => {
   const song = getBirthSong(year, month);
   const [art, setArt] = useState<string | null>(null);
   const [album, setAlbum] = useState<string | null>(null);
+  const [preview, setPreview] = useState<string | null>(null);
 
   useEffect(() => {
     if (!song) return;
+    setPreview(null);
+    setArt(null);
+    setAlbum(null);
     const ctrl = new AbortController();
     const q = encodeURIComponent(`${song.title} ${song.artist}`);
     fetch(`https://itunes.apple.com/search?term=${q}&media=music&limit=1`, { signal: ctrl.signal })
@@ -28,6 +32,7 @@ const BirthSongPlayer = ({ year, month }: BirthSongProps) => {
         const r: ITunesResult | undefined = data?.results?.[0];
         if (r?.artworkUrl100) setArt(r.artworkUrl100.replace("100x100", "300x300"));
         if (r?.collectionName) setAlbum(r.collectionName);
+        if (r?.previewUrl) setPreview(r.previewUrl);
       })
       .catch(() => {});
     return () => ctrl.abort();
