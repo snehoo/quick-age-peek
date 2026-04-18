@@ -40,11 +40,6 @@ const BirthSongPlayer = ({ year, month }: BirthSongProps) => {
 
   if (!song) return null;
 
-  const searchQuery = encodeURIComponent(`${song.title} ${song.artist}`);
-  const spotifyUrl = `https://open.spotify.com/search/${searchQuery}`;
-  const youtubeUrl = `https://www.youtube.com/results?search_query=${searchQuery}`;
-  const appleUrl = `https://music.apple.com/search?term=${searchQuery}`;
-
   return (
     <div className="mt-8 rounded-xl border border-border bg-card p-6 animate-fade-in-up">
       <h2 className="font-display text-xl text-foreground mb-1">🎵 #1 song when you were born</h2>
@@ -75,33 +70,6 @@ const BirthSongPlayer = ({ year, month }: BirthSongProps) => {
           <p className="text-[11px] text-muted-foreground/70 mt-1">30-second preview · courtesy iTunes</p>
         </div>
       )}
-
-      <div className="mt-5 flex flex-wrap gap-2">
-        <a
-          href={spotifyUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-1.5 rounded-full bg-[#1DB954] hover:opacity-90 text-white text-sm font-medium px-4 py-2 transition-opacity"
-        >
-          ▶ Play on Spotify
-        </a>
-        <a
-          href={youtubeUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-1.5 rounded-full bg-foreground text-background hover:opacity-90 text-sm font-medium px-4 py-2 transition-opacity"
-        >
-          ▶ Watch on YouTube
-        </a>
-        <a
-          href={appleUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-1.5 rounded-full border border-border text-foreground hover:bg-muted/50 text-sm font-medium px-4 py-2 transition-colors"
-        >
-          Apple Music
-        </a>
-      </div>
     </div>
   );
 };

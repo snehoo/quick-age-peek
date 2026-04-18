@@ -29,11 +29,11 @@ Deno.serve(async (req) => {
     const cleanName = name.trim().slice(0, 60);
     const cleanCountry = (country || "").trim().slice(0, 60);
 
-    const systemPrompt = `You are an expert onomastician (name historian). Given a first name, a birth year, and optionally a country, return:
+    const systemPrompt = `You are an expert onomastician (name historian) and personality archetypist. Given a first name, a birth year, and optionally a country, return:
 - meaning: literal meaning of the name (1 short phrase)
 - origin: language/culture of origin (e.g. "Hebrew", "Sanskrit", "Old English")
-- vibe: 1 evocative sentence describing the personality/feel of the name (modern, classic, edgy, gentle, regal, etc.)
 - popularity: 1 sentence describing how popular the name was around the given birth year, ideally referencing rank, trend (rising/falling/peaking), and region if country is given.
+- personality: 1-2 warm sentences describing a personality archetype for people with this name + birthday combo. MUST start with the exact phrase "People with your birthday tend to be" — frame it as gentle identity validation (warm, flattering, evocative — not horoscope-cheesy). Reference traits, vibes, strengths.
 Be concise, factual, and culturally aware. If the country is non-Western, prioritise local naming context.`;
 
     const userPrompt = `Name: "${cleanName}"\nBirth year: ${year}${cleanCountry ? `\nCountry: ${cleanCountry}` : ""}\n\nReturn the structured insights via the provided tool.`;
@@ -49,10 +49,10 @@ Be concise, factual, and culturally aware. If the country is non-Western, priori
             properties: {
               meaning: { type: "string" },
               origin: { type: "string" },
-              vibe: { type: "string" },
               popularity: { type: "string" },
+              personality: { type: "string" },
             },
-            required: ["meaning", "origin", "vibe", "popularity"],
+            required: ["meaning", "origin", "popularity", "personality"],
             additionalProperties: false,
           },
         },
@@ -99,7 +99,7 @@ Be concise, factual, and culturally aware. If the country is non-Western, priori
 
     const data = await aiRes.json();
     const toolCall = data?.choices?.[0]?.message?.tool_calls?.[0];
-    let insights: { meaning?: string; origin?: string; vibe?: string; popularity?: string } = {};
+    let insights: { meaning?: string; origin?: string; popularity?: string; personality?: string } = {};
     if (toolCall?.function?.arguments) {
       try {
         insights = JSON.parse(toolCall.function.arguments);

@@ -4,6 +4,7 @@ import NameInsights from "./NameInsights";
 import FamousBirthdaysList from "./FamousBirthdaysList";
 import BirthSongPlayer from "./BirthSongPlayer";
 import NameTwins from "./NameTwins";
+import Rarity from "./Rarity";
 
 const AgeCalculator = () => {
   const [name, setName] = useState("");
@@ -85,17 +86,17 @@ const AgeCalculator = () => {
     validateAndStart(dob);
   };
 
-  const handleDobFieldClick = (
-    e: React.MouseEvent<HTMLInputElement> | React.FocusEvent<HTMLInputElement>,
-  ) => {
-    const el = e.currentTarget as HTMLInputElement & { showPicker?: () => void };
-    if (typeof el.showPicker === "function") {
+  const openPicker = (el: HTMLInputElement | null) => {
+    if (!el) return;
+    const input = el as HTMLInputElement & { showPicker?: () => void };
+    requestAnimationFrame(() => {
       try {
-        el.showPicker();
+        input.focus();
+        input.showPicker?.();
       } catch {
         /* no-op */
       }
-    }
+    });
   };
 
   const greeting = name.trim() ? name.trim() : "You";
@@ -126,14 +127,12 @@ const AgeCalculator = () => {
             type="date"
             value={dob}
             onChange={(e) => setDob(e.target.value)}
-            onClick={handleDobFieldClick}
-            onFocus={handleDobFieldClick}
+            onClick={(e) => openPicker(e.currentTarget)}
+            onFocus={(e) => openPicker(e.currentTarget)}
+            onTouchEnd={(e) => openPicker(e.currentTarget)}
             max={new Date().toISOString().split("T")[0]}
             className="w-full rounded-lg border border-input bg-card px-4 py-3 text-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-colors cursor-pointer [&::-webkit-calendar-picker-indicator]:cursor-pointer"
           />
-          <p className="mt-1.5 text-xs text-muted-foreground/70">
-            Tap anywhere in the field to open the calendar
-          </p>
         </div>
 
         {error && <p className="text-destructive text-sm">{error}</p>}
@@ -146,79 +145,111 @@ const AgeCalculator = () => {
         </button>
       </form>
 
-      {result && (
-        <div className="mt-10 animate-fade-in-up">
-          <p className="text-center font-display text-2xl text-foreground mb-1">
-            {greeting}, you are <span className="text-primary">{result.years}</span> years old
-            {country && (
-              <span className="text-muted-foreground text-lg font-body"> — from {country}</span>
-            )}
-          </p>
-          {timezone && (
-            <p className="text-center text-xs text-muted-foreground/70 mb-1">
-              Timezone: {timezone}
+      {result && (() => {
+        // Hours alive in current 24h cycle of "life as a day"
+        // Map life-progress (assume avg lifespan 80) to a 24h clock
+        const lifeFraction = Math.min(result.years / 80, 0.999);
+        const totalMinsInDay = lifeFraction * 24 * 60;
+        const lifeHour = Math.floor(totalMinsInDay / 60);
+        const lifeMin = Math.floor(totalMinsInDay % 60);
+        const ampm = lifeHour >= 12 ? "PM" : "AM";
+        const displayHour = lifeHour % 12 === 0 ? 12 : lifeHour % 12;
+        const lifeTimeStr = `${displayHour}:${String(lifeMin).padStart(2, "0")} ${ampm}`;
+
+        // Sleep estimate: ~33% of total days in hours
+        const sleepHours = Math.floor(result.totalDays * 8);
+        const sleepDays = Math.floor(sleepHours / 24);
+
+        return (
+          <div className="mt-10 animate-fade-in-up">
+            <p className="text-center font-display text-2xl text-foreground mb-1">
+              {greeting}, you are <span className="text-primary">{result.years}</span> years old
             </p>
-          )}
-          <p className="text-center text-sm text-muted-foreground mb-8">
-            🎂 {result.nextBirthdayDays === 0
-              ? "Happy Birthday!"
-              : `${result.nextBirthdayDays} day${result.nextBirthdayDays > 1 ? "s" : ""} until your next birthday`}
-          </p>
+            {timezone && (
+              <p className="text-center text-xs text-muted-foreground/70 mb-4">
+                Timezone: {timezone}
+              </p>
+            )}
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
-            <div className="age-stat-card">
-              <div className="age-stat-value">{result.years}</div>
-              <div className="age-stat-label">Years</div>
-            </div>
-            <div className="age-stat-card">
-              <div className="age-stat-value">{result.months}</div>
-              <div className="age-stat-label">Months</div>
-            </div>
-            <div className="age-stat-card">
-              <div className="age-stat-value">{result.days}</div>
-              <div className="age-stat-label">Days</div>
-            </div>
-            <div className="age-stat-card">
-              <div className="age-stat-value">{result.hours}</div>
-              <div className="age-stat-label">Hours</div>
-            </div>
-            <div className="age-stat-card">
-              <div className="age-stat-value">{result.minutes}</div>
-              <div className="age-stat-label">Minutes</div>
-            </div>
-            <div className="age-stat-card">
-              <div className="age-stat-value animate-pulse">{result.seconds}</div>
-              <div className="age-stat-label">Seconds</div>
-            </div>
-            <div className="age-stat-card col-span-2 sm:col-span-3">
-              <div className="age-stat-value text-lg">{result.totalDays.toLocaleString()}</div>
-              <div className="age-stat-label">Total Days Alive</div>
-            </div>
-          </div>
+            <p className="text-center font-display text-base sm:text-lg font-bold text-foreground mb-8">
+              If your life were a 24-hour day, it's currently {lifeTimeStr}
+            </p>
 
-          {name.trim() && (
-            <NameInsights name={name} birthYear={new Date(dob).getFullYear()} country={country} />
-          )}
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+              <div className="age-stat-card">
+                <div className="age-stat-value">{result.years}</div>
+                <div className="age-stat-label">Years</div>
+              </div>
+              <div className="age-stat-card">
+                <div className="age-stat-value">{result.months}</div>
+                <div className="age-stat-label">Months</div>
+              </div>
+              <div className="age-stat-card">
+                <div className="age-stat-value">{result.days}</div>
+                <div className="age-stat-label">Days</div>
+              </div>
+              <div className="age-stat-card">
+                <div className="age-stat-value">{result.hours}</div>
+                <div className="age-stat-label">Hours</div>
+              </div>
+              <div className="age-stat-card">
+                <div className="age-stat-value">{result.minutes}</div>
+                <div className="age-stat-label">Minutes</div>
+              </div>
+              <div className="age-stat-card">
+                <div className="age-stat-value animate-pulse">{result.seconds}</div>
+                <div className="age-stat-label">Seconds</div>
+              </div>
+              <div className="age-stat-card">
+                <div className="age-stat-value text-lg">{result.totalDays.toLocaleString()}</div>
+                <div className="age-stat-label">Total Days Alive</div>
+              </div>
+              <div className="age-stat-card">
+                <div className="age-stat-value text-lg">
+                  {result.nextBirthdayDays === 0 ? "🎂" : result.nextBirthdayDays}
+                </div>
+                <div className="age-stat-label">
+                  {result.nextBirthdayDays === 0 ? "Happy Birthday!" : "Days to Next Birthday"}
+                </div>
+              </div>
+              <div className="age-stat-card">
+                <div className="age-stat-value text-lg">{sleepDays.toLocaleString()}</div>
+                <div className="age-stat-label">Days Spent Sleeping</div>
+              </div>
+            </div>
 
-          <FamousBirthdaysList
-            month={new Date(dob).getMonth() + 1}
-            day={new Date(dob).getDate()}
-          />
+            {name.trim() && (
+              <NameInsights name={name} birthYear={new Date(dob).getFullYear()} country={country} />
+            )}
 
-          {name.trim() && (
-            <NameTwins
-              name={name}
-              year={new Date(dob).getFullYear()}
+            <Rarity
+              ageYears={result.years}
+              totalDays={result.totalDays}
+              birthMonth={new Date(dob).getMonth() + 1}
+              birthDay={new Date(dob).getDate()}
+            />
+
+            <FamousBirthdaysList
+              month={new Date(dob).getMonth() + 1}
+              day={new Date(dob).getDate()}
               country={country}
             />
-          )}
 
-          <BirthSongPlayer
-            year={new Date(dob).getFullYear()}
-            month={new Date(dob).getMonth() + 1}
-          />
-        </div>
-      )}
+            {name.trim() && (
+              <NameTwins
+                name={name}
+                year={new Date(dob).getFullYear()}
+                country={country}
+              />
+            )}
+
+            <BirthSongPlayer
+              year={new Date(dob).getFullYear()}
+              month={new Date(dob).getMonth() + 1}
+            />
+          </div>
+        );
+      })()}
     </div>
   );
 };

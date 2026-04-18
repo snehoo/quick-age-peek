@@ -10,8 +10,8 @@ interface NameInsightsProps {
 interface Insights {
   meaning?: string;
   origin?: string;
-  vibe?: string;
   popularity?: string;
+  personality?: string;
 }
 
 const NameInsights = ({ name, birthYear, country }: NameInsightsProps) => {
@@ -80,14 +80,14 @@ const NameInsights = ({ name, birthYear, country }: NameInsightsProps) => {
             {data.origin && <span> — from {data.origin}</span>}
           </p>
         )}
-        {data.vibe && (
-          <p>
-            <span className="font-semibold text-foreground">Vibe:</span> {data.vibe}
-          </p>
-        )}
         {data.popularity && (
           <p>
             <span className="font-semibold text-foreground">Popularity:</span> {data.popularity}
+          </p>
+        )}
+        {data.personality && (
+          <p>
+            <span className="font-semibold text-foreground">Personality:</span> {data.personality}
           </p>
         )}
       </div>
