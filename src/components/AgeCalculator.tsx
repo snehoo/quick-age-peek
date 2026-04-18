@@ -222,23 +222,23 @@ const AgeCalculator = () => {
                 <div className="age-stat-label">Seconds</div>
               </div>
               <div className="age-stat-card">
-                <div className="age-stat-value text-lg">{result.totalDays.toLocaleString()}</div>
+                <div className="age-stat-value">{result.totalDays.toLocaleString()}</div>
                 <div className="age-stat-label">Days Alive</div>
               </div>
               <div className="age-stat-card">
-                <div className="age-stat-value text-lg">
-                  {result.nextBirthdayDays === 0 ? "Today" : result.nextBirthdayDays}
+                <div className="age-stat-value">
+                  {result.nextBirthdayDays === 0 ? "🎂" : result.nextBirthdayDays}
                 </div>
                 <div className="age-stat-label">
                   {result.nextBirthdayDays === 0 ? "Happy Birthday!" : "Days to Birthday"}
                 </div>
               </div>
               <div className="age-stat-card">
-                <div className="age-stat-value text-lg">{nightsSlept.toLocaleString()}</div>
+                <div className="age-stat-value">{nightsSlept.toLocaleString()}</div>
                 <div className="age-stat-label">Days Slept</div>
               </div>
               <div className="age-stat-card">
-                <div className="age-stat-value text-lg">{heartBeatsStr}</div>
+                <div className="age-stat-value">{heartBeatsStr}</div>
                 <div className="age-stat-label">Heart Beats</div>
               </div>
             </div>
