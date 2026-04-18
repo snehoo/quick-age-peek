@@ -105,7 +105,7 @@ const AgeCalculator = () => {
       <form onSubmit={handleCalculate} className="space-y-5">
         <div>
           <label htmlFor="name" className="block text-sm font-medium text-muted-foreground mb-1.5">
-            Your name <span className="text-muted-foreground/60">(optional)</span>
+            Your name
           </label>
           <input
             id="name"
@@ -232,17 +232,17 @@ const AgeCalculator = () => {
               <NameInsights name={name} birthYear={new Date(dob).getFullYear()} country={country} />
             )}
 
-            <FamousBirthdaysList
-              month={new Date(dob).getMonth() + 1}
-              day={new Date(dob).getDate()}
-              country={country}
-            />
-
             <TimeLeft
               ageYears={result.years}
               totalDays={result.totalDays}
               birthMonth={new Date(dob).getMonth() + 1}
               birthDay={new Date(dob).getDate()}
+            />
+
+            <FamousBirthdaysList
+              month={new Date(dob).getMonth() + 1}
+              day={new Date(dob).getDate()}
+              country={country}
             />
 
             <LifeInContext

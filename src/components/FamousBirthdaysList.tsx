@@ -61,7 +61,7 @@ const FamousBirthdaysList = ({ month, day, country }: FamousBirthdaysProps) => {
   if (loading) {
     return (
       <div className="mt-8 rounded-xl border border-border bg-card p-6">
-        <h2 className="text-xl text-foreground mb-4">Born on your birthday 🎂</h2>
+        <h2 className="text-xl text-foreground mb-4">Born on your birthday</h2>
         <div className="flex flex-wrap gap-3">
           {[1, 2, 3, 4, 5].map((i) => (
             <div key={i} className="h-9 w-32 bg-muted/60 rounded-lg animate-pulse" />
@@ -75,10 +75,7 @@ const FamousBirthdaysList = ({ month, day, country }: FamousBirthdaysProps) => {
 
   return (
     <div className="mt-8 rounded-xl border border-border bg-card p-6 animate-fade-in-up">
-      <h2 className="text-xl text-foreground mb-1">Born on your birthday 🎂</h2>
-      <p className="text-xs text-muted-foreground/70 mb-4">
-        Famous people who share your exact birthday{country ? ` — including icons from ${country}` : ""}
-      </p>
+      <h2 className="text-xl text-foreground mb-4">Born on your birthday</h2>
       <div className="flex flex-wrap gap-3">
         {people.map((person, i) => (
           <div
