@@ -173,19 +173,28 @@ const AgeCalculator = () => {
         const localized = getLocalizedItems(result.years, country);
         const gen = getGeneration(new Date(dob).getFullYear());
 
+        const dobDate = new Date(dob);
+        const dobFormatted = dobDate.toLocaleDateString(undefined, {
+          year: "numeric",
+          month: "long",
+          day: "numeric",
+        });
+
         return (
           <div className="mt-10 animate-fade-in-up">
-            <p className="text-center font-display text-2xl text-foreground mb-2">
-              {greeting}, you are <span className="text-primary">{result.years}</span> years old
-            </p>
-            <p className="text-center text-sm text-muted-foreground italic max-w-md mx-auto mb-2">
-              {moodLine}
-            </p>
-            {timezone && (
-              <p className="text-center text-xs text-muted-foreground/70 mb-4">
-                Timezone: {timezone}
+            <div className="rounded-2xl border border-border bg-card p-5 sm:p-6 mb-4">
+              <h2 className="font-display text-2xl sm:text-3xl text-foreground leading-tight">
+                {greeting}, you are <span className="text-primary">{result.years}</span> years old
+              </h2>
+              <p className="text-sm text-muted-foreground mt-1">
+                {timezone ? `${timezone} · ` : ""}{dobFormatted}
               </p>
-            )}
+              <div className="mt-4 rounded-xl border border-primary/30 bg-primary/10 px-4 py-3">
+                <p className="text-sm sm:text-base text-foreground italic">
+                  &ldquo;{moodLine}&rdquo;
+                </p>
+              </div>
+            </div>
 
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
               <div className="age-stat-card">
