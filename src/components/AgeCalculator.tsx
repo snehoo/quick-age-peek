@@ -5,6 +5,7 @@ import { Slider } from "@/components/ui/slider";
 import CompactNameTile from "./CompactNameTile";
 import FamousBirthdaysList from "./FamousBirthdaysList";
 import ShareCard from "./ShareCard";
+import { getFamousBirthdays } from "@/lib/famousBirthdays";
 
 const DEFAULT_LIFE_EXPECTANCY = 80;
 
