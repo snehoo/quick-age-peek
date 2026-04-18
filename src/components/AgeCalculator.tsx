@@ -229,6 +229,15 @@ const AgeCalculator = () => {
               If your life were a 24-hour day, it's currently {lifeTimeStr}
             </p>
 
+            <ShareCard
+              name={name}
+              years={result.years}
+              totalDays={result.totalDays}
+              lifeTimeStr={lifeTimeStr}
+              heartBeatsStr={heartBeatsStr}
+              nextBirthdayDays={result.nextBirthdayDays}
+            />
+
             {name.trim() && (
               <NameInsights name={name} birthYear={new Date(dob).getFullYear()} country={country} />
             )}
