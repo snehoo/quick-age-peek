@@ -86,15 +86,13 @@ const AgeCalculator = () => {
     validateAndStart(dob);
   };
 
-  const handleDobFieldClick = (
-    e: React.MouseEvent<HTMLInputElement> | React.FocusEvent<HTMLInputElement>,
-  ) => {
-    const el = e.currentTarget as HTMLInputElement & { showPicker?: () => void };
-    // Use rAF to ensure focus before picker opens (mobile Safari/Chrome quirk)
+  const openPicker = (el: HTMLInputElement | null) => {
+    if (!el) return;
+    const input = el as HTMLInputElement & { showPicker?: () => void };
     requestAnimationFrame(() => {
       try {
-        el.focus();
-        el.showPicker?.();
+        input.focus();
+        input.showPicker?.();
       } catch {
         /* no-op */
       }
@@ -129,9 +127,9 @@ const AgeCalculator = () => {
             type="date"
             value={dob}
             onChange={(e) => setDob(e.target.value)}
-            onClick={handleDobFieldClick}
-            onFocus={handleDobFieldClick}
-            onTouchEnd={handleDobFieldClick}
+            onClick={(e) => openPicker(e.currentTarget)}
+            onFocus={(e) => openPicker(e.currentTarget)}
+            onTouchEnd={(e) => openPicker(e.currentTarget)}
             max={new Date().toISOString().split("T")[0]}
             className="w-full rounded-lg border border-input bg-card px-4 py-3 text-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-colors cursor-pointer [&::-webkit-calendar-picker-indicator]:cursor-pointer"
           />
