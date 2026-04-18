@@ -40,7 +40,7 @@ const TimeLeft = ({ ageYears, totalDays, birthMonth, birthDay }: TimeLeftProps) 
       <h2 className="text-xl text-foreground mb-1 text-center">⏳ Time Left</h2>
       <p className="text-sm text-muted-foreground mb-5 italic text-center">If you live to {LIFE_EXPECTANCY}…</p>
 
-      <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+      <div className="grid grid-cols-2 gap-4">
         {stats.map((s, i) => (
           <div
             key={s.label}
