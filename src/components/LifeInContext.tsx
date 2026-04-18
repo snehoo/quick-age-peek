@@ -17,31 +17,54 @@ const getGeneration = (year: number): { name: string; tagline: string } => {
   return { name: "Gen Alpha", tagline: "iPad in one hand, the future in the other." };
 };
 
+type Item = { value: number | string; label: string };
+
+const getItems = (ageYears: number, country: string | null): Item[] => {
+  const c = (country || "").toLowerCase().trim();
+  // Full moons: ~12.37 per year
+  const fullMoons = Math.floor(ageYears * 12.37);
+
+  if (c === "india") {
+    return [
+      { value: fullMoons, label: "🌙 Full moons" },
+      { value: Math.floor(ageYears / 4), label: "🏏 Cricket World Cups" },
+      { value: Math.floor(ageYears / 5), label: "🗳️ General elections" },
+    ];
+  }
+  if (c === "usa" || c === "us" || c === "united states" || c === "united states of america") {
+    return [
+      { value: fullMoons, label: "🌙 Full moons" },
+      { value: ageYears, label: "🏈 Super Bowls" },
+      { value: Math.floor(ageYears / 4), label: "🗳️ Presidential elections" },
+    ];
+  }
+  if (c === "uk" || c === "united kingdom" || c === "england" || c === "britain" || c === "great britain") {
+    return [
+      { value: fullMoons, label: "🌙 Full moons" },
+      { value: ageYears, label: "⚽ FA Cup Finals" },
+      { value: Math.max(1, Math.floor(ageYears / 10)), label: "👑 Royal events" },
+    ];
+  }
+  if (c === "australia") {
+    return [
+      { value: fullMoons, label: "🌙 Full moons" },
+      { value: ageYears, label: "🏉 AFL Grand Finals" },
+      { value: ageYears, label: "☀️ Summers (southern)" },
+    ];
+  }
+  // Global fallback
+  return [
+    { value: fullMoons, label: "🌙 Full moons" },
+    { value: Math.floor(ageYears / 4), label: "⚽ FIFA World Cups" },
+    { value: ageYears, label: "✈️ Orbits around the Sun" },
+  ];
+};
+
 const LifeInContext = ({ ageYears, birthYear, country }: LifeInContextProps) => {
   const { ref, visible } = useReveal<HTMLDivElement>();
 
-  const isIndia = country?.toLowerCase() === "india";
-
-  // World Cups (FIFA every 4 yrs, Cricket ODI every 4 yrs ≈ 1 every 2 yrs combined major)
-  const fifaWorldCups = Math.floor(ageYears / 4);
-  const cricketWorldCups = Math.floor(ageYears / 4);
-  // Indian general elections every ~5 yrs; US presidential every 4
-  const elections = isIndia ? Math.floor(ageYears / 5) : Math.floor(ageYears / 4);
-  const monsoons = ageYears; // 1 per year
-
   const gen = getGeneration(birthYear);
-
-  const items = isIndia
-    ? [
-        { value: monsoons, label: "Monsoons lived through" },
-        { value: cricketWorldCups, label: "Cricket World Cups" },
-        { value: elections, label: "General elections" },
-      ]
-    : [
-        { value: ageYears, label: "Summers lived through" },
-        { value: fifaWorldCups, label: "FIFA World Cups" },
-        { value: elections, label: isIndia ? "Elections" : "Presidential elections" },
-      ];
+  const items = getItems(ageYears, country);
 
   return (
     <div

@@ -28,11 +28,11 @@ Deno.serve(async (req) => {
 
     const cleanCountry = (country || "").trim().slice(0, 60);
 
-    const systemPrompt = `You are a pop-culture & history expert. Return famous people born on the given month/day. Mix global icons with locally-relevant celebrities from the user's country (if given). Include a variety of fields: actors, musicians, athletes, scientists, founders, leaders, writers, etc. Return 8-12 people, prefer those most recognisable today. CRITICAL: Sort the array from MOST popular/famous globally today to least — the most recognisable name must be first.`;
+    const systemPrompt = `You are a pop-culture expert. Return ONLY famous CELEBRITIES (actors, musicians, singers, film/TV stars, pop icons, sports superstars known for celebrity status) born on the given month/day. STRICTLY EXCLUDE: scientists, founders/CEOs, politicians/leaders, writers, activists, royalty, billionaires, inventors, generic athletes who aren't celebrity-tier. Mix global icons with locally-famous celebrities from the user's country (if given). Return 8-12 people. CRITICAL: Sort from MOST globally popular today to least — biggest celebrity first.`;
 
     const userPrompt = `Date: ${String(month).padStart(2, "0")}-${String(day).padStart(2, "0")} (any year)
-${cleanCountry ? `User country: ${cleanCountry} — include 3-5 well-known people from this country.` : ""}
-Return via the provided tool.`;
+${cleanCountry ? `User country: ${cleanCountry} — include 3-5 well-known celebrities from this country.` : ""}
+Only celebrities. Return via the provided tool.`;
 
     const tools = [
       {
@@ -49,7 +49,7 @@ Return via the provided tool.`;
                   type: "object",
                   properties: {
                     name: { type: "string" },
-                    tag: { type: "string", description: "Short tag like Actor, Musician, Athlete, Founder, Scientist, Leader, Writer, Director, Activist, Royalty, Billionaire, Artist" },
+                    tag: { type: "string", description: "Short tag — ONLY one of: Actor, Musician, Singer, Athlete, Director" },
                   },
                   required: ["name", "tag"],
                   additionalProperties: false,
