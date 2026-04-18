@@ -187,8 +187,8 @@ const AgeCalculator = () => {
         const displayHour = lifeHour % 12 === 0 ? 12 : lifeHour % 12;
         const lifeTimeStr = `${displayHour}:${String(lifeMin).padStart(2, "0")} ${ampm}`;
 
-        // Nights slept (~one night per total day alive)
-        const nightsSlept = result.totalDays;
+        // Days spent sleeping — avg 8 hours/day = 1/3 of life
+        const nightsSlept = Math.floor(result.totalDays / 3);
 
         // Heart beats: avg 80 bpm
         const heartBeats = result.totalDays * 24 * 60 * 80;
