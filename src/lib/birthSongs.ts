@@ -184,14 +184,21 @@ export function getBirthSong(year: number, month: number): BirthSong | null {
     if (songsByMonthYear[k]) return songsByMonthYear[k];
   }
 
-  // Try closest year
-  for (let offset = 1; offset <= 5; offset++) {
+  // Try closest year (any distance), then any month in that year
+  for (let offset = 1; offset <= 60; offset++) {
     for (const dir of [1, -1]) {
       const y = year + offset * dir;
       const k = `${y}-${String(month).padStart(2, "0")}`;
       if (songsByMonthYear[k]) return songsByMonthYear[k];
+      // any month in that year
+      for (let m = 1; m <= 12; m++) {
+        const k2 = `${y}-${String(m).padStart(2, "0")}`;
+        if (songsByMonthYear[k2]) return songsByMonthYear[k2];
+      }
     }
   }
 
-  return null;
+  // Last-resort: return first available
+  const firstKey = Object.keys(songsByMonthYear)[0];
+  return firstKey ? songsByMonthYear[firstKey] : null;
 }
