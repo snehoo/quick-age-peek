@@ -97,7 +97,7 @@ const AgeCalculator = () => {
     const t = setTimeout(async () => {
       try {
         const { data, error } = await supabase.functions.invoke("famous-birthdays", {
-          body: { month, day, country: country || null },
+          body: { month, day },
         });
         if (cancelled) return;
         if (!error && data?.people?.[0]?.name) setTopCelebName(data.people[0].name as string);
@@ -109,7 +109,7 @@ const AgeCalculator = () => {
       cancelled = true;
       clearTimeout(t);
     };
-  }, [dob, country]);
+  }, [dob]);
 
   const handleCalculate = (e: React.FormEvent) => {
     e.preventDefault();
@@ -346,7 +346,6 @@ const AgeCalculator = () => {
             <FamousBirthdaysList
               month={new Date(dob).getMonth() + 1}
               day={new Date(dob).getDate()}
-              country={country}
             />
 
             <ShareCard
