@@ -206,7 +206,7 @@ const ShareCard = ({
               <div style={valueStyle}>
                 {nextBirthdayDays === 0 ? "🎂" : nextBirthdayDays}
               </div>
-              <div style={labelStyle}>To Birthday</div>
+              <div style={labelStyle}>Days to Birthday</div>
             </div>
           </div>
 
