@@ -24,13 +24,10 @@ const TimeLeft = ({ ageYears, totalDays, birthMonth, birthDay }: TimeLeftProps) 
   const yearsLeft = Math.max(LIFE_EXPECTANCY - ageYears, 0);
   // Weekends left ≈ 52 per year remaining
   const weekendsLeft = Math.max(Math.round(yearsLeft * 52), 0);
-  // Summers left = full summers remaining (1 per year)
-  const summersLeft = yearsLeft;
 
   const stats = [
     { value: yearsLeft.toLocaleString(), label: "Years left" },
     { value: weekendsLeft.toLocaleString(), label: "Weekends left" },
-    { value: summersLeft.toLocaleString(), label: "Summers left" },
   ];
 
   return (
