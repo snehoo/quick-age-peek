@@ -330,7 +330,13 @@ const AgeCalculator = () => {
               nextBirthdayDays={result.nextBirthdayDays}
               generationName={gen.name}
               generationTagline={gen.tagline}
-              famousName={getFamousBirthdays(dobDate.getMonth() + 1, dobDate.getDate())[0]?.name ?? null}
+              famousName={(() => {
+                const m = dobDate.getMonth() + 1;
+                const d = dobDate.getDate();
+                const key = `${String(m).padStart(2, "0")}-${String(d).padStart(2, "0")}`;
+                const match = getFamousBirthdays(m, d).find((p) => p.born === key);
+                return match?.name ?? null;
+              })()}
             />
           </div>
         );
