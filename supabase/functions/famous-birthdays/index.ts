@@ -28,7 +28,7 @@ Deno.serve(async (req) => {
 
     const cleanCountry = (country || "").trim().slice(0, 60);
 
-    const systemPrompt = `You are a pop-culture & history expert. Return famous people born on the given month/day. Mix global icons with locally-relevant celebrities from the user's country (if given). Include a variety of fields: actors, musicians, athletes, scientists, founders, leaders, writers, etc. Return 8-12 people, prefer those most recognisable today.`;
+    const systemPrompt = `You are a pop-culture & history expert. Return famous people born on the given month/day. Mix global icons with locally-relevant celebrities from the user's country (if given). Include a variety of fields: actors, musicians, athletes, scientists, founders, leaders, writers, etc. Return 8-12 people, prefer those most recognisable today. CRITICAL: Sort the array from MOST popular/famous globally today to least — the most recognisable name must be first.`;
 
     const userPrompt = `Date: ${String(month).padStart(2, "0")}-${String(day).padStart(2, "0")} (any year)
 ${cleanCountry ? `User country: ${cleanCountry} — include 3-5 well-known people from this country.` : ""}
