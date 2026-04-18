@@ -4,6 +4,7 @@ import NameInsights from "./NameInsights";
 import FamousBirthdaysList from "./FamousBirthdaysList";
 import BirthSongPlayer from "./BirthSongPlayer";
 import NameTwins from "./NameTwins";
+import Rarity from "./Rarity";
 
 const AgeCalculator = () => {
   const [name, setName] = useState("");
@@ -89,13 +90,15 @@ const AgeCalculator = () => {
     e: React.MouseEvent<HTMLInputElement> | React.FocusEvent<HTMLInputElement>,
   ) => {
     const el = e.currentTarget as HTMLInputElement & { showPicker?: () => void };
-    if (typeof el.showPicker === "function") {
+    // Use rAF to ensure focus before picker opens (mobile Safari/Chrome quirk)
+    requestAnimationFrame(() => {
       try {
-        el.showPicker();
+        el.focus();
+        el.showPicker?.();
       } catch {
         /* no-op */
       }
-    }
+    });
   };
 
   const greeting = name.trim() ? name.trim() : "You";
@@ -128,12 +131,10 @@ const AgeCalculator = () => {
             onChange={(e) => setDob(e.target.value)}
             onClick={handleDobFieldClick}
             onFocus={handleDobFieldClick}
+            onTouchEnd={handleDobFieldClick}
             max={new Date().toISOString().split("T")[0]}
             className="w-full rounded-lg border border-input bg-card px-4 py-3 text-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-colors cursor-pointer [&::-webkit-calendar-picker-indicator]:cursor-pointer"
           />
-          <p className="mt-1.5 text-xs text-muted-foreground/70">
-            Tap anywhere in the field to open the calendar
-          </p>
         </div>
 
         {error && <p className="text-destructive text-sm">{error}</p>}
