@@ -6,6 +6,7 @@ import FamousBirthdaysList from "./FamousBirthdaysList";
 import NameTwins from "./NameTwins";
 import TimeLeft from "./TimeLeft";
 import LifeInContext from "./LifeInContext";
+import ShareCard from "./ShareCard";
 
 const AgeCalculator = () => {
   const [name, setName] = useState("");
