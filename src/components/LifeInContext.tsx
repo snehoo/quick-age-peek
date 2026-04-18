@@ -26,37 +26,37 @@ const getItems = (ageYears: number, country: string | null): Item[] => {
 
   if (c === "india") {
     return [
-      { value: fullMoons, label: "🌙 Full moons" },
-      { value: Math.floor(ageYears / 4), label: "🏏 Cricket World Cups" },
-      { value: Math.floor(ageYears / 5), label: "🗳️ General elections" },
+      { value: fullMoons, label: "Full moons" },
+      { value: Math.floor(ageYears / 4), label: "Cricket World Cups" },
+      { value: Math.floor(ageYears / 5), label: "General elections" },
     ];
   }
   if (c === "usa" || c === "us" || c === "united states" || c === "united states of america") {
     return [
-      { value: fullMoons, label: "🌙 Full moons" },
-      { value: ageYears, label: "🏈 Super Bowls" },
-      { value: Math.floor(ageYears / 4), label: "🗳️ Presidential elections" },
+      { value: fullMoons, label: "Full moons" },
+      { value: ageYears, label: "Super Bowls" },
+      { value: Math.floor(ageYears / 4), label: "Presidential elections" },
     ];
   }
   if (c === "uk" || c === "united kingdom" || c === "england" || c === "britain" || c === "great britain") {
     return [
-      { value: fullMoons, label: "🌙 Full moons" },
-      { value: ageYears, label: "⚽ FA Cup Finals" },
-      { value: Math.max(1, Math.floor(ageYears / 10)), label: "👑 Royal events" },
+      { value: fullMoons, label: "Full moons" },
+      { value: ageYears, label: "FA Cup Finals" },
+      { value: Math.max(1, Math.floor(ageYears / 10)), label: "Royal events" },
     ];
   }
   if (c === "australia") {
     return [
-      { value: fullMoons, label: "🌙 Full moons" },
-      { value: ageYears, label: "🏉 AFL Grand Finals" },
-      { value: ageYears, label: "☀️ Summers (southern)" },
+      { value: fullMoons, label: "Full moons" },
+      { value: ageYears, label: "AFL Grand Finals" },
+      { value: ageYears, label: "Summers (southern)" },
     ];
   }
   // Global fallback
   return [
-    { value: fullMoons, label: "🌙 Full moons" },
-    { value: Math.floor(ageYears / 4), label: "⚽ FIFA World Cups" },
-    { value: ageYears, label: "✈️ Orbits around the Sun" },
+    { value: fullMoons, label: "Full moons" },
+    { value: Math.floor(ageYears / 4), label: "FIFA World Cups" },
+    { value: ageYears, label: "Orbits around the Sun" },
   ];
 };
 
@@ -73,7 +73,7 @@ const LifeInContext = ({ ageYears, birthYear, country }: LifeInContextProps) => 
         visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
       }`}
     >
-      <h2 className="text-xl text-foreground mb-5 text-center">🌍 Life In Context</h2>
+      <h2 className="text-xl text-foreground mb-5 text-center">Life In Context</h2>
 
       <div className="grid grid-cols-3 gap-4">
         {items.map((item) => (
