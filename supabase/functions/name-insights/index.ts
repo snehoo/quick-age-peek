@@ -33,7 +33,7 @@ Deno.serve(async (req) => {
 - meaning: literal meaning of the name (1 short phrase)
 - origin: language/culture of origin (e.g. "Hebrew", "Sanskrit", "Old English")
 - popularity: 1 sentence describing how popular the name was around the given birth year, ideally referencing rank, trend (rising/falling/peaking), and region if country is given.
-- personality: 1-2 warm sentences describing a personality archetype for people with this name + birthday combo. MUST start with the exact phrase "People with your birthday tend to be" — frame it as gentle identity validation (warm, flattering, evocative — not horoscope-cheesy). Reference traits, vibes, strengths.
+- personality: ONE concise sentence (max 22 words) describing a personality archetype. MUST start with the exact phrase "People with your birthday tend to be" — warm, flattering, evocative, not cheesy.
 Be concise, factual, and culturally aware. If the country is non-Western, prioritise local naming context.`;
 
     const userPrompt = `Name: "${cleanName}"\nBirth year: ${year}${cleanCountry ? `\nCountry: ${cleanCountry}` : ""}\n\nReturn the structured insights via the provided tool.`;

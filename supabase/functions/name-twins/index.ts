@@ -29,9 +29,9 @@ Deno.serve(async (req) => {
     const cleanName = name.trim().slice(0, 60);
     const cleanCountry = (country || "").trim().slice(0, 60);
 
-    const systemPrompt = `You are a pop-culture historian. Given a first name, a birth year, and (optionally) a country, return up to 4 famous "Celebrity Name-Twins" — real people OR iconic fictional characters whose FIRST NAME matches the given name AND who were culturally relevant in or around that birth year. Mix real-world celebrities (actors, musicians, athletes, founders, billionaires, politicians) with iconic fictional characters from films/TV/games of that era. If a country is given, prioritise at least one local/regional icon from that country. Return strictly via the provided tool. If you genuinely cannot find any first-name match relevant to that era, return an empty twins array — do not invent people.`;
+    const systemPrompt = `You are a pop-culture historian. Given a first name, a birth year, and (optionally) a country, return exactly 2 famous "Celebrity Name-Twins" — real people whose FIRST NAME matches AND who were culturally relevant in/around that birth year. Prefer the most globally recognisable real people. If a country is given, one of the two should ideally be a local icon from that country. Provide a Wikipedia page slug (the part after /wiki/) for each so a photo can be fetched. If you genuinely cannot find a real person matching, return an empty array.`;
 
-    const userPrompt = `First name: "${cleanName}"\nBirth year: ${year}${cleanCountry ? `\nCountry: ${cleanCountry}` : ""}\n\nFind up to 4 famous people or iconic characters whose FIRST NAME is "${cleanName}" who were prominent around ${year}. Each entry: a category label (e.g. "The Real-World Twin", "The Fictional Twin", "The Name-Sake Legend", "The Local Icon"), the full name, and a 1-sentence blurb explaining what made them culturally relevant in/near ${year}.`;
+    const userPrompt = `First name: "${cleanName}"\nBirth year: ${year}${cleanCountry ? `\nCountry: ${cleanCountry}` : ""}\n\nReturn exactly 2 famous real people whose FIRST NAME is "${cleanName}" and who were prominent around ${year}. For each: a short category label (e.g. "Global Icon", "Local Legend"), full name, a brief blurb (max 12 words), and their Wikipedia slug (e.g. "Steve_Jobs").`;
 
     const tools = [
       {
@@ -47,11 +47,12 @@ Deno.serve(async (req) => {
                 items: {
                   type: "object",
                   properties: {
-                    label: { type: "string", description: "Category label e.g. 'The Real-World Twin'" },
-                    name: { type: "string", description: "Full name of the celebrity or character" },
-                    blurb: { type: "string", description: "One sentence describing their cultural relevance around the birth year" },
+                    label: { type: "string", description: "Short category label" },
+                    name: { type: "string", description: "Full name of the real person" },
+                    blurb: { type: "string", description: "Brief blurb, max 12 words" },
+                    wiki_slug: { type: "string", description: "Wikipedia page slug, e.g. 'Steve_Jobs'" },
                   },
-                  required: ["label", "name", "blurb"],
+                  required: ["label", "name", "blurb", "wiki_slug"],
                   additionalProperties: false,
                 },
               },
@@ -103,7 +104,7 @@ Deno.serve(async (req) => {
 
     const data = await aiRes.json();
     const toolCall = data?.choices?.[0]?.message?.tool_calls?.[0];
-    let twins: Array<{ label: string; name: string; blurb: string }> = [];
+    let twins: Array<{ label: string; name: string; blurb: string; wiki_slug?: string; image?: string | null }> = [];
     if (toolCall?.function?.arguments) {
       try {
         const args = JSON.parse(toolCall.function.arguments);
@@ -118,7 +119,26 @@ Deno.serve(async (req) => {
     twins = twins.filter((t) => {
       const first = (t.name || "").trim().split(/\s+/)[0]?.toLowerCase();
       return first === target;
-    }).slice(0, 4);
+    }).slice(0, 2);
+
+    // Fetch Wikipedia thumbnails in parallel
+    twins = await Promise.all(
+      twins.map(async (t) => {
+        const slug = (t.wiki_slug || t.name).replace(/\s+/g, "_");
+        try {
+          const r = await fetch(
+            `https://en.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(slug)}`,
+            { headers: { "User-Agent": "WhatsMyAge/1.0" } }
+          );
+          if (r.ok) {
+            const j = await r.json();
+            const img = j?.thumbnail?.source || j?.originalimage?.source || null;
+            return { ...t, image: img };
+          }
+        } catch (_) { /* ignore */ }
+        return { ...t, image: null };
+      })
+    );
 
     return new Response(JSON.stringify({ twins, name: cleanName, year, country: cleanCountry || null }), {
       status: 200,

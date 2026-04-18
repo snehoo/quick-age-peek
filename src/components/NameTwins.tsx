@@ -11,6 +11,7 @@ interface Twin {
   label: string;
   name: string;
   blurb: string;
+  image?: string | null;
 }
 
 const NameTwins = ({ name, year, country }: NameTwinsProps) => {
@@ -77,23 +78,31 @@ const NameTwins = ({ name, year, country }: NameTwinsProps) => {
 
   return (
     <section className="mt-8 rounded-xl border border-border bg-card p-6 animate-fade-in-up">
-      <h2 className="font-display text-xl text-foreground mb-1">
+      <h2 className="font-display text-xl text-foreground mb-5">
         Celebrity Name-Twins{" "}
-        <span className="text-muted-foreground font-body text-base">(The Class of {year})</span>
+        <span className="text-muted-foreground font-body text-base">(Class of {year})</span>
       </h2>
-      <p className="text-sm text-muted-foreground mb-5">
-        You don't just share a name — you share a "start date" with these icons and characters
-        who shaped culture the year you were born.
-      </p>
 
       <ul className="space-y-4">
         {twins.map((t, i) => (
-          <li key={`${t.name}-${i}`} className="border-l-2 border-primary/40 pl-4">
-            <p className="text-sm font-medium text-primary mb-0.5">{t.label}</p>
-            <p className="text-foreground">
-              <span className="font-semibold">{t.name}</span>
-              <span className="text-muted-foreground"> — {t.blurb}</span>
-            </p>
+          <li key={`${t.name}-${i}`} className="flex items-center gap-4">
+            {t.image ? (
+              <img
+                src={t.image}
+                alt={t.name}
+                loading="lazy"
+                className="h-16 w-16 rounded-full object-cover border border-border flex-shrink-0"
+              />
+            ) : (
+              <div className="h-16 w-16 rounded-full bg-muted flex items-center justify-center text-lg font-semibold text-muted-foreground flex-shrink-0">
+                {t.name.charAt(0)}
+              </div>
+            )}
+            <div className="min-w-0">
+              <p className="text-xs uppercase tracking-wide text-primary mb-0.5">{t.label}</p>
+              <p className="font-semibold text-foreground truncate">{t.name}</p>
+              <p className="text-sm text-muted-foreground">{t.blurb}</p>
+            </div>
           </li>
         ))}
       </ul>
