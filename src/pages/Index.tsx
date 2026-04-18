@@ -33,7 +33,7 @@ const Index = () => {
         <AgeCalculator />
       </main>
       <footer className="py-6 text-center text-xs text-muted-foreground/60">
-        What Is My Age · simple age calculator
+        whatismyage.me
       </footer>
     </div>
   );

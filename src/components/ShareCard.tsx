@@ -307,7 +307,7 @@ const ShareCard = ({
           className="flex items-center justify-center gap-2 rounded-lg bg-primary py-3 font-semibold text-primary-foreground hover:opacity-90 active:scale-[0.99] transition-all disabled:opacity-60"
         >
           <Share2 className="h-4 w-4" />
-          {busy ? "Preparing..." : "Share My Age Card"}
+          {busy ? "Preparing..." : "Share with friends"}
         </button>
         <button
           onClick={handleDownload}
@@ -315,11 +315,40 @@ const ShareCard = ({
           className="flex items-center justify-center gap-2 rounded-lg border border-input bg-card py-3 font-semibold text-foreground hover:bg-secondary transition-all disabled:opacity-60"
         >
           <Download className="h-4 w-4" />
-          Download
+          Save card
         </button>
       </div>
       <p className="mt-2 text-center text-xs text-muted-foreground">
         Share on WhatsApp, Twitter, Instagram — wherever your friends are.
+      </p>
+
+      {/* Compare with a friend */}
+      <div className="mt-8 rounded-xl border border-border bg-card/50 p-5 text-center">
+        <div className="font-display text-lg text-foreground mb-1">
+          Want to compare with a friend?
+        </div>
+        <button
+          onClick={() => {
+            const el = document.getElementById("dob-input");
+            if (el) {
+              el.scrollIntoView({ behavior: "smooth", block: "center" });
+              (el as HTMLInputElement).focus();
+            }
+          }}
+          className="text-sm text-primary hover:underline"
+        >
+          Enter their birthday →
+        </button>
+      </div>
+
+      {/* Return nudge */}
+      <div className="mt-4 text-center text-sm text-muted-foreground">
+        🎂 Come back on your birthday for your personalised year ahead.
+      </div>
+
+      {/* Privacy line */}
+      <p className="mt-6 text-center text-xs text-muted-foreground/70">
+        🔒 We don't store your name or date of birth.
       </p>
     </div>
   );
