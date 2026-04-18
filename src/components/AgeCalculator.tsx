@@ -322,9 +322,13 @@ const AgeCalculator = () => {
               name={name}
               years={result.years}
               totalDays={result.totalDays}
-              lifeTimeStr={lifeTimeStr}
+              daysSlept={nightsSlept}
               heartBeatsStr={heartBeatsStr}
+              moodLine={moodLine}
+              dobFormatted={dobFormatted}
               nextBirthdayDays={result.nextBirthdayDays}
+              generationName={gen.name}
+              generationTagline={gen.tagline}
             />
           </div>
         );
