@@ -3,8 +3,6 @@ import { calculateAge, type AgeResult } from "@/lib/ageCalculator";
 import { getGeneration, getLocalizedItems, getAgeMoodLine, getLifeClockMood } from "@/lib/lifeContext";
 import CompactNameTile from "./CompactNameTile";
 import FamousBirthdaysList from "./FamousBirthdaysList";
-
-import NameTwins from "./NameTwins";
 import ShareCard from "./ShareCard";
 
 const LIFE_EXPECTANCY = 80;
@@ -244,22 +242,24 @@ const AgeCalculator = () => {
               ))}
             </div>
 
-            {/* 24-hour life clock + years left + weekends left */}
-            <div className="mt-4 grid grid-cols-3 gap-4">
+            {/* 24-hour life clock + Time Left (combined) — 2-tile set */}
+            <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="age-stat-card text-center">
                 <div className="text-xs uppercase tracking-wider text-muted-foreground mb-1">
                   Life as a 24-hour day
                 </div>
-                <div className="font-display text-2xl text-primary mb-1">{lifeTimeStr}</div>
-                <div className="text-[11px] text-muted-foreground italic leading-snug">{clockMood}</div>
+                <div className="font-display text-2xl text-primary">{lifeTimeStr}</div>
               </div>
-              <div className="age-stat-card">
-                <div className="age-stat-value text-2xl sm:text-3xl">{yearsLeft.toLocaleString()}</div>
-                <div className="age-stat-label">Years left</div>
-              </div>
-              <div className="age-stat-card">
-                <div className="age-stat-value text-2xl sm:text-3xl">{weekendsLeft.toLocaleString()}</div>
-                <div className="age-stat-label">Weekends left</div>
+              <div className="age-stat-card text-center">
+                <div className="text-xs uppercase tracking-wider text-muted-foreground mb-1">
+                  Time Left (to age {LIFE_EXPECTANCY})
+                </div>
+                <div className="font-display text-2xl text-primary">
+                  {yearsLeft.toLocaleString()} years
+                </div>
+                <div className="text-xs text-muted-foreground mt-0.5">
+                  {weekendsLeft.toLocaleString()} weekends
+                </div>
               </div>
             </div>
 
@@ -284,6 +284,13 @@ const AgeCalculator = () => {
               </div>
             </div>
 
+            {/* Famous birthday twins — single tile */}
+            <FamousBirthdaysList
+              month={new Date(dob).getMonth() + 1}
+              day={new Date(dob).getDate()}
+              country={country}
+            />
+
             <ShareCard
               name={name}
               years={result.years}
@@ -292,21 +299,6 @@ const AgeCalculator = () => {
               heartBeatsStr={heartBeatsStr}
               nextBirthdayDays={result.nextBirthdayDays}
             />
-
-            <FamousBirthdaysList
-              month={new Date(dob).getMonth() + 1}
-              day={new Date(dob).getDate()}
-              country={country}
-            />
-
-            {name.trim() && (
-              <NameTwins
-                name={name}
-                year={new Date(dob).getFullYear()}
-                country={country}
-              />
-            )}
-
           </div>
         );
       })()}
