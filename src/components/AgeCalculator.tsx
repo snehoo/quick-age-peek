@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { calculateAge, type AgeResult } from "@/lib/ageCalculator";
 import NameInsights from "./NameInsights";
 import FamousBirthdaysList from "./FamousBirthdaysList";
-import BirthSongPlayer from "./BirthSongPlayer";
+
 import NameTwins from "./NameTwins";
 import TimeLeft from "./TimeLeft";
 
@@ -241,10 +241,6 @@ const AgeCalculator = () => {
               />
             )}
 
-            <BirthSongPlayer
-              year={new Date(dob).getFullYear()}
-              month={new Date(dob).getMonth() + 1}
-            />
           </div>
         );
       })()}
