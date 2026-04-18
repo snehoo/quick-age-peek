@@ -82,6 +82,35 @@ const AgeCalculator = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dob]);
 
+  // Fetch top famous birthday celeb (matches Famous Birthday Twins source) for the share card
+  useEffect(() => {
+    if (!dob) {
+      setTopCelebName(null);
+      return;
+    }
+    const d = new Date(dob);
+    if (isNaN(d.getTime())) return;
+    const month = d.getMonth() + 1;
+    const day = d.getDate();
+    let cancelled = false;
+    setTopCelebName(null);
+    const t = setTimeout(async () => {
+      try {
+        const { data, error } = await supabase.functions.invoke("famous-birthdays", {
+          body: { month, day, country: country || null },
+        });
+        if (cancelled) return;
+        if (!error && data?.people?.[0]?.name) setTopCelebName(data.people[0].name as string);
+      } catch (e) {
+        if (!cancelled) console.error("share card celeb fetch", e);
+      }
+    }, 350);
+    return () => {
+      cancelled = true;
+      clearTimeout(t);
+    };
+  }, [dob, country]);
+
   const handleCalculate = (e: React.FormEvent) => {
     e.preventDefault();
     if (!dob) {
