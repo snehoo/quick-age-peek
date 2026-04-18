@@ -318,9 +318,7 @@ const ShareCard = ({
           Save card
         </button>
       </div>
-      <p className="mt-2 text-center text-xs text-muted-foreground">
-        Share on WhatsApp, Twitter, Instagram — wherever your friends are.
-      </p>
+
 
       {/* Compare with a friend */}
       <div className="mt-8 rounded-xl border border-border bg-card/50 p-5 text-center">
