@@ -329,7 +329,7 @@ const ShareCard = ({
         </div>
         <button
           onClick={() => {
-            const el = document.getElementById("dob-input");
+            const el = document.getElementById("dob");
             if (el) {
               el.scrollIntoView({ behavior: "smooth", block: "center" });
               (el as HTMLInputElement).focus();
