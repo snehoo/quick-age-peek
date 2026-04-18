@@ -4,7 +4,7 @@ import NameInsights from "./NameInsights";
 import FamousBirthdaysList from "./FamousBirthdaysList";
 import BirthSongPlayer from "./BirthSongPlayer";
 import NameTwins from "./NameTwins";
-import Rarity from "./Rarity";
+import TimeLeft from "./TimeLeft";
 
 const AgeCalculator = () => {
   const [name, setName] = useState("");
@@ -222,17 +222,17 @@ const AgeCalculator = () => {
               <NameInsights name={name} birthYear={new Date(dob).getFullYear()} country={country} />
             )}
 
-            <Rarity
-              ageYears={result.years}
-              totalDays={result.totalDays}
-              birthMonth={new Date(dob).getMonth() + 1}
-              birthDay={new Date(dob).getDate()}
-            />
-
             <FamousBirthdaysList
               month={new Date(dob).getMonth() + 1}
               day={new Date(dob).getDate()}
               country={country}
+            />
+
+            <TimeLeft
+              ageYears={result.years}
+              totalDays={result.totalDays}
+              birthMonth={new Date(dob).getMonth() + 1}
+              birthDay={new Date(dob).getDate()}
             />
 
             {name.trim() && (
