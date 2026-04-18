@@ -223,7 +223,7 @@ const AgeCalculator = () => {
               </div>
               <div className="age-stat-card">
                 <div className="age-stat-value text-lg">{nightsSlept.toLocaleString()}</div>
-                <div className="age-stat-label">Nights Slept</div>
+                <div className="age-stat-label">Days Slept</div>
               </div>
               <div className="age-stat-card">
                 <div className="age-stat-value text-lg">{heartBeatsStr}</div>
@@ -248,6 +248,7 @@ const AgeCalculator = () => {
                   Life as a 24-hour day
                 </div>
                 <div className="font-display text-2xl text-primary">{lifeTimeStr}</div>
+                <div className="text-xs text-muted-foreground italic mt-1 leading-snug">{moodLine}</div>
               </div>
               <div className="age-stat-card text-center">
                 <div className="text-xs uppercase tracking-wider text-muted-foreground mb-1">
