@@ -36,14 +36,14 @@ const TimeLeft = ({ ageYears, totalDays, birthMonth, birthDay }: TimeLeftProps) 
   return (
     <div
       ref={ref}
-      className={`mt-8 rounded-xl border border-border bg-card p-6 transition-all duration-700 ${
+      className={`mt-10 transition-all duration-700 ${
         visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
       }`}
     >
       <h2 className="text-xl text-foreground mb-1">⏳ Time Left</h2>
       <p className="text-sm text-muted-foreground mb-5 italic">If you live to {LIFE_EXPECTANCY}…</p>
 
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+      <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
         {stats.map((s, i) => (
           <div
             key={s.label}
@@ -54,11 +54,11 @@ const TimeLeft = ({ ageYears, totalDays, birthMonth, birthDay }: TimeLeftProps) 
           >
             {ready ? (
               <>
-                <div className="age-stat-value text-3xl">{s.value}</div>
+                <div className="age-stat-value text-lg">{s.value}</div>
                 <div className="age-stat-label">{s.label}</div>
               </>
             ) : (
-              <div className="flex flex-col items-center justify-center h-[68px]">
+              <div className="flex flex-col items-center justify-center">
                 <LoadingDots />
                 <div className="age-stat-label mt-2">{s.label}</div>
               </div>
