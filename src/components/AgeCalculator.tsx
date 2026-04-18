@@ -89,14 +89,12 @@ const AgeCalculator = () => {
   const openPicker = (el: HTMLInputElement | null) => {
     if (!el) return;
     const input = el as HTMLInputElement & { showPicker?: () => void };
-    requestAnimationFrame(() => {
-      try {
-        input.focus();
-        input.showPicker?.();
-      } catch {
-        /* no-op */
-      }
-    });
+    try {
+      input.focus();
+      input.showPicker?.();
+    } catch {
+      /* no-op */
+    }
   };
 
   const greeting = name.trim() ? name.trim() : "You";
