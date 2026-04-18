@@ -5,7 +5,7 @@ import { Slider } from "@/components/ui/slider";
 import CompactNameTile from "./CompactNameTile";
 import FamousBirthdaysList from "./FamousBirthdaysList";
 import ShareCard from "./ShareCard";
-import { getFamousBirthdays } from "@/lib/famousBirthdays";
+import { supabase } from "@/integrations/supabase/client";
 
 const DEFAULT_LIFE_EXPECTANCY = 80;
 
@@ -17,6 +17,7 @@ const AgeCalculator = () => {
   const [country, setCountry] = useState<string | null>(null);
   const [timezone, setTimezone] = useState<string>("");
   const [error, setError] = useState("");
+  const [topCelebName, setTopCelebName] = useState<string | null>(null);
   const dobRef = useRef<string>("");
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
@@ -80,6 +81,35 @@ const AgeCalculator = () => {
     validateAndStart(dob);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dob]);
+
+  // Fetch top famous birthday celeb (matches Famous Birthday Twins source) for the share card
+  useEffect(() => {
+    if (!dob) {
+      setTopCelebName(null);
+      return;
+    }
+    const d = new Date(dob);
+    if (isNaN(d.getTime())) return;
+    const month = d.getMonth() + 1;
+    const day = d.getDate();
+    let cancelled = false;
+    setTopCelebName(null);
+    const t = setTimeout(async () => {
+      try {
+        const { data, error } = await supabase.functions.invoke("famous-birthdays", {
+          body: { month, day, country: country || null },
+        });
+        if (cancelled) return;
+        if (!error && data?.people?.[0]?.name) setTopCelebName(data.people[0].name as string);
+      } catch (e) {
+        if (!cancelled) console.error("share card celeb fetch", e);
+      }
+    }, 350);
+    return () => {
+      cancelled = true;
+      clearTimeout(t);
+    };
+  }, [dob, country]);
 
   const handleCalculate = (e: React.FormEvent) => {
     e.preventDefault();
@@ -330,13 +360,7 @@ const AgeCalculator = () => {
               nextBirthdayDays={result.nextBirthdayDays}
               generationName={gen.name}
               generationTagline={gen.tagline}
-              famousName={(() => {
-                const m = dobDate.getMonth() + 1;
-                const d = dobDate.getDate();
-                const key = `${String(m).padStart(2, "0")}-${String(d).padStart(2, "0")}`;
-                const match = getFamousBirthdays(m, d).find((p) => p.born === key);
-                return match?.name ?? null;
-              })()}
+              famousName={topCelebName}
             />
           </div>
         );
