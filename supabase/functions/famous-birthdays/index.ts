@@ -26,13 +26,10 @@ Deno.serve(async (req) => {
     const LOVABLE_API_KEY = Deno.env.get("LOVABLE_API_KEY");
     if (!LOVABLE_API_KEY) throw new Error("LOVABLE_API_KEY not configured");
 
-    const cleanCountry = (country || "").trim().slice(0, 60);
-
-    const systemPrompt = `You are a pop-culture expert. Return ONLY famous CELEBRITIES (actors, musicians, singers, film/TV stars, pop icons, sports superstars known for celebrity status) born on the given month/day. STRICTLY EXCLUDE: scientists, founders/CEOs, politicians/leaders, writers, activists, royalty, billionaires, inventors, generic athletes who aren't celebrity-tier. Mix global icons with locally-famous celebrities from the user's country (if given). Return EXACTLY the TOP 3 most popular celebrities today — no more, no less. CRITICAL: Sort from MOST globally/locally popular today to least — biggest celebrity first.`;
+    const systemPrompt = `You are a pop-culture expert. Return ONLY famous CELEBRITIES (actors, musicians, singers, film/TV stars, pop icons, sports superstars known for celebrity status) born on the given month/day. STRICTLY EXCLUDE: scientists, founders/CEOs, politicians/leaders, writers, activists, royalty, billionaires, inventors, generic athletes who aren't celebrity-tier. Return EXACTLY the TOP 3 MOST GLOBALLY POPULAR celebrities today — no more, no less. Do NOT consider any country or region — pick purely by global fame today. CRITICAL: Sort from MOST globally popular today to least — biggest celebrity first.`;
 
     const userPrompt = `Date: ${String(month).padStart(2, "0")}-${String(day).padStart(2, "0")} (any year)
-${cleanCountry ? `User country: ${cleanCountry} — prioritise celebrities well-known in this country.` : ""}
-Return EXACTLY 3 celebrities, ranked by current popularity. Use the provided tool.`;
+Return EXACTLY 3 celebrities, ranked by current GLOBAL popularity. Use the provided tool.`;
 
     const tools = [
       {
@@ -102,7 +99,7 @@ Return EXACTLY 3 celebrities, ranked by current popularity. Use the provided too
       }
     }
 
-    return new Response(JSON.stringify({ people, month, day, country: cleanCountry || null }), {
+    return new Response(JSON.stringify({ people, month, day }), {
       status: 200,
       headers: { ...corsHeaders, "Content-Type": "application/json" },
     });
