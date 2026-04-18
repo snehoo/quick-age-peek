@@ -17,6 +17,7 @@ const AgeCalculator = () => {
   const [country, setCountry] = useState<string | null>(null);
   const [timezone, setTimezone] = useState<string>("");
   const [error, setError] = useState("");
+  const [topCelebName, setTopCelebName] = useState<string | null>(null);
   const dobRef = useRef<string>("");
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
