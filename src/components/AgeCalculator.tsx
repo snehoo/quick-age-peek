@@ -330,6 +330,7 @@ const AgeCalculator = () => {
               nextBirthdayDays={result.nextBirthdayDays}
               generationName={gen.name}
               generationTagline={gen.tagline}
+              famousName={getFamousBirthdays(dobDate.getMonth() + 1, dobDate.getDate())[0]?.name ?? null}
             />
           </div>
         );
