@@ -138,7 +138,7 @@ const AgeCalculator = () => {
       <form onSubmit={handleCalculate} className="space-y-5">
         <div>
           <label htmlFor="name" className="block text-sm font-medium text-muted-foreground mb-1.5">
-            Your name
+            First name <span className="text-muted-foreground/70 font-normal">(so we can make it personal)</span>
           </label>
           <input
             id="name"
