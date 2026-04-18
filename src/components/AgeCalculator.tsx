@@ -316,7 +316,6 @@ const AgeCalculator = () => {
               lifeTimeStr={lifeTimeStr}
               heartBeatsStr={heartBeatsStr}
               nextBirthdayDays={result.nextBirthdayDays}
-              lifeExpectancy={lifeExpectancy}
             />
           </div>
         );
