@@ -61,9 +61,9 @@ const FamousBirthdaysList = ({ month, day, country }: FamousBirthdaysProps) => {
   if (loading) {
     return (
       <div className="mt-8 rounded-xl border border-border bg-card p-6">
-        <h2 className="text-xl text-foreground mb-4">Born on your birthday</h2>
+        <h2 className="text-xl text-foreground mb-4">Famous Birthday Twins</h2>
         <div className="flex flex-wrap gap-3">
-          {[1, 2, 3, 4, 5].map((i) => (
+          {[1, 2, 3].map((i) => (
             <div key={i} className="h-9 w-32 bg-muted/60 rounded-lg animate-pulse" />
           ))}
         </div>
@@ -73,11 +73,13 @@ const FamousBirthdaysList = ({ month, day, country }: FamousBirthdaysProps) => {
 
   if (!people || people.length === 0) return null;
 
+  const topPeople = people.slice(0, 3);
+
   return (
     <div className="mt-8 rounded-xl border border-border bg-card p-6 animate-fade-in-up">
-      <h2 className="text-xl text-foreground mb-4">Born on your birthday</h2>
+      <h2 className="text-xl text-foreground mb-4">Famous Birthday Twins</h2>
       <div className="flex flex-wrap gap-3">
-        {people.map((person, i) => (
+        {topPeople.map((person, i) => (
           <div
             key={`${person.name}-${i}`}
             className="flex items-center gap-2 rounded-lg border border-border bg-background px-3 py-2"
