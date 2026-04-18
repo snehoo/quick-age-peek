@@ -1,12 +1,13 @@
 import { useState, useEffect, useRef } from "react";
 import { calculateAge, type AgeResult } from "@/lib/ageCalculator";
-import NameInsights from "./NameInsights";
+import { getGeneration, getLocalizedItems, getAgeMoodLine, getLifeClockMood } from "@/lib/lifeContext";
+import CompactNameTile from "./CompactNameTile";
 import FamousBirthdaysList from "./FamousBirthdaysList";
 
 import NameTwins from "./NameTwins";
-import TimeLeft from "./TimeLeft";
-import LifeInContext from "./LifeInContext";
 import ShareCard from "./ShareCard";
+
+const LIFE_EXPECTANCY = 80;
 
 const AgeCalculator = () => {
   const [name, setName] = useState("");
@@ -147,8 +148,7 @@ const AgeCalculator = () => {
 
       {result && (() => {
         // Hours alive in current 24h cycle of "life as a day"
-        // Map life-progress (assume avg lifespan 80) to a 24h clock
-        const lifeFraction = Math.min(result.years / 80, 0.999);
+        const lifeFraction = Math.min(result.years / LIFE_EXPECTANCY, 0.999);
         const totalMinsInDay = lifeFraction * 24 * 60;
         const lifeHour = Math.floor(totalMinsInDay / 60);
         const lifeMin = Math.floor(totalMinsInDay % 60);
@@ -156,9 +156,8 @@ const AgeCalculator = () => {
         const displayHour = lifeHour % 12 === 0 ? 12 : lifeHour % 12;
         const lifeTimeStr = `${displayHour}:${String(lifeMin).padStart(2, "0")} ${ampm}`;
 
-        // Sleep estimate: ~33% of total days in hours
-        const sleepHours = Math.floor(result.totalDays * 8);
-        const sleepDays = Math.floor(sleepHours / 24);
+        // Nights slept (~one night per total day alive)
+        const nightsSlept = result.totalDays;
 
         // Heart beats: avg 80 bpm
         const heartBeats = result.totalDays * 24 * 60 * 80;
@@ -167,10 +166,20 @@ const AgeCalculator = () => {
             ? `${(heartBeats / 1e9).toFixed(1)}B`
             : `${(heartBeats / 1e6).toFixed(0)}M`;
 
+        const moodLine = getAgeMoodLine(result.years);
+        const clockMood = getLifeClockMood(result.years);
+        const yearsLeft = Math.max(LIFE_EXPECTANCY - result.years, 0);
+        const weekendsLeft = Math.max(Math.round(yearsLeft * 52), 0);
+        const localized = getLocalizedItems(result.years, country);
+        const gen = getGeneration(new Date(dob).getFullYear());
+
         return (
           <div className="mt-10 animate-fade-in-up">
-            <p className="text-center font-display text-2xl text-foreground mb-1">
+            <p className="text-center font-display text-2xl text-foreground mb-2">
               {greeting}, you are <span className="text-primary">{result.years}</span> years old
+            </p>
+            <p className="text-center text-sm text-muted-foreground italic max-w-md mx-auto mb-2">
+              {moodLine}
             </p>
             {timezone && (
               <p className="text-center text-xs text-muted-foreground/70 mb-4">
@@ -209,15 +218,15 @@ const AgeCalculator = () => {
               </div>
               <div className="age-stat-card">
                 <div className="age-stat-value text-lg">
-                  {result.nextBirthdayDays === 0 ? "🎂" : result.nextBirthdayDays}
+                  {result.nextBirthdayDays === 0 ? "Today" : result.nextBirthdayDays}
                 </div>
                 <div className="age-stat-label">
                   {result.nextBirthdayDays === 0 ? "Happy Birthday!" : "Days to Next Birthday"}
                 </div>
               </div>
               <div className="age-stat-card">
-                <div className="age-stat-value text-lg">{sleepDays.toLocaleString()}</div>
-                <div className="age-stat-label">Days Spent Sleeping</div>
+                <div className="age-stat-value text-lg">{nightsSlept.toLocaleString()}</div>
+                <div className="age-stat-label">Nights Slept</div>
               </div>
               <div className="age-stat-card">
                 <div className="age-stat-value text-lg">{heartBeatsStr}</div>
@@ -225,9 +234,55 @@ const AgeCalculator = () => {
               </div>
             </div>
 
-            <p className="mt-8 text-center font-display text-base sm:text-lg font-bold text-foreground">
-              If your life were a 24-hour day, it's currently {lifeTimeStr}
-            </p>
+            {/* Localized "Life in context" 3-box set */}
+            <div className="mt-4 grid grid-cols-3 gap-4">
+              {localized.map((item) => (
+                <div key={item.label} className="age-stat-card">
+                  <div className="age-stat-value text-2xl sm:text-3xl">{item.value}</div>
+                  <div className="age-stat-label">{item.label}</div>
+                </div>
+              ))}
+            </div>
+
+            {/* 24-hour life clock + years left + weekends left */}
+            <div className="mt-4 grid grid-cols-3 gap-4">
+              <div className="age-stat-card text-center">
+                <div className="text-xs uppercase tracking-wider text-muted-foreground mb-1">
+                  Life as a 24-hour day
+                </div>
+                <div className="font-display text-2xl text-primary mb-1">{lifeTimeStr}</div>
+                <div className="text-[11px] text-muted-foreground italic leading-snug">{clockMood}</div>
+              </div>
+              <div className="age-stat-card">
+                <div className="age-stat-value text-2xl sm:text-3xl">{yearsLeft.toLocaleString()}</div>
+                <div className="age-stat-label">Years left</div>
+              </div>
+              <div className="age-stat-card">
+                <div className="age-stat-value text-2xl sm:text-3xl">{weekendsLeft.toLocaleString()}</div>
+                <div className="age-stat-label">Weekends left</div>
+              </div>
+            </div>
+
+            {/* Name + Generation 2-tile set */}
+            <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {name.trim() ? (
+                <CompactNameTile
+                  name={name}
+                  birthYear={new Date(dob).getFullYear()}
+                  country={country}
+                />
+              ) : (
+                <div className="age-stat-card text-center">
+                  <div className="text-xs uppercase tracking-wider text-muted-foreground mb-1">Name meaning</div>
+                  <div className="text-sm text-muted-foreground italic">Add your name above to reveal its meaning.</div>
+                </div>
+              )}
+              <div className="age-stat-card text-center">
+                <div className="text-xs uppercase tracking-wider text-muted-foreground mb-1">Generation</div>
+                <div className="font-display text-xl text-primary mb-1">{gen.name}</div>
+                <div className="text-xs text-muted-foreground italic leading-snug">{gen.tagline}</div>
+              </div>
+            </div>
 
             <ShareCard
               name={name}
@@ -238,26 +293,9 @@ const AgeCalculator = () => {
               nextBirthdayDays={result.nextBirthdayDays}
             />
 
-            {name.trim() && (
-              <NameInsights name={name} birthYear={new Date(dob).getFullYear()} country={country} />
-            )}
-
-            <TimeLeft
-              ageYears={result.years}
-              totalDays={result.totalDays}
-              birthMonth={new Date(dob).getMonth() + 1}
-              birthDay={new Date(dob).getDate()}
-            />
-
             <FamousBirthdaysList
               month={new Date(dob).getMonth() + 1}
               day={new Date(dob).getDate()}
-              country={country}
-            />
-
-            <LifeInContext
-              ageYears={result.years}
-              birthYear={new Date(dob).getFullYear()}
               country={country}
             />
 
