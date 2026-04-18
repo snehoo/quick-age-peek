@@ -38,7 +38,7 @@ const ShareCard = ({
     const dataUrl = await toPng(cardRef.current, {
       pixelRatio: 2,
       cacheBust: true,
-      backgroundColor: "#0f0a08",
+      backgroundColor: "#3a1a0c",
     });
     const res = await fetch(dataUrl);
     const blob = await res.blob();
@@ -126,7 +126,7 @@ const ShareCard = ({
             width: "100%",
             maxWidth: "440px",
             margin: "0 auto",
-            background: "linear-gradient(165deg, #1a120e 0%, #2a1810 50%, #3a1f15 100%)",
+            background: "linear-gradient(165deg, #4a1d0a 0%, #7a2e10 45%, #c45a25 100%)",
             color: "#fdf6ec",
             padding: "32px 26px",
             display: "flex",
@@ -206,7 +206,7 @@ const ShareCard = ({
               <div style={valueStyle}>
                 {nextBirthdayDays === 0 ? "🎂" : nextBirthdayDays}
               </div>
-              <div style={labelStyle}>To Birthday</div>
+              <div style={labelStyle}>Days to Birthday</div>
             </div>
           </div>
 
