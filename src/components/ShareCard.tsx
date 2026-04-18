@@ -38,7 +38,7 @@ const ShareCard = ({
     const dataUrl = await toPng(cardRef.current, {
       pixelRatio: 2,
       cacheBust: true,
-      backgroundColor: "#0f0a08",
+      backgroundColor: "#3a1a0c",
     });
     const res = await fetch(dataUrl);
     const blob = await res.blob();
