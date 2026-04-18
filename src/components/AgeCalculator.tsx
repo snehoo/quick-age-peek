@@ -242,7 +242,7 @@ const AgeCalculator = () => {
             </div>
 
             {/* 24-hour life clock + Time Left (combined) — 2-tile set */}
-            <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="mt-4 grid grid-cols-2 gap-4">
               <div className="age-stat-card text-center">
                 <div className="text-xs uppercase tracking-wider text-muted-foreground mb-1">
                   Life as a 24-hour day
@@ -263,7 +263,7 @@ const AgeCalculator = () => {
             </div>
 
             {/* Name + Generation 2-tile set */}
-            <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="mt-4 grid grid-cols-2 gap-4">
               {name.trim() ? (
                 <CompactNameTile
                   name={name}
