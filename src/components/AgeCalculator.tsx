@@ -6,6 +6,7 @@ import FamousBirthdaysList from "./FamousBirthdaysList";
 import NameTwins from "./NameTwins";
 import TimeLeft from "./TimeLeft";
 import LifeInContext from "./LifeInContext";
+import ShareCard from "./ShareCard";
 
 const AgeCalculator = () => {
   const [name, setName] = useState("");
@@ -227,6 +228,15 @@ const AgeCalculator = () => {
             <p className="mt-8 text-center font-display text-base sm:text-lg font-bold text-foreground">
               If your life were a 24-hour day, it's currently {lifeTimeStr}
             </p>
+
+            <ShareCard
+              name={name}
+              years={result.years}
+              totalDays={result.totalDays}
+              lifeTimeStr={lifeTimeStr}
+              heartBeatsStr={heartBeatsStr}
+              nextBirthdayDays={result.nextBirthdayDays}
+            />
 
             {name.trim() && (
               <NameInsights name={name} birthYear={new Date(dob).getFullYear()} country={country} />
