@@ -5,6 +5,7 @@ import FamousBirthdaysList from "./FamousBirthdaysList";
 
 import NameTwins from "./NameTwins";
 import TimeLeft from "./TimeLeft";
+import LifeInContext from "./LifeInContext";
 
 const AgeCalculator = () => {
   const [name, setName] = useState("");
@@ -158,6 +159,13 @@ const AgeCalculator = () => {
         const sleepHours = Math.floor(result.totalDays * 8);
         const sleepDays = Math.floor(sleepHours / 24);
 
+        // Heart beats: avg 80 bpm
+        const heartBeats = result.totalDays * 24 * 60 * 80;
+        const heartBeatsStr =
+          heartBeats >= 1e9
+            ? `${(heartBeats / 1e9).toFixed(1)}B`
+            : `${(heartBeats / 1e6).toFixed(0)}M`;
+
         return (
           <div className="mt-10 animate-fade-in-up">
             <p className="text-center font-display text-2xl text-foreground mb-1">
@@ -210,6 +218,10 @@ const AgeCalculator = () => {
                 <div className="age-stat-value text-lg">{sleepDays.toLocaleString()}</div>
                 <div className="age-stat-label">Days Spent Sleeping</div>
               </div>
+              <div className="age-stat-card">
+                <div className="age-stat-value text-lg">{heartBeatsStr}</div>
+                <div className="age-stat-label">Heart Beats</div>
+              </div>
             </div>
 
             <p className="mt-8 text-center font-display text-base sm:text-lg font-bold text-foreground">
@@ -231,6 +243,12 @@ const AgeCalculator = () => {
               totalDays={result.totalDays}
               birthMonth={new Date(dob).getMonth() + 1}
               birthDay={new Date(dob).getDate()}
+            />
+
+            <LifeInContext
+              ageYears={result.years}
+              birthYear={new Date(dob).getFullYear()}
+              country={country}
             />
 
             {name.trim() && (
