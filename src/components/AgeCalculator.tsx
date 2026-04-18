@@ -1,15 +1,17 @@
 import { useState, useEffect, useRef } from "react";
 import { calculateAge, type AgeResult } from "@/lib/ageCalculator";
-import { getGeneration, getLocalizedItems, getAgeMoodLine } from "@/lib/lifeContext";
+import { getGeneration, getLocalizedItems, getAgeMoodLine, getLifeClockMood } from "@/lib/lifeContext";
+import { Slider } from "@/components/ui/slider";
 import CompactNameTile from "./CompactNameTile";
 import FamousBirthdaysList from "./FamousBirthdaysList";
 import ShareCard from "./ShareCard";
 
-const LIFE_EXPECTANCY = 80;
+const DEFAULT_LIFE_EXPECTANCY = 80;
 
 const AgeCalculator = () => {
   const [name, setName] = useState("");
   const [dob, setDob] = useState("");
+  const [lifeExpectancy, setLifeExpectancy] = useState(DEFAULT_LIFE_EXPECTANCY);
   const [result, setResult] = useState<AgeResult | null>(null);
   const [country, setCountry] = useState<string | null>(null);
   const [timezone, setTimezone] = useState<string>("");
@@ -146,7 +148,7 @@ const AgeCalculator = () => {
 
       {result && (() => {
         // Hours alive in current 24h cycle of "life as a day"
-        const lifeFraction = Math.min(result.years / LIFE_EXPECTANCY, 0.999);
+        const lifeFraction = Math.min(result.years / lifeExpectancy, 0.999);
         const totalMinsInDay = lifeFraction * 24 * 60;
         const lifeHour = Math.floor(totalMinsInDay / 60);
         const lifeMin = Math.floor(totalMinsInDay % 60);
@@ -165,7 +167,8 @@ const AgeCalculator = () => {
             : `${(heartBeats / 1e6).toFixed(0)}M`;
 
         const moodLine = getAgeMoodLine(result.years);
-        const yearsLeft = Math.max(LIFE_EXPECTANCY - result.years, 0);
+        const shortMood = getLifeClockMood(result.years);
+        const yearsLeft = Math.max(lifeExpectancy - result.years, 0);
         const weekendsLeft = Math.max(Math.round(yearsLeft * 52), 0);
         const localized = getLocalizedItems(result.years, country);
         const gen = getGeneration(new Date(dob).getFullYear());
@@ -211,14 +214,14 @@ const AgeCalculator = () => {
               </div>
               <div className="age-stat-card">
                 <div className="age-stat-value text-lg">{result.totalDays.toLocaleString()}</div>
-                <div className="age-stat-label">Total Days Alive</div>
+                <div className="age-stat-label">Days Alive</div>
               </div>
               <div className="age-stat-card">
                 <div className="age-stat-value text-lg">
                   {result.nextBirthdayDays === 0 ? "Today" : result.nextBirthdayDays}
                 </div>
                 <div className="age-stat-label">
-                  {result.nextBirthdayDays === 0 ? "Happy Birthday!" : "Days to Next Birthday"}
+                  {result.nextBirthdayDays === 0 ? "Happy Birthday!" : "Days to Birthday"}
                 </div>
               </div>
               <div className="age-stat-card">
@@ -248,17 +251,32 @@ const AgeCalculator = () => {
                   Life as a 24-hour day
                 </div>
                 <div className="font-display text-2xl text-primary">{lifeTimeStr}</div>
-                <div className="text-xs text-muted-foreground italic mt-1 leading-snug">{moodLine}</div>
+                <div className="text-xs text-muted-foreground italic mt-1 leading-snug">{shortMood}</div>
               </div>
               <div className="age-stat-card text-center">
                 <div className="text-xs uppercase tracking-wider text-muted-foreground mb-1">
-                  Time Left (to age {LIFE_EXPECTANCY})
+                  Time Left (to age {lifeExpectancy})
                 </div>
                 <div className="font-display text-2xl text-primary">
                   {yearsLeft.toLocaleString()} years
                 </div>
                 <div className="text-xs text-muted-foreground mt-0.5">
                   {weekendsLeft.toLocaleString()} weekends
+                </div>
+                <div className="mt-3 px-1">
+                  <Slider
+                    value={[lifeExpectancy]}
+                    min={70}
+                    max={100}
+                    step={1}
+                    onValueChange={(v) => setLifeExpectancy(v[0])}
+                    aria-label="Life expectancy"
+                  />
+                  <div className="flex justify-between text-[10px] text-muted-foreground/70 mt-1">
+                    <span>70</span>
+                    <span>{lifeExpectancy}</span>
+                    <span>100</span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -298,6 +316,7 @@ const AgeCalculator = () => {
               lifeTimeStr={lifeTimeStr}
               heartBeatsStr={heartBeatsStr}
               nextBirthdayDays={result.nextBirthdayDays}
+              lifeExpectancy={lifeExpectancy}
             />
           </div>
         );
