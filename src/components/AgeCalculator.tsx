@@ -231,7 +231,7 @@ const AgeCalculator = () => {
                   {result.nextBirthdayDays === 0 ? "🎂" : result.nextBirthdayDays}
                 </div>
                 <div className="age-stat-label">
-                  {result.nextBirthdayDays === 0 ? "Happy Birthday!" : "Days to Birthday"}
+                  {result.nextBirthdayDays === 0 ? "Happy Birthday!" : "To Birthday"}
                 </div>
               </div>
               <div className="age-stat-card">
