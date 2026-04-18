@@ -1,8 +1,15 @@
-import { getFamousBirthdays } from "@/lib/famousBirthdays";
+import { useEffect, useState } from "react";
+import { supabase } from "@/integrations/supabase/client";
 
 interface FamousBirthdaysProps {
   month: number;
   day: number;
+  country?: string | null;
+}
+
+interface Person {
+  name: string;
+  tag: string;
 }
 
 const tagColors: Record<string, string> = {
@@ -21,22 +28,56 @@ const tagColors: Record<string, string> = {
   Artist: "bg-pink-500/15 text-pink-600",
 };
 
-const FamousBirthdaysList = ({ month, day }: FamousBirthdaysProps) => {
-  const people = getFamousBirthdays(month, day);
+const FamousBirthdaysList = ({ month, day, country }: FamousBirthdaysProps) => {
+  const [people, setPeople] = useState<Person[] | null>(null);
+  const [loading, setLoading] = useState(false);
 
-  if (people.length === 0) return null;
+  useEffect(() => {
+    if (!month || !day) return;
+    let cancelled = false;
+    setLoading(true);
+    setPeople(null);
 
-  const isExact = people.some(
-    (p) => p.born === `${String(month).padStart(2, "0")}-${String(day).padStart(2, "0")}`
-  );
+    const t = setTimeout(async () => {
+      try {
+        const { data, error } = await supabase.functions.invoke("famous-birthdays", {
+          body: { month, day, country: country || null },
+        });
+        if (cancelled) return;
+        if (!error && data?.people) setPeople(data.people as Person[]);
+      } catch (e) {
+        if (!cancelled) console.error(e);
+      } finally {
+        if (!cancelled) setLoading(false);
+      }
+    }, 300);
+
+    return () => {
+      cancelled = true;
+      clearTimeout(t);
+    };
+  }, [month, day, country]);
+
+  if (loading) {
+    return (
+      <div className="mt-8 rounded-xl border border-border bg-card p-6">
+        <h2 className="text-xl text-foreground mb-4">Born on your birthday 🎂</h2>
+        <div className="flex flex-wrap gap-3">
+          {[1, 2, 3, 4, 5].map((i) => (
+            <div key={i} className="h-9 w-32 bg-muted/60 rounded-lg animate-pulse" />
+          ))}
+        </div>
+      </div>
+    );
+  }
+
+  if (!people || people.length === 0) return null;
 
   return (
     <div className="mt-8 rounded-xl border border-border bg-card p-6 animate-fade-in-up">
-      <h2 className="text-xl text-foreground mb-1">
-        {isExact ? "Born on your birthday 🎂" : "Born around your birthday"}
-      </h2>
+      <h2 className="text-xl text-foreground mb-1">Born on your birthday 🎂</h2>
       <p className="text-xs text-muted-foreground/70 mb-4">
-        Famous people who share your {isExact ? "exact birthday" : "birth month"}
+        Famous people who share your exact birthday{country ? ` — including icons from ${country}` : ""}
       </p>
       <div className="flex flex-wrap gap-3">
         {people.map((person, i) => (
