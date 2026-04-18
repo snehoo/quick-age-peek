@@ -259,14 +259,14 @@ const AgeCalculator = () => {
                 <div className="text-xs uppercase tracking-wider text-muted-foreground mb-1">
                   Life as a 24-hour day
                 </div>
-                <div className="font-display text-2xl text-primary">{lifeTimeStr}</div>
+                <div className="font-display text-2xl sm:text-3xl text-primary">{lifeTimeStr}</div>
                 <div className="text-xs text-muted-foreground italic mt-1 leading-snug">{shortMood}</div>
               </div>
               <div className="age-stat-card text-center">
                 <div className="text-xs uppercase tracking-wider text-muted-foreground mb-1">
                   Time Left (to age {lifeExpectancy})
                 </div>
-                <div className="font-display text-2xl text-primary">
+                <div className="font-display text-2xl sm:text-3xl text-primary">
                   {yearsLeft.toLocaleString()} years
                 </div>
                 <div className="text-xs text-muted-foreground mt-0.5">
