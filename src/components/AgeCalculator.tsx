@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { calculateAge, type AgeResult } from "@/lib/ageCalculator";
-import { getGeneration, getLocalizedItems, getAgeMoodLine, getLifeClockMood } from "@/lib/lifeContext";
+import { getGeneration, getLocalizedItems, getAgeMoodLine } from "@/lib/lifeContext";
 import CompactNameTile from "./CompactNameTile";
 import FamousBirthdaysList from "./FamousBirthdaysList";
 import ShareCard from "./ShareCard";
@@ -165,7 +165,6 @@ const AgeCalculator = () => {
             : `${(heartBeats / 1e6).toFixed(0)}M`;
 
         const moodLine = getAgeMoodLine(result.years);
-        const clockMood = getLifeClockMood(result.years);
         const yearsLeft = Math.max(LIFE_EXPECTANCY - result.years, 0);
         const weekendsLeft = Math.max(Math.round(yearsLeft * 52), 0);
         const localized = getLocalizedItems(result.years, country);
