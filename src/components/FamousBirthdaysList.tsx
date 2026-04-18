@@ -4,7 +4,6 @@ import { supabase } from "@/integrations/supabase/client";
 interface FamousBirthdaysProps {
   month: number;
   day: number;
-  country?: string | null;
 }
 
 interface Person {
@@ -28,7 +27,7 @@ const tagColors: Record<string, string> = {
   Artist: "bg-pink-500/15 text-pink-600",
 };
 
-const FamousBirthdaysList = ({ month, day, country }: FamousBirthdaysProps) => {
+const FamousBirthdaysList = ({ month, day }: FamousBirthdaysProps) => {
   const [people, setPeople] = useState<Person[] | null>(null);
   const [loading, setLoading] = useState(false);
 
@@ -41,7 +40,7 @@ const FamousBirthdaysList = ({ month, day, country }: FamousBirthdaysProps) => {
     const t = setTimeout(async () => {
       try {
         const { data, error } = await supabase.functions.invoke("famous-birthdays", {
-          body: { month, day, country: country || null },
+          body: { month, day },
         });
         if (cancelled) return;
         if (!error && data?.people) setPeople(data.people as Person[]);
@@ -56,7 +55,7 @@ const FamousBirthdaysList = ({ month, day, country }: FamousBirthdaysProps) => {
       cancelled = true;
       clearTimeout(t);
     };
-  }, [month, day, country]);
+  }, [month, day]);
 
   if (loading) {
     return (
