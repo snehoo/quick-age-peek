@@ -169,10 +169,6 @@ const AgeCalculator = () => {
               </p>
             )}
 
-            <p className="text-center font-display text-base sm:text-lg font-bold text-foreground mb-8">
-              If your life were a 24-hour day, it's currently {lifeTimeStr}
-            </p>
-
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
               <div className="age-stat-card">
                 <div className="age-stat-value">{result.years}</div>
@@ -215,6 +211,10 @@ const AgeCalculator = () => {
                 <div className="age-stat-label">Days Spent Sleeping</div>
               </div>
             </div>
+
+            <p className="mt-8 text-center font-display text-base sm:text-lg font-bold text-foreground">
+              If your life were a 24-hour day, it's currently {lifeTimeStr}
+            </p>
 
             {name.trim() && (
               <NameInsights name={name} birthYear={new Date(dob).getFullYear()} country={country} />
