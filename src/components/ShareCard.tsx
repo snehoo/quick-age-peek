@@ -126,7 +126,7 @@ const ShareCard = ({
             width: "100%",
             maxWidth: "440px",
             margin: "0 auto",
-            background: "linear-gradient(165deg, #1a120e 0%, #2a1810 50%, #3a1f15 100%)",
+            background: "linear-gradient(165deg, #4a1d0a 0%, #7a2e10 45%, #c45a25 100%)",
             color: "#fdf6ec",
             padding: "32px 26px",
             display: "flex",
