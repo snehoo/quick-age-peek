@@ -352,7 +352,7 @@ const AgeCalculator = () => {
               name={name}
               years={result.years}
               totalDays={result.totalDays}
-              daysSlept={nightsSlept}
+              fullMoons={Math.floor(result.years * 12.37)}
               heartBeatsStr={heartBeatsStr}
               moodLine={moodLine}
               dobFormatted={dobFormatted}

@@ -6,7 +6,7 @@ interface ShareCardProps {
   name: string;
   years: number;
   totalDays: number;
-  daysSlept: number;
+  fullMoons: number;
   heartBeatsStr: string;
   moodLine: string;
   dobFormatted: string;
@@ -20,7 +20,7 @@ const ShareCard = ({
   name,
   years,
   totalDays,
-  daysSlept,
+  fullMoons,
   heartBeatsStr,
   moodLine,
   dobFormatted,
@@ -195,8 +195,8 @@ const ShareCard = ({
               <div style={labelStyle}>Heartbeats</div>
             </div>
             <div style={tileBase}>
-              <div style={valueStyle}>{daysSlept.toLocaleString()}</div>
-              <div style={labelStyle}>Days Slept</div>
+              <div style={valueStyle}>{fullMoons.toLocaleString()}</div>
+              <div style={labelStyle}>Full Moons</div>
             </div>
             <div style={tileBase}>
               <div style={valueStyle}>{totalDays.toLocaleString()}</div>
@@ -227,12 +227,41 @@ const ShareCard = ({
           </div>
 
           {/* Famous birthday */}
-          {famousName && (
-            <div style={{ fontSize: "13px", opacity: 0.85 }}>
-              <span style={{ fontWeight: 600 }}>{famousName}</span>{" "}
-              <span style={{ opacity: 0.75 }}>shares your birthday</span>
-            </div>
-          )}
+          {famousName && (() => {
+            const initials = famousName
+              .split(/\s+/)
+              .filter(Boolean)
+              .slice(0, 2)
+              .map((w) => w[0]?.toUpperCase() ?? "")
+              .join("");
+            return (
+              <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
+                <div
+                  style={{
+                    width: "40px",
+                    height: "40px",
+                    borderRadius: "9999px",
+                    background: "rgba(255,255,255,0.1)",
+                    border: "1px solid rgba(255,255,255,0.15)",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    fontSize: "13px",
+                    fontWeight: 600,
+                    letterSpacing: "0.05em",
+                    color: "#fdf6ec",
+                    flexShrink: 0,
+                  }}
+                >
+                  {initials}
+                </div>
+                <div style={{ fontSize: "13px", lineHeight: 1.35 }}>
+                  <div style={{ fontWeight: 700, color: "#fdf6ec" }}>{famousName}</div>
+                  <div style={{ opacity: 0.7 }}>Born on the same day</div>
+                </div>
+              </div>
+            );
+          })()}
 
           {/* Divider */}
           <div
@@ -287,7 +316,7 @@ const ShareCard = ({
                 >
                   ██████
                 </div>
-                <div style={labelStyle}>Days Slept</div>
+                <div style={labelStyle}>Full Moons</div>
               </div>
             </div>
           </div>
