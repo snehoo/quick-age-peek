@@ -137,8 +137,8 @@ const ShareCard = ({
         >
           {/* Header: name · dob */}
           <div>
-            <div style={{ fontSize: "13px", opacity: 0.7 }}>
-              {displayName} · {dobFormatted}
+            <div style={{ fontSize: "15px", fontWeight: 700, opacity: 0.9 }}>
+              {displayName} · <span style={{ fontWeight: 400, opacity: 0.8 }}>{dobFormatted}</span>
             </div>
             <div
               style={{
