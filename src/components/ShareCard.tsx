@@ -137,8 +137,8 @@ const ShareCard = ({
         >
           {/* Header: name · dob */}
           <div>
-            <div style={{ fontSize: "13px", opacity: 0.7 }}>
-              {displayName} · {dobFormatted}
+            <div style={{ fontSize: "15px", fontWeight: 700, opacity: 0.9 }}>
+              {displayName} · <span style={{ fontWeight: 400, opacity: 0.8 }}>{dobFormatted}</span>
             </div>
             <div
               style={{
@@ -276,14 +276,14 @@ const ShareCard = ({
           <div>
             <div
               style={{
-                fontSize: "12px",
+                fontSize: "13px",
                 letterSpacing: "0.2em",
                 textTransform: "uppercase",
                 color: "#e8a464",
                 marginBottom: "10px",
               }}
             >
-              Your Numbers?
+              Still uncalculated?
             </div>
             <div
               style={{
@@ -296,12 +296,11 @@ const ShareCard = ({
                 <div
                   style={{
                     ...valueStyle,
-                    color: "transparent",
-                    textShadow: "0 0 14px rgba(253,246,236,0.65)",
+                    filter: "blur(8px)",
                     userSelect: "none",
                   }}
                 >
-                  ████
+                  1.2B
                 </div>
                 <div style={labelStyle}>Heartbeats</div>
               </div>
@@ -309,12 +308,11 @@ const ShareCard = ({
                 <div
                   style={{
                     ...valueStyle,
-                    color: "transparent",
-                    textShadow: "0 0 14px rgba(253,246,236,0.65)",
+                    filter: "blur(8px)",
                     userSelect: "none",
                   }}
                 >
-                  ██████
+                  408
                 </div>
                 <div style={labelStyle}>Full Moons</div>
               </div>
