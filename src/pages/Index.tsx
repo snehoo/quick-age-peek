@@ -1,10 +1,11 @@
 import { useMemo } from "react";
 import AgeCalculator from "@/components/AgeCalculator";
+import { getGeneration } from "@/lib/lifeContext";
 
 const Index = () => {
-  // Random sample age between 25-45, recomputed on each page load
+  // Random sample age between 25-58, recomputed on each page load
   const sample = useMemo(() => {
-    const years = Math.floor(Math.random() * (45 - 25 + 1)) + 25;
+    const years = Math.floor(Math.random() * (58 - 25 + 1)) + 25;
     const totalDays = years * 365.25;
     // Lunar cycle ≈ 29.53 days
     const fullMoons = Math.round(totalDays / 29.53);
@@ -12,9 +13,11 @@ const Index = () => {
     const beats = totalDays * 24 * 60 * 80;
     const beatsStr =
       beats >= 1e9
-        ? `${(beats / 1e9).toFixed(2)}B`
-        : `${(beats / 1e6).toFixed(0)}M`;
-    return { years, fullMoons, beatsStr };
+        ? `${(beats / 1e9).toFixed(2)} billion`
+        : `${(beats / 1e6).toFixed(0)} million`;
+    const birthYear = new Date().getFullYear() - years;
+    const generation = getGeneration(birthYear).name;
+    return { years, fullMoons, beatsStr, generation };
   }, []);
 
   return (
