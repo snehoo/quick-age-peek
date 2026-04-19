@@ -27,7 +27,8 @@ const Index = () => {
           <h1 className="text-3xl sm:text-4xl text-foreground leading-tight mb-3">
             <span className="text-primary">{sample.years}</span> years.{" "}
             <span className="text-primary">{sample.fullMoons}</span> full moons.{" "}
-            <span className="text-primary">{sample.beatsStr}</span> heartbeats.
+            <span className="text-primary">{sample.beatsStr}</span> heartbeats.{" "}
+            A <span className="text-primary">{sample.generation}</span>.
           </h1>
           <p className="text-muted-foreground max-w-md mx-auto">
             Your age in years is just the beginning — discover your heartbeats, full moons, and the exact moment of your life's 24-hour clock.
