@@ -105,7 +105,7 @@ Return EXACTLY 3 celebrities, ranked by current GLOBAL popularity. Use the provi
     });
   } catch (e) {
     console.error("famous-birthdays error", e);
-    return new Response(JSON.stringify({ error: e instanceof Error ? e.message : "Unknown" }), {
+    return new Response(JSON.stringify({ error: "An unexpected error occurred. Please try again." }), {
       status: 500,
       headers: { ...corsHeaders, "Content-Type": "application/json" },
     });
