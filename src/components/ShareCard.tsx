@@ -6,7 +6,7 @@ interface ShareCardProps {
   name: string;
   years: number;
   totalDays: number;
-  daysSlept: number;
+  fullMoons: number;
   heartBeatsStr: string;
   moodLine: string;
   dobFormatted: string;
@@ -20,7 +20,7 @@ const ShareCard = ({
   name,
   years,
   totalDays,
-  daysSlept,
+  fullMoons,
   heartBeatsStr,
   moodLine,
   dobFormatted,
@@ -195,8 +195,8 @@ const ShareCard = ({
               <div style={labelStyle}>Heartbeats</div>
             </div>
             <div style={tileBase}>
-              <div style={valueStyle}>{daysSlept.toLocaleString()}</div>
-              <div style={labelStyle}>Days Slept</div>
+              <div style={valueStyle}>{fullMoons.toLocaleString()}</div>
+              <div style={labelStyle}>Full Moons</div>
             </div>
             <div style={tileBase}>
               <div style={valueStyle}>{totalDays.toLocaleString()}</div>
@@ -287,7 +287,7 @@ const ShareCard = ({
                 >
                   ██████
                 </div>
-                <div style={labelStyle}>Days Slept</div>
+                <div style={labelStyle}>Full Moons</div>
               </div>
             </div>
           </div>
