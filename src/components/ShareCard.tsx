@@ -51,7 +51,7 @@ const ShareCard = ({
       const result = await generateImage();
       if (!result) return;
       const file = new File([result.blob], "my-age-card.png", { type: "image/png" });
-      const shareText = `${displayName === "Me" ? "I'm" : displayName + " is"} ${years} years old — ${totalDays.toLocaleString()} days alive. What's your number?`;
+      const shareText = `${displayName === "Me" ? "I'm" : displayName + " is"} ${years} years old — ${totalDays.toLocaleString()} days alive. Your turn.`;
       const shareUrl = typeof window !== "undefined" ? window.location.href : "";
 
       const nav = navigator as Navigator & {
@@ -283,7 +283,7 @@ const ShareCard = ({
                 marginBottom: "10px",
               }}
             >
-              Still uncalculated?
+              Your turn.
             </div>
             <div
               style={{
