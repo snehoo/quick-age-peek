@@ -22,14 +22,17 @@ const Index = () => {
 
   return (
     <div className="min-h-screen flex flex-col">
+      <h1 style={{ position: "absolute", width: "1px", height: "1px", overflow: "hidden", clip: "rect(0,0,0,0)" }}>
+        What Is My Age — Age Calculator
+      </h1>
       <main className="flex-1 flex flex-col items-center justify-center px-5 py-16">
         <div className="mb-10 text-center">
-          <h1 className="text-3xl sm:text-4xl text-foreground leading-tight mb-3">
+          <h2 className="text-3xl sm:text-4xl text-foreground leading-tight mb-3">
             <span className="text-primary">{sample.years}</span> years.{" "}
             <span className="text-primary">{sample.fullMoons}</span> full moons.{" "}
             <span className="text-primary">{sample.beatsStr}</span> heartbeats.{" "}
             A <span className="text-primary">{sample.generation}</span>.
-          </h1>
+          </h2>
           <p className="text-muted-foreground max-w-md mx-auto">
             Your age in years is just the beginning — discover your heartbeats, full moons, and the exact moment of your life's 24-hour clock.
           </p>
