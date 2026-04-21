@@ -42,6 +42,10 @@ const Index = () => {
       <footer className="py-6 text-center text-xs text-muted-foreground/60 space-x-3">
         <span>whatismyage.me</span>
         <span aria-hidden>·</span>
+        <a href="/blog" className="hover:text-foreground transition-colors">
+          Blog
+        </a>
+        <span aria-hidden>·</span>
         <a href="/privacy" className="hover:text-foreground transition-colors">
           Privacy
         </a>
