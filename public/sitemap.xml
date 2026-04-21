@@ -16,6 +16,26 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://whatismyage.me/blog/how-many-full-moons-in-a-lifetime</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://whatismyage.me/blog/what-generation-am-i</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://whatismyage.me/blog/how-to-calculate-age-in-days</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://whatismyage.me/blog/what-is-a-life-clock</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://whatismyage.me/privacy</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>

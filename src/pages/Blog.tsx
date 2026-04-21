@@ -10,6 +10,38 @@ const posts = [
       "The average human heart beats 2.5 billion times in a lifetime. Discover the science behind resting heart rate, cardiac output, and how to calculate your personal heartbeat total.",
     readTime: "6 min read",
   },
+  {
+    slug: "how-many-full-moons-in-a-lifetime",
+    tag: "Astronomy & Time",
+    title: "How Many Full Moons Will You See in Your Lifetime?",
+    excerpt:
+      "There are roughly 13 full moons per year. Over an average lifetime you will see around 1,000 full moons — fewer than most people expect.",
+    readTime: "5 min read",
+  },
+  {
+    slug: "what-generation-am-i",
+    tag: "Culture & Identity",
+    title: "What Generation Am I? The Complete Birth Year Guide",
+    excerpt:
+      "Find out which generation you belong to — Gen Z, Millennial, Gen X, Boomer — with birth year ranges and what defines each one.",
+    readTime: "6 min read",
+  },
+  {
+    slug: "how-to-calculate-age-in-days",
+    tag: "How-to & Calculation",
+    title: "How to Calculate Your Exact Age in Days",
+    excerpt:
+      "Learn how to calculate your exact age in days, account for leap years correctly, and understand milestone day counts.",
+    readTime: "5 min read",
+  },
+  {
+    slug: "what-is-a-life-clock",
+    tag: "Philosophy & Perspective",
+    title: "What Is a Life Clock? Your Age as a 24-Hour Day Explained",
+    excerpt:
+      "If your life were a 24-hour day, what time is it right now? The life clock converts your age into a powerful time-of-day metaphor.",
+    readTime: "6 min read",
+  },
 ];
 
 const Blog = () => {
