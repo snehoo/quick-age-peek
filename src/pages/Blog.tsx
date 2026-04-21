@@ -1,0 +1,86 @@
+import { Link } from "react-router-dom";
+import { useEffect } from "react";
+
+const posts = [
+  {
+    slug: "how-many-heartbeats-in-a-lifetime",
+    tag: "Biology & Science",
+    title: "How Many Heartbeats Does a Human Have in a Lifetime?",
+    excerpt:
+      "The average human heart beats 2.5 billion times in a lifetime. Discover the science behind resting heart rate, cardiac output, and how to calculate your personal heartbeat total.",
+    readTime: "6 min read",
+  },
+];
+
+const Blog = () => {
+  useEffect(() => {
+    document.title = "Blog — whatismyage.me";
+    const meta = document.querySelector('meta[name="description"]');
+    if (meta)
+      meta.setAttribute(
+        "content",
+        "Stories about time, age, heartbeats, full moons, and the numbers that quietly shape your life."
+      );
+  }, []);
+
+  return (
+    <div className="min-h-screen flex flex-col">
+      <main className="flex-1 max-w-3xl mx-auto px-5 py-12 w-full">
+        <Link
+          to="/"
+          className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+        >
+          ← Back
+        </Link>
+
+        <header className="mt-8 mb-10">
+          <h1 className="text-4xl sm:text-5xl text-foreground mb-3">
+            The <span className="text-primary">Blog</span>
+          </h1>
+          <p className="text-muted-foreground max-w-xl">
+            Stories about time, age, and the numbers that quietly shape your
+            life.
+          </p>
+        </header>
+
+        <div className="space-y-5">
+          {posts.map((p) => (
+            <Link
+              key={p.slug}
+              to={`/blog/${p.slug}`}
+              className="block rounded-xl border border-border bg-card p-6 transition-all duration-300 hover:shadow-md hover:-translate-y-0.5"
+            >
+              <div className="flex items-center gap-3 mb-3 text-xs uppercase tracking-wider text-muted-foreground">
+                <span className="px-2 py-1 rounded-full bg-secondary text-secondary-foreground">
+                  {p.tag}
+                </span>
+                <span>{p.readTime}</span>
+              </div>
+              <h2 className="text-2xl text-foreground mb-2 leading-snug">
+                {p.title}
+              </h2>
+              <p className="text-muted-foreground leading-relaxed">
+                {p.excerpt}
+              </p>
+              <span className="inline-block mt-4 text-primary text-sm font-medium">
+                Read article →
+              </span>
+            </Link>
+          ))}
+        </div>
+      </main>
+
+      <footer className="py-6 text-center text-xs text-muted-foreground/60 space-x-3">
+        <Link to="/" className="hover:text-foreground transition-colors">
+          whatismyage.me
+        </Link>
+        <span aria-hidden>·</span>
+        <Link to="/privacy" className="hover:text-foreground transition-colors">
+          Privacy
+        </Link>
+      </footer>
+    </div>
+  );
+};
+
+export default Blog;
