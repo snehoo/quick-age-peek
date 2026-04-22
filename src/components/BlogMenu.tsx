@@ -16,20 +16,28 @@ export const BLOG_POSTS = [
 
 interface BlogMenuProps {
   className?: string;
+  label?: string;
+  align?: "start" | "center" | "end";
+  side?: "top" | "bottom";
 }
 
-const BlogMenu = ({ className }: BlogMenuProps) => {
+const BlogMenu = ({
+  className,
+  label = "Blog",
+  align = "center",
+  side = "top",
+}: BlogMenuProps) => {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger
         className={
           className ??
-          "text-sm text-muted-foreground hover:text-foreground transition-colors outline-none"
+          "hover:text-foreground transition-colors outline-none cursor-pointer"
         }
       >
-        Blog ▾
+        {label}
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="end" className="w-64">
+      <DropdownMenuContent align={align} side={side} className="w-64">
         <DropdownMenuItem asChild>
           <Link to="/blog" className="cursor-pointer font-medium">
             All posts

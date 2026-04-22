@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { useEffect } from "react";
 import BlogMenu from "@/components/BlogMenu";
 
+
 const posts = [
   {
     slug: "how-many-heartbeats-in-a-lifetime",
@@ -58,11 +59,10 @@ const Blog = () => {
 
   return (
     <div className="min-h-screen flex flex-col">
-      <header className="w-full px-5 py-4 flex items-center justify-between max-w-3xl mx-auto w-full">
+      <header className="w-full px-5 py-4 max-w-3xl mx-auto w-full">
         <Link to="/" className="font-display text-lg text-foreground">
           What Is My <span className="text-primary">Age</span>
         </Link>
-        <BlogMenu />
       </header>
       <main className="flex-1 max-w-3xl mx-auto px-5 py-12 w-full">
         <Link
@@ -113,6 +113,8 @@ const Blog = () => {
         <Link to="/" className="hover:text-foreground transition-colors">
           whatismyage.me
         </Link>
+        <span aria-hidden>·</span>
+        <BlogMenu />
         <span aria-hidden>·</span>
         <Link to="/privacy" className="hover:text-foreground transition-colors">
           Privacy
