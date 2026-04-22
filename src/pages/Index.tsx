@@ -1,7 +1,8 @@
 import { useMemo } from "react";
+import { Link } from "react-router-dom";
 import AgeCalculator from "@/components/AgeCalculator";
 import { getGeneration } from "@/lib/lifeContext";
-import BlogMenu from "@/components/BlogMenu";
+import BlogMenu, { BLOG_POSTS } from "@/components/BlogMenu";
 
 
 const Index = () => {
@@ -41,14 +42,30 @@ const Index = () => {
         </div>
         <AgeCalculator />
       </main>
-      <footer className="py-6 text-center text-xs text-muted-foreground/60 space-x-3">
-        <span>whatismyage.me</span>
-        <span aria-hidden>·</span>
-        <BlogMenu />
-        <span aria-hidden>·</span>
-        <a href="/privacy" className="hover:text-foreground transition-colors">
-          Privacy
-        </a>
+      <footer className="py-6 px-5 text-center text-xs text-muted-foreground/60">
+        <nav aria-label="Blog posts" className="mb-3 flex flex-wrap justify-center gap-x-3 gap-y-1">
+          <Link to="/blog" className="hover:text-primary transition-colors font-medium">
+            Blog
+          </Link>
+          {BLOG_POSTS.map((p) => (
+            <Link
+              key={p.slug}
+              to={`/blog/${p.slug}`}
+              className="hover:text-primary transition-colors"
+            >
+              {p.title}
+            </Link>
+          ))}
+        </nav>
+        <div className="space-x-3">
+          <span>whatismyage.me</span>
+          <span aria-hidden>·</span>
+          <BlogMenu />
+          <span aria-hidden>·</span>
+          <a href="/privacy" className="hover:text-foreground transition-colors">
+            Privacy
+          </a>
+        </div>
       </footer>
     </div>
   );
