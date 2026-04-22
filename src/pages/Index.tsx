@@ -1,6 +1,7 @@
 import { useMemo } from "react";
 import AgeCalculator from "@/components/AgeCalculator";
 import { getGeneration } from "@/lib/lifeContext";
+import BlogMenu from "@/components/BlogMenu";
 
 const Index = () => {
   // Random sample age between 25-58, recomputed on each page load
@@ -25,6 +26,9 @@ const Index = () => {
       <h1 style={{ position: "absolute", width: "1px", height: "1px", overflow: "hidden", clip: "rect(0,0,0,0)" }}>
         What Is My Age — Age Calculator
       </h1>
+      <header className="w-full px-5 py-4 flex items-center justify-end max-w-5xl mx-auto">
+        <BlogMenu />
+      </header>
       <main className="flex-1 flex flex-col items-center justify-center px-5 py-16">
         <div className="mb-10 text-center">
           <h2 className="text-3xl sm:text-4xl text-foreground leading-tight mb-3">

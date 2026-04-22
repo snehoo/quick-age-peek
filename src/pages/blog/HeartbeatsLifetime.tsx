@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
+import BlogMenu from "@/components/BlogMenu";
 
 const CANONICAL = "https://whatismyage.me/blog/how-many-heartbeats-in-a-lifetime";
 const TITLE = "How Many Heartbeats in a Human Lifetime? | whatismyage.me";
@@ -74,16 +75,19 @@ const HeartbeatsLifetime = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <header className="border-b border-border">
-        <div className="max-w-3xl mx-auto px-5 py-4 flex items-center justify-between">
+        <div className="max-w-3xl mx-auto px-5 py-4 flex items-center justify-between gap-4">
           <Link to="/" className="font-display text-lg text-foreground">
             What Is My <span className="text-primary">Age</span>
           </Link>
-          <Link
-            to="/"
-            className="text-xs sm:text-sm bg-primary text-primary-foreground px-4 py-2 rounded-full hover:opacity-90 transition-opacity"
-          >
-            Calculate my age
-          </Link>
+          <div className="flex items-center gap-4">
+            <BlogMenu />
+            <Link
+              to="/"
+              className="text-xs sm:text-sm bg-primary text-primary-foreground px-4 py-2 rounded-full hover:opacity-90 transition-opacity whitespace-nowrap"
+            >
+              Calculate my age
+            </Link>
+          </div>
         </div>
       </header>
 
@@ -261,9 +265,12 @@ const HeartbeatsLifetime = () => {
             For more on translating your age into remarkable numbers, try the{" "}
             <Link to="/" className="text-primary underline">
               age calculator on whatismyage.me
-            </Link>{" "}
-            to see your full life in numbers — heartbeats, full moons, days
-            alive, generation, and more.
+            </Link>
+            . You may also enjoy{" "}
+            <Link to="/blog/how-many-full-moons-in-a-lifetime" className="text-primary underline">how many full moons you'll see in a lifetime</Link>,{" "}
+            <Link to="/blog/what-is-a-life-clock" className="text-primary underline">your life as a 24-hour clock</Link>,{" "}
+            <Link to="/blog/how-to-calculate-age-in-days" className="text-primary underline">your exact age in days</Link>, and{" "}
+            <Link to="/blog/what-generation-am-i" className="text-primary underline">which generation you belong to</Link>.
           </p>
 
           <div className="bg-primary text-primary-foreground rounded-2xl p-7 text-center my-10">
