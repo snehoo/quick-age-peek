@@ -1,7 +1,8 @@
 import { useMemo } from "react";
+import { Link } from "react-router-dom";
 import AgeCalculator from "@/components/AgeCalculator";
 import { getGeneration } from "@/lib/lifeContext";
-import BlogMenu from "@/components/BlogMenu";
+import BlogMenu, { BLOG_POSTS } from "@/components/BlogMenu";
 
 
 const Index = () => {
