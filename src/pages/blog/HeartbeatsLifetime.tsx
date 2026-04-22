@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
+import BlogMenu from "@/components/BlogMenu";
 
 const CANONICAL = "https://whatismyage.me/blog/how-many-heartbeats-in-a-lifetime";
 const TITLE = "How Many Heartbeats in a Human Lifetime? | whatismyage.me";
@@ -74,16 +75,19 @@ const HeartbeatsLifetime = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <header className="border-b border-border">
-        <div className="max-w-3xl mx-auto px-5 py-4 flex items-center justify-between">
+        <div className="max-w-3xl mx-auto px-5 py-4 flex items-center justify-between gap-4">
           <Link to="/" className="font-display text-lg text-foreground">
             What Is My <span className="text-primary">Age</span>
           </Link>
-          <Link
-            to="/"
-            className="text-xs sm:text-sm bg-primary text-primary-foreground px-4 py-2 rounded-full hover:opacity-90 transition-opacity"
-          >
-            Calculate my age
-          </Link>
+          <div className="flex items-center gap-4">
+            <BlogMenu />
+            <Link
+              to="/"
+              className="text-xs sm:text-sm bg-primary text-primary-foreground px-4 py-2 rounded-full hover:opacity-90 transition-opacity whitespace-nowrap"
+            >
+              Calculate my age
+            </Link>
+          </div>
         </div>
       </header>
 
