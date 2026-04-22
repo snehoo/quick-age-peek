@@ -21,6 +21,9 @@ interface BlogMenuProps {
   side?: "top" | "bottom";
 }
 
+const itemClass =
+  "cursor-pointer focus:bg-primary/10 focus:text-primary data-[highlighted]:bg-primary/10 data-[highlighted]:text-primary";
+
 const BlogMenu = ({
   className,
   label = "Blog",
@@ -38,16 +41,14 @@ const BlogMenu = ({
         {label}
       </DropdownMenuTrigger>
       <DropdownMenuContent align={align} side={side} className="w-64">
-        <DropdownMenuItem asChild>
-          <Link to="/blog" className="cursor-pointer font-medium">
+        <DropdownMenuItem asChild className={itemClass}>
+          <Link to="/blog" className="font-medium">
             All posts
           </Link>
         </DropdownMenuItem>
         {BLOG_POSTS.map((p) => (
-          <DropdownMenuItem key={p.slug} asChild>
-            <Link to={`/blog/${p.slug}`} className="cursor-pointer">
-              {p.title}
-            </Link>
+          <DropdownMenuItem key={p.slug} asChild className={itemClass}>
+            <Link to={`/blog/${p.slug}`}>{p.title}</Link>
           </DropdownMenuItem>
         ))}
       </DropdownMenuContent>
