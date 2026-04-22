@@ -47,6 +47,29 @@ async function run() {
     process.exit(1);
   }
 
+  // Polyfills for libraries that touch browser globals at module load (e.g. supabase-js → localStorage)
+  const memoryStorage = (() => {
+    const store = new Map();
+    return {
+      getItem: (k) => (store.has(k) ? store.get(k) : null),
+      setItem: (k, v) => store.set(k, String(v)),
+      removeItem: (k) => store.delete(k),
+      clear: () => store.clear(),
+      key: (i) => Array.from(store.keys())[i] ?? null,
+      get length() {
+        return store.size;
+      },
+    };
+  })();
+  if (typeof globalThis.localStorage === "undefined") globalThis.localStorage = memoryStorage;
+  if (typeof globalThis.sessionStorage === "undefined") globalThis.sessionStorage = memoryStorage;
+  if (typeof globalThis.window === "undefined") {
+    globalThis.window = { localStorage: memoryStorage, sessionStorage: memoryStorage };
+  }
+  if (typeof globalThis.document === "undefined") {
+    globalThis.document = { addEventListener: () => {}, removeEventListener: () => {} };
+  }
+
   const { render } = await import(pathToFileURL(ssrEntry).href);
   const template = readFileSync(resolve(distDir, "index.html"), "utf-8");
 
