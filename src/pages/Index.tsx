@@ -16,6 +16,10 @@ const setCanonical = (href: string) => {
 
 
 const Index = () => {
+  useEffect(() => {
+    setCanonical("https://whatismyage.me/");
+  }, []);
+
   // Random sample age between 25-58, recomputed on each page load
   const sample = useMemo(() => {
     const years = Math.floor(Math.random() * (58 - 25 + 1)) + 25;
