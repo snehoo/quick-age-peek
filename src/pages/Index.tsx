@@ -1,8 +1,18 @@
-import { useMemo } from "react";
+import { useEffect, useMemo } from "react";
 import { Link } from "react-router-dom";
 import AgeCalculator from "@/components/AgeCalculator";
 import { getGeneration } from "@/lib/lifeContext";
 import BlogMenu, { BLOG_POSTS } from "@/components/BlogMenu";
+
+const setCanonical = (href: string) => {
+  let el = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
+  if (!el) {
+    el = document.createElement("link");
+    el.rel = "canonical";
+    document.head.appendChild(el);
+  }
+  el.href = href;
+};
 
 
 const Index = () => {
