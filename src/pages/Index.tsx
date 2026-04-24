@@ -57,20 +57,6 @@ const Index = () => {
         <AgeCalculator />
       </main>
       <footer className="py-6 px-5 text-center text-xs text-muted-foreground/60">
-        <nav aria-label="Blog posts" className="mb-3 flex flex-wrap justify-center gap-x-3 gap-y-1">
-          <Link to="/blog" className="hover:text-primary transition-colors font-medium">
-            Blog
-          </Link>
-          {BLOG_POSTS.map((p) => (
-            <Link
-              key={p.slug}
-              to={`/blog/${p.slug}`}
-              className="hover:text-primary transition-colors"
-            >
-              {p.title}
-            </Link>
-          ))}
-        </nav>
         <div className="space-x-3">
           <span>whatismyage.me</span>
           <span aria-hidden>·</span>
@@ -80,6 +66,15 @@ const Index = () => {
             Privacy
           </a>
         </div>
+        {/* SEO: keep blog post links discoverable in static HTML for crawlers */}
+        <nav aria-label="Blog posts" className="sr-only">
+          <a href="/blog">All blog posts</a>
+          {BLOG_POSTS.map((p) => (
+            <a key={p.slug} href={`/blog/${p.slug}`}>
+              {p.title}
+            </a>
+          ))}
+        </nav>
       </footer>
     </div>
   );
