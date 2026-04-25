@@ -123,9 +123,10 @@ const ShareCard = ({
         <div
           ref={cardRef}
           style={{
-            width: "100%",
-            maxWidth: "440px",
+            width: "440px",
+            maxWidth: "100%",
             margin: "0 auto",
+            boxSizing: "border-box",
             background: "linear-gradient(165deg, #4a1d0a 0%, #7a2e10 45%, #c45a25 100%)",
             color: "#fdf6ec",
             padding: "32px 26px",
