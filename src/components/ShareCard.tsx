@@ -35,10 +35,21 @@ const ShareCard = ({
 
   const generateImage = async (): Promise<{ blob: Blob; dataUrl: string } | null> => {
     if (!cardRef.current) return null;
-    const dataUrl = await toPng(cardRef.current, {
+    const node = cardRef.current;
+    const width = node.offsetWidth;
+    const height = node.offsetHeight;
+    const dataUrl = await toPng(node, {
       pixelRatio: 2,
       cacheBust: true,
       backgroundColor: "#3a1a0c",
+      width,
+      height,
+      canvasWidth: width,
+      canvasHeight: height,
+      style: {
+        margin: "0",
+        transform: "none",
+      },
     });
     const res = await fetch(dataUrl);
     const blob = await res.blob();
