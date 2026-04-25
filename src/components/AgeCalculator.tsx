@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { calculateAge, type AgeResult } from "@/lib/ageCalculator";
 import { getGeneration, getLocalizedItems, getAgeMoodLine, getLifeClockMood } from "@/lib/lifeContext";
+import { parseIsoDate, isoToLocalDate, getMonthDay } from "@/lib/isoDate";
 import { Slider } from "@/components/ui/slider";
 import CompactNameTile from "./CompactNameTile";
 import FamousBirthdaysList from "./FamousBirthdaysList";
@@ -35,7 +36,9 @@ const AgeCalculator = () => {
   const startLiveUpdate = (dobStr: string) => {
     if (intervalRef.current) clearInterval(intervalRef.current);
     dobRef.current = dobStr;
-    const tick = () => setResult(calculateAge(new Date(dobStr)));
+    const dobLocal = isoToLocalDate(dobStr);
+    if (!dobLocal) return;
+    const tick = () => setResult(calculateAge(dobLocal));
     tick();
     intervalRef.current = setInterval(tick, 1000);
   };
@@ -55,19 +58,20 @@ const AgeCalculator = () => {
       return;
     }
 
-    const dobDate = new Date(dobStr);
-    const now = new Date();
-
-    if (isNaN(dobDate.getTime())) {
+    const parts = parseIsoDate(dobStr);
+    if (!parts) {
       setResult(null);
       return;
     }
+    const dobDate = isoToLocalDate(dobStr)!;
+    const now = new Date();
+
     if (dobDate > now) {
       setError("Date of birth can't be in the future.");
       setResult(null);
       return;
     }
-    if (dobDate.getFullYear() < 1900) {
+    if (parts.year < 1900) {
       setError("Please enter a valid date of birth.");
       setResult(null);
       return;
@@ -88,10 +92,9 @@ const AgeCalculator = () => {
       setTopCelebName(null);
       return;
     }
-    const d = new Date(dob);
-    if (isNaN(d.getTime())) return;
-    const month = d.getMonth() + 1;
-    const day = d.getDate();
+    const md = getMonthDay(dob);
+    if (!md) return;
+    const { month, day } = md;
     let cancelled = false;
     setTopCelebName(null);
     const t = setTimeout(async () => {
@@ -202,9 +205,10 @@ const AgeCalculator = () => {
         const yearsLeft = Math.max(lifeExpectancy - result.years, 0);
         const weekendsLeft = Math.max(Math.round(yearsLeft * 52), 0);
         const localized = getLocalizedItems(result.years, country);
-        const gen = getGeneration(new Date(dob).getFullYear());
+        const dobParts = parseIsoDate(dob)!;
+        const gen = getGeneration(dobParts.year);
 
-        const dobDate = new Date(dob);
+        const dobDate = isoToLocalDate(dob)!;
         const dobFormatted = dobDate.toLocaleDateString(undefined, {
           year: "numeric",
           month: "long",
@@ -326,7 +330,7 @@ const AgeCalculator = () => {
               {name.trim() ? (
                 <CompactNameTile
                   name={name}
-                  birthYear={new Date(dob).getFullYear()}
+                  birthYear={dobParts.year}
                   country={country}
                 />
               ) : (
@@ -344,8 +348,8 @@ const AgeCalculator = () => {
 
             {/* Famous birthday twins — single tile */}
             <FamousBirthdaysList
-              month={new Date(dob).getMonth() + 1}
-              day={new Date(dob).getDate()}
+              month={dobParts.month}
+              day={dobParts.day}
             />
 
             <ShareCard
