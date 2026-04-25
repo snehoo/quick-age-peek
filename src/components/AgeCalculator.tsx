@@ -205,10 +205,10 @@ const AgeCalculator = () => {
         const yearsLeft = Math.max(lifeExpectancy - result.years, 0);
         const weekendsLeft = Math.max(Math.round(yearsLeft * 52), 0);
         const localized = getLocalizedItems(result.years, country);
-        const dobParts = parseIsoDate(dob)!;
+        const dobParts = parseIsoDate(dob);
+        const dobDate = isoToLocalDate(dob);
+        if (!dobParts || !dobDate) return null;
         const gen = getGeneration(dobParts.year);
-
-        const dobDate = isoToLocalDate(dob)!;
         const dobFormatted = dobDate.toLocaleDateString(undefined, {
           year: "numeric",
           month: "long",
