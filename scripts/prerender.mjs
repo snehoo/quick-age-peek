@@ -18,6 +18,11 @@ const ROUTES = [
   "/blog/what-generation-am-i",
   "/blog/how-to-calculate-age-in-days",
   "/blog/what-is-a-life-clock",
+  "/blog/what-day-of-the-week-was-i-born",
+  "/blog/how-many-seconds-old-am-i",
+  "/blog/birthday-twins-famous-people-born-on-your-birthday",
+  "/blog/how-to-find-your-zodiac-sign-by-birth-date",
+  "/blog/what-does-days-to-birthday-mean",
   "/privacy",
 ];
 

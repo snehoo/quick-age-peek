@@ -11,6 +11,11 @@ import FullMoonsLifetime from "./pages/blog/FullMoonsLifetime.tsx";
 import GenerationGuide from "./pages/blog/GenerationGuide.tsx";
 import AgeInDays from "./pages/blog/AgeInDays.tsx";
 import LifeClock from "./pages/blog/LifeClock.tsx";
+import BirthWeekday from "./pages/blog/BirthWeekday.tsx";
+import SecondsOld from "./pages/blog/SecondsOld.tsx";
+import BirthdayTwins from "./pages/blog/BirthdayTwins.tsx";
+import ZodiacByBirthDate from "./pages/blog/ZodiacByBirthDate.tsx";
+import BirthdayCountdown from "./pages/blog/BirthdayCountdown.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 // Server-only App without BrowserRouter (uses StaticRouter instead).
@@ -29,6 +34,11 @@ const ServerApp = ({ url }: { url: string }) => {
             <Route path="/blog/what-generation-am-i" element={<GenerationGuide />} />
             <Route path="/blog/how-to-calculate-age-in-days" element={<AgeInDays />} />
             <Route path="/blog/what-is-a-life-clock" element={<LifeClock />} />
+            <Route path="/blog/what-day-of-the-week-was-i-born" element={<BirthWeekday />} />
+            <Route path="/blog/how-many-seconds-old-am-i" element={<SecondsOld />} />
+            <Route path="/blog/birthday-twins-famous-people-born-on-your-birthday" element={<BirthdayTwins />} />
+            <Route path="/blog/how-to-find-your-zodiac-sign-by-birth-date" element={<ZodiacByBirthDate />} />
+            <Route path="/blog/what-does-days-to-birthday-mean" element={<BirthdayCountdown />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </StaticRouter>
