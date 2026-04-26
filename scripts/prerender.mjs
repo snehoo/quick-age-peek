@@ -4,6 +4,7 @@ import { build } from "vite";
 import { fileURLToPath, pathToFileURL } from "url";
 import { dirname, resolve } from "path";
 import { existsSync, mkdirSync, readFileSync, writeFileSync, rmSync } from "fs";
+import { injectRouteMeta } from "./route-meta.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const root = resolve(__dirname, "..");
@@ -87,10 +88,13 @@ async function run() {
       continue;
     }
 
-    const html = template.replace(
+    const withRoot = template.replace(
       '<div id="root"></div>',
       `<div id="root">${appHtml}</div>`,
     );
+
+    // Inject per-route canonical / OG / Twitter / JSON-LD into <head>
+    const html = injectRouteMeta(withRoot, route);
 
     const outPath =
       route === "/"
