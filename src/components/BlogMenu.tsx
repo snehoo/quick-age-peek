@@ -12,6 +12,17 @@ export const BLOG_POSTS = [
   { slug: "what-generation-am-i", title: "What Generation Am I?" },
   { slug: "how-to-calculate-age-in-days", title: "Calculate Your Age in Days" },
   { slug: "what-is-a-life-clock", title: "What Is a Life Clock?" },
+  { slug: "what-day-of-the-week-was-i-born", title: "What Day of the Week Were You Born?" },
+  { slug: "how-many-seconds-old-am-i", title: "How Many Seconds Old Are You?" },
+  {
+    slug: "birthday-twins-famous-people-born-on-your-birthday",
+    title: "Birthday Twins: Famous People Born on Your Birthday",
+  },
+  {
+    slug: "how-to-find-your-zodiac-sign-by-birth-date",
+    title: "How to Find Your Zodiac Sign by Birth Date",
+  },
+  { slug: "what-does-days-to-birthday-mean", title: "Days to Your Next Birthday" },
 ];
 
 interface BlogMenuProps {

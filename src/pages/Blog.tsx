@@ -44,6 +44,46 @@ const posts = [
       "If your life were a 24-hour day, what time is it right now? The life clock converts your age into a powerful time-of-day metaphor.",
     readTime: "6 min read",
   },
+  {
+    slug: "what-day-of-the-week-was-i-born",
+    tag: "Trivia & History",
+    title: "What Day of the Week Were You Born? And Why It Matters",
+    excerpt:
+      "Discover the Doomsday algorithm, weekday folklore from Monday's Child to Thai birth colours, and what your birth weekday actually reveals.",
+    readTime: "5 min read",
+  },
+  {
+    slug: "how-many-seconds-old-am-i",
+    tag: "Science & Numbers",
+    title: "How Many Seconds Old Are You Right Now?",
+    excerpt:
+      "A 38-year-old has lived 1.2 billion seconds. Find out when you turn 1 billion seconds old and why seconds are the most honest unit of age.",
+    readTime: "5 min read",
+  },
+  {
+    slug: "birthday-twins-famous-people-born-on-your-birthday",
+    tag: "Culture & Curiosity",
+    title: "Birthday Twins: Famous People Born on Your Birthday",
+    excerpt:
+      "The birthday paradox, the similarity-attraction effect, and the famous figures who arrived on the same calendar date as you.",
+    readTime: "5 min read",
+  },
+  {
+    slug: "how-to-find-your-zodiac-sign-by-birth-date",
+    tag: "Astrology & Culture",
+    title: "How to Find Your Zodiac Sign by Birth Date",
+    excerpt:
+      "Western, Vedic, and Chinese astrology — plus what your sun sign, moon sign, and rising sign actually mean for your birth chart.",
+    readTime: "6 min read",
+  },
+  {
+    slug: "what-does-days-to-birthday-mean",
+    tag: "How-to & Celebration",
+    title: "Days to Your Next Birthday: How the Countdown Works",
+    excerpt:
+      "How the days-to-birthday number is calculated, why it feels different at every age, and the milestones worth tracking on the way there.",
+    readTime: "5 min read",
+  },
 ];
 
 const Blog = () => {

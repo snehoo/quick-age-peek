@@ -36,6 +36,31 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://whatismyage.me/blog/what-day-of-the-week-was-i-born</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://whatismyage.me/blog/how-many-seconds-old-am-i</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://whatismyage.me/blog/birthday-twins-famous-people-born-on-your-birthday</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://whatismyage.me/blog/how-to-find-your-zodiac-sign-by-birth-date</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://whatismyage.me/blog/what-does-days-to-birthday-mean</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://whatismyage.me/privacy</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
