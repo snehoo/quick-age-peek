@@ -44,6 +44,7 @@ async function bundleSSR() {
     target: "node18",
     jsx: "automatic",
     logLevel: "warning",
+    packages: "external",
     // Stub out asset imports that would fail under Node
     loader: {
       ".css": "empty",
