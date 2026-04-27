@@ -79,6 +79,34 @@ async function run() {
   }
 
   await bundleSSR();
+
+  // Minimal browser globals so module-top-level code (e.g. Supabase client) doesn't crash.
+  const memStore = () => {
+    const m = new Map();
+    return {
+      getItem: (k) => (m.has(k) ? m.get(k) : null),
+      setItem: (k, v) => m.set(k, String(v)),
+      removeItem: (k) => m.delete(k),
+      clear: () => m.clear(),
+      key: (i) => Array.from(m.keys())[i] ?? null,
+      get length() { return m.size; },
+    };
+  };
+  globalThis.localStorage ??= memStore();
+  globalThis.sessionStorage ??= memStore();
+  if (typeof globalThis.window === "undefined") globalThis.window = globalThis;
+  if (typeof globalThis.document === "undefined") {
+    globalThis.document = {
+      addEventListener() {},
+      removeEventListener() {},
+      createElement: () => ({ setAttribute() {}, appendChild() {} }),
+      querySelector: () => null,
+      head: { appendChild() {} },
+      getElementById: () => null,
+    };
+  }
+  if (typeof globalThis.navigator === "undefined") globalThis.navigator = { userAgent: "node-ssr" };
+
   const { render } = requireFromRoot(ssrOut);
 
   const template = readFileSync(resolve(distDir, "index.html"), "utf-8");
