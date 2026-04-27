@@ -46,6 +46,19 @@ async function bundleSSR() {
     target: "node18",
     jsx: "automatic",
     logLevel: "warning",
+    external: [
+      "react",
+      "react-dom",
+      "react-dom/server",
+      "react-dom/client",
+      "react-router-dom",
+      "react-router-dom/server",
+      "react/jsx-runtime",
+      "react/jsx-dev-runtime",
+      "@tanstack/react-query",
+      "@tanstack/query-core",
+      "@supabase/supabase-js",
+    ],
     // Stub out asset imports that would fail under Node
     loader: {
       ".css": "empty",
