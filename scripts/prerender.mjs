@@ -9,13 +9,15 @@
 import { fileURLToPath, pathToFileURL } from "url";
 import { dirname, resolve } from "path";
 import { existsSync, mkdirSync, readFileSync, writeFileSync, rmSync } from "fs";
+import { createRequire } from "module";
 import { build } from "esbuild";
 import { injectRouteMeta } from "./route-meta.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const root = resolve(__dirname, "..");
 const distDir = resolve(root, "dist");
-const ssrOut = resolve(root, ".ssr-tmp/entry-server.mjs");
+const ssrOut = resolve(root, ".ssr-tmp/entry-server.cjs");
+const requireFromRoot = createRequire(resolve(root, "package.json"));
 
 const ROUTES = [
   "/",
@@ -40,11 +42,10 @@ async function bundleSSR() {
     bundle: true,
     outfile: ssrOut,
     platform: "node",
-    format: "esm",
+    format: "cjs",
     target: "node18",
     jsx: "automatic",
     logLevel: "warning",
-    packages: "external",
     // Stub out asset imports that would fail under Node
     loader: {
       ".css": "empty",
@@ -78,7 +79,7 @@ async function run() {
   }
 
   await bundleSSR();
-  const { render } = await import(pathToFileURL(ssrOut).href);
+  const { render } = requireFromRoot(ssrOut);
 
   const template = readFileSync(resolve(distDir, "index.html"), "utf-8");
 
