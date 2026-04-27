@@ -163,6 +163,9 @@ async function run() {
   } catch {}
 
   console.log("[prerender] Done.");
+  // Some bundled client libraries can leave background handles open in Node.
+  // The static files are already written at this point, so exit cleanly.
+  process.exit(0);
 }
 
 run().catch((err) => {
