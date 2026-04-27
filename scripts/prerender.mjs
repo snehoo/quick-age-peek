@@ -19,6 +19,15 @@ const distDir = resolve(root, "dist");
 const ssrOut = resolve(root, ".ssr-tmp/entry-server.cjs");
 const requireFromRoot = createRequire(resolve(root, "package.json"));
 
+// Load .env (Node doesn't do this automatically — Vite does it for the client build).
+const envPath = resolve(root, ".env");
+if (existsSync(envPath)) {
+  for (const line of readFileSync(envPath, "utf-8").split("\n")) {
+    const m = line.match(/^\s*([A-Z0-9_]+)\s*=\s*"?([^"\n]*)"?\s*$/i);
+    if (m && !process.env[m[1]]) process.env[m[1]] = m[2];
+  }
+}
+
 const ROUTES = [
   "/",
   "/blog",
