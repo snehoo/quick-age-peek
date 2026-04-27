@@ -97,30 +97,24 @@ async function run() {
   globalThis.localStorage ??= memStore();
   globalThis.sessionStorage ??= memStore();
   if (typeof globalThis.window === "undefined") globalThis.window = globalThis;
-  if (typeof globalThis.document === "undefined") {
-    const makeEl = () => ({
-      setAttribute() {},
-      appendChild() {},
-      removeChild() {},
-      style: {
-        // Pretend the browser supports unprefixed transitions/animations
-        animation: "",
-        transition: "",
-      },
-    });
-    globalThis.document = {
-      addEventListener() {},
-      removeEventListener() {},
-      createElement: makeEl,
-      createElementNS: makeEl,
-      querySelector: () => null,
-      querySelectorAll: () => [],
-      head: { appendChild() {} },
-      body: { appendChild() {} },
-      getElementById: () => null,
-      documentElement: { style: {} },
-    };
-  }
+  const makeEl = () => ({
+    setAttribute() {},
+    appendChild() {},
+    removeChild() {},
+    style: { animation: "", transition: "", WebkitAnimation: "", WebkitTransition: "" },
+  });
+  globalThis.document = {
+    addEventListener() {},
+    removeEventListener() {},
+    createElement: makeEl,
+    createElementNS: makeEl,
+    querySelector: () => null,
+    querySelectorAll: () => [],
+    head: { appendChild() {} },
+    body: { appendChild() {} },
+    getElementById: () => null,
+    documentElement: { style: {} },
+  };
   if (typeof globalThis.navigator === "undefined") globalThis.navigator = { userAgent: "node-ssr" };
 
   const { render } = requireFromRoot(ssrOut);
