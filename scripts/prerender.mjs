@@ -74,6 +74,7 @@ async function bundleSSR() {
 }
 
 async function run() {
+  process.env.NODE_ENV = "production";
   if (!existsSync(distDir)) {
     console.error("[prerender] dist/ not found — run vite build first");
     process.exit(1);
