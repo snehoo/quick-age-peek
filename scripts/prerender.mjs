@@ -37,10 +37,19 @@ async function run() {
   await build({
     root,
     logLevel: "warn",
+    configFile: false,
+    plugins: [(await import("@vitejs/plugin-react-swc")).default()],
+    resolve: {
+      alias: { "@": resolve(root, "src") },
+    },
     build: {
       ssr: "src/entry-server.tsx",
       outDir: "dist-ssr",
       emptyOutDir: true,
+      minify: false,
+      target: "esnext",
+      ssrManifest: false,
+      reportCompressedSize: false,
       rollupOptions: {
         input: resolve(root, "src/entry-server.tsx"),
       },
