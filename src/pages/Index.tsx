@@ -2,7 +2,24 @@ import { useEffect, useMemo } from "react";
 import { Link } from "react-router-dom";
 import AgeCalculator from "@/components/AgeCalculator";
 import { getGeneration } from "@/lib/lifeContext";
-import { BLOG_POSTS } from "@/components/BlogMenu";
+
+const BLOG_POSTS = [
+  { slug: "how-many-heartbeats-in-a-lifetime", title: "How Many Heartbeats in a Lifetime?" },
+  { slug: "how-many-full-moons-in-a-lifetime", title: "How Many Full Moons in a Lifetime?" },
+  { slug: "what-generation-am-i", title: "What Generation Am I?" },
+  { slug: "how-to-calculate-age-in-days", title: "Calculate Your Age in Days" },
+  { slug: "what-is-a-life-clock", title: "What Is a Life Clock?" },
+  { slug: "what-day-of-the-week-was-i-born", title: "What Day of the Week Were You Born?" },
+  { slug: "how-many-seconds-old-am-i", title: "How Many Seconds Old Are You?" },
+  { slug: "birthday-twins-famous-people-born-on-your-birthday", title: "Birthday Twins: Famous People Born on Your Birthday" },
+  { slug: "how-to-find-your-zodiac-sign-by-birth-date", title: "How to Find Your Zodiac Sign by Birth Date" },
+  { slug: "what-does-days-to-birthday-mean", title: "Days to Your Next Birthday" },
+  { slug: "calculator-net-vs-calculatorsoup-age-calculator", title: "Calculator.net vs CalculatorSoup Age Calculator" },
+  { slug: "calculatorsoup-vs-omnicalculator", title: "CalculatorSoup vs OmniCalculator: Best Age Calculator" },
+  { slug: "myagecalculator-vs-calculator-net", title: "MyAgeCalculator vs Calculator.net" },
+  { slug: "omnicalculator-vs-calculator-net", title: "OmniCalculator vs Calculator.net" },
+  { slug: "zoho-gst-calculator-vs-tally-gst-calculator", title: "Zoho GST Calculator vs Tally GST Calculator" },
+];
 
 const setCanonical = (href: string) => {
   let el = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
