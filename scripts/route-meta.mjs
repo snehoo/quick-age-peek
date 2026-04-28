@@ -97,6 +97,41 @@ export const ROUTE_META = {
     canonical: `${SITE}/blog/what-does-days-to-birthday-mean`,
     ogType: "article",
   },
+  "/blog/calculator-net-vs-calculatorsoup-age-calculator": {
+    title: "Calculator.net vs CalculatorSoup Age Calculator | whatismyage.me",
+    description:
+      "Calculator.net vs CalculatorSoup age calculator: which tool is more accurate? We compare features, leap-year handling, and outputs to help you choose.",
+    canonical: `${SITE}/blog/calculator-net-vs-calculatorsoup-age-calculator`,
+    ogType: "article",
+  },
+  "/blog/calculatorsoup-vs-omnicalculator": {
+    title: "CalculatorSoup vs OmniCalculator Age Calculator | whatismyage.me",
+    description:
+      "CalculatorSoup vs OmniCalculator: which age calculator wins? Compare features, accuracy, and speed — then find the fastest option for your exact age.",
+    canonical: `${SITE}/blog/calculatorsoup-vs-omnicalculator`,
+    ogType: "article",
+  },
+  "/blog/myagecalculator-vs-calculator-net": {
+    title: "MyAgeCalculator vs Calculator.net | whatismyage.me",
+    description:
+      "MyAgeCalculator vs Calculator.net: which finds your exact age fastest? We compare speed, features, timezone support & precision. Find your answer in seconds.",
+    canonical: `${SITE}/blog/myagecalculator-vs-calculator-net`,
+    ogType: "article",
+  },
+  "/blog/omnicalculator-vs-calculator-net": {
+    title: "OmniCalculator vs Calculator.net Age Calculator | whatismyage.me",
+    description:
+      "OmniCalculator vs Calculator.net: we compare both age calculators on features, accuracy, and ease of use—so you pick the right tool in seconds.",
+    canonical: `${SITE}/blog/omnicalculator-vs-calculator-net`,
+    ogType: "article",
+  },
+  "/blog/zoho-gst-calculator-vs-tally-gst-calculator": {
+    title: "Zoho GST Calculator vs Tally GST Calculator | whatismyage.me",
+    description:
+      "Zoho GST Calculator vs Tally GST Calculator: which tool saves more time for Indian small businesses? Compare features, accuracy, and ease of use right here.",
+    canonical: `${SITE}/blog/zoho-gst-calculator-vs-tally-gst-calculator`,
+    ogType: "article",
+  },
 };
 
 const escapeHtml = (s) =>
