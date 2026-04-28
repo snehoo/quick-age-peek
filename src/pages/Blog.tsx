@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
-import BlogMenu from "@/components/BlogMenu";
+
 
 
 const posts = [
@@ -154,7 +154,7 @@ const Blog = () => {
           whatismyage.me
         </Link>
         <span aria-hidden>·</span>
-        <BlogMenu />
+        <Link to="/blog" className="hover:text-foreground transition-colors">Blog</Link>
         <span aria-hidden>·</span>
         <Link to="/privacy" className="hover:text-foreground transition-colors">
           Privacy

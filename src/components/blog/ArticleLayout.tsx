@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import type { ReactNode } from "react";
-import BlogMenu from "@/components/BlogMenu";
+
 
 
 type RelatedPost = {
@@ -31,7 +31,7 @@ export const ArticleFooter = () => (
       whatismyage.me
     </Link>
     <span aria-hidden>·</span>
-    <BlogMenu />
+    <Link to="/blog" className="hover:text-foreground transition-colors">Blog</Link>
     <span aria-hidden>·</span>
     <Link to="/privacy" className="hover:text-foreground transition-colors">
       Privacy

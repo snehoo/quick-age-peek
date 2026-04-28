@@ -2,7 +2,7 @@ import { useEffect, useMemo } from "react";
 import { Link } from "react-router-dom";
 import AgeCalculator from "@/components/AgeCalculator";
 import { getGeneration } from "@/lib/lifeContext";
-import BlogMenu, { BLOG_POSTS } from "@/components/BlogMenu";
+import { BLOG_POSTS } from "@/components/BlogMenu";
 
 const setCanonical = (href: string) => {
   let el = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
@@ -60,7 +60,7 @@ const Index = () => {
         <div className="space-x-3">
           <span>whatismyage.me</span>
           <span aria-hidden>·</span>
-          <BlogMenu />
+          <a href="/blog" className="hover:text-foreground transition-colors">Blog</a>
           <span aria-hidden>·</span>
           <a href="/privacy" className="hover:text-foreground transition-colors">
             Privacy
