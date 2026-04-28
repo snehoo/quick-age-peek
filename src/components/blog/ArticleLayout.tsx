@@ -135,3 +135,67 @@ export const BackToBlog = () => (
     </Link>
   </p>
 );
+
+type ComparisonRow = (string | { value: string; status?: "yes" | "no" | "partial" })[];
+
+export const ComparisonTable = ({
+  headers,
+  rows,
+}: {
+  headers: string[];
+  rows: ComparisonRow[];
+}) => (
+  <div className="my-7 overflow-x-auto rounded-xl border border-border">
+    <table className="w-full text-sm border-collapse">
+      <thead>
+        <tr className="bg-primary text-primary-foreground">
+          {headers.map((h) => (
+            <th key={h} className="text-left font-semibold px-4 py-3">
+              {h}
+            </th>
+          ))}
+        </tr>
+      </thead>
+      <tbody>
+        {rows.map((row, i) => (
+          <tr key={i} className="even:bg-secondary/40">
+            {row.map((cell, j) => {
+              const text = typeof cell === "string" ? cell : cell.value;
+              const status = typeof cell === "string" ? undefined : cell.status;
+              const cls =
+                status === "yes"
+                  ? "text-primary font-semibold"
+                  : status === "no"
+                  ? "text-muted-foreground font-semibold"
+                  : status === "partial"
+                  ? "text-foreground/70 font-medium"
+                  : "text-foreground/90";
+              return (
+                <td key={j} className={`px-4 py-3 border-t border-border ${cls}`}>
+                  {text}
+                </td>
+              );
+            })}
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+);
+
+export const ProsConsList = ({
+  title,
+  items,
+}: {
+  title: string;
+  items: string[];
+}) => (
+  <div className="bg-card border border-border rounded-xl p-5 my-6">
+    <div className="font-semibold text-foreground mb-3">{title}</div>
+    <ul className="list-disc pl-5 space-y-2 text-foreground/90 text-[16px] leading-relaxed">
+      {items.map((it, i) => (
+        <li key={i}>{it}</li>
+      ))}
+    </ul>
+  </div>
+);
