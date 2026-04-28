@@ -61,6 +61,31 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://whatismyage.me/blog/calculator-net-vs-calculatorsoup-age-calculator</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://whatismyage.me/blog/calculatorsoup-vs-omnicalculator</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://whatismyage.me/blog/myagecalculator-vs-calculator-net</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://whatismyage.me/blog/omnicalculator-vs-calculator-net</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://whatismyage.me/blog/zoho-gst-calculator-vs-tally-gst-calculator</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://whatismyage.me/privacy</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
