@@ -116,14 +116,6 @@ const posts = [
       "OmniCalculator and Calculator.net both offer free age tools. We compare features, accuracy, and ease of use so you can pick the right one immediately.",
     readTime: "7 min read",
   },
-  {
-    slug: "zoho-gst-calculator-vs-tally-gst-calculator",
-    tag: "Tool Comparison",
-    title: "Zoho GST Calculator vs Tally GST Calculator: Which Is Right for You?",
-    excerpt:
-      "Zoho GST Calculator vs Tally GST Calculator compared for Indian small business owners — features, accuracy, ecosystem, and which tool saves more time.",
-    readTime: "8 min read",
-  },
 ];
 
 const Blog = () => {

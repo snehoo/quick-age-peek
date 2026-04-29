@@ -125,13 +125,6 @@ export const ROUTE_META = {
     canonical: `${SITE}/blog/omnicalculator-vs-calculator-net`,
     ogType: "article",
   },
-  "/blog/zoho-gst-calculator-vs-tally-gst-calculator": {
-    title: "Zoho GST Calculator vs Tally GST Calculator | whatismyage.me",
-    description:
-      "Zoho GST Calculator vs Tally GST Calculator: which tool saves more time for Indian small businesses? Compare features, accuracy, and ease of use right here.",
-    canonical: `${SITE}/blog/zoho-gst-calculator-vs-tally-gst-calculator`,
-    ogType: "article",
-  },
 };
 
 const escapeHtml = (s) =>
