@@ -18,7 +18,7 @@ const BLOG_POSTS = [
   { slug: "calculatorsoup-vs-omnicalculator", title: "CalculatorSoup vs OmniCalculator: Best Age Calculator" },
   { slug: "myagecalculator-vs-calculator-net", title: "MyAgeCalculator vs Calculator.net" },
   { slug: "omnicalculator-vs-calculator-net", title: "OmniCalculator vs Calculator.net" },
-  { slug: "zoho-gst-calculator-vs-tally-gst-calculator", title: "Zoho GST Calculator vs Tally GST Calculator" },
+  
 ];
 
 const setCanonical = (href: string) => {
