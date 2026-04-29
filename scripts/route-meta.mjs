@@ -125,6 +125,13 @@ export const ROUTE_META = {
     canonical: `${SITE}/blog/omnicalculator-vs-calculator-net`,
     ogType: "article",
   },
+  "/blog/gigacalculator-vs-omnicalculator": {
+    title: "GigaCalculator vs OmniCalculator Age Tool | whatismyage.me",
+    description:
+      "GigaCalculator vs OmniCalculator: which age tool wins on accuracy, features, and speed? Full comparison to help you pick the best free age calculator.",
+    canonical: `${SITE}/blog/gigacalculator-vs-omnicalculator`,
+    ogType: "article",
+  },
 };
 
 const escapeHtml = (s) =>
