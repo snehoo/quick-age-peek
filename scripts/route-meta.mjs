@@ -132,6 +132,14 @@ export const ROUTE_META = {
     canonical: `${SITE}/blog/gigacalculator-vs-omnicalculator`,
     ogType: "article",
   },
+  "/blog/age-calculator-statistics": {
+    title:
+      "Age Calculator Statistics (2025): 50+ Data Points on Usage Trends & Behavior | whatismyage.me",
+    description:
+      "Explore 50+ age calculator statistics for 2025 including search trends, demographics, usage behavior, and AI-driven growth insights.",
+    canonical: `${SITE}/blog/age-calculator-statistics`,
+    ogType: "article",
+  },
 };
 
 const escapeHtml = (s) =>
