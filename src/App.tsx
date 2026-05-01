@@ -21,6 +21,7 @@ import CalculatorSoupVsOmniCalculator from "./pages/blog/CalculatorSoupVsOmniCal
 import MyAgeCalculatorVsCalculatorNet from "./pages/blog/MyAgeCalculatorVsCalculatorNet.tsx";
 import OmniCalculatorVsCalculatorNet from "./pages/blog/OmniCalculatorVsCalculatorNet.tsx";
 import GigaCalculatorVsOmniCalculator from "./pages/blog/GigaCalculatorVsOmniCalculator.tsx";
+import AgeCalculatorStatistics from "./pages/blog/AgeCalculatorStatistics.tsx";
 
 import NotFound from "./pages/NotFound.tsx";
 
@@ -63,6 +64,7 @@ const App = () => (
           <Route path="/blog/myagecalculator-vs-calculator-net" element={<MyAgeCalculatorVsCalculatorNet />} />
           <Route path="/blog/omnicalculator-vs-calculator-net" element={<OmniCalculatorVsCalculatorNet />} />
           <Route path="/blog/gigacalculator-vs-omnicalculator" element={<GigaCalculatorVsOmniCalculator />} />
+          <Route path="/blog/age-calculator-statistics" element={<AgeCalculatorStatistics />} />
           
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />

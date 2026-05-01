@@ -124,6 +124,14 @@ const posts = [
       "GigaCalculator vs OmniCalculator: which age tool wins on accuracy, features, and speed? Full feature-by-feature comparison.",
     readTime: "8 min read",
   },
+  {
+    slug: "age-calculator-statistics",
+    tag: "Data & Trends",
+    title: "Age Calculator Statistics (2025): 50+ Data Points on Usage Trends & Behavior",
+    excerpt:
+      "50+ age calculator statistics for 2025 — search demand, demographics, device share, geographic trends, and the AI-driven shift to instant answers.",
+    readTime: "6 min read",
+  },
 ];
 
 const Blog = () => {
