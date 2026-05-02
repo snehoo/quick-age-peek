@@ -132,6 +132,38 @@ const posts = [
       "50+ age calculator statistics for 2025 — search demand, demographics, device share, geographic trends, and the AI-driven shift to instant answers.",
     readTime: "6 min read",
   },
+  {
+    slug: "how-different-age-groups-behave-online-statistics",
+    tag: "Data & Trends",
+    title: "How Different Age Groups Behave Online Statistics (2025): 55+ Data Points on Gen Z, Screen Time, and Digital Habits",
+    excerpt:
+      "55+ data points on how Gen Z, Millennials, Gen X, and Boomers behave online — screen time, mobile share, social media use, and platform preferences.",
+    readTime: "7 min read",
+  },
+  {
+    slug: "what-happens-inside-your-body-over-time-statistics",
+    tag: "Biology & Science",
+    title: "What Happens Inside Your Body Over Time Statistics (2025): 55+ Data Points on Sleep, Heartbeats, and Biological Aging",
+    excerpt:
+      "55+ data points on heartbeats, sleep, calories, and biological aging across an average human lifetime — sourced from WHO, CDC, AHA, and NIH.",
+    readTime: "7 min read",
+  },
+  {
+    slug: "how-age-and-birthdays-distribute-globally-statistics",
+    tag: "Demographics",
+    title: "How Age and Birthdays Distribute Globally Statistics (2025): 52+ Data Points on Population Age, Birth Trends, and Birthday Patterns",
+    excerpt:
+      "52+ data points on global median age, fertility rates, most common birth months, and how birthdays cluster across countries and cultures.",
+    readTime: "7 min read",
+  },
+  {
+    slug: "how-people-measure-time-and-life-statistics",
+    tag: "Philosophy & Data",
+    title: "How People Measure Time and Life Statistics (2025): 52+ Data Points on Lifespan, Time Perception, and Life Milestones",
+    excerpt:
+      "52+ data points on lifespan in days and weeks, time perception, life milestones, and how digital tools are reshaping how we experience time.",
+    readTime: "8 min read",
+  },
 ];
 
 const Blog = () => {

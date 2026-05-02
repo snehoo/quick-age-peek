@@ -22,6 +22,10 @@ import MyAgeCalculatorVsCalculatorNet from "./pages/blog/MyAgeCalculatorVsCalcul
 import OmniCalculatorVsCalculatorNet from "./pages/blog/OmniCalculatorVsCalculatorNet.tsx";
 import GigaCalculatorVsOmniCalculator from "./pages/blog/GigaCalculatorVsOmniCalculator.tsx";
 import AgeCalculatorStatistics from "./pages/blog/AgeCalculatorStatistics.tsx";
+import AgeGroupsOnlineStatistics from "./pages/blog/AgeGroupsOnlineStatistics.tsx";
+import BodyOverTimeStatistics from "./pages/blog/BodyOverTimeStatistics.tsx";
+import AgeBirthdaysGloballyStatistics from "./pages/blog/AgeBirthdaysGloballyStatistics.tsx";
+import MeasureTimeAndLifeStatistics from "./pages/blog/MeasureTimeAndLifeStatistics.tsx";
 
 import NotFound from "./pages/NotFound.tsx";
 
@@ -65,6 +69,10 @@ const App = () => (
           <Route path="/blog/omnicalculator-vs-calculator-net" element={<OmniCalculatorVsCalculatorNet />} />
           <Route path="/blog/gigacalculator-vs-omnicalculator" element={<GigaCalculatorVsOmniCalculator />} />
           <Route path="/blog/age-calculator-statistics" element={<AgeCalculatorStatistics />} />
+          <Route path="/blog/how-different-age-groups-behave-online-statistics" element={<AgeGroupsOnlineStatistics />} />
+          <Route path="/blog/what-happens-inside-your-body-over-time-statistics" element={<BodyOverTimeStatistics />} />
+          <Route path="/blog/how-age-and-birthdays-distribute-globally-statistics" element={<AgeBirthdaysGloballyStatistics />} />
+          <Route path="/blog/how-people-measure-time-and-life-statistics" element={<MeasureTimeAndLifeStatistics />} />
           
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />

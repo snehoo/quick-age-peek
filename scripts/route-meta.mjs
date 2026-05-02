@@ -140,6 +140,38 @@ export const ROUTE_META = {
     canonical: `${SITE}/blog/age-calculator-statistics`,
     ogType: "article",
   },
+  "/blog/how-different-age-groups-behave-online-statistics": {
+    title:
+      "How Different Age Groups Behave Online Statistics (2025): 55+ Data Points | whatismyage.me",
+    description:
+      "55+ data points on how Gen Z, Millennials, Gen X, and Boomers behave online — screen time, mobile, and social media trends in 2025.",
+    canonical: `${SITE}/blog/how-different-age-groups-behave-online-statistics`,
+    ogType: "article",
+  },
+  "/blog/what-happens-inside-your-body-over-time-statistics": {
+    title:
+      "What Happens Inside Your Body Over Time Statistics (2025): 55+ Data Points | whatismyage.me",
+    description:
+      "55+ data points on heartbeats, sleep, calories, and biological aging across an average human lifetime in 2025.",
+    canonical: `${SITE}/blog/what-happens-inside-your-body-over-time-statistics`,
+    ogType: "article",
+  },
+  "/blog/how-age-and-birthdays-distribute-globally-statistics": {
+    title:
+      "How Age and Birthdays Distribute Globally Statistics (2025): 52+ Data Points | whatismyage.me",
+    description:
+      "52+ data points on global median age, fertility, birth months, and birthday distribution patterns across countries in 2025.",
+    canonical: `${SITE}/blog/how-age-and-birthdays-distribute-globally-statistics`,
+    ogType: "article",
+  },
+  "/blog/how-people-measure-time-and-life-statistics": {
+    title:
+      "How People Measure Time and Life Statistics (2025): 52+ Data Points | whatismyage.me",
+    description:
+      "52+ data points on lifespan, time perception, life milestones, and how cultures measure life in 2025.",
+    canonical: `${SITE}/blog/how-people-measure-time-and-life-statistics`,
+    ogType: "article",
+  },
 };
 
 const escapeHtml = (s) =>
