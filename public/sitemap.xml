@@ -91,6 +91,26 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://whatismyage.me/blog/how-different-age-groups-behave-online-statistics</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://whatismyage.me/blog/what-happens-inside-your-body-over-time-statistics</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://whatismyage.me/blog/how-age-and-birthdays-distribute-globally-statistics</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://whatismyage.me/blog/how-people-measure-time-and-life-statistics</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://whatismyage.me/privacy</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
