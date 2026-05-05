@@ -172,6 +172,41 @@ export const ROUTE_META = {
     canonical: `${SITE}/blog/how-people-measure-time-and-life-statistics`,
     ogType: "article",
   },
+  "/blog/how-old-am-i-if-i-was-born-in-1985": {
+    title: "How Old Am I If I Was Born in 1985? | Age in 2026",
+    description:
+      "Born in 1985? You're 40 or 41 in 2026 — but your life is so much more than that. Discover your age in days, heartbeats, full moons, and what makes 1985 babies unique.",
+    canonical: `${SITE}/blog/how-old-am-i-if-i-was-born-in-1985`,
+    ogType: "article",
+  },
+  "/blog/how-old-am-i-if-i-was-born-in-1986": {
+    title: "How Old Am I If I Was Born in 1986? | Age in 2026",
+    description:
+      "Born in 1986? You're 39 or 40 in 2026. Find out your age in days, heartbeats, full moons, and relive what made 1986 one of the most eventful years in modern history.",
+    canonical: `${SITE}/blog/how-old-am-i-if-i-was-born-in-1986`,
+    ogType: "article",
+  },
+  "/blog/how-old-am-i-if-i-was-born-in-1987": {
+    title: "How Old Am I If I Was Born in 1987? | Age in 2026",
+    description:
+      "Born in 1987? You're 38 or 39 in 2026. See your age in days, heartbeats, and full moons — plus a look back at the remarkable world you were born into.",
+    canonical: `${SITE}/blog/how-old-am-i-if-i-was-born-in-1987`,
+    ogType: "article",
+  },
+  "/blog/how-old-am-i-if-i-was-born-in-1988": {
+    title: "How Old Am I If I Was Born in 1988? | Age in 2026",
+    description:
+      "Born in 1988? You're 37 or 38 in 2026. Discover your age in days, heartbeats, full moons, and what the world looked like when you first arrived in it.",
+    canonical: `${SITE}/blog/how-old-am-i-if-i-was-born-in-1988`,
+    ogType: "article",
+  },
+  "/blog/how-old-am-i-if-i-was-born-in-1989": {
+    title: "How Old Am I If I Was Born in 1989? | Age in 2026",
+    description:
+      "Born in 1989? You're 36 or 37 in 2026. Find your age in days, heartbeats, and full moons — plus why 1989 was one of the most extraordinary years in modern history.",
+    canonical: `${SITE}/blog/how-old-am-i-if-i-was-born-in-1989`,
+    ogType: "article",
+  },
 };
 
 const escapeHtml = (s) =>

@@ -26,6 +26,11 @@ import AgeGroupsOnlineStatistics from "./pages/blog/AgeGroupsOnlineStatistics.ts
 import BodyOverTimeStatistics from "./pages/blog/BodyOverTimeStatistics.tsx";
 import AgeBirthdaysGloballyStatistics from "./pages/blog/AgeBirthdaysGloballyStatistics.tsx";
 import MeasureTimeAndLifeStatistics from "./pages/blog/MeasureTimeAndLifeStatistics.tsx";
+import BornIn1985 from "./pages/blog/BornIn1985.tsx";
+import BornIn1986 from "./pages/blog/BornIn1986.tsx";
+import BornIn1987 from "./pages/blog/BornIn1987.tsx";
+import BornIn1988 from "./pages/blog/BornIn1988.tsx";
+import BornIn1989 from "./pages/blog/BornIn1989.tsx";
 
 import NotFound from "./pages/NotFound.tsx";
 
@@ -73,7 +78,12 @@ const App = () => (
           <Route path="/blog/what-happens-inside-your-body-over-time-statistics" element={<BodyOverTimeStatistics />} />
           <Route path="/blog/how-age-and-birthdays-distribute-globally-statistics" element={<AgeBirthdaysGloballyStatistics />} />
           <Route path="/blog/how-people-measure-time-and-life-statistics" element={<MeasureTimeAndLifeStatistics />} />
-          
+          <Route path="/blog/how-old-am-i-if-i-was-born-in-1985" element={<BornIn1985 />} />
+          <Route path="/blog/how-old-am-i-if-i-was-born-in-1986" element={<BornIn1986 />} />
+          <Route path="/blog/how-old-am-i-if-i-was-born-in-1987" element={<BornIn1987 />} />
+          <Route path="/blog/how-old-am-i-if-i-was-born-in-1988" element={<BornIn1988 />} />
+          <Route path="/blog/how-old-am-i-if-i-was-born-in-1989" element={<BornIn1989 />} />
+
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

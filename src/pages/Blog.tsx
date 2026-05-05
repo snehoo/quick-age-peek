@@ -164,6 +164,46 @@ const posts = [
       "52+ data points on lifespan in days and weeks, time perception, life milestones, and how digital tools are reshaping how we experience time.",
     readTime: "8 min read",
   },
+  {
+    slug: "how-old-am-i-if-i-was-born-in-1985",
+    tag: "Birth Year Guide",
+    title: "How Old Am I If I Was Born in 1985?",
+    excerpt:
+      "Born in 1985? You're 40 or 41 in 2026. Your age in days, heartbeats, full moons — and the world you arrived into.",
+    readTime: "5 min read",
+  },
+  {
+    slug: "how-old-am-i-if-i-was-born-in-1986",
+    tag: "Birth Year Guide",
+    title: "How Old Am I If I Was Born in 1986?",
+    excerpt:
+      "Born in 1986? You're 39 or 40 in 2026. Discover your age in days, heartbeats, full moons, and what made 1986 unforgettable.",
+    readTime: "5 min read",
+  },
+  {
+    slug: "how-old-am-i-if-i-was-born-in-1987",
+    tag: "Birth Year Guide",
+    title: "How Old Am I If I Was Born in 1987?",
+    excerpt:
+      "Born in 1987? You're 38 or 39 in 2026. Your life in days, heartbeats, and full moons — plus the world you were born into.",
+    readTime: "5 min read",
+  },
+  {
+    slug: "how-old-am-i-if-i-was-born-in-1988",
+    tag: "Birth Year Guide",
+    title: "How Old Am I If I Was Born in 1988?",
+    excerpt:
+      "Born in 1988? You're 37 or 38 in 2026. Your age in days, heartbeats, full moons — and a look back at the world that welcomed you.",
+    readTime: "5 min read",
+  },
+  {
+    slug: "how-old-am-i-if-i-was-born-in-1989",
+    tag: "Birth Year Guide",
+    title: "How Old Am I If I Was Born in 1989?",
+    excerpt:
+      "Born in 1989? You're 36 or 37 in 2026. Your life in numbers and the year the Berlin Wall fell and the web was born.",
+    readTime: "5 min read",
+  },
 ];
 
 const Blog = () => {
