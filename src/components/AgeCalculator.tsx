@@ -142,6 +142,16 @@ const AgeCalculator = ({ showHero = false }: AgeCalculatorProps) => {
 
   return (
     <div className="w-full max-w-xl mx-auto">
+      {showHero && !result && (
+        <div className="mb-8 text-center animate-fade-in-up">
+          <h2 className="font-display text-4xl sm:text-5xl text-foreground leading-[1.1] mb-3">
+            Your life, counted in<br />ways you've never seen
+          </h2>
+          <p className="text-muted-foreground text-base sm:text-lg max-w-md mx-auto">
+            Enter your date of birth — and discover the numbers behind your story.
+          </p>
+        </div>
+      )}
       <form onSubmit={handleCalculate} className="space-y-5">
         <div>
           <label htmlFor="name" className="block text-sm font-medium text-muted-foreground mb-1.5">
