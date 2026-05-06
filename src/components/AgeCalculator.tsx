@@ -138,7 +138,7 @@ const AgeCalculator = () => {
 
   return (
     <div className="w-full max-w-xl mx-auto">
-      <form onSubmit={handleCalculate} className="space-y-5">
+      <form onSubmit={handleCalculate} className="space-y-5 max-w-sm mx-auto">
         <div>
           <label htmlFor="name" className="block text-sm font-medium text-muted-foreground mb-1.5">
             First name <span className="text-muted-foreground/70 font-normal">(so we can make it personal)</span>
@@ -231,7 +231,7 @@ const AgeCalculator = () => {
               </div>
             </div>
 
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+            <div className="grid grid-cols-2 gap-4 sm:gap-5">
               <div className="age-stat-card">
                 <div className="age-stat-value">{result.years}</div>
                 <div className="age-stat-label">Years</div>
@@ -279,7 +279,7 @@ const AgeCalculator = () => {
             </div>
 
             {/* Localized "Life in context" 3-box set */}
-            <div className="mt-4 grid grid-cols-3 gap-4">
+            <div className="mt-4 grid grid-cols-2 gap-4 sm:gap-5">
               {localized.map((item) => (
                 <div key={item.label} className="age-stat-card">
                   <div className="age-stat-value text-2xl sm:text-3xl">{item.value}</div>

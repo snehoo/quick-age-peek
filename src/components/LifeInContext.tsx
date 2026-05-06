@@ -75,7 +75,7 @@ const LifeInContext = ({ ageYears, birthYear, country }: LifeInContextProps) => 
     >
       <h2 className="text-xl text-foreground mb-5 text-center">Life In Context</h2>
 
-      <div className="grid grid-cols-3 gap-4">
+      <div className="grid grid-cols-2 gap-4 sm:gap-5">
         {items.map((item) => (
           <div key={item.label} className="age-stat-card">
             <div className="age-stat-value text-2xl sm:text-3xl">{item.value}</div>
