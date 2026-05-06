@@ -1,7 +1,5 @@
-import { useEffect, useMemo } from "react";
-import { Link } from "react-router-dom";
+import { useEffect } from "react";
 import AgeCalculator from "@/components/AgeCalculator";
-import { getGeneration } from "@/lib/lifeContext";
 
 const BLOG_POSTS = [
   { slug: "how-many-heartbeats-in-a-lifetime", title: "How Many Heartbeats in a Lifetime?" },
