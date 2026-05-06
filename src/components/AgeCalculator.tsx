@@ -6,6 +6,7 @@ import { Slider } from "@/components/ui/slider";
 import CompactNameTile from "./CompactNameTile";
 import FamousBirthdaysList from "./FamousBirthdaysList";
 import ShareCard from "./ShareCard";
+import DemoSlideshow from "./DemoSlideshow";
 import { supabase } from "@/integrations/supabase/client";
 
 const DEFAULT_LIFE_EXPECTANCY = 80;
@@ -142,16 +143,6 @@ const AgeCalculator = ({ showHero = false }: AgeCalculatorProps) => {
 
   return (
     <div className="w-full max-w-xl mx-auto">
-      {showHero && !result && (
-        <div className="mb-8 text-center animate-fade-in-up">
-          <h2 className="font-display text-4xl sm:text-5xl text-foreground leading-[1.1] mb-3">
-            Your life, counted in<br />ways you've never seen
-          </h2>
-          <p className="text-muted-foreground text-base sm:text-lg max-w-md mx-auto">
-            Enter your date of birth — and discover the numbers behind your story.
-          </p>
-        </div>
-      )}
       <form onSubmit={handleCalculate} className="space-y-5">
         <div>
           <label htmlFor="name" className="block text-sm font-medium text-muted-foreground mb-1.5">
@@ -195,24 +186,8 @@ const AgeCalculator = ({ showHero = false }: AgeCalculatorProps) => {
       </form>
 
       {showHero && !result && (
-        <div className="mt-6 animate-fade-in-up" aria-hidden="true">
-          <div className="grid grid-cols-2 gap-4 sm:gap-5">
-            <div className="age-stat-card">
-              <div className="age-stat-value">41</div>
-              <div className="age-stat-label">Years</div>
-            </div>
-            <div className="age-stat-card">
-              <div className="age-stat-value">8</div>
-              <div className="age-stat-label">Months</div>
-            </div>
-            <div className="age-stat-card col-span-2">
-              <div className="age-stat-value">15,244</div>
-              <div className="age-stat-label">Days Alive</div>
-            </div>
-          </div>
-          <p className="text-center text-xs text-muted-foreground/70 mt-3 italic">
-            Sample preview — your numbers appear once you calculate.
-          </p>
+        <div className="mt-8 animate-fade-in-up">
+          <DemoSlideshow />
         </div>
       )}
 
