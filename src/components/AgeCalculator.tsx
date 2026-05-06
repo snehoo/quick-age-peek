@@ -231,7 +231,7 @@ const AgeCalculator = () => {
               </div>
             </div>
 
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+            <div className="grid grid-cols-2 gap-4 sm:gap-5">
               <div className="age-stat-card">
                 <div className="age-stat-value">{result.years}</div>
                 <div className="age-stat-label">Years</div>
