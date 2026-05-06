@@ -194,6 +194,28 @@ const AgeCalculator = ({ showHero = false }: AgeCalculatorProps) => {
         </button>
       </form>
 
+      {showHero && !result && (
+        <div className="mt-6 animate-fade-in-up" aria-hidden="true">
+          <div className="grid grid-cols-2 gap-4 sm:gap-5">
+            <div className="age-stat-card">
+              <div className="age-stat-value">41</div>
+              <div className="age-stat-label">Years</div>
+            </div>
+            <div className="age-stat-card">
+              <div className="age-stat-value">8</div>
+              <div className="age-stat-label">Months</div>
+            </div>
+            <div className="age-stat-card col-span-2">
+              <div className="age-stat-value">15,244</div>
+              <div className="age-stat-label">Days Alive</div>
+            </div>
+          </div>
+          <p className="text-center text-xs text-muted-foreground/70 mt-3 italic">
+            Sample preview — your numbers appear once you calculate.
+          </p>
+        </div>
+      )}
+
       {result && (() => {
         // Hours alive in current 24h cycle of "life as a day"
         const lifeFraction = Math.min(result.years / lifeExpectancy, 0.999);
