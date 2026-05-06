@@ -10,7 +10,11 @@ import { supabase } from "@/integrations/supabase/client";
 
 const DEFAULT_LIFE_EXPECTANCY = 80;
 
-const AgeCalculator = () => {
+interface AgeCalculatorProps {
+  showHero?: boolean;
+}
+
+const AgeCalculator = ({ showHero = false }: AgeCalculatorProps) => {
   const [name, setName] = useState("");
   const [dob, setDob] = useState("");
   const [lifeExpectancy, setLifeExpectancy] = useState(DEFAULT_LIFE_EXPECTANCY);
