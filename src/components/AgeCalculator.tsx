@@ -279,7 +279,7 @@ const AgeCalculator = () => {
             </div>
 
             {/* Localized "Life in context" 3-box set */}
-            <div className="mt-4 grid grid-cols-3 gap-4">
+            <div className="mt-4 grid grid-cols-2 gap-4 sm:gap-5">
               {localized.map((item) => (
                 <div key={item.label} className="age-stat-card">
                   <div className="age-stat-value text-2xl sm:text-3xl">{item.value}</div>
