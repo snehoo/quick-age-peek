@@ -111,6 +111,8 @@ export const CtaBox = ({ title, children }: { title: string; children: ReactNode
 );
 
 export const RelatedPosts = ({ posts }: { posts: RelatedPost[] }) => (
+  <>
+    <AdSlot slotId="post-end" />
   <section className="bg-card border border-border rounded-xl p-5 my-8" aria-labelledby="related-posts">
     <h3 id="related-posts" className="font-semibold text-foreground mb-4">
       More from whatismyage.me
