@@ -243,6 +243,8 @@ const AgeCalculator = ({ showHero = false }: AgeCalculatorProps) => {
               </div>
             </div>
 
+            <AdSlot slotId="results-top" />
+
             <div className="grid grid-cols-2 gap-4 sm:gap-5">
               <div className="age-stat-card">
                 <div className="age-stat-value">{result.years}</div>
