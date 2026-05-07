@@ -42,6 +42,9 @@ export const ArticleShell = ({ children }: { children: ReactNode }) => (
   <div className="min-h-screen flex flex-col">
     <ArticleHeader />
     <main className="flex-1">
+      <div className="max-w-3xl mx-auto px-5 pt-8">
+        <AdSlot slotId="post-top" />
+      </div>
       <article className="max-w-2xl mx-auto px-5 py-12">{children}</article>
     </main>
     <ArticleFooter />
