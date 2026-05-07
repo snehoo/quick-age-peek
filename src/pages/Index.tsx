@@ -56,6 +56,7 @@ const Index = () => {
         What Is My Age — Age Calculator
       </h1>
       <main className="flex-1 flex flex-col items-center px-5 pt-8 sm:pt-12 pb-16">
+        <AdSlot slotId="home-top" />
         <div className="mb-8 text-center max-w-xl">
           <h2 className="font-display text-3xl sm:text-4xl text-foreground leading-tight mb-3">
             <span className="text-primary">{sample.years}</span> years.{" "}
@@ -64,10 +65,12 @@ const Index = () => {
             A <span className="text-primary">{sample.generation}</span>.
           </h2>
           <p className="text-muted-foreground max-w-md mx-auto">
-            Your age in years is just the beginning — discover your heartbeats, full moons, and the exact moment of your life's 24-hour clock.
+            Your life, counted in ways you've never seen.<br />
+            Enter your date of birth and discover the numbers behind your story.
           </p>
         </div>
         <AgeCalculator showHero />
+        <AdSlot slotId="home-bottom" />
       </main>
       <footer className="py-6 px-5 text-center text-xs text-muted-foreground/60">
         <div className="space-x-3">
