@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import type { ReactNode } from "react";
-
-
+import AdSlot from "@/components/AdSlot";
 
 type RelatedPost = {
   tag: string;
