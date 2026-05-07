@@ -130,6 +130,7 @@ export const RelatedPosts = ({ posts }: { posts: RelatedPost[] }) => (
       ))}
     </div>
   </section>
+  </>
 );
 
 export const BackToBlog = () => (
