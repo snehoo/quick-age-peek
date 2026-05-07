@@ -292,6 +292,8 @@ const AgeCalculator = ({ showHero = false }: AgeCalculatorProps) => {
               </div>
             </div>
 
+            <AdSlot slotId="home-mid" />
+
             {/* Localized "Life in context" 3-box set */}
             <div className="mt-4 grid grid-cols-3 gap-3 sm:gap-4">
               {localized.map((item) => (
