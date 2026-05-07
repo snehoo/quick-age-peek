@@ -1,5 +1,6 @@
 import { useEffect, useMemo } from "react";
 import AgeCalculator from "@/components/AgeCalculator";
+import AdSlot from "@/components/AdSlot";
 import { getGeneration } from "@/lib/lifeContext";
 
 const BLOG_POSTS = [
