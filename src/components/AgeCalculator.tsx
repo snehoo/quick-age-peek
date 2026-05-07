@@ -7,6 +7,7 @@ import CompactNameTile from "./CompactNameTile";
 import FamousBirthdaysList from "./FamousBirthdaysList";
 import ShareCard from "./ShareCard";
 import DemoSlideshow from "./DemoSlideshow";
+import AdSlot from "./AdSlot";
 import { supabase } from "@/integrations/supabase/client";
 
 const DEFAULT_LIFE_EXPECTANCY = 80;
