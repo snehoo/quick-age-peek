@@ -187,6 +187,11 @@ const AgeCalculator = ({ showHero = false }: AgeCalculatorProps) => {
 
       {showHero && !result && (
         <div className="mt-8 animate-fade-in-up">
+          <div className="text-center mb-6">
+            <p className="font-display text-xl sm:text-2xl text-foreground leading-snug">
+              Your life, counted in<br />ways you've never seen
+            </p>
+          </div>
           <DemoSlideshow />
         </div>
       )}
