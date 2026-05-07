@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import type { ReactNode } from "react";
-
-
+import AdSlot from "@/components/AdSlot";
 
 type RelatedPost = {
   tag: string;
@@ -43,6 +42,9 @@ export const ArticleShell = ({ children }: { children: ReactNode }) => (
   <div className="min-h-screen flex flex-col">
     <ArticleHeader />
     <main className="flex-1">
+      <div className="max-w-3xl mx-auto px-5 pt-8">
+        <AdSlot slotId="post-top" />
+      </div>
       <article className="max-w-2xl mx-auto px-5 py-12">{children}</article>
     </main>
     <ArticleFooter />
@@ -109,6 +111,8 @@ export const CtaBox = ({ title, children }: { title: string; children: ReactNode
 );
 
 export const RelatedPosts = ({ posts }: { posts: RelatedPost[] }) => (
+  <>
+    <AdSlot slotId="post-end" />
   <section className="bg-card border border-border rounded-xl p-5 my-8" aria-labelledby="related-posts">
     <h3 id="related-posts" className="font-semibold text-foreground mb-4">
       More from whatismyage.me
@@ -126,6 +130,7 @@ export const RelatedPosts = ({ posts }: { posts: RelatedPost[] }) => (
       ))}
     </div>
   </section>
+  </>
 );
 
 export const BackToBlog = () => (

@@ -7,6 +7,7 @@ import CompactNameTile from "./CompactNameTile";
 import FamousBirthdaysList from "./FamousBirthdaysList";
 import ShareCard from "./ShareCard";
 import DemoSlideshow from "./DemoSlideshow";
+import AdSlot from "./AdSlot";
 import { supabase } from "@/integrations/supabase/client";
 
 const DEFAULT_LIFE_EXPECTANCY = 80;
@@ -187,11 +188,6 @@ const AgeCalculator = ({ showHero = false }: AgeCalculatorProps) => {
 
       {showHero && !result && (
         <div className="mt-8 animate-fade-in-up">
-          <div className="text-center mb-6">
-            <p className="font-display text-xl sm:text-2xl text-foreground leading-snug">
-              Your life, counted in<br />ways you've never seen
-            </p>
-          </div>
           <DemoSlideshow />
         </div>
       )}
@@ -247,6 +243,8 @@ const AgeCalculator = ({ showHero = false }: AgeCalculatorProps) => {
               </div>
             </div>
 
+            <AdSlot slotId="results-top" />
+
             <div className="grid grid-cols-2 gap-4 sm:gap-5">
               <div className="age-stat-card">
                 <div className="age-stat-value">{result.years}</div>
@@ -293,6 +291,8 @@ const AgeCalculator = ({ showHero = false }: AgeCalculatorProps) => {
                 <div className="age-stat-label">Heart Beats</div>
               </div>
             </div>
+
+            <AdSlot slotId="home-mid" />
 
             {/* Localized "Life in context" 3-box set */}
             <div className="mt-4 grid grid-cols-3 gap-3 sm:gap-4">
