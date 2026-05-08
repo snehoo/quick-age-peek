@@ -205,6 +205,70 @@ const posts = [
       "Born in 1989? You're 36 or 37 in 2026. Your life in numbers and the year the Berlin Wall fell and the web was born.",
     readTime: "5 min read",
   },
+  {
+    slug: "how-old-am-i-if-i-was-born-in-1995",
+    tag: "Birth Year Guide",
+    title: "How Old Am I If I Was Born in 1995?",
+    excerpt:
+      "Born in 1995? You're 30 or 31 in 2026. Your life in days, heartbeats, and full moons — plus the world that shaped you.",
+    readTime: "5 min read",
+  },
+  {
+    slug: "how-old-am-i-if-i-was-born-in-1996",
+    tag: "Birth Year Guide",
+    title: "How Old Am I If I Was Born in 1996?",
+    excerpt:
+      "Born in 1996? You're 29 or 30 in 2026. The last Millennials — your life in numbers and the landmark year you arrived.",
+    readTime: "5 min read",
+  },
+  {
+    slug: "how-old-am-i-if-i-was-born-in-1997",
+    tag: "Birth Year Guide",
+    title: "How Old Am I If I Was Born in 1997?",
+    excerpt:
+      "Born in 1997? You're 28 or 29 in 2026. The first Gen Z — your life in heartbeats, full moons, and the year Google was founded.",
+    readTime: "5 min read",
+  },
+  {
+    slug: "how-old-am-i-if-i-was-born-in-1998",
+    tag: "Birth Year Guide",
+    title: "How Old Am I If I Was Born in 1998?",
+    excerpt:
+      "Born in 1998? You're 27 or 28 in 2026. Your life in days, heartbeats, and full moons — plus the defining year you arrived.",
+    readTime: "5 min read",
+  },
+  {
+    slug: "how-old-am-i-if-i-was-born-in-1999",
+    tag: "Birth Year Guide",
+    title: "How Old Am I If I Was Born in 1999?",
+    excerpt:
+      "Born in 1999? You're 26 or 27 in 2026. The last year of the millennium — your life in numbers and what shaped your generation.",
+    readTime: "5 min read",
+  },
+  {
+    slug: "how-old-am-i-if-i-was-born-in-2000",
+    tag: "Birth Year Guide",
+    title: "How Old Am I If I Was Born in 2000?",
+    excerpt:
+      "Born in 2000? You're 25 or 26 in 2026. A true child of the new millennium — your life in heartbeats, full moons, and beyond.",
+    readTime: "5 min read",
+  },
+  {
+    slug: "how-old-am-i-if-i-was-born-in-2001",
+    tag: "Birth Year Guide",
+    title: "How Old Am I If I Was Born in 2001?",
+    excerpt:
+      "Born in 2001? You're 24 or 25 in 2026. Your life in numbers and the unforgettable world that shaped you.",
+    readTime: "5 min read",
+  },
+  {
+    slug: "how-old-am-i-if-i-was-born-in-2002",
+    tag: "Birth Year Guide",
+    title: "How Old Am I If I Was Born in 2002?",
+    excerpt:
+      "Born in 2002? You're 23 or 24 in 2026. Your life in days, heartbeats, and full moons — and the early 2000s world you arrived in.",
+    readTime: "5 min read",
+  },
 ];
 
 const Blog = () => {

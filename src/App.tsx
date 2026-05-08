@@ -31,6 +31,14 @@ import BornIn1986 from "./pages/blog/BornIn1986.tsx";
 import BornIn1987 from "./pages/blog/BornIn1987.tsx";
 import BornIn1988 from "./pages/blog/BornIn1988.tsx";
 import BornIn1989 from "./pages/blog/BornIn1989.tsx";
+import BornIn1995 from "./pages/blog/BornIn1995.tsx";
+import BornIn1996 from "./pages/blog/BornIn1996.tsx";
+import BornIn1997 from "./pages/blog/BornIn1997.tsx";
+import BornIn1998 from "./pages/blog/BornIn1998.tsx";
+import BornIn1999 from "./pages/blog/BornIn1999.tsx";
+import BornIn2000 from "./pages/blog/BornIn2000.tsx";
+import BornIn2001 from "./pages/blog/BornIn2001.tsx";
+import BornIn2002 from "./pages/blog/BornIn2002.tsx";
 
 import NotFound from "./pages/NotFound.tsx";
 
@@ -83,6 +91,14 @@ const App = () => (
           <Route path="/blog/how-old-am-i-if-i-was-born-in-1987" element={<BornIn1987 />} />
           <Route path="/blog/how-old-am-i-if-i-was-born-in-1988" element={<BornIn1988 />} />
           <Route path="/blog/how-old-am-i-if-i-was-born-in-1989" element={<BornIn1989 />} />
+          <Route path="/blog/how-old-am-i-if-i-was-born-in-1995" element={<BornIn1995 />} />
+          <Route path="/blog/how-old-am-i-if-i-was-born-in-1996" element={<BornIn1996 />} />
+          <Route path="/blog/how-old-am-i-if-i-was-born-in-1997" element={<BornIn1997 />} />
+          <Route path="/blog/how-old-am-i-if-i-was-born-in-1998" element={<BornIn1998 />} />
+          <Route path="/blog/how-old-am-i-if-i-was-born-in-1999" element={<BornIn1999 />} />
+          <Route path="/blog/how-old-am-i-if-i-was-born-in-2000" element={<BornIn2000 />} />
+          <Route path="/blog/how-old-am-i-if-i-was-born-in-2001" element={<BornIn2001 />} />
+          <Route path="/blog/how-old-am-i-if-i-was-born-in-2002" element={<BornIn2002 />} />
 
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
