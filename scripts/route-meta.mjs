@@ -207,6 +207,62 @@ export const ROUTE_META = {
     canonical: `${SITE}/blog/how-old-am-i-if-i-was-born-in-1989`,
     ogType: "article",
   },
+  "/blog/how-old-am-i-if-i-was-born-in-1995": {
+    title: "How Old Am I If I Was Born in 1995? | Age in 2026",
+    description:
+      "Born in 1995? You're 30 or 31 in 2026. Find your exact age in days, heartbeats, and full moons — plus a look at the world that shaped you.",
+    canonical: `${SITE}/blog/how-old-am-i-if-i-was-born-in-1995`,
+    ogType: "article",
+  },
+  "/blog/how-old-am-i-if-i-was-born-in-1996": {
+    title: "How Old Am I If I Was Born in 1996? | Age in 2026",
+    description:
+      "Born in 1996? You're 29 or 30 in 2026. Discover your exact age in days, heartbeats, and full moons — plus the landmark year you entered the world.",
+    canonical: `${SITE}/blog/how-old-am-i-if-i-was-born-in-1996`,
+    ogType: "article",
+  },
+  "/blog/how-old-am-i-if-i-was-born-in-1997": {
+    title: "How Old Am I If I Was Born in 1997? | Age in 2026",
+    description:
+      "Born in 1997? You're 28 or 29 in 2026. Find your exact age in days, heartbeats, and full moons — plus the remarkable world you were born into.",
+    canonical: `${SITE}/blog/how-old-am-i-if-i-was-born-in-1997`,
+    ogType: "article",
+  },
+  "/blog/how-old-am-i-if-i-was-born-in-1998": {
+    title: "How Old Am I If I Was Born in 1998? | Age in 2026",
+    description:
+      "Born in 1998? You're 27 or 28 in 2026. Discover your age in days, heartbeats, and full moons — plus the defining events of the year you arrived.",
+    canonical: `${SITE}/blog/how-old-am-i-if-i-was-born-in-1998`,
+    ogType: "article",
+  },
+  "/blog/how-old-am-i-if-i-was-born-in-1999": {
+    title: "How Old Am I If I Was Born in 1999? | Age in 2026",
+    description:
+      "Born in 1999? You're 26 or 27 in 2026. Find your age in days, heartbeats, and full moons — plus why 1999 was one of the most electric years in modern history.",
+    canonical: `${SITE}/blog/how-old-am-i-if-i-was-born-in-1999`,
+    ogType: "article",
+  },
+  "/blog/how-old-am-i-if-i-was-born-in-2000": {
+    title: "How Old Am I If I Was Born in 2000? | Age in 2026",
+    description:
+      "Born in 2000? You're 25 or 26 in 2026. Find your exact age in days, heartbeats, and full moons — and explore what it means to be a true child of the new millennium.",
+    canonical: `${SITE}/blog/how-old-am-i-if-i-was-born-in-2000`,
+    ogType: "article",
+  },
+  "/blog/how-old-am-i-if-i-was-born-in-2001": {
+    title: "How Old Am I If I Was Born in 2001? | Age in 2026",
+    description:
+      "Born in 2001? You're 24 or 25 in 2026. Discover your exact age in days, heartbeats, and full moons — and the unforgettable world that shaped you.",
+    canonical: `${SITE}/blog/how-old-am-i-if-i-was-born-in-2001`,
+    ogType: "article",
+  },
+  "/blog/how-old-am-i-if-i-was-born-in-2002": {
+    title: "How Old Am I If I Was Born in 2002? | Age in 2026",
+    description:
+      "Born in 2002? You're 23 or 24 in 2026. Find your exact age in days, heartbeats, and full moons — plus a look at the early 2000s world you were born into.",
+    canonical: `${SITE}/blog/how-old-am-i-if-i-was-born-in-2002`,
+    ogType: "article",
+  },
 };
 
 const escapeHtml = (s) =>
