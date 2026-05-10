@@ -39,6 +39,16 @@ import BornIn1999 from "./pages/blog/BornIn1999.tsx";
 import BornIn2000 from "./pages/blog/BornIn2000.tsx";
 import BornIn2001 from "./pages/blog/BornIn2001.tsx";
 import BornIn2002 from "./pages/blog/BornIn2002.tsx";
+import BornIn1990 from "./pages/blog/BornIn1990.tsx";
+import BornIn1991 from "./pages/blog/BornIn1991.tsx";
+import BornIn1992 from "./pages/blog/BornIn1992.tsx";
+import BornIn1993 from "./pages/blog/BornIn1993.tsx";
+import BornIn1994 from "./pages/blog/BornIn1994.tsx";
+import HoursOld from "./pages/blog/HoursOld.tsx";
+import MinutesOld from "./pages/blog/MinutesOld.tsx";
+import MonthsOld from "./pages/blog/MonthsOld.tsx";
+import WeeksOld from "./pages/blog/WeeksOld.tsx";
+import HowOldGuide from "./pages/blog/HowOldGuide.tsx";
 
 import NotFound from "./pages/NotFound.tsx";
 
@@ -99,6 +109,16 @@ const App = () => (
           <Route path="/blog/how-old-am-i-if-i-was-born-in-2000" element={<BornIn2000 />} />
           <Route path="/blog/how-old-am-i-if-i-was-born-in-2001" element={<BornIn2001 />} />
           <Route path="/blog/how-old-am-i-if-i-was-born-in-2002" element={<BornIn2002 />} />
+          <Route path="/blog/how-old-am-i-if-i-was-born-in-1990" element={<BornIn1990 />} />
+          <Route path="/blog/how-old-am-i-if-i-was-born-in-1991" element={<BornIn1991 />} />
+          <Route path="/blog/how-old-am-i-if-i-was-born-in-1992" element={<BornIn1992 />} />
+          <Route path="/blog/how-old-am-i-if-i-was-born-in-1993" element={<BornIn1993 />} />
+          <Route path="/blog/how-old-am-i-if-i-was-born-in-1994" element={<BornIn1994 />} />
+          <Route path="/blog/how-many-hours-old-am-i" element={<HoursOld />} />
+          <Route path="/blog/how-many-minutes-old-am-i" element={<MinutesOld />} />
+          <Route path="/blog/how-many-months-old-am-i" element={<MonthsOld />} />
+          <Route path="/blog/how-many-weeks-old-am-i" element={<WeeksOld />} />
+          <Route path="/blog/how-old-am-i-complete-guide" element={<HowOldGuide />} />
 
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />

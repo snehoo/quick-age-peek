@@ -263,6 +263,76 @@ export const ROUTE_META = {
     canonical: `${SITE}/blog/how-old-am-i-if-i-was-born-in-2002`,
     ogType: "article",
   },
+  "/blog/how-old-am-i-if-i-was-born-in-1990": {
+    title: "How Old Am I If I Was Born in 1990? | Age in 2026",
+    description:
+      "Born in 1990? You're 35 or 36 in 2026. Find your exact age in days, heartbeats, and full moons — plus the world-changing year you were born into.",
+    canonical: `${SITE}/blog/how-old-am-i-if-i-was-born-in-1990`,
+    ogType: "article",
+  },
+  "/blog/how-old-am-i-if-i-was-born-in-1991": {
+    title: "How Old Am I If I Was Born in 1991? | Age in 2026",
+    description:
+      "Born in 1991? You're 34 or 35 in 2026. Discover your age in days, heartbeats, full moons — and why 1991 was one of the most consequential years in modern history.",
+    canonical: `${SITE}/blog/how-old-am-i-if-i-was-born-in-1991`,
+    ogType: "article",
+  },
+  "/blog/how-old-am-i-if-i-was-born-in-1992": {
+    title: "How Old Am I If I Was Born in 1992? | Age in 2026",
+    description:
+      "Born in 1992? You're 33 or 34 in 2026. Discover your age in days, heartbeats, and full moons — plus a look back at the iconic year you entered the world.",
+    canonical: `${SITE}/blog/how-old-am-i-if-i-was-born-in-1992`,
+    ogType: "article",
+  },
+  "/blog/how-old-am-i-if-i-was-born-in-1993": {
+    title: "How Old Am I If I Was Born in 1993? | Age in 2026",
+    description:
+      "Born in 1993? You're 32 or 33 in 2026. See your age in days, heartbeats, and full moons — and revisit the remarkable world that welcomed you.",
+    canonical: `${SITE}/blog/how-old-am-i-if-i-was-born-in-1993`,
+    ogType: "article",
+  },
+  "/blog/how-old-am-i-if-i-was-born-in-1994": {
+    title: "How Old Am I If I Was Born in 1994? | Age in 2026",
+    description:
+      "Born in 1994? You're 31 or 32 in 2026. Find your exact age in days, heartbeats, and full moons — plus the incredible year you arrived in.",
+    canonical: `${SITE}/blog/how-old-am-i-if-i-was-born-in-1994`,
+    ogType: "article",
+  },
+  "/blog/how-many-hours-old-am-i": {
+    title: "How Many Hours Old Am I? Calculate Your Exact Age in Hours | whatismyage.me",
+    description:
+      "How many hours old are you? Find out with our formula and quick reference table — plus what your hour count reveals about the extraordinary scale of a human life.",
+    canonical: `${SITE}/blog/how-many-hours-old-am-i`,
+    ogType: "article",
+  },
+  "/blog/how-many-minutes-old-am-i": {
+    title: "How Many Minutes Old Am I? Calculate Your Age in Minutes | whatismyage.me",
+    description:
+      "How many minutes old are you? Probably more than you think. Find your age in minutes instantly, understand the formula, and discover what that enormous number really means.",
+    canonical: `${SITE}/blog/how-many-minutes-old-am-i`,
+    ogType: "article",
+  },
+  "/blog/how-many-months-old-am-i": {
+    title: "How Many Months Old Am I? Calculate Your Age in Months | whatismyage.me",
+    description:
+      "Wondering how many months old you are? Get the formula, a quick reference table, and the fascinating reason months are one of the most meaningful ways to measure a human life.",
+    canonical: `${SITE}/blog/how-many-months-old-am-i`,
+    ogType: "article",
+  },
+  "/blog/how-many-weeks-old-am-i": {
+    title: "How Many Weeks Old Am I? Calculate Your Age in Weeks | whatismyage.me",
+    description:
+      "How many weeks old are you? Find out instantly — plus the formula, week milestones to look forward to, and why thinking in weeks changes how you see your life.",
+    canonical: `${SITE}/blog/how-many-weeks-old-am-i`,
+    ogType: "article",
+  },
+  "/blog/how-old-am-i-complete-guide": {
+    title: "How Old Am I? Every Way to Calculate Your Exact Age (2026) | whatismyage.me",
+    description:
+      "How old are you, really? Beyond years — learn how to calculate your age in months, weeks, days, hours, minutes, and heartbeats. The complete guide with formulas, tables, and tools.",
+    canonical: `${SITE}/blog/how-old-am-i-complete-guide`,
+    ogType: "article",
+  },
 };
 
 const escapeHtml = (s) =>
