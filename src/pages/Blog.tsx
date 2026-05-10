@@ -269,6 +269,86 @@ const posts = [
       "Born in 2002? You're 23 or 24 in 2026. Your life in days, heartbeats, and full moons — and the early 2000s world you arrived in.",
     readTime: "5 min read",
   },
+  {
+    slug: "how-old-am-i-if-i-was-born-in-1990",
+    tag: "Birth Year Guide",
+    title: "How Old Am I If I Was Born in 1990?",
+    excerpt:
+      "Born in 1990? You're 35 or 36 in 2026. Your life in days, heartbeats, and full moons — plus the world-changing year you arrived in.",
+    readTime: "5 min read",
+  },
+  {
+    slug: "how-old-am-i-if-i-was-born-in-1991",
+    tag: "Birth Year Guide",
+    title: "How Old Am I If I Was Born in 1991?",
+    excerpt:
+      "Born in 1991? You're 34 or 35 in 2026. Your life in numbers — and the year the Soviet Union collapsed and the web went live.",
+    readTime: "5 min read",
+  },
+  {
+    slug: "how-old-am-i-if-i-was-born-in-1992",
+    tag: "Birth Year Guide",
+    title: "How Old Am I If I Was Born in 1992?",
+    excerpt:
+      "Born in 1992? You're 33 or 34 in 2026. Your age in days, heartbeats, and full moons — plus the iconic year you entered the world.",
+    readTime: "5 min read",
+  },
+  {
+    slug: "how-old-am-i-if-i-was-born-in-1993",
+    tag: "Birth Year Guide",
+    title: "How Old Am I If I Was Born in 1993?",
+    excerpt:
+      "Born in 1993? You're 32 or 33 in 2026. Your life in days, heartbeats, and full moons — and the remarkable world that welcomed you.",
+    readTime: "5 min read",
+  },
+  {
+    slug: "how-old-am-i-if-i-was-born-in-1994",
+    tag: "Birth Year Guide",
+    title: "How Old Am I If I Was Born in 1994?",
+    excerpt:
+      "Born in 1994? You're 31 or 32 in 2026. Your life in numbers — and the incredible year that gave us Mandela's election and Pulp Fiction.",
+    readTime: "5 min read",
+  },
+  {
+    slug: "how-many-hours-old-am-i",
+    tag: "Time & Numbers",
+    title: "How Many Hours Old Am I?",
+    excerpt:
+      "A 30-year-old has lived ~263,000 hours. Find your exact age in hours — plus where all those hours actually go.",
+    readTime: "6 min read",
+  },
+  {
+    slug: "how-many-minutes-old-am-i",
+    tag: "Time & Numbers",
+    title: "How Many Minutes Old Am I?",
+    excerpt:
+      "Probably more than you think. Calculate your age in minutes, and discover what that enormous number really means.",
+    readTime: "6 min read",
+  },
+  {
+    slug: "how-many-months-old-am-i",
+    tag: "Time & Numbers",
+    title: "How Many Months Old Am I?",
+    excerpt:
+      "Months are one of humanity's oldest units of time. Find your exact age in months — plus the milestones worth noticing.",
+    readTime: "6 min read",
+  },
+  {
+    slug: "how-many-weeks-old-am-i",
+    tag: "Time & Numbers",
+    title: "How Many Weeks Old Am I?",
+    excerpt:
+      "The average life is roughly 4,000 weeks. Find your week count — plus why thinking in weeks changes how you see your life.",
+    readTime: "6 min read",
+  },
+  {
+    slug: "how-old-am-i-complete-guide",
+    tag: "How-to & Calculation",
+    title: "How Old Am I? The Complete Guide to Calculating Your Age",
+    excerpt:
+      "Beyond years — every way to calculate your age in months, weeks, days, hours, minutes, seconds, and heartbeats. The complete guide.",
+    readTime: "10 min read",
+  },
 ];
 
 const Blog = () => {
