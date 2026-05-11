@@ -96,6 +96,11 @@
 @layer components {
   .age-stat-card {
     @apply rounded-xl border border-border bg-card p-5 text-center transition-all duration-300;
+    /* Prevent CLS by reserving space */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 140px;
   }
   .age-stat-card:hover {
     @apply shadow-md -translate-y-0.5;
@@ -103,9 +108,13 @@
   .age-stat-value {
     font-family: var(--font-display);
     @apply text-4xl text-primary leading-none;
+    /* Ensure consistent height to prevent shifts */
+    min-height: 2.5rem;
   }
   .age-stat-label {
     @apply text-sm text-muted-foreground mt-1.5 font-medium uppercase tracking-wider;
+    /* Prevent height collapse */
+    min-height: 1rem;
   }
 }
 

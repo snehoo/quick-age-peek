@@ -192,7 +192,7 @@ const AgeCalculator = ({ showHero = false }: AgeCalculatorProps) => {
         </div>
       )}
 
-      {result && (() => {
+      {(() => {
         // Hours alive in current 24h cycle of "life as a day"
         const lifeFraction = Math.min(result.years / lifeExpectancy, 0.999);
         const totalMinsInDay = lifeFraction * 24 * 60;
@@ -227,10 +227,92 @@ const AgeCalculator = ({ showHero = false }: AgeCalculatorProps) => {
           day: "numeric",
         });
 
+        // Only compute detailed values if result exists
+        if (!result) {
+          return (
+            <div className="mt-10" style={{ opacity: 0, pointerEvents: "none" }}>
+              {/* Space reservation: skeleton structure with zero/empty values */}
+              <div className="rounded-2xl border border-border bg-card p-5 sm:p-6 mb-4 opacity-30">
+                <h2 className="font-display text-2xl sm:text-3xl text-foreground leading-tight min-h-[1.4em]">
+                  {greeting}, you are <span className="text-primary">0</span> years old
+                </h2>
+                <p className="text-sm text-muted-foreground mt-1 h-5"></p>
+                <div className="mt-4 rounded-xl border border-primary/30 bg-primary/10 px-4 py-3">
+                  <p className="text-sm sm:text-base text-foreground italic h-6"></p>
+                </div>
+              </div>
+
+              <div className="h-8"></div>
+
+              <div className="grid grid-cols-2 gap-4 sm:gap-5">
+                {[...Array(10)].map((_, i) => (
+                  <div key={i} className="age-stat-card opacity-30">
+                    <div className="age-stat-value">-</div>
+                    <div className="age-stat-label">-</div>
+                  </div>
+                ))}
+              </div>
+
+              <div className="h-8"></div>
+
+              <div className="mt-4 grid grid-cols-3 gap-3 sm:gap-4">
+                {[...Array(3)].map((_, i) => (
+                  <div key={i} className="age-stat-card opacity-30">
+                    <div className="age-stat-value text-2xl sm:text-3xl">-</div>
+                    <div className="age-stat-label">-</div>
+                  </div>
+                ))}
+              </div>
+
+              <div className="h-8"></div>
+
+              <div className="mt-4 grid grid-cols-2 gap-4">
+                <div className="age-stat-card text-center opacity-30">
+                  <div className="text-xs uppercase tracking-wider text-muted-foreground mb-1">-</div>
+                  <div className="font-display text-2xl sm:text-3xl text-primary">--:-- --</div>
+                  <div className="text-xs text-muted-foreground italic mt-1 leading-snug h-4"></div>
+                </div>
+                <div className="age-stat-card text-center opacity-30">
+                  <div className="text-xs uppercase tracking-wider text-muted-foreground mb-1">-</div>
+                  <div className="font-display text-2xl sm:text-3xl text-primary">0 years</div>
+                  <div className="text-xs text-muted-foreground mt-0.5 h-4"></div>
+                  <div className="mt-3 px-1 h-8"></div>
+                </div>
+              </div>
+
+              <div className="h-8"></div>
+
+              <div className="mt-4 grid grid-cols-2 gap-4">
+                <div className="age-stat-card text-center opacity-30">
+                  <div className="text-xs uppercase tracking-wider text-muted-foreground mb-1">-</div>
+                  <div className="text-sm text-muted-foreground italic">-</div>
+                </div>
+                <div className="age-stat-card text-center opacity-30">
+                  <div className="text-xs uppercase tracking-wider text-muted-foreground mb-1">-</div>
+                  <div className="font-display text-xl text-primary mb-1">-</div>
+                  <div className="text-xs text-muted-foreground italic leading-snug h-4"></div>
+                </div>
+              </div>
+
+              <div className="h-8"></div>
+
+              <div className="mt-4 rounded-xl border border-border bg-card p-5 sm:p-6 opacity-30">
+                <p className="text-sm text-muted-foreground h-5"></p>
+              </div>
+
+              <div className="h-8"></div>
+
+              <div className="mt-4 rounded-xl border border-border bg-card p-5 sm:p-6 opacity-30">
+                <p className="text-sm text-muted-foreground h-16"></p>
+              </div>
+            </div>
+          );
+        }
+
         return (
-          <div className="mt-10 animate-fade-in-up">
+          <div className="mt-10 transition-opacity duration-300" style={{ opacity: 1 }}>
             <div className="rounded-2xl border border-border bg-card p-5 sm:p-6 mb-4">
-              <h2 className="font-display text-2xl sm:text-3xl text-foreground leading-tight">
+              <h2 className="font-display text-2xl sm:text-3xl text-foreground leading-tight min-h-[1.4em]">
                 {greeting}, you are <span className="text-primary">{result.years}</span> years old
               </h2>
               <p className="text-sm text-muted-foreground mt-1">

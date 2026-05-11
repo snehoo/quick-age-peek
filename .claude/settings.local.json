@@ -26,7 +26,11 @@
       "Bash(curl -s -o /dev/null -w \"%{http_code}\" https://whatismyage.me/robots.txt)",
       "Bash(curl -s -o /dev/null -w \"%{http_code}\" https://whatismyage.me/sitemap.xml)",
       "Bash(curl -s https://whatismyage.me/robots.txt)",
-      "Bash(curl -s https://whatismyage.me/sitemap.xml)"
+      "Bash(curl -s https://whatismyage.me/sitemap.xml)",
+      "Bash(curl -s -I https://whatismyage.me)",
+      "Bash(curl -sI https://whatismyage.me)",
+      "Bash(curl -sI http://whatismyage.me)",
+      "Bash(curl -sI https://www.whatismyage.me)"
     ]
   }
 }
