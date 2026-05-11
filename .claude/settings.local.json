@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(bun run *)",
+      "Bash(npm install *)",
+      "Bash(curl -s http://localhost:8081/blog/how-old-will-i-be-in-2030)",
+      "Bash(npm run *)",
+      "Bash(curl -s http://localhost:8081/blog/)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git config *)",
+      "Bash(git push *)",
+      "Bash(git remote *)",
+      "Bash(git pull *)",
+      "Bash(git stash *)",
+      "Bash(git checkout *)",
+      "Bash(git rebase *)"
+    ]
+  }
+}
