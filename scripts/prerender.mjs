@@ -12,6 +12,7 @@ import { existsSync, mkdirSync, readFileSync, writeFileSync, rmSync } from "fs";
 import { createRequire } from "module";
 import { build } from "esbuild";
 import { injectRouteMeta } from "./route-meta.mjs";
+import { getAllBlogRoutes } from "./blog-metadata.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const root = resolve(__dirname, "..");
@@ -31,17 +32,8 @@ if (existsSync(envPath)) {
 const ROUTES = [
   "/",
   "/blog",
-  "/blog/how-many-heartbeats-in-a-lifetime",
-  "/blog/how-many-full-moons-in-a-lifetime",
-  "/blog/what-generation-am-i",
-  "/blog/how-to-calculate-age-in-days",
-  "/blog/what-is-a-life-clock",
-  "/blog/what-day-of-the-week-was-i-born",
-  "/blog/how-many-seconds-old-am-i",
-  "/blog/birthday-twins-famous-people-born-on-your-birthday",
-  "/blog/how-to-find-your-zodiac-sign-by-birth-date",
-  "/blog/what-does-days-to-birthday-mean",
   "/privacy",
+  ...getAllBlogRoutes(),
 ];
 
 async function bundleSSR() {

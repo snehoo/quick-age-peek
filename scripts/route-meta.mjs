@@ -333,6 +333,41 @@ export const ROUTE_META = {
     canonical: `${SITE}/blog/how-old-am-i-complete-guide`,
     ogType: "article",
   },
+  "/blog/how-old-will-i-be-in-2030": {
+    title: "How Old Will I Be in 2030? Age Calculator by Birth Year | whatismyage.me",
+    description:
+      "Find out exactly how old you'll be in 2030 with our complete birth year table, plus what the world might look like when you get there.",
+    canonical: `${SITE}/blog/how-old-will-i-be-in-2030`,
+    ogType: "article",
+  },
+  "/blog/how-old-will-i-be-in-2040": {
+    title: "How Old Will I Be in 2040? Age Calculator by Birth Year | whatismyage.me",
+    description:
+      "Wondering how old you'll be in 2040? Find your age instantly with our complete birth year table — plus what the world could look like in fourteen years.",
+    canonical: `${SITE}/blog/how-old-will-i-be-in-2040`,
+    ogType: "article",
+  },
+  "/blog/how-old-will-i-be-in-2050": {
+    title: "How Old Will I Be in 2050? Age Calculator by Birth Year | whatismyage.me",
+    description:
+      "How old will you be in 2050? Find your age instantly by birth year — plus a fascinating look at what the world might look like in 24 years time.",
+    canonical: `${SITE}/blog/how-old-will-i-be-in-2050`,
+    ogType: "article",
+  },
+  "/blog/what-day-will-i-be-10000-days-old": {
+    title: "What Day Will I Be 10,000 Days Old? Find Your Exact Date | whatismyage.me",
+    description:
+      "The 10,000th day of your life is a milestone hiding in plain sight. Find out exactly when it arrives — and why this number matters.",
+    canonical: `${SITE}/blog/what-day-will-i-be-10000-days-old`,
+    ogType: "article",
+  },
+  "/blog/when-will-i-be-1-billion-seconds-old": {
+    title: "When Will I Be 1 Billion Seconds Old? Find Your Exact Date | whatismyage.me",
+    description:
+      "One billion seconds is roughly 31.7 years — a hidden milestone most people don't know they've crossed. Find out when yours arrives.",
+    canonical: `${SITE}/blog/when-will-i-be-1-billion-seconds-old`,
+    ogType: "article",
+  },
 };
 
 const escapeHtml = (s) =>
