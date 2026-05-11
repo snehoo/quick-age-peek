@@ -226,6 +226,31 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://whatismyage.me/blog/how-old-will-i-be-in-2030</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://whatismyage.me/blog/how-old-will-i-be-in-2040</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://whatismyage.me/blog/how-old-will-i-be-in-2050</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://whatismyage.me/blog/what-day-will-i-be-10000-days-old</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://whatismyage.me/blog/when-will-i-be-1-billion-seconds-old</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://whatismyage.me/privacy</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
