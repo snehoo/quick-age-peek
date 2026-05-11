@@ -192,11 +192,11 @@ const AgeCalculator = ({ showHero = false }: AgeCalculatorProps) => {
         </div>
       )}
 
-      {(() => {
-        // Only compute detailed values if result exists
+      {dob && (() => {
+        // Only show results section (skeleton or actual) if user has entered a date
         if (!result) {
           return (
-            <div className="mt-10" style={{ opacity: 0, pointerEvents: "none" }}>
+            <div className="mt-10 transition-opacity duration-300" style={{ opacity: 1 }}>
               {/* Space reservation: skeleton structure with zero/empty values */}
               <div className="rounded-2xl border border-border bg-card p-5 sm:p-6 mb-4 opacity-30">
                 <h2 className="font-display text-2xl sm:text-3xl text-foreground leading-tight min-h-[1.4em]">
