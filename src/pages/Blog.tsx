@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Fragment, useEffect } from "react";
 import AdSlot from "@/components/AdSlot";
+import { useBreadcrumbMeta } from "@/components/blog/breadcrumbMeta";
 
 
 
@@ -392,6 +393,8 @@ const posts = [
 ];
 
 const Blog = () => {
+  useBreadcrumbMeta();
+
   useEffect(() => {
     document.title = "Blog — whatismyage.me";
     const meta = document.querySelector('meta[name="description"]');

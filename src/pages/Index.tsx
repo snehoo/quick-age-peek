@@ -2,6 +2,7 @@ import { useEffect, useMemo } from "react";
 import AgeCalculator from "@/components/AgeCalculator";
 import AdSlot from "@/components/AdSlot";
 import { getGeneration } from "@/lib/lifeContext";
+import { useWebApplicationMeta } from "@/components/blog/webAppMeta";
 
 const BLOG_POSTS = [
   { slug: "how-many-heartbeats-in-a-lifetime", title: "How Many Heartbeats in a Lifetime?" },
@@ -31,6 +32,8 @@ const setCanonical = (href: string) => {
 };
 
 const Index = () => {
+  useWebApplicationMeta();
+
   useEffect(() => {
     setCanonical("https://whatismyage.me/");
   }, []);

@@ -14,7 +14,19 @@
       "Bash(git pull *)",
       "Bash(git stash *)",
       "Bash(git checkout *)",
-      "Bash(git rebase *)"
+      "Bash(git rebase *)",
+      "Bash(git commit -m 'Add new blog article links to Blog page posts array *)",
+      "Bash(curl -s -I http://localhost:8081/blog/how-old-will-i-be-in-2030)",
+      "Bash(git commit -m 'Add imports and routes for 5 new blog articles to App.tsx *)",
+      "Bash(curl -s http://localhost:8081/blog/how-many-heartbeats-in-a-lifetime)",
+      "Bash(curl -s http://localhost:8082/blog/how-old-will-i-be-in-2030)",
+      "Bash(curl -s http://localhost:3000/blog/how-old-will-i-be-in-2030)",
+      "Bash(curl -s http://localhost:3000/blog/when-will-i-be-1-billion-seconds-old)",
+      "Bash(curl -s http://localhost:3000/)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" https://whatismyage.me/robots.txt)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" https://whatismyage.me/sitemap.xml)",
+      "Bash(curl -s https://whatismyage.me/robots.txt)",
+      "Bash(curl -s https://whatismyage.me/sitemap.xml)"
     ]
   }
 }

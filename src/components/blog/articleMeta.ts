@@ -62,9 +62,42 @@ export const useArticleMeta = ({ title, description, canonical, headline }: Arti
     });
     document.head.appendChild(ld);
 
+    const existingBreadcrumb = document.getElementById("article-breadcrumb-jsonld");
+    if (existingBreadcrumb) existingBreadcrumb.remove();
+
+    const breadcrumbLd = document.createElement("script");
+    breadcrumbLd.type = "application/ld+json";
+    breadcrumbLd.id = "article-breadcrumb-jsonld";
+    breadcrumbLd.textContent = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: "https://whatismyage.me/",
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Blog",
+          item: "https://whatismyage.me/blog",
+        },
+        {
+          "@type": "ListItem",
+          position: 3,
+          name: headline,
+          item: canonical,
+        },
+      ],
+    });
+    document.head.appendChild(breadcrumbLd);
+
     return () => {
       setMeta('link[rel="canonical"]', "href", "https://whatismyage.me/");
       document.getElementById("article-jsonld")?.remove();
+      document.getElementById("article-breadcrumb-jsonld")?.remove();
     };
   }, [canonical, description, headline, title]);
 };

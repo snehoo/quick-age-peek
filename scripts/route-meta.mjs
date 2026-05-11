@@ -398,28 +398,109 @@ export function injectRouteMeta(template, route) {
       "",
     );
 
-  const jsonLd =
-    meta.ogType === "article"
-      ? {
-          "@context": "https://schema.org",
-          "@type": "Article",
-          headline: meta.title.replace(/ \| whatismyage\.me$/, ""),
-          description: meta.description,
-          url: meta.canonical,
-          image: OG_IMAGE,
-          datePublished: "2026-04-20",
-          dateModified: "2026-04-20",
-          author: { "@type": "Organization", name: "whatismyage.me", url: SITE },
-          publisher: { "@type": "Organization", name: "What Is My Age", url: SITE },
-          mainEntityOfPage: meta.canonical,
-        }
-      : {
-          "@context": "https://schema.org",
-          "@type": "WebSite",
-          name: "What Is My Age",
-          url: SITE,
-          description: meta.description,
-        };
+  // Build array of JSON-LD schemas for this route
+  const jsonLdSchemas = [];
+
+  // Homepage: WebApplication schema
+  if (route === "/") {
+    jsonLdSchemas.push({
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      name: "What Is My Age?",
+      url: SITE,
+      description: meta.description,
+      applicationCategory: "UtilitiesApplication",
+      operatingSystem: "Any",
+      offers: {
+        "@type": "Offer",
+        price: "0",
+        priceCurrency: "USD",
+      },
+    });
+  }
+
+  // Blog index: BreadcrumbList schema
+  if (route === "/blog") {
+    jsonLdSchemas.push({
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: SITE,
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Blog",
+          item: `${SITE}/blog`,
+        },
+      ],
+    });
+  }
+
+  // Article pages: Article schema + BreadcrumbList
+  if (meta.ogType === "article") {
+    const isArticlePage = route.startsWith("/blog/") && route !== "/blog";
+
+    jsonLdSchemas.push({
+      "@context": "https://schema.org",
+      "@type": "Article",
+      headline: meta.title.replace(/ \| whatismyage\.me$/, ""),
+      description: meta.description,
+      url: meta.canonical,
+      image: OG_IMAGE,
+      datePublished: "2026-04-20",
+      dateModified: "2026-04-20",
+      author: { "@type": "Organization", name: "whatismyage.me", url: SITE },
+      publisher: { "@type": "Organization", name: "What Is My Age", url: SITE },
+      mainEntityOfPage: meta.canonical,
+    });
+
+    // Add BreadcrumbList for article pages
+    if (isArticlePage) {
+      jsonLdSchemas.push({
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: SITE,
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Blog",
+            item: `${SITE}/blog`,
+          },
+          {
+            "@type": "ListItem",
+            position: 3,
+            name: meta.title.replace(/ \| whatismyage\.me$/, ""),
+            item: meta.canonical,
+          },
+        ],
+      });
+    }
+  } else if (route !== "/") {
+    // Other pages (privacy, etc): WebSite schema
+    jsonLdSchemas.push({
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      name: "What Is My Age",
+      url: SITE,
+      description: meta.description,
+    });
+  }
+
+  // Build JSON-LD script tags
+  const jsonLdScripts = jsonLdSchemas
+    .map((schema) => `<script type="application/ld+json">${JSON.stringify(schema)}</script>`)
+    .join("\n    ");
 
   const injected = `
     <title>${t}</title>
@@ -435,7 +516,7 @@ export function injectRouteMeta(template, route) {
     <meta name="twitter:title" content="${t}">
     <meta name="twitter:description" content="${d}">
     <meta name="twitter:image" content="${OG_IMAGE}">
-    <script type="application/ld+json">${JSON.stringify(jsonLd)}</script>
+    ${jsonLdScripts}
   `;
 
   // Insert just before </head>
