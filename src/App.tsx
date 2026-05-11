@@ -49,6 +49,11 @@ import MinutesOld from "./pages/blog/MinutesOld.tsx";
 import MonthsOld from "./pages/blog/MonthsOld.tsx";
 import WeeksOld from "./pages/blog/WeeksOld.tsx";
 import HowOldGuide from "./pages/blog/HowOldGuide.tsx";
+import HowOldWillIBeIn2030 from "./pages/blog/HowOldWillIBeIn2030.tsx";
+import HowOldWillIBeIn2040 from "./pages/blog/HowOldWillIBeIn2040.tsx";
+import HowOldWillIBeIn2050 from "./pages/blog/HowOldWillIBeIn2050.tsx";
+import WhatDayWillIBe10000DaysOld from "./pages/blog/WhatDayWillIBe10000DaysOld.tsx";
+import WhenWillIBe1BillionSecondsOld from "./pages/blog/WhenWillIBe1BillionSecondsOld.tsx";
 
 import NotFound from "./pages/NotFound.tsx";
 
@@ -119,6 +124,11 @@ const App = () => (
           <Route path="/blog/how-many-months-old-am-i" element={<MonthsOld />} />
           <Route path="/blog/how-many-weeks-old-am-i" element={<WeeksOld />} />
           <Route path="/blog/how-old-am-i-complete-guide" element={<HowOldGuide />} />
+          <Route path="/blog/how-old-will-i-be-in-2030" element={<HowOldWillIBeIn2030 />} />
+          <Route path="/blog/how-old-will-i-be-in-2040" element={<HowOldWillIBeIn2040 />} />
+          <Route path="/blog/how-old-will-i-be-in-2050" element={<HowOldWillIBeIn2050 />} />
+          <Route path="/blog/what-day-will-i-be-10000-days-old" element={<WhatDayWillIBe10000DaysOld />} />
+          <Route path="/blog/when-will-i-be-1-billion-seconds-old" element={<WhenWillIBe1BillionSecondsOld />} />
 
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
