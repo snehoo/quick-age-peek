@@ -193,40 +193,6 @@ const AgeCalculator = ({ showHero = false }: AgeCalculatorProps) => {
       )}
 
       {(() => {
-        // Hours alive in current 24h cycle of "life as a day"
-        const lifeFraction = Math.min(result.years / lifeExpectancy, 0.999);
-        const totalMinsInDay = lifeFraction * 24 * 60;
-        const lifeHour = Math.floor(totalMinsInDay / 60);
-        const lifeMin = Math.floor(totalMinsInDay % 60);
-        const ampm = lifeHour >= 12 ? "PM" : "AM";
-        const displayHour = lifeHour % 12 === 0 ? 12 : lifeHour % 12;
-        const lifeTimeStr = `${displayHour}:${String(lifeMin).padStart(2, "0")} ${ampm}`;
-
-        // Days spent sleeping — avg 8 hours/day = 1/3 of life
-        const nightsSlept = Math.floor(result.totalDays / 3);
-
-        // Heart beats: avg 80 bpm
-        const heartBeats = result.totalDays * 24 * 60 * 80;
-        const heartBeatsStr =
-          heartBeats >= 1e9
-            ? `${(heartBeats / 1e9).toFixed(1)}B`
-            : `${(heartBeats / 1e6).toFixed(0)}M`;
-
-        const moodLine = getAgeMoodLine(result.years);
-        const shortMood = getLifeClockMood(result.years);
-        const yearsLeft = Math.max(lifeExpectancy - result.years, 0);
-        const weekendsLeft = Math.max(Math.round(yearsLeft * 52), 0);
-        const localized = getLocalizedItems(result.years, country);
-        const dobParts = parseIsoDate(dob);
-        const dobDate = isoToLocalDate(dob);
-        if (!dobParts || !dobDate) return null;
-        const gen = getGeneration(dobParts.year);
-        const dobFormatted = dobDate.toLocaleDateString(undefined, {
-          year: "numeric",
-          month: "long",
-          day: "numeric",
-        });
-
         // Only compute detailed values if result exists
         if (!result) {
           return (
@@ -308,6 +274,40 @@ const AgeCalculator = ({ showHero = false }: AgeCalculatorProps) => {
             </div>
           );
         }
+
+        // Hours alive in current 24h cycle of "life as a day"
+        const lifeFraction = Math.min(result.years / lifeExpectancy, 0.999);
+        const totalMinsInDay = lifeFraction * 24 * 60;
+        const lifeHour = Math.floor(totalMinsInDay / 60);
+        const lifeMin = Math.floor(totalMinsInDay % 60);
+        const ampm = lifeHour >= 12 ? "PM" : "AM";
+        const displayHour = lifeHour % 12 === 0 ? 12 : lifeHour % 12;
+        const lifeTimeStr = `${displayHour}:${String(lifeMin).padStart(2, "0")} ${ampm}`;
+
+        // Days spent sleeping — avg 8 hours/day = 1/3 of life
+        const nightsSlept = Math.floor(result.totalDays / 3);
+
+        // Heart beats: avg 80 bpm
+        const heartBeats = result.totalDays * 24 * 60 * 80;
+        const heartBeatsStr =
+          heartBeats >= 1e9
+            ? `${(heartBeats / 1e9).toFixed(1)}B`
+            : `${(heartBeats / 1e6).toFixed(0)}M`;
+
+        const moodLine = getAgeMoodLine(result.years);
+        const shortMood = getLifeClockMood(result.years);
+        const yearsLeft = Math.max(lifeExpectancy - result.years, 0);
+        const weekendsLeft = Math.max(Math.round(yearsLeft * 52), 0);
+        const localized = getLocalizedItems(result.years, country);
+        const dobParts = parseIsoDate(dob);
+        const dobDate = isoToLocalDate(dob);
+        if (!dobParts || !dobDate) return null;
+        const gen = getGeneration(dobParts.year);
+        const dobFormatted = dobDate.toLocaleDateString(undefined, {
+          year: "numeric",
+          month: "long",
+          day: "numeric",
+        });
 
         return (
           <div className="mt-10 transition-opacity duration-300" style={{ opacity: 1 }}>
