@@ -349,6 +349,46 @@ const posts = [
       "Beyond years — every way to calculate your age in months, weeks, days, hours, minutes, seconds, and heartbeats. The complete guide.",
     readTime: "10 min read",
   },
+  {
+    slug: "how-old-will-i-be-in-2030",
+    tag: "Predictions & Milestones",
+    title: "How Old Will I Be in 2030? Age Calculator by Birth Year",
+    excerpt:
+      "Find out exactly how old you'll be in 2030 with our complete birth year table, plus what the world might look like when you get there.",
+    readTime: "6 min read",
+  },
+  {
+    slug: "how-old-will-i-be-in-2040",
+    tag: "Predictions & Milestones",
+    title: "How Old Will I Be in 2040? Age Calculator by Birth Year",
+    excerpt:
+      "Wondering how old you'll be in 2040? Find your age instantly with our complete birth year table — plus what the world could look like in fourteen years.",
+    readTime: "6 min read",
+  },
+  {
+    slug: "how-old-will-i-be-in-2050",
+    tag: "Predictions & Milestones",
+    title: "How Old Will I Be in 2050? Age Calculator by Birth Year",
+    excerpt:
+      "How old will you be in 2050? Find your age instantly by birth year — plus a fascinating look at what the world might look like in 24 years time.",
+    readTime: "7 min read",
+  },
+  {
+    slug: "what-day-will-i-be-10000-days-old",
+    tag: "Time Milestones",
+    title: "What Day Will I Be 10,000 Days Old? Find Your Exact Date",
+    excerpt:
+      "The 10,000th day of your life is a milestone hiding in plain sight. Find out exactly when it arrives — and why this number matters.",
+    readTime: "7 min read",
+  },
+  {
+    slug: "when-will-i-be-1-billion-seconds-old",
+    tag: "Time Milestones",
+    title: "When Will I Be 1 Billion Seconds Old? Find Your Exact Date",
+    excerpt:
+      "One billion seconds is roughly 31.7 years — a hidden milestone most people don't know they've crossed. Find out when yours arrives.",
+    readTime: "7 min read",
+  },
 ];
 
 const Blog = () => {
