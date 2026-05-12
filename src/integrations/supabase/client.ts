@@ -8,10 +8,31 @@ const SUPABASE_PUBLISHABLE_KEY = import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY;
 // Import the supabase client like this:
 // import { supabase } from "@/integrations/supabase/client";
 
-export const supabase = createClient<Database>(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY, {
-  auth: {
-    storage: localStorage,
-    persistSession: true,
-    autoRefreshToken: true,
+// Detect if we're in Node.js environment (SSR/prerendering)
+const isNode = typeof window === 'undefined';
+let transport: any;
+
+if (isNode) {
+  try {
+    const ws = require('ws');
+    transport = { ws };
+  } catch {
+    // ws not available in this context
   }
-});
+}
+
+const clientOptions: any = {
+  auth: {
+    ...(typeof localStorage !== 'undefined' && {
+      storage: localStorage,
+      persistSession: true,
+      autoRefreshToken: true,
+    }),
+  },
+};
+
+if (transport) {
+  clientOptions.realtime = { transport };
+}
+
+export const supabase = createClient<Database>(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY, clientOptions);
