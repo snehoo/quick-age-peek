@@ -10,29 +10,18 @@ const SUPABASE_PUBLISHABLE_KEY = import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY;
 
 // Detect if we're in Node.js environment (SSR/prerendering)
 const isNode = typeof window === 'undefined';
-let transport: any;
-
-if (isNode) {
-  try {
-    const ws = require('ws');
-    transport = { ws };
-  } catch {
-    // ws not available in this context
-  }
-}
 
 const clientOptions: any = {
   auth: {
-    ...(typeof localStorage !== 'undefined' && {
-      storage: localStorage,
-      persistSession: true,
-      autoRefreshToken: true,
-    }),
+    storage: typeof localStorage !== 'undefined' ? localStorage : undefined,
+    persistSession: typeof localStorage !== 'undefined',
+    autoRefreshToken: typeof localStorage !== 'undefined',
+  },
+  realtime: {
+    params: {
+      eventsPerSecond: isNode ? 0 : 10,
+    },
   },
 };
-
-if (transport) {
-  clientOptions.realtime = { transport };
-}
 
 export const supabase = createClient<Database>(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY, clientOptions);
