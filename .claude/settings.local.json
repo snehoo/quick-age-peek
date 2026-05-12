@@ -30,7 +30,13 @@
       "Bash(curl -s -I https://whatismyage.me)",
       "Bash(curl -sI https://whatismyage.me)",
       "Bash(curl -sI http://whatismyage.me)",
-      "Bash(curl -sI https://www.whatismyage.me)"
+      "Bash(curl -sI https://www.whatismyage.me)",
+      "Bash(curl -s http://localhost:8082/)",
+      "Bash(curl -s http://localhost:8082)",
+      "Bash(git commit -m 'Fix: Move variable declarations after null check in results section *)",
+      "Bash(git commit -m 'Revert: Only show results skeleton after user enters date *)",
+      "Bash(git commit *)",
+      "Bash(npm ci *)"
     ]
   }
 }
