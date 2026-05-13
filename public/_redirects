@@ -1,0 +1,5 @@
+# Redirect www to non-www
+https://www.whatismyage.me/* https://whatismyage.me/:splat 301
+
+# Force trailing slashes on blog pages (optional - improves SEO consistency)
+# /blog/* /blog/:splat/ 301
