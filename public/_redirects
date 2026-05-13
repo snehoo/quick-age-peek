@@ -1,5 +1,6 @@
-# Redirect www to non-www
-https://www.whatismyage.me/* https://whatismyage.me/:splat 301
+# Cloudflare Pages _redirects file
+# Note: Only relative URLs are allowed in this file
+# www to non-www redirect is handled through Cloudflare Bulk Redirect Rules in the dashboard
 
-# Force trailing slashes on blog pages (optional - improves SEO consistency)
-# /blog/* /blog/:splat/ 301
+# Example relative redirect (if needed):
+# /old-page /new-page 301
