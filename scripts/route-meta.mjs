@@ -9,7 +9,7 @@ export const ROUTE_META = {
   "/": {
     title: "What Is My Age? — Your life in numbers",
     description:
-      "Not just years — discover your heartbeats, full moons, days alive, generation, and who shares your birthday. Enter your date of birth and see your life in numbers.",
+      "Calculate your age beyond years. Discover how many heartbeats, full moons, days, and seconds you've lived. Enter your birth date and see your life in numbers.",
     canonical: `${SITE}/`,
     ogType: "website",
   },
@@ -496,6 +496,54 @@ export function injectRouteMeta(template, route) {
             position: 3,
             name: meta.title.replace(/ \| whatismyage\.me$/, ""),
             item: meta.canonical,
+          },
+        ],
+      });
+
+      // Add FAQ schema for article pages
+      jsonLdSchemas.push({
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: [
+          {
+            "@type": "Question",
+            name: "How do I calculate my exact age?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Enter your birth date into an age calculator to get your exact age in years, months, days, hours, minutes, and seconds. The calculator accounts for leap years and varying month lengths to ensure accuracy.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "Why would I want to know my age in different units?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Measuring age in different units like days, heartbeats, or full moons provides perspective on your life. For example, seeing your age as 1+ billion seconds or 10,000+ days can feel more meaningful than years alone.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "How accurate are online age calculators?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Accurate age calculators properly account for leap years, varying month lengths, and your birth time. Most online calculators are accurate to the day. The key is whether they handle leap years and month variations correctly.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "What is the 10,000-day milestone?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "The 10,000-day milestone represents approximately 27.4 years of life. It's an invisible birthday that most people pass without noticing, but it serves as an interesting marker of how many actual days you've lived.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "How many full moons will I see in my lifetime?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "There are approximately 13 full moons per year, so over a typical 76-year lifetime, you'll see roughly 1,000 full moons — fewer than most people expect.",
+            },
           },
         ],
       });
