@@ -1,0 +1,41 @@
+# LLM Content Discovery
+
+## Site: What Is My Age?
+**URL:** https://whatismyage.me/
+**Description:** Calculate your age beyond years. Discover how many heartbeats, full moons, days, seconds, and more you've lived.
+
+## Main Content
+- Homepage: https://whatismyage.me/
+- Blog: https://whatismyage.me/blog/
+- Privacy: https://whatismyage.me/privacy/
+
+## Popular Blog Posts
+- How Old Am I? Age Calculator Guide: https://whatismyage.me/blog/how-old-am-i/
+- Age Calculator: https://whatismyage.me/blog/age-calculator/
+- Age in Days Calculator: https://whatismyage.me/blog/age-in-days-calculator/
+- How Many Heartbeats in a Lifetime: https://whatismyage.me/blog/how-many-heartbeats-in-a-lifetime/
+- How Many Full Moons in a Lifetime: https://whatismyage.me/blog/how-many-full-moons-in-a-lifetime/
+- What Generation Am I: https://whatismyage.me/blog/what-generation-am-i/
+- How to Calculate Age in Days: https://whatismyage.me/blog/how-to-calculate-age-in-days/
+
+## Additional Resources
+- Sitemap: https://whatismyage.me/sitemap.xml
+- All Blog Posts: https://whatismyage.me/blog/
+
+## Site Features
+- Age calculation in multiple formats (years, months, days, hours, minutes, seconds)
+- Days lived counter
+- Full moons seen in lifetime
+- Heartbeats calculation
+- Generation identification by birth year
+- Life clock visualization
+- Zodiac sign lookup
+- Birthday twin discovery
+
+## Language Support
+- English
+
+## Content Type
+- Educational utility
+- Age and life statistics calculator
+- Blog articles about age, time, and life measurements
