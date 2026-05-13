@@ -132,6 +132,13 @@ export const ROUTE_META = {
     canonical: `${SITE}/blog/gigacalculator-vs-omnicalculator`,
     ogType: "article",
   },
+  "/blog/how-old-am-i": {
+    title: "How Old Am I? The Ultimate Age Calculator Guide | whatismyage.me",
+    description:
+      "You think you know your age. But do you really? Discover dozens of ways to measure how old you actually are — from days to heartbeats and full moons.",
+    canonical: `${SITE}/blog/how-old-am-i`,
+    ogType: "article",
+  },
   "/blog/age-calculator": {
     title: "Age Calculator — The Best Way to Calculate Your Exact Age | whatismyage.me",
     description:
