@@ -31,6 +31,78 @@ const posts = [
     readTime: "6 min read",
   },
   {
+    slug: "age-calculator-for-legal-documents",
+    tag: "Tools & Comparison",
+    title: "Age Calculator for Legal Documents",
+    excerpt:
+      "Need an exact age for a visa, passport, insurance form or school admission? Here's why precision matters for legal documents.",
+    readTime: "8 min read",
+  },
+  {
+    slug: "age-calculator-for-medical-professionals",
+    tag: "Tools & Comparison",
+    title: "Age Calculator for Medical Professionals",
+    excerpt:
+      "Doctors, nurses, and clinicians need precise chronological age for dosing, assessments, and screening.",
+    readTime: "8 min read",
+  },
+  {
+    slug: "age-calculator-no-sign-up",
+    tag: "Tools & Comparison",
+    title: "Age Calculator No Sign-Up Required",
+    excerpt:
+      "Want an online age calculator with no login or sign-up required? We list the top tools you can use instantly.",
+    readTime: "7 min read",
+  },
+  {
+    slug: "better-alternative-to-calculator-net",
+    tag: "Tools & Comparison",
+    title: "Better Alternative to Calculator.net Age Tool",
+    excerpt:
+      "Why is WhatIsMyAge.me a better alternative to Calculator.net for age calculation?",
+    readTime: "8 min read",
+  },
+  {
+    slug: "calculator-net-alternative",
+    tag: "Tools & Comparison",
+    title: "Calculator.net Alternative for Age",
+    excerpt:
+      "Looking for a calculator.net alternative for age calculation? Discover 7 faster, cleaner options.",
+    readTime: "9 min read",
+  },
+  {
+    slug: "calculatorsoup-age-calculator-alternative",
+    tag: "Tools & Comparison",
+    title: "CalculatorSoup Age Calculator Alternative",
+    excerpt:
+      "CalculatorSoup age calculator vs WhatIsMyAge.me: which is faster for a simple age lookup?",
+    readTime: "7 min read",
+  },
+  {
+    slug: "free-age-calculator-no-ads",
+    tag: "Tools & Comparison",
+    title: "Best Ad-Free Age Calculator Online",
+    excerpt:
+      "Tired of ads ruining your age calculation? We tested the top free age calculator no ads options.",
+    readTime: "7 min read",
+  },
+  {
+    slug: "gigacalculator-age-calculator-alternative",
+    tag: "Tools & Comparison",
+    title: "GigaCalculator Alternative for Age",
+    excerpt:
+      "Looking for a GigaCalculator alternative for age calculation? We compare 6 cleaner, faster options.",
+    readTime: "8 min read",
+  },
+  {
+    slug: "omnicalculator-alternative-age-tool",
+    tag: "Tools & Comparison",
+    title: "Omni Calculator Alternative for Age",
+    excerpt:
+      "Omni Calculator is powerful but often overkill for a simple age lookup. Discover 5 focused alternatives.",
+    readTime: "7 min read",
+  },
+  {
     slug: "how-many-heartbeats-in-a-lifetime",
     tag: "Biology & Science",
     title: "How Many Heartbeats Does a Human Have in a Lifetime?",

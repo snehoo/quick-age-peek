@@ -153,6 +153,69 @@ export const ROUTE_META = {
     canonical: `${SITE}/blog/age-in-days-calculator`,
     ogType: "article",
   },
+  "/blog/age-calculator-for-legal-documents": {
+    title: "Age Calculator for Legal Documents | WhatIsMyAge.me",
+    description:
+      "Need an exact age for a visa, passport, insurance form or school admission? Here's why precision matters for legal documents — and the best free tool to use.",
+    canonical: `${SITE}/blog/age-calculator-for-legal-documents`,
+    ogType: "article",
+  },
+  "/blog/age-calculator-for-medical-professionals": {
+    title: "Age Calculator for Medical Professionals | WhatIsMyAge.me",
+    description:
+      "Doctors, nurses, and clinicians need precise chronological age for dosing, assessments, and screening. Here are the best age calculator tools for healthcare use.",
+    canonical: `${SITE}/blog/age-calculator-for-medical-professionals`,
+    ogType: "article",
+  },
+  "/blog/age-calculator-no-sign-up": {
+    title: "Age Calculator No Sign-Up Required | WhatIsMyAge.me",
+    description:
+      "Want an online age calculator with no login or sign-up required? We list the top tools you can use instantly — no account, no email, no friction whatsoever.",
+    canonical: `${SITE}/blog/age-calculator-no-sign-up`,
+    ogType: "article",
+  },
+  "/blog/better-alternative-to-calculator-net": {
+    title: "Better Alternative to Calculator.net Age Tool | WhatIsMyAge.me",
+    description:
+      "Why is WhatIsMyAge.me a better alternative to Calculator.net for age calculation? We compare features, speed, UI, and accuracy — side by side, honestly.",
+    canonical: `${SITE}/blog/better-alternative-to-calculator-net`,
+    ogType: "article",
+  },
+  "/blog/calculator-net-alternative": {
+    title: "Calculator.net Alternative for Age | WhatIsMyAge.me",
+    description:
+      "Looking for a calculator.net alternative for age calculation? Discover 7 faster, cleaner options — no clutter, no popups, instant results from your date of birth.",
+    canonical: `${SITE}/blog/calculator-net-alternative`,
+    ogType: "article",
+  },
+  "/blog/calculatorsoup-age-calculator-alternative": {
+    title: "CalculatorSoup Age Calculator Alternative | WhatIsMyAge.me",
+    description:
+      "CalculatorSoup age calculator vs WhatIsMyAge.me: which is faster for a simple age lookup? We compare features, speed, and output depth — honestly and side by side.",
+    canonical: `${SITE}/blog/calculatorsoup-age-calculator-alternative`,
+    ogType: "article",
+  },
+  "/blog/free-age-calculator-no-ads": {
+    title: "Best Ad-Free Age Calculator Online | WhatIsMyAge.me",
+    description:
+      "Tired of ads ruining your age calculation? We tested the top free age calculator no ads options in 2026 — here are the cleanest, fastest tools with zero popups.",
+    canonical: `${SITE}/blog/free-age-calculator-no-ads`,
+    ogType: "article",
+  },
+  "/blog/gigacalculator-age-calculator-alternative": {
+    title: "GigaCalculator Alternative for Age | WhatIsMyAge.me",
+    description:
+      "Looking for a GigaCalculator alternative for age calculation? We compare 6 cleaner, faster options — including which one gives you the most complete result fastest.",
+    canonical: `${SITE}/blog/gigacalculator-age-calculator-alternative`,
+    ogType: "article",
+  },
+  "/blog/omnicalculator-alternative-age-tool": {
+    title: "Omni Calculator Alternative for Age | WhatIsMyAge.me",
+    description:
+      "Omni Calculator is powerful but often overkill for a simple age lookup. Discover 5 focused Omni Calculator alternatives that return your exact age in seconds.",
+    canonical: `${SITE}/blog/omnicalculator-alternative-age-tool`,
+    ogType: "article",
+  },
   "/blog/age-calculator-statistics": {
     title:
       "Age Calculator Statistics 2026: 50+ Data Points on Trends & Usage | whatismyage.me",

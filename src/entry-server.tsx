@@ -57,6 +57,15 @@ import WhenWillIBe1BillionSecondsOld from "./pages/blog/WhenWillIBe1BillionSecon
 import HowOldAmI from "./pages/blog/HowOldAmI.tsx";
 import AgeCalculator from "./pages/blog/AgeCalculator.tsx";
 import AgeInDaysCalculator from "./pages/blog/AgeInDaysCalculator.tsx";
+import AgeCalculatorLegalDocuments from "./pages/blog/AgeCalculatorLegalDocuments.tsx";
+import AgeCalculatorMedicalProfessionals from "./pages/blog/AgeCalculatorMedicalProfessionals.tsx";
+import AgeCalculatorNoSignUp from "./pages/blog/AgeCalculatorNoSignUp.tsx";
+import BetterAlternativeCalculatorNet from "./pages/blog/BetterAlternativeCalculatorNet.tsx";
+import CalculatorNetAlternative from "./pages/blog/CalculatorNetAlternative.tsx";
+import CalculatorSoupAlternative from "./pages/blog/CalculatorSoupAlternative.tsx";
+import FreeAgeCalculatorNoAds from "./pages/blog/FreeAgeCalculatorNoAds.tsx";
+import GigaCalculatorAlternative from "./pages/blog/GigaCalculatorAlternative.tsx";
+import OmniCalculatorAlternative from "./pages/blog/OmniCalculatorAlternative.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 // Server-only App without BrowserRouter (uses StaticRouter instead).
@@ -133,6 +142,15 @@ const ServerApp = ({ url }: { url: string }) => {
             <Route path="/blog/how-old-am-i" element={<HowOldAmI />} />
             <Route path="/blog/age-calculator" element={<AgeCalculator />} />
             <Route path="/blog/age-in-days-calculator" element={<AgeInDaysCalculator />} />
+            <Route path="/blog/age-calculator-for-legal-documents" element={<AgeCalculatorLegalDocuments />} />
+            <Route path="/blog/age-calculator-for-medical-professionals" element={<AgeCalculatorMedicalProfessionals />} />
+            <Route path="/blog/age-calculator-no-sign-up" element={<AgeCalculatorNoSignUp />} />
+            <Route path="/blog/better-alternative-to-calculator-net" element={<BetterAlternativeCalculatorNet />} />
+            <Route path="/blog/calculator-net-alternative" element={<CalculatorNetAlternative />} />
+            <Route path="/blog/calculatorsoup-age-calculator-alternative" element={<CalculatorSoupAlternative />} />
+            <Route path="/blog/free-age-calculator-no-ads" element={<FreeAgeCalculatorNoAds />} />
+            <Route path="/blog/gigacalculator-age-calculator-alternative" element={<GigaCalculatorAlternative />} />
+            <Route path="/blog/omnicalculator-alternative-age-tool" element={<OmniCalculatorAlternative />} />
 
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
