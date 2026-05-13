@@ -1,18 +1,8 @@
-import { Helmet } from "react-helmet-async";
+import { Link } from "react-router-dom";
 
 export default function AgeInDaysCalculator() {
   return (
-    <>
-      <Helmet>
-        <title>Age in Days Calculator — Find Your Exact Age Today</title>
-        <meta
-          name="description"
-          content="Calculate your exact age in days with our precise age in days calculator. Discover milestone days, track your day count, and see what your life's days reveal."
-        />
-        <meta name="keywords" content="age in days, age calculator days, how many days old am I, days lived" />
-      </Helmet>
-
-      <article className="prose prose-lg max-w-2xl mx-auto px-4 py-12">
+    <article className="prose prose-lg max-w-2xl mx-auto px-4 py-12">
         <h1>Age in Days Calculator — Find Your Exact Day Count</h1>
 
         <p className="lead">
@@ -113,6 +103,5 @@ Final: 11,315 + 8 + 128 = 11,451 days`}</code>
           </p>
         </div>
       </article>
-    </>
   );
 }

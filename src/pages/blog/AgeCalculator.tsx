@@ -1,18 +1,8 @@
-import { Helmet } from "react-helmet-async";
+import { Link } from "react-router-dom";
 
 export default function AgeCalculator() {
   return (
-    <>
-      <Helmet>
-        <title>Age Calculator — The Best Way to Calculate Your Exact Age</title>
-        <meta
-          name="description"
-          content="The ultimate age calculator. Calculate your age in years, days, hours, minutes, seconds, heartbeats, and full moons. See your life in numbers."
-        />
-        <meta name="keywords" content="age calculator, calculate age, exact age calculator, how old am I calculator" />
-      </Helmet>
-
-      <article className="prose prose-lg max-w-2xl mx-auto px-4 py-12">
+    <article className="prose prose-lg max-w-2xl mx-auto px-4 py-12">
         <h1>Age Calculator — The Complete Guide</h1>
 
         <p className="lead">
@@ -159,6 +149,5 @@ export default function AgeCalculator() {
           </p>
         </div>
       </article>
-    </>
   );
 }

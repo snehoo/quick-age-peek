@@ -1,18 +1,8 @@
-import { Helmet } from "react-helmet-async";
+import { Link } from "react-router-dom";
 
 export default function HowOldAmI() {
   return (
-    <>
-      <Helmet>
-        <title>How Old Am I? — Calculate Your Age Every Way</title>
-        <meta
-          name="description"
-          content="Find out how old you really are. Calculate your age in years, months, days, hours, minutes, seconds, heartbeats, and full moons."
-        />
-        <meta name="keywords" content="how old am i, calculate age, age calculator, age in days, age in seconds" />
-      </Helmet>
-
-      <article className="prose prose-lg max-w-2xl mx-auto px-4 py-12">
+    <article className="prose prose-lg max-w-2xl mx-auto px-4 py-12">
         <h1>How Old Am I? The Ultimate Age Calculator Guide</h1>
 
         <p className="lead">
@@ -120,6 +110,5 @@ export default function HowOldAmI() {
           </p>
         </div>
       </article>
-    </>
   );
 }
