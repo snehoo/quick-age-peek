@@ -54,6 +54,9 @@ import HowOldWillIBeIn2040 from "./pages/blog/HowOldWillIBeIn2040.tsx";
 import HowOldWillIBeIn2050 from "./pages/blog/HowOldWillIBeIn2050.tsx";
 import WhatDayWillIBe10000DaysOld from "./pages/blog/WhatDayWillIBe10000DaysOld.tsx";
 import WhenWillIBe1BillionSecondsOld from "./pages/blog/WhenWillIBe1BillionSecondsOld.tsx";
+import HowOldAmI from "./pages/blog/HowOldAmI.tsx";
+import AgeCalculator from "./pages/blog/AgeCalculator.tsx";
+import AgeInDaysCalculator from "./pages/blog/AgeInDaysCalculator.tsx";
 
 import NotFound from "./pages/NotFound.tsx";
 
@@ -69,6 +72,9 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/how-old-am-i" element={<HowOldAmI />} />
+          <Route path="/blog/age-calculator" element={<AgeCalculator />} />
+          <Route path="/blog/age-in-days-calculator" element={<AgeInDaysCalculator />} />
           <Route
             path="/blog/how-many-heartbeats-in-a-lifetime"
             element={<HeartbeatsLifetime />}

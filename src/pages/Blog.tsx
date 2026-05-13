@@ -7,6 +7,30 @@ import { useBreadcrumbMeta } from "@/components/blog/breadcrumbMeta";
 
 const posts = [
   {
+    slug: "how-old-am-i",
+    tag: "Guide & Overview",
+    title: "How Old Am I? The Ultimate Age Calculator Guide",
+    excerpt:
+      "You think you know your age. But do you really? Discover dozens of ways to measure how old you actually are — from days to heartbeats.",
+    readTime: "7 min read",
+  },
+  {
+    slug: "age-calculator",
+    tag: "Guide & Tools",
+    title: "Age Calculator — The Best Way to Calculate Your Exact Age",
+    excerpt:
+      "The ultimate guide to age calculators. Learn how to calculate your age in years, days, hours, minutes, seconds, heartbeats, and full moons.",
+    readTime: "8 min read",
+  },
+  {
+    slug: "age-in-days-calculator",
+    tag: "How-to & Calculation",
+    title: "Age in Days Calculator — Find Your Exact Day Count",
+    excerpt:
+      "Calculate your exact age in days with our precision calculator. Discover milestone days, invisible birthdays, and what your life's days reveal.",
+    readTime: "6 min read",
+  },
+  {
     slug: "how-many-heartbeats-in-a-lifetime",
     tag: "Biology & Science",
     title: "How Many Heartbeats Does a Human Have in a Lifetime?",
