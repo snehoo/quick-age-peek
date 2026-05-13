@@ -4,6 +4,21 @@
 export function getBlogPosts() {
   return [
     {
+      slug: "how-old-am-i",
+      title: "How Old Am I? The Ultimate Age Calculator Guide",
+      description: "You think you know your age. But do you really? Discover dozens of ways to measure how old you actually are.",
+    },
+    {
+      slug: "age-calculator",
+      title: "Age Calculator — The Best Way to Calculate Your Exact Age",
+      description: "The ultimate age calculator. Calculate your age in years, days, hours, minutes, seconds, heartbeats, and full moons.",
+    },
+    {
+      slug: "age-in-days-calculator",
+      title: "Age in Days Calculator — Find Your Exact Day Count",
+      description: "Calculate your exact age in days with our precise age in days calculator. Discover milestone days and what your life's days reveal.",
+    },
+    {
       slug: "how-many-heartbeats-in-a-lifetime",
       title: "How Many Heartbeats Does a Human Have in a Lifetime?",
       description: "The average human heart beats 2.5 billion times in a lifetime. Discover the science behind resting heart rate, cardiac output, and how to calculate...",
