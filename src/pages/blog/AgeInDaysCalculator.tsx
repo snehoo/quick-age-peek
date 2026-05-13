@@ -1,107 +1,171 @@
-import { Link } from "react-router-dom";
+import {
+  ArticleShell,
+  Lead,
+  Paragraph,
+  H2,
+  H3,
+  FormulaBox,
+  Note,
+  CtaBox,
+  RelatedPosts,
+  BackToBlog,
+} from "@/components/blog/ArticleLayout";
+import { useArticleMeta } from "@/components/blog/articleMeta";
 
-export default function AgeInDaysCalculator() {
+const CANONICAL = "https://whatismyage.me/blog/age-in-days-calculator";
+const TITLE = "Age in Days Calculator — Find Your Exact Day Count | whatismyage.me";
+const DESC = "Calculate your exact age in days with precision. Discover milestone days, track your day count, and see what your life's days reveal about time.";
+const HEADLINE = "Age in Days Calculator — Find Your Exact Day Count";
+
+const AgeInDaysCalculator = () => {
+  useArticleMeta({ title: TITLE, description: DESC, canonical: CANONICAL, headline: HEADLINE });
+
   return (
-    <article className="prose prose-lg max-w-2xl mx-auto px-4 py-12">
-        <h1>Age in Days Calculator — Find Your Exact Day Count</h1>
+    <ArticleShell>
+      <BackToBlog />
 
-        <p className="lead">
-          Your life in days. Not years — days. Enter your birth date below and discover exactly how many days you've lived, and what the major milestones mean.
-        </p>
+      <h1 className="font-display text-3xl sm:text-4xl text-foreground leading-tight mt-6 mb-4">
+        {HEADLINE}
+      </h1>
 
-        <h2>What is an Age in Days Calculator?</h2>
-        <p>
-          An age in days calculator takes your birth date and counts every single day you've been alive. It accounts for:
-        </p>
-        <ul>
-          <li><strong>Leap years</strong> — Feb 29 occurs every 4 years (mostly)</li>
-          <li><strong>Varying month lengths</strong> — January has 31 days, February has 28 or 29</li>
-          <li><strong>Timezone adjustments</strong> — If you were born at midnight vs. noon</li>
-          <li><strong>Current time</strong> — Hours and minutes matter for precise counts</li>
-        </ul>
+      <Lead>
+        Your life in days. Not years — days. Enter your birth date and discover exactly how many days you've lived, and what the major milestones mean.
+      </Lead>
 
-        <h2>Why Count Your Age in Days?</h2>
-        <p>
-          Years are convenient but coarse. Days reveal the finer grain of your life:
-        </p>
-        <ul>
-          <li>A 30-year-old has lived ~11,000 days. That number feels heavier than "30".</li>
-          <li>Milestone days (like your 10,000th) mark invisible birthdays you never noticed</li>
-          <li>Days align with heartbeats and seconds — other precise age measurements</li>
-          <li>Different cultures mark age differently; days are universal</li>
-        </ul>
+      <H2>What is an Age in Days Calculator?</H2>
 
-        <h2>How to Calculate Age in Days: The Formula</h2>
-        <p>
-          The formula is straightforward, but the details matter:
-        </p>
-        <pre>
-          <code>{`Age in Days = Today's Date − Birth Date
+      <Paragraph>
+        An age in days calculator takes your birth date and counts every single day you've been alive. It's more precise than years because it accounts for leap years, month variations, timezone differences, and even the time of day you were born.
+      </Paragraph>
 
-Example:
-Born: January 15, 1995
-Today: May 13, 2026
+      <Paragraph>
+        Days reveal the finer grain of your life in a way years never can. A 30-year-old has lived roughly 10,957 days — a number that feels heavier and more real than "30."
+      </Paragraph>
 
-Step 1: Calculate total days between dates
-Years × 365 = 31 years × 365 = 11,315 days
+      <H2>Why Count Your Age in Days?</H2>
 
-Step 2: Add leap year days (Feb 29 in 1996, 2000, 2004, 2008, 2012, 2016, 2020, 2024)
-= 8 leap days
+      <Paragraph>
+        Years are convenient but coarse. Days reveal the texture of your life:
+      </Paragraph>
 
-Step 3: Add remaining days (Jan 15 to May 13 = 128 days)
+      <ul className="list-disc pl-6 space-y-2 text-foreground/90 leading-relaxed mb-6">
+        <li><strong>Granularity</strong> — A 30-year-old has lived ~11,000 days. That feels heavier than "30".</li>
+        <li><strong>Invisible milestones</strong> — Your 10,000th day is a landmark most people never celebrate</li>
+        <li><strong>Universal measurement</strong> — Days are the same across all cultures</li>
+        <li><strong>Connection to other metrics</strong> — Days are the basis for calculating hours, minutes, and seconds</li>
+        <li><strong>Mortality awareness</strong> — Days make time feel more finite and precious</li>
+      </ul>
 
-Final: 11,315 + 8 + 128 = 11,451 days`}</code>
-        </pre>
+      <H2>How to Calculate Age in Days: The Math</H2>
 
-        <h2>Major Age Milestones in Days</h2>
-        <p>
-          These day counts mark invisible turning points in your life:
-        </p>
-        <ul>
-          <li><strong>1,000 days</strong> — ~2.7 years (often missed toddler milestone)</li>
-          <li><strong>5,000 days</strong> — ~13.7 years (usually around age 13-14)</li>
-          <li><strong>10,000 days</strong> — ~27.4 years (often in your late 20s)</li>
-          <li><strong>15,000 days</strong> — ~41 years (mid-life marker)</li>
-          <li><strong>20,000 days</strong> — ~54.8 years (approaching retirement)</li>
-          <li><strong>25,000 days</strong> — ~68.5 years (entering final chapter)</li>
-          <li><strong>30,000 days</strong> — ~82.2 years (approaching century milestone)</li>
-        </ul>
+      <Paragraph>
+        The formula is straightforward, but precision requires handling several details:
+      </Paragraph>
 
-        <h2>Other Ways to Measure Your Age</h2>
-        <p>
-          Days are just one piece. Try these calculators to see your age in other measurements:
-        </p>
-        <ul>
-          <li><a href="/blog/how-many-heartbeats-in-a-lifetime">Age in Heartbeats</a> — How many times has your heart beaten?</li>
-          <li><a href="/blog/how-many-hours-old-am-i">Age in Hours</a> — The precise hourly count</li>
-          <li><a href="/blog/how-many-minutes-old-am-i">Age in Minutes</a> — Down to the minute</li>
-          <li><a href="/blog/how-many-seconds-old-am-i">Age in Seconds</a> — The billion-second milestone</li>
-          <li><a href="/blog/how-many-weeks-old-am-i">Age in Weeks</a> — Weeks as a life measure</li>
-          <li><a href="/blog/how-many-months-old-am-i">Age in Months</a> — The monthly perspective</li>
-        </ul>
+      <FormulaBox title="Basic age in days formula">
+        Age in Days = Today's Date − Birth Date
+        <br />
+        Example: Born Jan 15, 1995 | Today: May 13, 2026
+        <br />
+        Result: ~11,451 days
+      </FormulaBox>
 
-        <h2>How Does Leap Year Affect Your Day Count?</h2>
-        <p>
-          Most calculators treat leap years correctly, but here's how they matter:
-        </p>
-        <ul>
-          <li>Born in a leap year? You likely saw Feb 29 on your birth certificate</li>
-          <li>Leap years occur every 4 years (with exceptions for century years)</li>
-          <li>Skipping Feb 29 in non-leap years is why "day counts" get tricky</li>
-          <li>Our calculator accounts for all leap days between your birth and today</li>
-        </ul>
+      <H3>Step-by-Step Calculation</H3>
 
-        <h2>The Bottom Line</h2>
-        <p>
-          Your age in days is a more visceral number than years. It shows that life isn't measured in neat calendar blocks — it's measured in sunrise after sunrise after sunrise. Enter your birth date above and see exactly how many days you've collected so far.
-        </p>
+      <Paragraph>
+        To get the exact day count:
+      </Paragraph>
 
-        <div className="bg-blue-50 p-6 rounded-lg mt-8">
-          <p className="font-bold">Ready to find your exact age in days?</p>
-          <p>
-            Head to the <a href="/">age calculator</a> and enter your birth date. We'll show you your day count plus hours, minutes, seconds, and more.
-          </p>
-        </div>
-      </article>
+      <ol className="list-decimal pl-6 space-y-3 text-foreground/90 leading-relaxed mb-6">
+        <li><strong>Calculate years between dates:</strong> 2026 − 1995 = 31 years</li>
+        <li><strong>Convert to baseline days:</strong> 31 years × 365 = 11,315 days</li>
+        <li><strong>Add leap year days:</strong> 1996, 2000, 2004, 2008, 2012, 2016, 2020, 2024 = 8 leap days</li>
+        <li><strong>Add remaining days:</strong> Jan 15 to May 13 = 128 days</li>
+        <li><strong>Total:</strong> 11,315 + 8 + 128 = <strong>11,451 days</strong></li>
+      </ol>
+
+      <Note>
+        <strong>Accuracy matters:</strong> A quality calculator accounts for leap years, varying month lengths, timezone differences, and birth time. Small details add up when counting thousands of days.
+      </Note>
+
+      <H2>Major Day Count Milestones</H2>
+
+      <Paragraph>
+        These invisible birthdays mark turning points in your life:
+      </Paragraph>
+
+      <ul className="list-disc pl-6 space-y-2 text-foreground/90 leading-relaxed mb-6">
+        <li><strong>1,000 days</strong> — ~2.7 years old. Often a missed toddler milestone.</li>
+        <li><strong>5,000 days</strong> — ~13.7 years old. Usually around age 13–14, entry to teenage years.</li>
+        <li><strong>10,000 days</strong> — ~27.4 years old. Often in your late 20s, a major turning point most people miss.</li>
+        <li><strong>15,000 days</strong> — ~41 years old. Mid-life marker, the passage of significant time.</li>
+        <li><strong>20,000 days</strong> — ~54.8 years old. Approaching retirement, life's final act beginning.</li>
+        <li><strong>25,000 days</strong> — ~68.5 years old. Entering the final chapter, wisdom earned.</li>
+        <li><strong>30,000 days</strong> — ~82.2 years old. Approaching the century milestone, a rare achievement.</li>
+      </ul>
+
+      <Paragraph>
+        The 10,000-day milestone deserves special mention: it's a threshold that most 25–30-year-olds silently cross without noticing. When you reach it, you've lived through 27 years of birthdays, school, relationships, jobs, and growth — all compressed into four digits.
+      </Paragraph>
+
+      <H2>How Leap Years Affect Your Day Count</H2>
+
+      <Paragraph>
+        Leap years add complexity to day calculations, but they're essential for accuracy:
+      </Paragraph>
+
+      <ul className="list-disc pl-6 space-y-2 text-foreground/90 leading-relaxed mb-6">
+        <li><strong>Every 4 years:</strong> February gets an extra day (Feb 29)</li>
+        <li><strong>Century exception:</strong> Years divisible by 100 are NOT leap years (1900, 2100)</li>
+        <li><strong>400-year exception:</strong> Except years divisible by 400 ARE leap years (2000, 2400)</li>
+        <li><strong>Impact:</strong> Missing a single leap day throws your count off by 1. Over 30 years, that's 7–8 days.</li>
+      </ul>
+
+      <Paragraph>
+        A proper age in days calculator accounts for all of these rules automatically.
+      </Paragraph>
+
+      <H2>Other Ways to Measure Your Age</H2>
+
+      <Paragraph>
+        Days are just one lens. Explore your age in other units:
+      </Paragraph>
+
+      <ul className="list-disc pl-6 space-y-2 text-foreground/90 leading-relaxed mb-6">
+        <li><a href="/blog/how-many-heartbeats-in-a-lifetime" className="text-primary underline">Age in Heartbeats</a> — ~1 billion heartbeats in 30 years</li>
+        <li><a href="/blog/how-many-hours-old-am-i" className="text-primary underline">Age in Hours</a> — Precision down to the hour</li>
+        <li><a href="/blog/how-many-minutes-old-am-i" className="text-primary underline">Age in Minutes</a> — Over 15 million minutes by age 30</li>
+        <li><a href="/blog/how-many-seconds-old-am-i" className="text-primary underline">Age in Seconds</a> — Nearly 1 billion seconds</li>
+        <li><a href="/blog/how-many-weeks-old-am-i" className="text-primary underline">Age in Weeks</a> — ~1,560 weeks in 30 years</li>
+        <li><a href="/blog/how-many-months-old-am-i" className="text-primary underline">Age in Months</a> — ~360 months by age 30</li>
+      </ul>
+
+      <H2>The Bottom Line: Life Measured in Days</H2>
+
+      <Paragraph>
+        Your age in days is a more visceral number than years. It shows that life isn't measured in neat calendar blocks — it's measured in sunrise after sunrise after sunrise. Each day is a small unit of time that accumulates into a lifetime.
+      </Paragraph>
+
+      <Paragraph>
+        When you know you've lived 10,000+ days, time becomes real. You've lived through thousands of mornings, thousands of conversations, thousands of choices. Each day counted.
+      </Paragraph>
+
+      <CtaBox title="Find your exact age in days">
+        Enter your birth date and discover exactly how many days you've lived — plus hours, minutes, seconds, heartbeats, and more.
+      </CtaBox>
+
+      <RelatedPosts
+        posts={[
+          { tag: "How-to", title: "How to Calculate Your Age in Days", href: "/blog/how-to-calculate-age-in-days" },
+          { tag: "Science", title: "How Many Seconds Old Are You Right Now?", href: "/blog/how-many-seconds-old-am-i" },
+          { tag: "Perspective", title: "What Is a Life Clock?", href: "/blog/what-is-a-life-clock" },
+          { tag: "Milestones", title: "What Day Will You Be 10,000 Days Old?", href: "/blog/what-day-will-i-be-10000-days-old" },
+        ]}
+      />
+
+      <BackToBlog />
+    </ArticleShell>
   );
-}
+};
+
+export default AgeInDaysCalculator;

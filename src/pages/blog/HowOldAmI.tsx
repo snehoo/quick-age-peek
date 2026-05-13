@@ -1,114 +1,159 @@
-import { Link } from "react-router-dom";
+import {
+  ArticleShell,
+  Lead,
+  Paragraph,
+  H2,
+  H3,
+  Note,
+  CtaBox,
+  RelatedPosts,
+  BackToBlog,
+} from "@/components/blog/ArticleLayout";
+import { useArticleMeta } from "@/components/blog/articleMeta";
 
-export default function HowOldAmI() {
+const CANONICAL = "https://whatismyage.me/blog/how-old-am-i";
+const TITLE = "How Old Am I? The Ultimate Age Calculator Guide | whatismyage.me";
+const DESC = "You think you know your age. But do you really? Discover dozens of ways to measure how old you actually are — from days to heartbeats and full moons.";
+const HEADLINE = "How Old Am I? The Ultimate Age Calculator Guide";
+
+const HowOldAmI = () => {
+  useArticleMeta({ title: TITLE, description: DESC, canonical: CANONICAL, headline: HEADLINE });
+
   return (
-    <article className="prose prose-lg max-w-2xl mx-auto px-4 py-12">
-        <h1>How Old Am I? The Ultimate Age Calculator Guide</h1>
+    <ArticleShell>
+      <BackToBlog />
 
-        <p className="lead">
-          You think you know your age. But do you really? There are dozens of ways to measure how old you actually are — and each one tells a different story.
-        </p>
+      <h1 className="font-display text-3xl sm:text-4xl text-foreground leading-tight mt-6 mb-4">
+        {HEADLINE}
+      </h1>
 
-        <h2>Quick Answer: Your Age in Numbers</h2>
-        <p>
-          If you were born today, you're:
-        </p>
-        <ul>
-          <li><strong>2.5 billion heartbeats</strong> old</li>
-          <li><strong>1,000+ full moons</strong> old</li>
-          <li>Around <strong>10,000+ days</strong> old (for a 30-year-old)</li>
-          <li>Over <strong>300 million seconds</strong> old</li>
-        </ul>
+      <Lead>
+        You think you know your age. But do you really? There are dozens of ways to measure how old you actually are — and each one tells a different story about your life.
+      </Lead>
 
-        <h2>Different Ways to Calculate Your Age</h2>
+      <H2>Quick Answer: Your Age in Numbers</H2>
+      <Paragraph>
+        If you're 30 years old right now, you're also:
+      </Paragraph>
+      <ul className="list-disc pl-6 space-y-2 text-foreground/90 leading-relaxed mb-6">
+        <li><strong>10,957 days old</strong> (and counting)</li>
+        <li><strong>~2.5 billion heartbeats</strong> in your lifetime</li>
+        <li><strong>~1,000 full moons</strong> witnessed</li>
+        <li><strong>950+ million seconds</strong> lived</li>
+      </ul>
 
-        <h3>1. Age in Days</h3>
-        <p>
-          The number of days you've lived. This matters because:
-        </p>
-        <ul>
-          <li>Days are more granular than years</li>
-          <li>You can spot 1,000-day and 10,000-day milestones</li>
-          <li>It's the basis for calculating age in hours, minutes, and seconds</li>
-        </ul>
-        <p>
-          <a href="/blog/how-to-calculate-age-in-days">Learn to calculate age in days →</a>
-        </p>
+      <H2>Different Ways to Calculate Your Age</H2>
 
-        <h3>2. Age in Heartbeats</h3>
-        <p>
-          Your heart beats ~2.5 billion times in a lifetime. Resting heart rate varies (50-100 bpm), so your heartbeat count is personal:
-        </p>
-        <ul>
-          <li>Low heart rate = fewer heartbeats per year</li>
-          <li>Higher heart rate = more heartbeats per year</li>
-          <li>Athletes might have 500 million fewer heartbeats than average</li>
-        </ul>
-        <p>
-          <a href="/blog/how-many-heartbeats-in-a-lifetime">Calculate your heartbeats →</a>
-        </p>
+      <H3>Age in Days</H3>
+      <Paragraph>
+        Days are visceral. A 30-year-old has lived roughly 10,957 days. That number feels heavier than "30" — and it reveals invisible milestones. Your 10,000th day is a landmark you probably never celebrated.
+      </Paragraph>
+      <Paragraph>
+        <a href="/blog/age-in-days-calculator" className="text-primary underline">Calculate your exact age in days →</a>
+      </Paragraph>
 
-        <h3>3. Age in Full Moons</h3>
-        <p>
-          There are ~13 full moons per year, meaning you'll see roughly 1,000 full moons in a 76-year lifetime. This is often fewer than people expect.
-        </p>
-        <p>
-          <a href="/blog/how-many-full-moons-in-a-lifetime">See your full moon count →</a>
-        </p>
+      <H3>Age in Heartbeats</H3>
+      <Paragraph>
+        Your heart beats approximately 100,000 times per day. Over 30 years, that's roughly 1 billion heartbeats — each one automatic, each one keeping you here. When you know this number, time feels different.
+      </Paragraph>
+      <Paragraph>
+        <a href="/blog/how-many-heartbeats-in-a-lifetime" className="text-primary underline">Discover your heartbeat count →</a>
+      </Paragraph>
 
-        <h3>4. Life Clock — Age as a 24-Hour Day</h3>
-        <p>
-          If your life were a single 24-hour day, what time is it now? This reveals a powerful perspective on your life stage:
-        </p>
-        <ul>
-          <li>Age 20 = ~6:41 AM (early morning)</li>
-          <li>Age 40 = ~1:23 PM (early afternoon)</li>
-          <li>Age 60 = ~8:05 PM (evening)</li>
-        </ul>
-        <p>
-          <a href="/blog/what-is-a-life-clock">Calculate your life clock →</a>
-        </p>
+      <H3>Age in Full Moons</H3>
+      <Paragraph>
+        There are roughly 13 full moons every year. In 30 years, you've witnessed only about 390 of them. The number is smaller than most expect — a reminder of how finite our time is.
+      </Paragraph>
+      <Paragraph>
+        <a href="/blog/how-many-full-moons-in-a-lifetime" className="text-primary underline">See your full moon count →</a>
+      </Paragraph>
 
-        <h3>5. What Generation Are You?</h3>
-        <p>
-          Your age determines your generation — Gen Z, Millennial, Gen X, or Boomer. Generations define shared cultural experiences and worldviews.
-        </p>
-        <p>
-          <a href="/blog/what-generation-am-i">Find your generation →</a>
-        </p>
+      <H3>Life Clock — Age as a 24-Hour Day</H3>
+      <Paragraph>
+        Imagine your life as a single 24-hour day. What time is it now? A 30-year-old (assuming a global life expectancy of ~73 years) is at approximately 1:23 PM — early afternoon, with the whole day still ahead.
+      </Paragraph>
+      <Paragraph>
+        <a href="/blog/what-is-a-life-clock" className="text-primary underline">Find your life clock time →</a>
+      </Paragraph>
 
-        <h3>6. What Day of the Week Were You Born?</h3>
-        <p>
-          A lesser-known fact about your age: the specific day of the week you were born. Some cultures believe birth day influences personality.
-        </p>
-        <p>
-          <a href="/blog/what-day-of-the-week-was-i-born">Calculate your birth day →</a>
-        </p>
+      <H3>Your Generation</H3>
+      <Paragraph>
+        Your birth year determines your generation — Gen Z, Millennial, Gen X, or Boomer. Each generation has shared cultural moments that shape worldview. Your generation's defining events are different from those who came before or after.
+      </Paragraph>
+      <Paragraph>
+        <a href="/blog/what-generation-am-i" className="text-primary underline">Discover your generation →</a>
+      </Paragraph>
 
-        <h2>Why These Different Age Measurements Matter</h2>
+      <H3>Your Birth Day of the Week</H3>
+      <Paragraph>
+        A lesser-known detail: the exact day of the week you were born. Some cultures believe your birth day influences personality and life path. It's a small detail that shapes identity.
+      </Paragraph>
+      <Paragraph>
+        <a href="/blog/what-day-of-the-week-was-i-born" className="text-primary underline">Find your birth day →</a>
+      </Paragraph>
 
-        <p>
-          Years are coarse. They miss the fine grain of your life. When you know:
-        </p>
-        <ul>
-          <li><strong>Your age in days</strong>, you can spot 10,000-day milestones</li>
-          <li><strong>Your age in heartbeats</strong>, you feel the weight of mortality</li>
-          <li><strong>Your age in full moons</strong>, you realize 1,000 is not that many</li>
-          <li><strong>Your life clock</strong>, you see your life stage vividly</li>
-        </ul>
+      <Note>
+        <strong>Why all these different measurements matter:</strong> Years are a convenient fiction. Reality is made of heartbeats, sunrises, and individual days. Each measurement reveals something different about how you've lived.
+      </Note>
 
-        <h2>The Bottom Line: You're Older Than You Think</h2>
+      <H2>Age in Other Units: The Granular Truth</H2>
 
-        <p>
-          You've lived more than you realize. Whether measured in heartbeats, seconds, or full moons — the numbers are always larger than years alone suggest. That's the point.
-        </p>
+      <Paragraph>
+        The deeper you look, the more interesting age becomes. A 30-year-old has lived:
+      </Paragraph>
 
-        <div className="bg-blue-50 p-6 rounded-lg mt-8">
-          <p className="font-bold">Ready to see your age in all its forms?</p>
-          <p>
-            Head to the <a href="/">age calculator</a> and enter your birth date. We'll show you how old you really are.
-          </p>
-        </div>
-      </article>
+      <ul className="list-disc pl-6 space-y-2 text-foreground/90 leading-relaxed mb-6">
+        <li><strong>~360 months</strong> — More granular than years, but still too broad</li>
+        <li><strong>~1,560 weeks</strong> — Weeks align with human projects and goals</li>
+        <li><strong>~263,000 hours</strong> — Hours start to feel personal</li>
+        <li><strong>~15.7 million minutes</strong> — Minutes are where life actually happens</li>
+        <li><strong>~950 million seconds</strong> — Seconds reveal the weight of time</li>
+      </ul>
+
+      <Paragraph>
+        Most people pass the 1-billion-second mark without knowing it. That's a shame, because it's worth celebrating.
+      </Paragraph>
+
+      <H2>Why Different Measurements Tell Different Stories</H2>
+
+      <Paragraph>
+        Years are legal and official. But they miss the texture of life. When you know your age in:
+      </Paragraph>
+
+      <ul className="list-disc pl-6 space-y-2 text-foreground/90 leading-relaxed mb-6">
+        <li><strong>Days</strong>, you can spot invisible 10,000-day milestones</li>
+        <li><strong>Heartbeats</strong>, you feel the weight of mortality and finitude</li>
+        <li><strong>Full moons</strong>, you realize 1,000 is not a large number</li>
+        <li><strong>Seconds</strong>, you grasp the science of aging</li>
+        <li><strong>Life clock</strong>, you see your life stage with clarity</li>
+      </ul>
+
+      <H2>The Bottom Line: You're Older Than You Think</H2>
+
+      <Paragraph>
+        You've lived more than you realize. A billion seconds sounds enormous — but most 30-year-olds have already passed it. A thousand full moons sounds like a lot — until you realize you'll only see maybe 1,000 in your whole life.
+      </Paragraph>
+
+      <Paragraph>
+        That's the power of measuring age in different units. It forces you to see your life not as a neat calendar progression, but as the accumulation of moments, heartbeats, and sunrises that actually make up time.
+      </Paragraph>
+
+      <CtaBox title="Find your exact age in every measurement">
+        No sign-up. No account. Just enter your birth date and discover how old you really are — in days, hours, minutes, seconds, heartbeats, and beyond.
+      </CtaBox>
+
+      <RelatedPosts
+        posts={[
+          { tag: "How-to", title: "Age in Days Calculator", href: "/blog/age-in-days-calculator" },
+          { tag: "Science", title: "How Many Heartbeats in a Lifetime?", href: "/blog/how-many-heartbeats-in-a-lifetime" },
+          { tag: "Perspective", title: "What Is a Life Clock?", href: "/blog/what-is-a-life-clock" },
+          { tag: "Identity", title: "What Generation Am I?", href: "/blog/what-generation-am-i" },
+        ]}
+      />
+
+      <BackToBlog />
+    </ArticleShell>
   );
-}
+};
+
+export default HowOldAmI;

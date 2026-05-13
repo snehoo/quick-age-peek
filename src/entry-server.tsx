@@ -54,6 +54,9 @@ import HowOldWillIBeIn2040 from "./pages/blog/HowOldWillIBeIn2040.tsx";
 import HowOldWillIBeIn2050 from "./pages/blog/HowOldWillIBeIn2050.tsx";
 import WhatDayWillIBe10000DaysOld from "./pages/blog/WhatDayWillIBe10000DaysOld.tsx";
 import WhenWillIBe1BillionSecondsOld from "./pages/blog/WhenWillIBe1BillionSecondsOld.tsx";
+import HowOldAmI from "./pages/blog/HowOldAmI.tsx";
+import AgeCalculator from "./pages/blog/AgeCalculator.tsx";
+import AgeInDaysCalculator from "./pages/blog/AgeInDaysCalculator.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 // Server-only App without BrowserRouter (uses StaticRouter instead).
@@ -127,6 +130,9 @@ const ServerApp = ({ url }: { url: string }) => {
             <Route path="/blog/how-old-will-i-be-in-2050" element={<HowOldWillIBeIn2050 />} />
             <Route path="/blog/what-day-will-i-be-10000-days-old" element={<WhatDayWillIBe10000DaysOld />} />
             <Route path="/blog/when-will-i-be-1-billion-seconds-old" element={<WhenWillIBe1BillionSecondsOld />} />
+            <Route path="/blog/how-old-am-i" element={<HowOldAmI />} />
+            <Route path="/blog/age-calculator" element={<AgeCalculator />} />
+            <Route path="/blog/age-in-days-calculator" element={<AgeInDaysCalculator />} />
 
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
