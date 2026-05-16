@@ -36,7 +36,14 @@
       "Bash(git commit -m 'Fix: Move variable declarations after null check in results section *)",
       "Bash(git commit -m 'Revert: Only show results skeleton after user enters date *)",
       "Bash(git commit *)",
-      "Bash(npm ci *)"
+      "Bash(npm ci *)",
+      "mcp__Claude_in_Chrome__tabs_context_mcp",
+      "mcp__Claude_in_Chrome__browser_batch",
+      "Bash(curl -s -I https://whatismyage.me/blog/age-calculator-for-legal-documents)",
+      "Bash(curl -s -I https://whatismyage.me/blog/age-calculator-for-legal-documents/)",
+      "Bash(curl -s https://whatismyage.me/blog/)",
+      "Bash(curl -s -I https://whatismyage.me/llm.txt)",
+      "Bash(curl -s -I https://whatismyage.me/iims.txt)"
     ]
   }
 }

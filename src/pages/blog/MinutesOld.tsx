@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import { CtaBox, Figure, H2, H3, Lead, Paragraph, RelatedPosts, SimpleTable, UnitArticleShell, credit, ext } from "@/components/blog/UnitArticle";
+import { CtaBox, Figure, H2, H3, Lead, Paragraph, AuthorBio,
+  RelatedPosts, SimpleTable, UnitArticleShell, credit, ext } from "@/components/blog/UnitArticle";
 
 const meta = {
   title: "How Many Minutes Old Am I? Calculate Your Age in Minutes | whatismyage.me",
@@ -105,6 +106,15 @@ const MinutesOld = () => (
     <CtaBox title="Find your exact minute count">
       Enter your date of birth at whatismyage.me — your minutes alive, calculated to this exact second.
     </CtaBox>
+
+    <AuthorBio
+
+      name="Snehal Patel"
+
+      bio="Snehal is a developer and data enthusiast from Mumbai who loves finding unexpected patterns in numbers. When not building calculators, they're probably wondering how many breaths they've taken so far. What Is My Age was born from a simple question: what does your age really mean?"
+
+    />
+
 
     <RelatedPosts posts={[
       { tag: "Time", title: "How Many Hours Old Am I?", href: "/blog/how-many-hours-old-am-i" },

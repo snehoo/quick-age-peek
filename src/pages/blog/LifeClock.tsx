@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import { ArticleShell, BackToBlog, CtaBox, FormulaBox, H2, H3, Lead, Paragraph, Quote, RelatedPosts } from "@/components/blog/ArticleLayout";
+import { ArticleShell, BackToBlog, CtaBox, FormulaBox, H2, H3, Lead, Paragraph, Quote, AuthorBio,
+  RelatedPosts } from "@/components/blog/ArticleLayout";
 import { useArticleMeta } from "@/components/blog/articleMeta";
 
 const meta = {
@@ -70,6 +71,11 @@ const LifeClock = () => {
       <H2>How Your Life Clock Connects to Your Other Age Stats</H2>
       <Paragraph>The life clock is one of several powerful ways to reframe what your age actually means. Furthermore, your <Link to="/blog/how-many-heartbeats-in-a-lifetime" className="text-primary underline">heartbeat total</Link> shows the biological machinery running behind those years. Additionally, your <Link to="/blog/how-many-full-moons-in-a-lifetime" className="text-primary underline">full moon count</Link> provides a poetic, astronomical measure of time. Moreover, your <Link to="/blog/how-to-calculate-age-in-days" className="text-primary underline">exact age in days</Link> gives you the raw, unvarnished total. Together, these numbers paint a portrait of a life that a single number in years can never fully convey.</Paragraph>
       <CtaBox title="What time is it on your life clock?">Enter your date of birth at whatismyage.me to find your exact life clock time — plus heartbeats, full moons, days alive, and your shareable life card.</CtaBox>
+      <AuthorBio
+        name="Snehal Patel"
+        bio="Snehal is a developer and data enthusiast from Mumbai who loves finding unexpected patterns in numbers. When not building calculators, they're probably wondering how many breaths they've taken so far. What Is My Age was born from a simple question: what does your age really mean?"
+      />
+
       <RelatedPosts posts={related} />
       <BackToBlog />
     </ArticleShell>

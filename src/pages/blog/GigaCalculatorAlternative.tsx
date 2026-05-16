@@ -5,6 +5,7 @@ import {
   H2,
   H3,
   CtaBox,
+  AuthorBio,
   RelatedPosts,
   BackToBlog,
 } from "@/components/blog/ArticleLayout";
@@ -70,6 +71,15 @@ const GigaCalculatorAlternative = () => {
       <Paragraph>
         The perfect age calculator depends on your specific needs. Whether you need legal precision, medical accuracy, zero friction, or just a quick lookup — there's a tool built for exactly what you're trying to do.
       </Paragraph>
+
+      <AuthorBio
+
+        name="Snehal Patel"
+
+        bio="Snehal is a developer and data enthusiast from Mumbai who loves finding unexpected patterns in numbers. When not building calculators, they're probably wondering how many breaths they've taken so far. What Is My Age was born from a simple question: what does your age really mean?"
+
+      />
+
 
       <RelatedPosts
         posts={[

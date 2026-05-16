@@ -6,6 +6,7 @@ import {
   H3,
   Note,
   CtaBox,
+  AuthorBio,
   RelatedPosts,
   BackToBlog,
 } from "@/components/blog/ArticleLayout";
@@ -141,6 +142,15 @@ const HowOldAmI = () => {
       <CtaBox title="Find your exact age in every measurement">
         No sign-up. No account. Just enter your birth date and discover how old you really are — in days, hours, minutes, seconds, heartbeats, and beyond.
       </CtaBox>
+
+      <AuthorBio
+
+        name="Snehal Patel"
+
+        bio="Snehal is a developer and data enthusiast from Mumbai who loves finding unexpected patterns in numbers. When not building calculators, they're probably wondering how many breaths they've taken so far. What Is My Age was born from a simple question: what does your age really mean?"
+
+      />
+
 
       <RelatedPosts
         posts={[

@@ -10,6 +10,7 @@ import {
   StatBox,
   CtaBox,
   ComparisonTable,
+  AuthorBio,
   RelatedPosts,
   BackToBlog,
 } from "@/components/blog/ArticleLayout";
@@ -206,6 +207,15 @@ const GigaCalculatorVsOmniCalculator = () => {
       <CtaBox title="Try a faster, simpler age calculator">
         Skip the clutter. Get your exact age in years, months, and days — instantly, for free.
       </CtaBox>
+
+      <AuthorBio
+
+        name="Snehal Patel"
+
+        bio="Snehal is a developer and data enthusiast from Mumbai who loves finding unexpected patterns in numbers. When not building calculators, they're probably wondering how many breaths they've taken so far. What Is My Age was born from a simple question: what does your age really mean?"
+
+      />
+
 
       <RelatedPosts
         posts={[

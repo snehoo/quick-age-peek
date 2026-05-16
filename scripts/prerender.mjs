@@ -31,6 +31,8 @@ if (existsSync(envPath)) {
 
 const ROUTES = [
   "/",
+  "/about",
+  "/contact",
   "/blog",
   "/privacy",
   ...getAllBlogRoutes(),

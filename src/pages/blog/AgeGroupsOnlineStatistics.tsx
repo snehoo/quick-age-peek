@@ -1,4 +1,5 @@
-import { ArticleShell, BackToBlog, RelatedPosts } from "@/components/blog/ArticleLayout";
+import { ArticleShell, BackToBlog, AuthorBio,
+  RelatedPosts } from "@/components/blog/ArticleLayout";
 import { useArticleMeta } from "@/components/blog/articleMeta";
 
 const CANONICAL = "https://whatismyage.me/blog/how-different-age-groups-behave-online-statistics";
@@ -209,6 +210,15 @@ const AgeGroupsOnlineStatistics = () => {
         Explore your own age-based digital and life insights here:{" "}
         <ExternalLink href="https://www.whatismyage.me">www.whatismyage.me</ExternalLink>
       </P>
+
+      <AuthorBio
+
+        name="Snehal Patel"
+
+        bio="Snehal is a developer and data enthusiast from Mumbai who loves finding unexpected patterns in numbers. When not building calculators, they're probably wondering how many breaths they've taken so far. What Is My Age was born from a simple question: what does your age really mean?"
+
+      />
+
 
       <RelatedPosts
         posts={[

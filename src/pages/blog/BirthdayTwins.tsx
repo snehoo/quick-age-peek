@@ -7,6 +7,7 @@ import {
   H3,
   Quote,
   CtaBox,
+  AuthorBio,
   RelatedPosts,
   BackToBlog,
 } from "@/components/blog/ArticleLayout";
@@ -186,6 +187,15 @@ const BirthdayTwins = () => {
         Enter your date of birth at whatismyage.me — find who shares your birthday alongside your
         heartbeats, full moons, and personalised life card.
       </CtaBox>
+
+      <AuthorBio
+
+        name="Snehal Patel"
+
+        bio="Snehal is a developer and data enthusiast from Mumbai who loves finding unexpected patterns in numbers. When not building calculators, they're probably wondering how many breaths they've taken so far. What Is My Age was born from a simple question: what does your age really mean?"
+
+      />
+
 
       <RelatedPosts
         posts={[

@@ -9,6 +9,7 @@ import {
   Note,
   CtaBox,
   ComparisonTable,
+  AuthorBio,
   RelatedPosts,
   BackToBlog,
 } from "@/components/blog/ArticleLayout";
@@ -165,6 +166,15 @@ const MyAgeCalculatorVsCalculatorNet = () => {
         Enter your birthdate and get your age in years, months, days, hours, and seconds — instantly, for
         free, with no sign-up.
       </CtaBox>
+
+      <AuthorBio
+
+        name="Snehal Patel"
+
+        bio="Snehal is a developer and data enthusiast from Mumbai who loves finding unexpected patterns in numbers. When not building calculators, they're probably wondering how many breaths they've taken so far. What Is My Age was born from a simple question: what does your age really mean?"
+
+      />
+
 
       <RelatedPosts
         posts={[

@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import { CtaBox, Figure, H2, H3, Lead, Paragraph, RelatedPosts, SimpleTable, UnitArticleShell, credit, ext } from "@/components/blog/UnitArticle";
+import { CtaBox, Figure, H2, H3, Lead, Paragraph, AuthorBio,
+  RelatedPosts, SimpleTable, UnitArticleShell, credit, ext } from "@/components/blog/UnitArticle";
 
 const meta = {
   title: "How Many Months Old Am I? Calculate Your Age in Months | whatismyage.me",
@@ -101,6 +102,15 @@ const MonthsOld = () => (
     <CtaBox title="Find your exact age in months">
       Enter your date of birth at whatismyage.me and see your age in months, weeks, days, hours, and heartbeats — calculated precisely.
     </CtaBox>
+
+    <AuthorBio
+
+      name="Snehal Patel"
+
+      bio="Snehal is a developer and data enthusiast from Mumbai who loves finding unexpected patterns in numbers. When not building calculators, they're probably wondering how many breaths they've taken so far. What Is My Age was born from a simple question: what does your age really mean?"
+
+    />
+
 
     <RelatedPosts posts={[
       { tag: "How-to", title: "How to Calculate Your Age in Days", href: "/blog/how-to-calculate-age-in-days" },

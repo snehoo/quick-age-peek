@@ -133,6 +133,14 @@ export const RelatedPosts = ({ posts }: { posts: RelatedPost[] }) => (
   </>
 );
 
+export const AuthorBio = ({ name, bio }: { name: string; bio: string }) => (
+  <div className="bg-secondary/40 border border-secondary rounded-xl p-6 my-10 space-y-2">
+    <div className="font-semibold text-foreground text-sm">About the author</div>
+    <div className="font-medium text-foreground">{name}</div>
+    <p className="text-foreground/80 text-sm leading-relaxed">{bio}</p>
+  </div>
+);
+
 export const BackToBlog = () => (
   <p className="text-sm">
     <Link to="/blog" className="text-primary hover:underline">

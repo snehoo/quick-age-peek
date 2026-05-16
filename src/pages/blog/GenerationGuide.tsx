@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import { ArticleShell, BackToBlog, CtaBox, H2, H3, Lead, Paragraph, Quote, RelatedPosts } from "@/components/blog/ArticleLayout";
+import { ArticleShell, BackToBlog, CtaBox, H2, H3, Lead, Paragraph, Quote, AuthorBio,
+  RelatedPosts } from "@/components/blog/ArticleLayout";
 import { useArticleMeta } from "@/components/blog/articleMeta";
 
 const meta = {
@@ -59,6 +60,11 @@ const GenerationGuide = () => {
       <Paragraph>Additionally, the mobile internet revolution arrived in India later but accelerated faster — Jio's 2016 launch compressed a decade of digital adoption into two years. As a result, Indian Millennials and early Gen Z experienced a uniquely compressed version of the digital transition. Therefore, generational identity in India is arguably better defined by economic inflection points than by the cultural touchstones of the Western framework.</Paragraph>
       <Paragraph>To discover your generation alongside other personal life stats — <Link to="/blog/how-many-heartbeats-in-a-lifetime" className="text-primary underline">heartbeat count</Link>, <Link to="/blog/how-many-full-moons-in-a-lifetime" className="text-primary underline">full moons lived</Link>, and <Link to="/blog/what-is-a-life-clock" className="text-primary underline">life clock time</Link> — use our calculator at whatismyage.me.</Paragraph>
       <CtaBox title="Discover your generation — and much more">Enter your date of birth to see your generational identity, heartbeat count, full moons, and personalised life card.</CtaBox>
+      <AuthorBio
+        name="Snehal Patel"
+        bio="Snehal is a developer and data enthusiast from Mumbai who loves finding unexpected patterns in numbers. When not building calculators, they're probably wondering how many breaths they've taken so far. What Is My Age was born from a simple question: what does your age really mean?"
+      />
+
       <RelatedPosts posts={related} />
       <BackToBlog />
     </ArticleShell>

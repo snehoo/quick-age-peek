@@ -5,6 +5,7 @@ import {
   H2,
   H3,
   CtaBox,
+  AuthorBio,
   RelatedPosts,
   BackToBlog,
 } from "@/components/blog/ArticleLayout";
@@ -194,6 +195,15 @@ const CalculatorNetAlternative = () => {
       <div className="bg-secondary/60 rounded-lg px-5 py-4 my-6 text-foreground/90 leading-relaxed">
         <strong>Bottom line:</strong> Calculator.net is a fine multi-purpose calculator hub. However, if age calculation is your only goal, a focused alternative will get you to the answer faster and with far less friction.
       </div>
+
+      <AuthorBio
+
+        name="Snehal Patel"
+
+        bio="Snehal is a developer and data enthusiast from Mumbai who loves finding unexpected patterns in numbers. When not building calculators, they're probably wondering how many breaths they've taken so far. What Is My Age was born from a simple question: what does your age really mean?"
+
+      />
+
 
       <RelatedPosts
         posts={[

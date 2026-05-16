@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import { ArticleShell, BackToBlog, CtaBox, H2, Lead, Paragraph, RelatedPosts } from "@/components/blog/ArticleLayout";
+import { ArticleShell, BackToBlog, CtaBox, H2, Lead, Paragraph, AuthorBio,
+  RelatedPosts } from "@/components/blog/ArticleLayout";
 import { useArticleMeta } from "@/components/blog/articleMeta";
 
 const meta = {
@@ -182,6 +183,11 @@ const HowOldWillIBeIn2050 = () => {
       </ul>
 
       <CtaBox title="Find your exact age on any date in 2050">Enter your date of birth at whatismyage.me — get your precise age, plus heartbeats, full moons, and shareable life card.</CtaBox>
+      <AuthorBio
+        name="Snehal Patel"
+        bio="Snehal is a developer and data enthusiast from Mumbai who loves finding unexpected patterns in numbers. When not building calculators, they're probably wondering how many breaths they've taken so far. What Is My Age was born from a simple question: what does your age really mean?"
+      />
+
       <RelatedPosts posts={related} />
       <BackToBlog />
     </ArticleShell>

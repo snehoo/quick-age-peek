@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import type { ReactNode } from "react";
-import { ArticleShell, BackToBlog, CtaBox, H2, H3, Lead, Paragraph, RelatedPosts } from "@/components/blog/ArticleLayout";
+import { ArticleShell, AuthorBio, BackToBlog, CtaBox, H2, H3, Lead, Paragraph, RelatedPosts } from "@/components/blog/ArticleLayout";
 import { useArticleMeta } from "@/components/blog/articleMeta";
 
 export const Figure = ({ src, alt, credit }: { src: string; alt: string; credit: ReactNode }) => (
@@ -64,4 +64,4 @@ export const UnitArticleShell = ({
 };
 
 // Re-exports for convenience
-export { Link, CtaBox, H2, H3, Lead, Paragraph, RelatedPosts };
+export { Link, AuthorBio, CtaBox, H2, H3, Lead, Paragraph, RelatedPosts };

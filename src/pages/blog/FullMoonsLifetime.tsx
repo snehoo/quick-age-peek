@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import { ArticleShell, BackToBlog, CtaBox, H2, H3, Lead, Paragraph, Quote, RelatedPosts, StatBox } from "@/components/blog/ArticleLayout";
+import { ArticleShell, BackToBlog, CtaBox, H2, H3, Lead, Paragraph, Quote, AuthorBio,
+  RelatedPosts, StatBox } from "@/components/blog/ArticleLayout";
 import { useArticleMeta } from "@/components/blog/articleMeta";
 
 const meta = {
@@ -69,6 +70,11 @@ const FullMoonsLifetime = () => {
       <Paragraph>This is the question that quietly changes things. If you are 38 years old and live to 80, approximately 519 full moons remain. That is 519 chances to step outside on a clear night and look up. Moreover, these are not special occasions requiring travel or equipment. They happen automatically, every 29.53 days, whether you notice them or not.</Paragraph>
       <Paragraph>Subsequently, knowing your number tends to make the noticing more likely. For more perspective on translating age into meaningful figures, read about <Link to="/blog/how-many-heartbeats-in-a-lifetime" className="text-primary underline">how many heartbeats you have had in your lifetime</Link>. Additionally, see <Link to="/blog/what-is-a-life-clock" className="text-primary underline">what time it is on your personal life clock</Link> right now.</Paragraph>
       <CtaBox title="How many full moons have you lived through?">Enter your date of birth at whatismyage.me for your exact count — plus heartbeats, days alive, and your shareable life card.</CtaBox>
+      <AuthorBio
+        name="Snehal Patel"
+        bio="Snehal is a developer and data enthusiast from Mumbai who loves finding unexpected patterns in numbers. When not building calculators, they're probably wondering how many breaths they've taken so far. What Is My Age was born from a simple question: what does your age really mean?"
+      />
+
       <RelatedPosts posts={related} />
       <BackToBlog />
     </ArticleShell>

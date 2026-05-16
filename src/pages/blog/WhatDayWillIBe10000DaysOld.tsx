@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import { ArticleShell, BackToBlog, CtaBox, H2, H3, Lead, Paragraph, RelatedPosts, Quote } from "@/components/blog/ArticleLayout";
+import { ArticleShell, BackToBlog, CtaBox, H2, H3, Lead, Paragraph, AuthorBio,
+  RelatedPosts, Quote } from "@/components/blog/ArticleLayout";
 import { useArticleMeta } from "@/components/blog/articleMeta";
 
 const meta = {
@@ -177,6 +178,11 @@ const WhatDayWillIBe10000DaysOld = () => {
       </ul>
 
       <CtaBox title="Find when you'll be 10,000 days old">Enter your date of birth at whatismyage.me — see your exact 10,000-day date, plus all other major milestones.</CtaBox>
+      <AuthorBio
+        name="Snehal Patel"
+        bio="Snehal is a developer and data enthusiast from Mumbai who loves finding unexpected patterns in numbers. When not building calculators, they're probably wondering how many breaths they've taken so far. What Is My Age was born from a simple question: what does your age really mean?"
+      />
+
       <RelatedPosts posts={related} />
       <BackToBlog />
     </ArticleShell>

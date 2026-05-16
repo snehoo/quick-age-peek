@@ -10,6 +10,7 @@ import {
   CtaBox,
   ComparisonTable,
   ProsConsList,
+  AuthorBio,
   RelatedPosts,
   BackToBlog,
 } from "@/components/blog/ArticleLayout";
@@ -165,6 +166,15 @@ const CalculatorSoupVsOmniCalculator = () => {
         No sign-up. No scrolling. Just enter your date of birth and get your age in years, months, days — and
         more.
       </CtaBox>
+
+      <AuthorBio
+
+        name="Snehal Patel"
+
+        bio="Snehal is a developer and data enthusiast from Mumbai who loves finding unexpected patterns in numbers. When not building calculators, they're probably wondering how many breaths they've taken so far. What Is My Age was born from a simple question: what does your age really mean?"
+
+      />
+
 
       <RelatedPosts
         posts={[

@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import { CtaBox, Figure, H2, H3, Lead, Paragraph, RelatedPosts, SimpleTable, UnitArticleShell, credit, ext } from "@/components/blog/UnitArticle";
+import { CtaBox, Figure, H2, H3, Lead, Paragraph, AuthorBio,
+  RelatedPosts, SimpleTable, UnitArticleShell, credit, ext } from "@/components/blog/UnitArticle";
 
 const meta = {
   title: "How Old Am I? Every Way to Calculate Your Exact Age (2026) | whatismyage.me",
@@ -162,6 +163,15 @@ const HowOldGuide = () => (
     <CtaBox title="Find your exact age right now">
       The most complete answer to "how old am I?" — across every unit simultaneously — is at whatismyage.me. Free, instant, no sign-up.
     </CtaBox>
+
+    <AuthorBio
+
+      name="Snehal Patel"
+
+      bio="Snehal is a developer and data enthusiast from Mumbai who loves finding unexpected patterns in numbers. When not building calculators, they're probably wondering how many breaths they've taken so far. What Is My Age was born from a simple question: what does your age really mean?"
+
+    />
+
 
     <RelatedPosts posts={[
       { tag: "Time", title: "How Many Months Old Am I?", href: "/blog/how-many-months-old-am-i" },

@@ -5,6 +5,8 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import Index from "./pages/Index.tsx";
 import Privacy from "./pages/Privacy.tsx";
+import About from "./pages/About.tsx";
+import Contact from "./pages/Contact.tsx";
 import Blog from "./pages/Blog.tsx";
 import HeartbeatsLifetime from "./pages/blog/HeartbeatsLifetime.tsx";
 import FullMoonsLifetime from "./pages/blog/FullMoonsLifetime.tsx";
@@ -79,6 +81,8 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/how-old-am-i" element={<HowOldAmI />} />
