@@ -1,6 +1,7 @@
-import { useEffect, useMemo } from "react";
+import { useEffect, useMemo, useState } from "react";
 import AgeCalculator from "@/components/AgeCalculator";
 import AdSlot from "@/components/AdSlot";
+import HomepageContent from "@/components/HomepageContent";
 import { getGeneration } from "@/lib/lifeContext";
 import { useWebApplicationMeta } from "@/components/blog/webAppMeta";
 
@@ -33,6 +34,7 @@ const setCanonical = (href: string) => {
 
 const Index = () => {
   useWebApplicationMeta();
+  const [hasDob, setHasDob] = useState(false);
 
   useEffect(() => {
     setCanonical("https://whatismyage.me/");
@@ -72,9 +74,11 @@ const Index = () => {
             Enter your date of birth and discover the numbers behind your story.
           </p>
         </div>
-        <AgeCalculator showHero />
+        <AgeCalculator showHero onDobChange={(d) => setHasDob(!!d)} />
         <AdSlot slotId="home-bottom" />
       </main>
+
+      {!hasDob && <HomepageContent />}
       <footer className="py-6 px-5 text-center text-xs text-muted-foreground/60">
         <div className="space-x-3">
           <span>whatismyage.me</span>

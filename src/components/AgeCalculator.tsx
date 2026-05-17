@@ -14,9 +14,10 @@ const DEFAULT_LIFE_EXPECTANCY = 80;
 
 interface AgeCalculatorProps {
   showHero?: boolean;
+  onDobChange?: (dob: string) => void;
 }
 
-const AgeCalculator = ({ showHero = false }: AgeCalculatorProps) => {
+const AgeCalculator = ({ showHero = false, onDobChange }: AgeCalculatorProps) => {
   const [name, setName] = useState("");
   const [dob, setDob] = useState("");
   const [lifeExpectancy, setLifeExpectancy] = useState(DEFAULT_LIFE_EXPECTANCY);
@@ -89,6 +90,7 @@ const AgeCalculator = ({ showHero = false }: AgeCalculatorProps) => {
   // Live recalculation as soon as a valid date is entered
   useEffect(() => {
     validateAndStart(dob);
+    onDobChange?.(dob);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dob]);
 
