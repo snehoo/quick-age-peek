@@ -1,5 +1,14 @@
 import { BornInYearArticle } from "@/components/blog/BornInYearArticle";
 
+const credit = (name: string, url = "https://unsplash.com") => (
+  <>
+    Photo by {name} on{" "}
+    <a href={url} target="_blank" rel="noopener noreferrer" className="underline">
+      Unsplash
+    </a>
+  </>
+);
+
 const BornIn1999 = () => (
   <BornInYearArticle
     year={1999}
@@ -11,55 +20,50 @@ const BornIn1999 = () => (
     intro={
       <>
         If you were born in 1999, you are <strong>26 or 27 years old in 2026</strong> — 27 if
-        your birthday has already passed this year, 26 if it's still coming. You were born in the
-        final year of the twentieth century — the year the whole world was watching the clock,
-        wondering what would happen when it ticked over to 2000. <em>The Matrix</em> hit cinemas.
-        Napster launched. The euro was introduced. And somewhere in all of that, you arrived.
+        your birthday has already passed this year, 26 if it's still coming. You arrived in the
+        final year of the twentieth century — the year the entire world was watching a digital
+        clock and quietly panicking about what would happen when it rolled over to 2000. Billions
+        were spent. Bunkers were stocked. The Matrix hit cinemas and asked whether any of it was
+        even real. Napster launched and broke the music industry in half. And somewhere in all
+        of that extraordinary noise, you arrived.
       </>
     }
     topImage={{
-      src: "https://images.unsplash.com/photo-1650535261994-41fd11b04220?w=1200&q=75&auto=format&fit=crop",
-      alt: "A woman wearing a white hat and round sunglasses — Y2K aesthetic",
-      credit: (
-        <>
-          Photo by Deon on{" "}
-          <a href="https://unsplash.com/photos/a-woman-wearing-a-white-hat-and-sunglasses-rLBKTgznq5I" target="_blank" rel="noopener noreferrer" className="underline">Unsplash</a>
-        </>
-      ),
+      src: "https://images.unsplash.com/photo-1497515114851-e55cf768414d?w=1200&q=75&auto=format&fit=crop",
+      alt: "Old computer countdown display — the Y2K era that defined 1999",
+      credit: credit("Markus Spiske"),
     }}
-    heartbeatImage={{
-      src: "https://images.unsplash.com/photo-1773998240458-9a36e718c63a?w=1200&q=75&auto=format&fit=crop",
-      alt: "Transparent purple iPod with colourful keyboard and earphones — early 2000s nostalgia",
-      credit: (
-        <>
-          Photo by Rich Laxa on{" "}
-          <a href="https://unsplash.com/photos/transparent-purple-ipod-with-colorful-keyboard-in-ear-headphones-98ZX4sKgytg" target="_blank" rel="noopener noreferrer" className="underline">Unsplash</a>
-        </>
-      ),
+    midImage={{
+      src: "https://images.unsplash.com/photo-1592659762303-f57d1c2f5f40?w=1200&q=75&auto=format&fit=crop",
+      alt: "2000s childhood toys and colourful objects — the world 1999 babies grew up in",
+      credit: credit("Stas Knop"),
     }}
     daysLived={
       <>
-        At 27 years old, you've lived approximately <strong>9,862 days</strong> — nearly ten
-        thousand individual days of waking up on this planet and getting on with it.
+        At 27, you've lived approximately <strong>9,862 days</strong>. At 26, it's closer to{" "}
+        <strong>9,497 days</strong>. Either way, that's nearly ten thousand mornings. You've
+        woken up and chosen what to do with each one. That's worth pausing on.
       </>
     }
     hoursMinutes={
       <>
-        <strong>~236,688 hours</strong> since your first breath and{" "}
-        <strong>~14,201,280 minutes</strong> of life so far.
+        Twenty-seven years translates to roughly <strong>236,688 hours</strong> and{" "}
+        <strong>14,201,280 minutes</strong> of existence. Every day adds another 1,440 to
+        the total, rain or shine.
       </>
     }
     heartbeats={
       <>
-        Your heart beats approximately 100,000 times a day per the American Heart Association.
-        Over 27 years, that's roughly <strong>986 million heartbeats</strong> — approaching a
-        billion, never once interrupted.
+        At approximately 100,000 heartbeats per day, you've clocked roughly{" "}
+        <strong>986 million heartbeats</strong> over 27 years — approaching a billion, never
+        once pausing for a break.
       </>
     }
     fullMoons={
       <>
-        The lunar cycle is 29.5 days. Since 1999, you've watched approximately{" "}
-        <strong>334 full moons</strong> rise.
+        The lunar cycle takes 29.5 days to complete. Since 1999, the full moon has risen
+        approximately <strong>334 times</strong>. Ancient calendars were built around this rhythm.
+        Your life has unfolded against it whether you looked up or not.
       </>
     }
     breaths={
@@ -71,30 +75,103 @@ const BornIn1999 = () => (
     generation={
       <>
         <p className="text-foreground/90 leading-relaxed mb-5 text-[17px]">
-          Born in 1999, you are <strong>Generation Z</strong>. You had the very last childhood in
-          which being offline was the default. Then came the iPhone (2007), Facebook opening to
-          everyone (2006), YouTube going mainstream — and suddenly the world was permanently
-          connected.
+          Born in 1999, you are <strong>Generation Z</strong> — and you had the very last
+          childhood in which being offline was the default. You might have fuzzy early memories
+          of dial-up internet, of boxy family computers that lived in a specific room and had to
+          be shared. Then, fairly rapidly, everything changed: the iPhone arrived in 2007 (when
+          you were around eight), Facebook opened to everyone in 2006, YouTube went mainstream
+          in 2007. By the time you hit your teens, the always-connected world was simply the
+          world.
         </p>
         <p className="text-foreground/90 leading-relaxed mb-5 text-[17px]">
-          You came of age during COVID-19, which hit when you were 20 or 21 — right at the moment
-          you were supposed to be building a social life, launching a career, and figuring out
-          who you are as an adult. That experience has left a visible mark on your generation's
-          mental health, economic expectations, and relationship with institutions.
+          Your generation grew up entirely post-9/11. You were about two years old when the
+          attacks happened, so you have no memory of the pre-9/11 world at all. The post-9/11
+          security state — airport body scanners, surveillance cameras on every street corner,
+          the assumption that your metadata might be collected — is just how things are. You
+          never had a version of normal to compare it to.
+        </p>
+        <p className="text-foreground/90 leading-relaxed mb-5 text-[17px]">
+          Columbine happened months before you were born, in April 1999. You grew up in the
+          lockdown-drill generation — schools that trained you from primary age to shelter in
+          place. That particular anxiety, woven into the fabric of American education since 1999,
+          is part of the texture of Gen Z childhood in a way that has no real precedent.
+        </p>
+        <p className="text-foreground/90 leading-relaxed mb-5 text-[17px]">
+          COVID hit when you were 20 or 21 — peak university years, the years you were supposed
+          to be building a social world and figuring out who you are as an adult. A lot of that
+          happened behind screens, in isolation, with a pandemic backdrop. Gen Z has the highest
+          recorded rates of anxiety and depression of any generation in modern survey data —
+          researchers link it partly to social media use from ages 10–12 onward, partly to the
+          cumulative weight of growing up with active-shooter drills, climate anxiety, economic
+          uncertainty, and a pandemic hitting right on cue. At 26 or 27 in 2026, you are in
+          early career mode, figuring out a high-cost world without a very helpful roadmap.
         </p>
       </>
     }
-    worldIntro="1999 was the last year of the millennium — and it felt like it. Here's what was happening:"
+    worldIntro="Here's what was happening in 1999, the year you arrived:"
     worldEvents={
       <ul className="list-disc pl-5 space-y-2 text-foreground/90 text-[17px] leading-relaxed mb-5">
-        <li><strong>Y2K:</strong> The Y2K bug consumed global attention throughout 1999. Governments spent an estimated $300–600 billion preparing for the possibility that computer systems would fail.</li>
-        <li><strong>The euro launched:</strong> On January 1, 1999, the euro was introduced as the official currency of 11 European Union member states.</li>
-        <li><strong>Napster:</strong> Shawn Fanning launched Napster in June 1999, enabling peer-to-peer music file sharing. It had 80 million users at its peak.</li>
-        <li><strong>The Matrix:</strong> Released in March 1999, <em>The Matrix</em> pioneered bullet-time cinematography and defined a generation's visual language.</li>
-        <li><strong>Music:</strong> Britney Spears' debut <em>...Baby One More Time</em>, TLC's <em>No Scrubs</em>, Ricky Martin's <em>Livin' La Vida Loca</em>, Eminem's <em>The Slim Shady LP</em>, Lauryn Hill's Grammy sweep.</li>
-        <li><strong>Film:</strong> <em>The Matrix</em>, <em>Fight Club</em>, <em>American Beauty</em>, <em>The Sixth Sense</em>, <em>Toy Story 2</em>, <em>Being John Malkovich</em>.</li>
-        <li><strong>Sport:</strong> Manchester United won an unprecedented treble — Premier League, FA Cup, and Champions League — in the same season.</li>
+        <li>
+          <strong>Y2K dominated global attention all year:</strong> The fear that two-digit year
+          codes in computer systems would cause catastrophic failures at midnight January 1, 2000
+          led to an estimated $300–600 billion in remediation spending worldwide. Governments,
+          banks, airlines, hospitals — everyone was scrambling. It largely fizzled. But the fear
+          was completely real at the time. Full context at{" "}
+          <a
+            href="https://www.bbc.com/news/technology-49040765"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline"
+          >
+            BBC News
+          </a>
+          .
+        </li>
+        <li>
+          <strong>Napster launched, June 1:</strong> Shawn Fanning, a 19-year-old Northeastern
+          University student, released his peer-to-peer music file-sharing application. Within
+          two years it had 80 million registered users. Within five years it had helped destroy
+          the CD industry. The music business has never fully recovered (or reorganised) since.
+        </li>
+        <li>
+          <strong>Columbine High School shooting, April 20:</strong> Two students killed 13 people
+          and injured 21 others before taking their own lives. It was the deadliest school shooting
+          in US history at the time. It changed school security permanently — and it happened the
+          month before many 1999-borns arrived in the world.
+        </li>
+        <li>
+          <strong>The Matrix, March 31:</strong> The Wachowskis' sci-fi film introduced bullet-time
+          cinematography, grossed $463 million, and launched a philosophical conversation about
+          simulated reality that genuinely hasn't stopped. The red pill / blue pill metaphor has
+          become embedded in the culture in ways its creators probably didn't fully intend.
+        </li>
+        <li>
+          <strong>Star Wars: Episode I – The Phantom Menace, May 19:</strong> The most
+          anticipated film in cinema history up to that point. People camped outside cinemas for
+          weeks. It grossed over $1 billion. The disappointment was proportional to the hype.
+          "Jar Jar Binks" became a cultural shorthand for cinematic let-down.
+        </li>
+        <li>
+          <strong>Euro launched as electronic currency, January 1:</strong> Eleven EU countries
+          adopted the euro as their official currency, though coins and notes wouldn't arrive
+          until January 2002. The largest currency unification in history began with a button
+          press, not a ceremony.
+        </li>
+        <li>
+          <strong>Music of 1999:</strong> Britney Spears' debut <em>...Baby One More Time</em>{" "}
+          sold 25 million copies. Eminem's <em>The Slim Shady LP</em> arrived. The Backstreet Boys
+          and <em>*NSYNC</em> were inescapable. TLC's <em>No Scrubs</em> won Grammy Awards.
+          Santana's <em>Supernatural</em> swept the 2000 Grammys with nine wins.
+        </li>
       </ul>
+    }
+    worldOutro={
+      <>
+        You arrived at the exact hinge between centuries — close enough to the analogue world to
+        have some fingerprints of it, young enough to be entirely shaped by what came after.
+        The Y2K generation grew up to be the generation that actually built the digital world
+        everyone else now lives in.
+      </>
     }
     futureRows={[
       ["2027", "27–28"],
@@ -104,32 +181,54 @@ const BornIn1999 = () => (
       ["2050", "50–51"],
       ["2060", "60–61"],
     ]}
-    futureNote="The big 30 is arriving in 2029 or 2030 — depending on your birthday."
+    futureNote={
+      <>
+        Your 30th birthday arrives in 2029 or 2030 — depending on your specific date of birth.
+        The big round number is just ahead.
+      </>
+    }
     planetRows={[
-      ["Mercury", "~112 Mercury years"],
-      ["Venus", "~44 Venus years"],
-      ["Mars", "~14 Mars years"],
-      ["Jupiter", "~2.3 Jupiter years"],
-      ["Saturn", "~0.92 Saturn years"],
+      ["Mercury", "~112 Mercury years (88 days per orbit)"],
+      ["Venus", "~44 Venus years (225 days per orbit)"],
+      ["Mars", "~14.4 Mars years (687 days per orbit)"],
+      ["Jupiter", "~2.3 Jupiter years (12 Earth years per orbit)"],
+      ["Saturn", "~0.92 Saturn years (29.5 Earth years per orbit)"],
     ]}
-    planetNote="On Saturn you haven't yet completed a single full orbit of the sun."
+    planetNote={
+      <>
+        On Saturn, you haven't yet completed your first full orbit of the sun. On Mercury, you'd
+        be 112. The number depends entirely on which planet you call home.
+      </>
+    }
     lifeClock={
       <>
-        On a 24-hour life clock — midnight at birth, midnight at the end of a full life — a
-        27-year-old (based on a global average life expectancy of ~73 years) sits at
-        approximately <strong>8:53 AM</strong>. Morning light. Everything ahead.
+        Map a human life onto a 24-hour clock — midnight at birth, midnight at age 79 — and a
+        27-year-old lands at approximately <strong>8:13 AM</strong>. Still early morning.
+        The day is wide open.
       </>
     }
     finalNote={
       <>
-        These numbers are based on turning 27 in 2026. Your precise age — in days, hours,
-        minutes, and heartbeats — depends on your exact birthday. Find it instantly at{" "}
-        <a href="https://whatismyage.me" className="text-primary underline">whatismyage.me</a>.
+        The numbers above use 27 as the base age. Your precise count — in days, hours, heartbeats,
+        and full moons — depends on your exact birthday. Find it at{" "}
+        <a href="https://whatismyage.me" className="text-primary underline">
+          whatismyage.me
+        </a>
+        .
       </>
     }
     related={[
       { tag: "Identity", title: "What Generation Am I?", href: "/blog/what-generation-am-i" },
-      { tag: "Biology", title: "How Many Heartbeats in a Lifetime?", href: "/blog/how-many-heartbeats-in-a-lifetime" },
+      {
+        tag: "Biology",
+        title: "How Many Heartbeats in a Lifetime?",
+        href: "/blog/how-many-heartbeats-in-a-lifetime",
+      },
+      {
+        tag: "Astronomy",
+        title: "How Many Full Moons in a Lifetime?",
+        href: "/blog/how-many-full-moons-in-a-lifetime",
+      },
       { tag: "Perspective", title: "What Is a Life Clock?", href: "/blog/what-is-a-life-clock" },
     ]}
   />

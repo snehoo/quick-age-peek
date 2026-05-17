@@ -1,5 +1,14 @@
 import { BornInYearArticle } from "@/components/blog/BornInYearArticle";
 
+const credit = (name: string, url = "https://unsplash.com") => (
+  <>
+    Photo by {name} on{" "}
+    <a href={url} target="_blank" rel="noopener noreferrer" className="underline">
+      Unsplash
+    </a>
+  </>
+);
+
 const BornIn2002 = () => (
   <BornInYearArticle
     year={2002}
@@ -11,88 +20,160 @@ const BornIn2002 = () => (
     intro={
       <>
         If you were born in 2002, you are <strong>23 or 24 years old in 2026</strong> — 24 if
-        your birthday has passed this year, 23 if it's still ahead. Early twenties. The years of
-        figuring out who you actually are. You were born in 2002 — the year the euro began
-        circulating as physical cash, the year <em>Spider-Man</em> became a global phenomenon,
-        and the year the International Criminal Court was established.
+        your birthday has passed this year, 23 if it's still ahead. Early twenties: the years of
+        figuring out who you actually are, independent of the structures (school, family, the place
+        you grew up) that used to define you. You were born in 2002 — the year 300 million
+        Europeans woke up with new coins in their pockets, the year Sam Raimi's <em>Spider-Man</em>{" "}
+        kicked off the modern superhero era, and, quietly in a dorm room somewhere, the year
+        Friendster launched and social media first went mainstream. You were one year old when
+        social media was invented.
       </>
     }
     topImage={{
-      src: "https://images.unsplash.com/photo-1773998240458-9a36e718c63a?w=1200&q=75&auto=format&fit=crop",
-      alt: "A transparent purple iPod with colourful keyboard — iconic early 2000s tech",
-      credit: (
-        <>
-          Photo by Rich Laxa on{" "}
-          <a href="https://unsplash.com/photos/transparent-purple-ipod-with-colorful-keyboard-in-ear-headphones-98ZX4sKgytg" target="_blank" rel="noopener noreferrer" className="underline">Unsplash</a>
-        </>
-      ),
+      src: "https://images.unsplash.com/photo-1584446049209-a7ceea4e1c54?w=1200&q=75&auto=format&fit=crop",
+      alt: "Pandemic and 2020 era — the defining disruption of Gen Z's coming-of-age years",
+      credit: credit("Fusion Medical Animation"),
     }}
-    heartbeatImage={{
-      src: "https://images.unsplash.com/photo-1771366629899-2b695442ad31?w=1200&q=75&auto=format&fit=crop",
-      alt: "A retro desk with vintage computer and drawing supplies — early 2000s home setup",
-      credit: (
-        <>
-          Photo by Calvin Wise on{" "}
-          <a href="https://unsplash.com/photos/retro-desk-with-vintage-computer-and-drawing-supplies-6PAGsCSXSFc" target="_blank" rel="noopener noreferrer" className="underline">Unsplash</a>
-        </>
-      ),
+    midImage={{
+      src: "https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?w=1200&q=75&auto=format&fit=crop",
+      alt: "Early 2000s iPod and music era — the soundtrack of the generation born in 2002",
+      credit: credit("blocks"),
     }}
     daysLived={
       <>
-        At 24 years old, you've lived approximately <strong>8,766 days</strong> — nearly nine
-        thousand individual days of experience, each one different from the last.
+        At 24, you've lived approximately <strong>8,766 days</strong>. At 23, it's closer to{" "}
+        <strong>8,400 days</strong>. Over eight thousand individual days of experience — each
+        one different from the last, the recent ones probably more interesting than the early ones.
       </>
     }
     hoursMinutes={
       <>
-        <strong>~210,384 hours</strong> since your first breath and{" "}
-        <strong>~12,623,040 minutes</strong> of life so far.
+        Twenty-four years translates to roughly <strong>210,240 hours</strong> and{" "}
+        <strong>12,614,400 minutes</strong> of existence. That number grows by 1,440 every day,
+        automatically, whether you're paying attention or not.
       </>
     }
     heartbeats={
       <>
-        Your heart beats approximately 100,000 times a day per the American Heart Association.
-        Over 24 years, that's roughly <strong>876 million heartbeats</strong> — over three
-        quarters of a billion, all automatic.
+        At approximately 100,000 heartbeats per day, you've accumulated roughly{" "}
+        <strong>876 million heartbeats</strong> over 24 years — over three quarters of a billion,
+        every single one automatic, none requiring a conscious decision to continue.
       </>
     }
     fullMoons={
       <>
-        The lunar cycle completes every 29.5 days. Since 2002, you've seen approximately{" "}
-        <strong>297 full moons</strong> rise over your life.
+        The lunar cycle completes every 29.5 days. Since 2002, the full moon has risen
+        approximately <strong>297 times</strong>. Your whole life, measured in moons.
       </>
     }
     breaths={
       <>
         At 15 breaths per minute over 24 years: roughly <strong>189 million breaths</strong>.
-        Each one keeping you here, one quiet moment at a time.
+        Each one quietly underwriting everything else you've ever done.
       </>
     }
     generation={
       <>
         <p className="text-foreground/90 leading-relaxed mb-5 text-[17px]">
-          Born in 2002, you are <strong>Generation Z</strong> — fully and squarely. You are among
-          the most digitally native people alive. You have no meaningful memory of a pre-internet
-          world.
+          Born in 2002, you are <strong>Generation Z</strong> — fully and squarely, without
+          any of the "elder Gen Z" asterisks that 1997-borns sometimes claim. You are among the
+          most genuinely digitally native people alive. You don't remember dial-up internet,
+          don't remember a world before WiFi, don't remember a time when looking something up
+          meant going to a library. Broadband and Google were simply always there.
         </p>
         <p className="text-foreground/90 leading-relaxed mb-5 text-[17px]">
-          You came of age during COVID-19 — you were 17 or 18 when lockdowns began. Your final
-          years of school or first years of university happened behind screens, in isolation,
-          during one of the most socially disorienting periods in modern memory. You are entering
-          a workforce being reshaped by artificial intelligence.
+          Your generation grew up entirely post-9/11. You were born the year after the attacks —
+          you have zero memory of them. But you grew up inside every consequence: the surveillance
+          infrastructure, the security theatre at airports, the continuous overseas military
+          operations that were simply part of the background of childhood. September 11 is something
+          you studied in school, the way older generations studied Vietnam. That's a genuinely
+          different relationship with that event than anyone born before 2001.
+        </p>
+        <p className="text-foreground/90 leading-relaxed mb-5 text-[17px]">
+          Smartphones arrived when you were around five to eight years old. Social media was
+          handed to you in early adolescence — Instagram when you were around nine or ten,
+          Snapchat at twelve or thirteen, TikTok by fifteen or sixteen. Identity formation for
+          your cohort happened partially in public, on platforms, with performance metrics
+          (likes, followers, views) attached. Researchers have spent years studying this and the
+          findings are consistent: Gen Z has the highest recorded rates of anxiety and depression
+          of any generation in modern survey history. The correlation with social media use from
+          ages 10–12 onward is strong. You are not imagining the weight of it.
+        </p>
+        <p className="text-foreground/90 leading-relaxed mb-5 text-[17px]">
+          COVID arrived when you were 17 or 18 — the final year of secondary school or the very
+          first year of university. Your A-levels, your leaving cert, your senior year — disrupted
+          or cancelled. The moment you were supposed to transition into adult independence happened
+          during a global pandemic. Many in your cohort moved back home, missed the in-person
+          experiences that tend to shape early adulthood, and emerged into a changed world
+          carrying the invisible weight of that disruption. At 23 or 24 in 2026, you're the
+          youngest in this series — and you're only just getting started.
         </p>
       </>
     }
-    worldIntro="2002 was an early 2000s world — post-9/11, pre-social media, right at the hinge. Here's what was happening:"
+    worldIntro="Here's what was happening in 2002, the year you arrived:"
     worldEvents={
       <ul className="list-disc pl-5 space-y-2 text-foreground/90 text-[17px] leading-relaxed mb-5">
-        <li><strong>Euro coins and notes launched:</strong> On January 1, 2002, euro banknotes and coins entered circulation across 12 European countries simultaneously — one of the largest currency transitions in history.</li>
-        <li><strong>Spider-Man:</strong> Sam Raimi's <em>Spider-Man</em> grossed over $821 million globally and launched the modern superhero blockbuster era.</li>
-        <li><strong>International Criminal Court:</strong> The ICC officially began functioning on July 1, 2002 — the world's first permanent international criminal tribunal.</li>
-        <li><strong>Music:</strong> Nelly's <em>Hot in Herre</em>, Justin Timberlake's <em>Cry Me a River</em>, Eminem's <em>Without Me</em>, Coldplay's <em>The Scientist</em>, Avril Lavigne's debut <em>Let Go</em>.</li>
-        <li><strong>Film:</strong> <em>The Lord of the Rings: The Two Towers</em>, <em>Spider-Man</em>, <em>Minority Report</em>, <em>Chicago</em>, <em>Bowling for Columbine</em>, <em>Bend It Like Beckham</em>.</li>
-        <li><strong>Sport:</strong> Brazil won the FIFA World Cup in Japan/South Korea — Ronaldo top scored with 8 goals. South Korea's run to the semi-finals was one of the tournament's great stories.</li>
+        <li>
+          <strong>Euro coins and notes entered circulation, January 1:</strong> Twelve countries,
+          300 million people, switched physical currencies overnight — the largest currency
+          transition in history. Greeks, Germans, Italians, French and others all woke up with
+          euros instead of drachmas, marks, lire, and francs. Background at{" "}
+          <a
+            href="https://www.ecb.europa.eu/euro/changeover/html/index.en.html"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline"
+          >
+            European Central Bank
+          </a>
+          .
+        </li>
+        <li>
+          <strong>Salt Lake City Winter Olympics, February:</strong> The first Olympics since 9/11.
+          The American flag recovered from Ground Zero was carried into the opening ceremony by
+          a group of NYPD officers and firefighters. The moment was raw and real. Team USA won
+          34 medals — their best Winter Games performance at the time.
+        </li>
+        <li>
+          <strong>Spider-Man (Sam Raimi), May 3:</strong> Tobey Maguire as Peter Parker grossed
+          $821 million globally — the first superhero film of the modern era to cross $800 million.
+          It proved comic-book adaptations could be serious, emotional blockbusters. The MCU would
+          launch five years later and take that lesson to its logical conclusion.
+        </li>
+        <li>
+          <strong>Bali bombings, October 12:</strong> Two bombs at nightclubs in Kuta, Bali killed
+          202 people — mostly Australian tourists. It was the deadliest terrorist attack since 9/11
+          and made brutally clear that the "war on terror" wasn't geographically contained.
+        </li>
+        <li>
+          <strong>Friendster launched — social media goes mainstream:</strong> Friendster was the
+          first social network to reach mainstream adoption, hitting 3 million users in its first
+          few months. MySpace followed in 2003. Facebook in 2004. The social media era was born.
+          You were one year old when it started. You've never known a world without it.
+        </li>
+        <li>
+          <strong>The DC Sniper attacks, October 2–22:</strong> John Muhammad and Lee Boyd Malvo
+          killed 10 people across three weeks of random shootings in the Washington DC area.
+          Schools cancelled outdoor activities. Gas stations erected plywood shields. The region
+          was paralysed for nearly a month.
+        </li>
+        <li>
+          <strong>Music and film of 2002:</strong> Eminem released both "Without Me" and "Lose
+          Yourself" and starred in <em>8 Mile</em>. Justin Timberlake launched his solo career
+          with "Cry Me a River." Avril Lavigne's debut <em>Let Go</em>, Coldplay's{" "}
+          <em>A Rush of Blood to the Head</em>. In cinemas: <em>The Lord of the Rings: The Two
+          Towers</em>, <em>Minority Report</em>, <em>Chicago</em> (Best Picture), Sam Raimi's
+          <em>Spider-Man</em>. Brazil won the FIFA World Cup with Ronaldo scoring 8 goals.
+        </li>
       </ul>
+    }
+    worldOutro={
+      <>
+        You arrived one year after the world changed and grew up entirely inside the consequences.
+        In 2026 you're in your early twenties, building something from scratch — and you're doing
+        it with more context, more self-awareness, and more information than any generation before
+        you had at this age. That counts for something.
+      </>
     }
     futureRows={[
       ["2027", "24–25"],
@@ -102,32 +183,57 @@ const BornIn2002 = () => (
       ["2050", "47–48"],
       ["2060", "57–58"],
     ]}
+    futureNote={
+      <>
+        Your 30th birthday arrives in 2032. The late twenties — which everyone warns you about
+        and which most people actually find more stable than their early twenties — are still
+        ahead of you.
+      </>
+    }
     planetRows={[
-      ["Mercury", "~100 Mercury years"],
-      ["Venus", "~39 Venus years"],
-      ["Mars", "~13 Mars years"],
-      ["Jupiter", "~2 Jupiter years"],
-      ["Saturn", "~0.81 Saturn years"],
+      ["Mercury", "~100 Mercury years (88 days per orbit)"],
+      ["Venus", "~39 Venus years (225 days per orbit)"],
+      ["Mars", "~12.8 Mars years (687 days per orbit)"],
+      ["Jupiter", "~2.0 Jupiter years (12 Earth years per orbit)"],
+      ["Saturn", "~0.81 Saturn years (29.5 Earth years per orbit)"],
     ]}
-    planetNote="On Jupiter, you'd be celebrating your 2nd birthday. On Mercury, you'd be 100 years old."
+    planetNote={
+      <>
+        On Jupiter, you'd just be celebrating your second birthday. On Mercury, you'd be
+        a century old. On Saturn, you haven't completed your first full orbit around the sun.
+        Age is a very local concept.
+      </>
+    }
     lifeClock={
       <>
-        On a 24-hour life clock — midnight at birth, midnight at the end of a full life — a
-        24-year-old (based on a global average life expectancy of ~73 years) sits at
-        approximately <strong>7:53 AM</strong>. Early morning. A long, full day ahead.
+        Map a human life onto a 24-hour clock — midnight at birth, midnight at age 79 — and a
+        24-year-old lands at approximately <strong>7:16 AM</strong>. Early morning. The entire
+        day is in front of you.
       </>
     }
     finalNote={
       <>
-        These figures are based on turning 24 in 2026. Your precise age — in days, hours,
-        minutes, and heartbeats — depends on your exact birthday. Find it at{" "}
-        <a href="https://whatismyage.me" className="text-primary underline">whatismyage.me</a>.
+        The figures above use 24 as the base age. Your precise count — days, hours, heartbeats,
+        full moons — depends on your exact birthday. Get your specific number at{" "}
+        <a href="https://whatismyage.me" className="text-primary underline">
+          whatismyage.me
+        </a>
+        .
       </>
     }
     related={[
       { tag: "Identity", title: "What Generation Am I?", href: "/blog/what-generation-am-i" },
-      { tag: "Astronomy", title: "How Many Full Moons in a Lifetime?", href: "/blog/how-many-full-moons-in-a-lifetime" },
-      { tag: "How-to", title: "How to Calculate Age in Days", href: "/blog/how-to-calculate-age-in-days" },
+      {
+        tag: "Biology",
+        title: "How Many Heartbeats in a Lifetime?",
+        href: "/blog/how-many-heartbeats-in-a-lifetime",
+      },
+      {
+        tag: "Astronomy",
+        title: "How Many Full Moons in a Lifetime?",
+        href: "/blog/how-many-full-moons-in-a-lifetime",
+      },
+      { tag: "Perspective", title: "What Is a Life Clock?", href: "/blog/what-is-a-life-clock" },
     ]}
   />
 );
