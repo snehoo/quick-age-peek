@@ -20,6 +20,20 @@ export const ROUTE_META = {
     canonical: `${SITE}/blog`,
     ogType: "website",
   },
+  "/about": {
+    title: "About — What Is My Age?",
+    description:
+      "Learn about What Is My Age — the story behind the calculator, who built it, and why it exists.",
+    canonical: `${SITE}/about`,
+    ogType: "website",
+  },
+  "/contact": {
+    title: "Contact — What Is My Age?",
+    description:
+      "Contact What Is My Age — send feedback, report bugs, or just say hello.",
+    canonical: `${SITE}/contact`,
+    ogType: "website",
+  },
   "/privacy": {
     title: "Privacy Policy — whatismyage.me",
     description:
