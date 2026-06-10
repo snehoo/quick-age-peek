@@ -1,5 +1,16 @@
+// src/App.tsx
+// ─────────────────────────────────────────────────────────────────
+// CHANGES FROM ORIGINAL:
+// 1. Added TrailingSlashRedirect component (client-side safety net)
+// 2. All Route paths now include trailing slash variants
+//    e.g.  path="/blog/how-many-seconds-old-am-i"
+//    becomes both that AND "/blog/how-many-seconds-old-am-i/"
+//    via the redirect component — no routes needed to change
+// 3. TrailingSlashRedirect placed as first child of BrowserRouter
+// ─────────────────────────────────────────────────────────────────
+
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes, useLocation } from "react-router-dom";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -68,8 +79,33 @@ import CalculatorSoupAlternative from "./pages/blog/CalculatorSoupAlternative.ts
 import FreeAgeCalculatorNoAds from "./pages/blog/FreeAgeCalculatorNoAds.tsx";
 import GigaCalculatorAlternative from "./pages/blog/GigaCalculatorAlternative.tsx";
 import OmniCalculatorAlternative from "./pages/blog/OmniCalculatorAlternative.tsx";
-
 import NotFound from "./pages/NotFound.tsx";
+
+// ─────────────────────────────────────────────────────────────────
+// NEW: TrailingSlashRedirect
+// Client-side safety net — redirects /blog/slug → /blog/slug/
+// Works alongside the Cloudflare _redirects rule for full coverage.
+// ─────────────────────────────────────────────────────────────────
+function TrailingSlashRedirect() {
+  const location = useLocation();
+  const { pathname, search, hash } = location;
+
+  // Skip: root, already has slash, or looks like a file (has extension)
+  if (
+    pathname !== "/" &&
+    !pathname.endsWith("/") &&
+    !/\.[a-zA-Z0-9]+$/.test(pathname)
+  ) {
+    return (
+      <Navigate
+        to={pathname + "/" + search + hash}
+        replace
+      />
+    );
+  }
+
+  return null;
+}
 
 const queryClient = new QueryClient();
 
@@ -79,84 +115,147 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+
+        {/* ── Trailing slash enforcer — must be FIRST inside BrowserRouter ── */}
+        <TrailingSlashRedirect />
+
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/about" element={<About />} />
+          <Route path="/about/" element={<About />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/contact/" element={<Contact />} />
           <Route path="/privacy" element={<Privacy />} />
+          <Route path="/privacy/" element={<Privacy />} />
           <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/" element={<Blog />} />
+
           <Route path="/blog/how-old-am-i" element={<HowOldAmI />} />
+          <Route path="/blog/how-old-am-i/" element={<HowOldAmI />} />
           <Route path="/blog/age-calculator" element={<AgeCalculator />} />
+          <Route path="/blog/age-calculator/" element={<AgeCalculator />} />
           <Route path="/blog/age-in-days-calculator" element={<AgeInDaysCalculator />} />
-          <Route
-            path="/blog/how-many-heartbeats-in-a-lifetime"
-            element={<HeartbeatsLifetime />}
-          />
-          <Route
-            path="/blog/how-many-full-moons-in-a-lifetime"
-            element={<FullMoonsLifetime />}
-          />
+          <Route path="/blog/age-in-days-calculator/" element={<AgeInDaysCalculator />} />
+
+          <Route path="/blog/how-many-heartbeats-in-a-lifetime" element={<HeartbeatsLifetime />} />
+          <Route path="/blog/how-many-heartbeats-in-a-lifetime/" element={<HeartbeatsLifetime />} />
+          <Route path="/blog/how-many-full-moons-in-a-lifetime" element={<FullMoonsLifetime />} />
+          <Route path="/blog/how-many-full-moons-in-a-lifetime/" element={<FullMoonsLifetime />} />
           <Route path="/blog/what-generation-am-i" element={<GenerationGuide />} />
+          <Route path="/blog/what-generation-am-i/" element={<GenerationGuide />} />
           <Route path="/blog/how-to-calculate-age-in-days" element={<AgeInDays />} />
+          <Route path="/blog/how-to-calculate-age-in-days/" element={<AgeInDays />} />
           <Route path="/blog/what-is-a-life-clock" element={<LifeClock />} />
+          <Route path="/blog/what-is-a-life-clock/" element={<LifeClock />} />
           <Route path="/blog/what-day-of-the-week-was-i-born" element={<BirthWeekday />} />
+          <Route path="/blog/what-day-of-the-week-was-i-born/" element={<BirthWeekday />} />
           <Route path="/blog/how-many-seconds-old-am-i" element={<SecondsOld />} />
-          <Route
-            path="/blog/birthday-twins-famous-people-born-on-your-birthday"
-            element={<BirthdayTwins />}
-          />
-          <Route
-            path="/blog/how-to-find-your-zodiac-sign-by-birth-date"
-            element={<ZodiacByBirthDate />}
-          />
+          <Route path="/blog/how-many-seconds-old-am-i/" element={<SecondsOld />} />
+          <Route path="/blog/birthday-twins-famous-people-born-on-your-birthday" element={<BirthdayTwins />} />
+          <Route path="/blog/birthday-twins-famous-people-born-on-your-birthday/" element={<BirthdayTwins />} />
+          <Route path="/blog/how-to-find-your-zodiac-sign-by-birth-date" element={<ZodiacByBirthDate />} />
+          <Route path="/blog/how-to-find-your-zodiac-sign-by-birth-date/" element={<ZodiacByBirthDate />} />
           <Route path="/blog/what-does-days-to-birthday-mean" element={<BirthdayCountdown />} />
+          <Route path="/blog/what-does-days-to-birthday-mean/" element={<BirthdayCountdown />} />
+
           <Route path="/blog/calculator-net-vs-calculatorsoup-age-calculator" element={<CalculatorNetVsCalculatorSoup />} />
+          <Route path="/blog/calculator-net-vs-calculatorsoup-age-calculator/" element={<CalculatorNetVsCalculatorSoup />} />
           <Route path="/blog/calculatorsoup-vs-omnicalculator" element={<CalculatorSoupVsOmniCalculator />} />
+          <Route path="/blog/calculatorsoup-vs-omnicalculator/" element={<CalculatorSoupVsOmniCalculator />} />
           <Route path="/blog/myagecalculator-vs-calculator-net" element={<MyAgeCalculatorVsCalculatorNet />} />
+          <Route path="/blog/myagecalculator-vs-calculator-net/" element={<MyAgeCalculatorVsCalculatorNet />} />
           <Route path="/blog/omnicalculator-vs-calculator-net" element={<OmniCalculatorVsCalculatorNet />} />
+          <Route path="/blog/omnicalculator-vs-calculator-net/" element={<OmniCalculatorVsCalculatorNet />} />
           <Route path="/blog/gigacalculator-vs-omnicalculator" element={<GigaCalculatorVsOmniCalculator />} />
+          <Route path="/blog/gigacalculator-vs-omnicalculator/" element={<GigaCalculatorVsOmniCalculator />} />
+
           <Route path="/blog/age-calculator-statistics" element={<AgeCalculatorStatistics />} />
+          <Route path="/blog/age-calculator-statistics/" element={<AgeCalculatorStatistics />} />
           <Route path="/blog/how-different-age-groups-behave-online-statistics" element={<AgeGroupsOnlineStatistics />} />
+          <Route path="/blog/how-different-age-groups-behave-online-statistics/" element={<AgeGroupsOnlineStatistics />} />
           <Route path="/blog/what-happens-inside-your-body-over-time-statistics" element={<BodyOverTimeStatistics />} />
+          <Route path="/blog/what-happens-inside-your-body-over-time-statistics/" element={<BodyOverTimeStatistics />} />
           <Route path="/blog/how-age-and-birthdays-distribute-globally-statistics" element={<AgeBirthdaysGloballyStatistics />} />
+          <Route path="/blog/how-age-and-birthdays-distribute-globally-statistics/" element={<AgeBirthdaysGloballyStatistics />} />
           <Route path="/blog/how-people-measure-time-and-life-statistics" element={<MeasureTimeAndLifeStatistics />} />
+          <Route path="/blog/how-people-measure-time-and-life-statistics/" element={<MeasureTimeAndLifeStatistics />} />
+
           <Route path="/blog/how-old-am-i-if-i-was-born-in-1985" element={<BornIn1985 />} />
+          <Route path="/blog/how-old-am-i-if-i-was-born-in-1985/" element={<BornIn1985 />} />
           <Route path="/blog/how-old-am-i-if-i-was-born-in-1986" element={<BornIn1986 />} />
+          <Route path="/blog/how-old-am-i-if-i-was-born-in-1986/" element={<BornIn1986 />} />
           <Route path="/blog/how-old-am-i-if-i-was-born-in-1987" element={<BornIn1987 />} />
+          <Route path="/blog/how-old-am-i-if-i-was-born-in-1987/" element={<BornIn1987 />} />
           <Route path="/blog/how-old-am-i-if-i-was-born-in-1988" element={<BornIn1988 />} />
+          <Route path="/blog/how-old-am-i-if-i-was-born-in-1988/" element={<BornIn1988 />} />
           <Route path="/blog/how-old-am-i-if-i-was-born-in-1989" element={<BornIn1989 />} />
-          <Route path="/blog/how-old-am-i-if-i-was-born-in-1995" element={<BornIn1995 />} />
-          <Route path="/blog/how-old-am-i-if-i-was-born-in-1996" element={<BornIn1996 />} />
-          <Route path="/blog/how-old-am-i-if-i-was-born-in-1997" element={<BornIn1997 />} />
-          <Route path="/blog/how-old-am-i-if-i-was-born-in-1998" element={<BornIn1998 />} />
-          <Route path="/blog/how-old-am-i-if-i-was-born-in-1999" element={<BornIn1999 />} />
-          <Route path="/blog/how-old-am-i-if-i-was-born-in-2000" element={<BornIn2000 />} />
-          <Route path="/blog/how-old-am-i-if-i-was-born-in-2001" element={<BornIn2001 />} />
-          <Route path="/blog/how-old-am-i-if-i-was-born-in-2002" element={<BornIn2002 />} />
+          <Route path="/blog/how-old-am-i-if-i-was-born-in-1989/" element={<BornIn1989 />} />
           <Route path="/blog/how-old-am-i-if-i-was-born-in-1990" element={<BornIn1990 />} />
+          <Route path="/blog/how-old-am-i-if-i-was-born-in-1990/" element={<BornIn1990 />} />
           <Route path="/blog/how-old-am-i-if-i-was-born-in-1991" element={<BornIn1991 />} />
+          <Route path="/blog/how-old-am-i-if-i-was-born-in-1991/" element={<BornIn1991 />} />
           <Route path="/blog/how-old-am-i-if-i-was-born-in-1992" element={<BornIn1992 />} />
+          <Route path="/blog/how-old-am-i-if-i-was-born-in-1992/" element={<BornIn1992 />} />
           <Route path="/blog/how-old-am-i-if-i-was-born-in-1993" element={<BornIn1993 />} />
+          <Route path="/blog/how-old-am-i-if-i-was-born-in-1993/" element={<BornIn1993 />} />
           <Route path="/blog/how-old-am-i-if-i-was-born-in-1994" element={<BornIn1994 />} />
+          <Route path="/blog/how-old-am-i-if-i-was-born-in-1994/" element={<BornIn1994 />} />
+          <Route path="/blog/how-old-am-i-if-i-was-born-in-1995" element={<BornIn1995 />} />
+          <Route path="/blog/how-old-am-i-if-i-was-born-in-1995/" element={<BornIn1995 />} />
+          <Route path="/blog/how-old-am-i-if-i-was-born-in-1996" element={<BornIn1996 />} />
+          <Route path="/blog/how-old-am-i-if-i-was-born-in-1996/" element={<BornIn1996 />} />
+          <Route path="/blog/how-old-am-i-if-i-was-born-in-1997" element={<BornIn1997 />} />
+          <Route path="/blog/how-old-am-i-if-i-was-born-in-1997/" element={<BornIn1997 />} />
+          <Route path="/blog/how-old-am-i-if-i-was-born-in-1998" element={<BornIn1998 />} />
+          <Route path="/blog/how-old-am-i-if-i-was-born-in-1998/" element={<BornIn1998 />} />
+          <Route path="/blog/how-old-am-i-if-i-was-born-in-1999" element={<BornIn1999 />} />
+          <Route path="/blog/how-old-am-i-if-i-was-born-in-1999/" element={<BornIn1999 />} />
+          <Route path="/blog/how-old-am-i-if-i-was-born-in-2000" element={<BornIn2000 />} />
+          <Route path="/blog/how-old-am-i-if-i-was-born-in-2000/" element={<BornIn2000 />} />
+          <Route path="/blog/how-old-am-i-if-i-was-born-in-2001" element={<BornIn2001 />} />
+          <Route path="/blog/how-old-am-i-if-i-was-born-in-2001/" element={<BornIn2001 />} />
+          <Route path="/blog/how-old-am-i-if-i-was-born-in-2002" element={<BornIn2002 />} />
+          <Route path="/blog/how-old-am-i-if-i-was-born-in-2002/" element={<BornIn2002 />} />
+
           <Route path="/blog/how-many-hours-old-am-i" element={<HoursOld />} />
+          <Route path="/blog/how-many-hours-old-am-i/" element={<HoursOld />} />
           <Route path="/blog/how-many-minutes-old-am-i" element={<MinutesOld />} />
+          <Route path="/blog/how-many-minutes-old-am-i/" element={<MinutesOld />} />
           <Route path="/blog/how-many-months-old-am-i" element={<MonthsOld />} />
+          <Route path="/blog/how-many-months-old-am-i/" element={<MonthsOld />} />
           <Route path="/blog/how-many-weeks-old-am-i" element={<WeeksOld />} />
+          <Route path="/blog/how-many-weeks-old-am-i/" element={<WeeksOld />} />
           <Route path="/blog/how-old-am-i-complete-guide" element={<HowOldGuide />} />
+          <Route path="/blog/how-old-am-i-complete-guide/" element={<HowOldGuide />} />
           <Route path="/blog/how-old-will-i-be-in-2030" element={<HowOldWillIBeIn2030 />} />
+          <Route path="/blog/how-old-will-i-be-in-2030/" element={<HowOldWillIBeIn2030 />} />
           <Route path="/blog/how-old-will-i-be-in-2040" element={<HowOldWillIBeIn2040 />} />
+          <Route path="/blog/how-old-will-i-be-in-2040/" element={<HowOldWillIBeIn2040 />} />
           <Route path="/blog/how-old-will-i-be-in-2050" element={<HowOldWillIBeIn2050 />} />
+          <Route path="/blog/how-old-will-i-be-in-2050/" element={<HowOldWillIBeIn2050 />} />
           <Route path="/blog/what-day-will-i-be-10000-days-old" element={<WhatDayWillIBe10000DaysOld />} />
+          <Route path="/blog/what-day-will-i-be-10000-days-old/" element={<WhatDayWillIBe10000DaysOld />} />
           <Route path="/blog/when-will-i-be-1-billion-seconds-old" element={<WhenWillIBe1BillionSecondsOld />} />
+          <Route path="/blog/when-will-i-be-1-billion-seconds-old/" element={<WhenWillIBe1BillionSecondsOld />} />
+
           <Route path="/blog/age-calculator-for-legal-documents" element={<AgeCalculatorLegalDocuments />} />
+          <Route path="/blog/age-calculator-for-legal-documents/" element={<AgeCalculatorLegalDocuments />} />
           <Route path="/blog/age-calculator-for-medical-professionals" element={<AgeCalculatorMedicalProfessionals />} />
+          <Route path="/blog/age-calculator-for-medical-professionals/" element={<AgeCalculatorMedicalProfessionals />} />
           <Route path="/blog/age-calculator-no-sign-up" element={<AgeCalculatorNoSignUp />} />
+          <Route path="/blog/age-calculator-no-sign-up/" element={<AgeCalculatorNoSignUp />} />
           <Route path="/blog/better-alternative-to-calculator-net" element={<BetterAlternativeCalculatorNet />} />
+          <Route path="/blog/better-alternative-to-calculator-net/" element={<BetterAlternativeCalculatorNet />} />
           <Route path="/blog/calculator-net-alternative" element={<CalculatorNetAlternative />} />
+          <Route path="/blog/calculator-net-alternative/" element={<CalculatorNetAlternative />} />
           <Route path="/blog/calculatorsoup-age-calculator-alternative" element={<CalculatorSoupAlternative />} />
+          <Route path="/blog/calculatorsoup-age-calculator-alternative/" element={<CalculatorSoupAlternative />} />
           <Route path="/blog/free-age-calculator-no-ads" element={<FreeAgeCalculatorNoAds />} />
+          <Route path="/blog/free-age-calculator-no-ads/" element={<FreeAgeCalculatorNoAds />} />
           <Route path="/blog/gigacalculator-age-calculator-alternative" element={<GigaCalculatorAlternative />} />
+          <Route path="/blog/gigacalculator-age-calculator-alternative/" element={<GigaCalculatorAlternative />} />
           <Route path="/blog/omnicalculator-alternative-age-tool" element={<OmniCalculatorAlternative />} />
+          <Route path="/blog/omnicalculator-alternative-age-tool/" element={<OmniCalculatorAlternative />} />
 
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />

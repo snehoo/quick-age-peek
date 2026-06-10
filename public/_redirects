@@ -1,6 +1,11 @@
-# Cloudflare Pages _redirects file
-# Note: Only relative URLs are allowed in this file
-# www to non-www redirect is handled through Cloudflare Bulk Redirect Rules in the dashboard
+# Cloudflare Pages _redirects
+# Enforces trailing slash on all URLs — fixes canonical tag mismatch
 
-# Example relative redirect (if needed):
-# /old-page /new-page 301
+# Blog post URLs: /blog/slug → /blog/slug/ (301)
+/blog/:slug  /blog/:slug/  301
+
+# Top-level pages: /privacy → /privacy/ etc.
+/privacy  /privacy/  301
+/about    /about/    301
+/contact  /contact/  301
+/blog     /blog/     301
