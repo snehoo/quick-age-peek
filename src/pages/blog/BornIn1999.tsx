@@ -218,18 +218,18 @@ const BornIn1999 = () => (
       </>
     }
     related={[
-      { tag: "Identity", title: "What Generation Am I?", href: "/blog/what-generation-am-i" },
+      { tag: "Identity", title: "What Generation Am I?", href: "/blog/what-generation-am-i/" },
       {
         tag: "Biology",
         title: "How Many Heartbeats in a Lifetime?",
-        href: "/blog/how-many-heartbeats-in-a-lifetime",
+        href: "/blog/how-many-heartbeats-in-a-lifetime/",
       },
       {
         tag: "Astronomy",
         title: "How Many Full Moons in a Lifetime?",
-        href: "/blog/how-many-full-moons-in-a-lifetime",
+        href: "/blog/how-many-full-moons-in-a-lifetime/",
       },
-      { tag: "Perspective", title: "What Is a Life Clock?", href: "/blog/what-is-a-life-clock" },
+      { tag: "Perspective", title: "What Is a Life Clock?", href: "/blog/what-is-a-life-clock/" },
     ]}
   />
 );

@@ -20,10 +20,10 @@ const steps = [
 ];
 
 const related = [
-  { tag: "Science", title: "How Many Heartbeats in a Human Lifetime?", href: "/blog/how-many-heartbeats-in-a-lifetime" },
-  { tag: "Astronomy", title: "How Many Full Moons Will You See in Your Lifetime?", href: "/blog/how-many-full-moons-in-a-lifetime" },
-  { tag: "Philosophy", title: "What Is a Life Clock? Your Age as a 24-Hour Day Explained", href: "/blog/what-is-a-life-clock" },
-  { tag: "Culture", title: "What Generation Am I? The Complete Guide", href: "/blog/what-generation-am-i" },
+  { tag: "Science", title: "How Many Heartbeats in a Human Lifetime?", href: "/blog/how-many-heartbeats-in-a-lifetime/" },
+  { tag: "Astronomy", title: "How Many Full Moons Will You See in Your Lifetime?", href: "/blog/how-many-full-moons-in-a-lifetime/" },
+  { tag: "Philosophy", title: "What Is a Life Clock? Your Age as a 24-Hour Day Explained", href: "/blog/what-is-a-life-clock/" },
+  { tag: "Culture", title: "What Generation Am I? The Complete Guide", href: "/blog/what-generation-am-i/" },
 ];
 
 const AgeInDays = () => {
@@ -61,8 +61,8 @@ const AgeInDays = () => {
       <Paragraph>The 10,000-day birthday has become particularly popular online. Moreover, it falls in the late twenties for most people — a natural inflection point between early adulthood and the thirties. Consequently, it is often framed as a prompt to take stock of what has been accomplished and what remains undone. Furthermore, the number is large enough to feel substantial but small enough to make the remaining thousands feel consequential.</Paragraph>
       <H2>From Days to Seconds, Minutes, and Heartbeats</H2>
       <Paragraph>Once you know your exact age in days, every other unit of time follows directly. Specifically, multiply by 24 for hours, by 1,440 for minutes, and by 86,400 for seconds. As a result, a 38-year-old has lived approximately <strong>1.2 billion seconds</strong>.</Paragraph>
-      <Paragraph>Interestingly, that figure is closely comparable to their <Link to="/blog/how-many-heartbeats-in-a-lifetime" className="text-primary underline">total heartbeat count of 1.43 billion</Link>. Therefore, your heart has beaten slightly more times than the number of seconds you have been alive — a genuinely surprising relationship between two seemingly unrelated body clocks.</Paragraph>
-      <Paragraph>Similarly, converting days to <Link to="/blog/how-many-full-moons-in-a-lifetime" className="text-primary underline">full moons</Link> provides another satisfying unit: divide your total days by 29.53. Furthermore, you can find <Link to="/blog/what-is-a-life-clock" className="text-primary underline">what time it currently is on your life clock</Link> — your age expressed as a moment in a 24-hour day.</Paragraph>
+      <Paragraph>Interestingly, that figure is closely comparable to their <Link to="/blog/how-many-heartbeats-in-a-lifetime/" className="text-primary underline">total heartbeat count of 1.43 billion</Link>. Therefore, your heart has beaten slightly more times than the number of seconds you have been alive — a genuinely surprising relationship between two seemingly unrelated body clocks.</Paragraph>
+      <Paragraph>Similarly, converting days to <Link to="/blog/how-many-full-moons-in-a-lifetime/" className="text-primary underline">full moons</Link> provides another satisfying unit: divide your total days by 29.53. Furthermore, you can find <Link to="/blog/what-is-a-life-clock/" className="text-primary underline">what time it currently is on your life clock</Link> — your age expressed as a moment in a 24-hour day.</Paragraph>
       <H2>Why Your Age in Days Matters Beyond Curiosity</H2>
       <Paragraph>There are practical contexts where day-precise age calculations genuinely matter. Specifically, paediatricians track newborn development in days during the critical first weeks of life. Moreover, some legal systems and financial contracts specify eligibility in calendar days rather than years. Additionally, certain insurance products and pension calculations use day-level precision.</Paragraph>
       <Paragraph>For most people, however, the appeal is simpler. Your age in years changes once annually — a sudden jump that arrives and disappears. Conversely, your age in days increments quietly every morning at midnight. It is a continuous, honest measure of time lived. As a result, it makes time feel real in a way that years, somehow, do not.</Paragraph>

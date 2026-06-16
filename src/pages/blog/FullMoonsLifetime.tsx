@@ -21,10 +21,10 @@ const moonCounts = [
 ];
 
 const related = [
-  { tag: "Science", title: "How Many Heartbeats in a Human Lifetime?", href: "/blog/how-many-heartbeats-in-a-lifetime" },
-  { tag: "Philosophy", title: "What Is a Life Clock? Your Age as a 24-Hour Day Explained", href: "/blog/what-is-a-life-clock" },
-  { tag: "How-to", title: "How to Calculate Your Exact Age in Days", href: "/blog/how-to-calculate-age-in-days" },
-  { tag: "Culture", title: "What Generation Am I? The Complete Guide", href: "/blog/what-generation-am-i" },
+  { tag: "Science", title: "How Many Heartbeats in a Human Lifetime?", href: "/blog/how-many-heartbeats-in-a-lifetime/" },
+  { tag: "Philosophy", title: "What Is a Life Clock? Your Age as a 24-Hour Day Explained", href: "/blog/what-is-a-life-clock/" },
+  { tag: "How-to", title: "How to Calculate Your Exact Age in Days", href: "/blog/how-to-calculate-age-in-days/" },
+  { tag: "Culture", title: "What Generation Am I? The Complete Guide", href: "/blog/what-generation-am-i/" },
 ];
 
 const FullMoonsLifetime = () => {
@@ -68,7 +68,7 @@ const FullMoonsLifetime = () => {
       <Paragraph>If you were born within a day or two of a full moon, your first night on Earth was illuminated. Conversely, if you arrived during a new moon, the night sky would have been unusually dark and star-filled. Furthermore, knowing your birth moon phase is one of the most evocative personal facts you can discover — and it requires nothing more than your date of birth.</Paragraph>
       <H2>How Many Full Moons Remain in Your Lifetime?</H2>
       <Paragraph>This is the question that quietly changes things. If you are 38 years old and live to 80, approximately 519 full moons remain. That is 519 chances to step outside on a clear night and look up. Moreover, these are not special occasions requiring travel or equipment. They happen automatically, every 29.53 days, whether you notice them or not.</Paragraph>
-      <Paragraph>Subsequently, knowing your number tends to make the noticing more likely. For more perspective on translating age into meaningful figures, read about <Link to="/blog/how-many-heartbeats-in-a-lifetime" className="text-primary underline">how many heartbeats you have had in your lifetime</Link>. Additionally, see <Link to="/blog/what-is-a-life-clock" className="text-primary underline">what time it is on your personal life clock</Link> right now.</Paragraph>
+      <Paragraph>Subsequently, knowing your number tends to make the noticing more likely. For more perspective on translating age into meaningful figures, read about <Link to="/blog/how-many-heartbeats-in-a-lifetime/" className="text-primary underline">how many heartbeats you have had in your lifetime</Link>. Additionally, see <Link to="/blog/what-is-a-life-clock/" className="text-primary underline">what time it is on your personal life clock</Link> right now.</Paragraph>
       <CtaBox title="How many full moons have you lived through?">Enter your date of birth at whatismyage.me for your exact count — plus heartbeats, days alive, and your shareable life card.</CtaBox>
       <AuthorBio
         name="Snehal Patel"

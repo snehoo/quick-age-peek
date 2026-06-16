@@ -87,7 +87,7 @@ const WeeksOld = () => (
       ]}
     />
     <Paragraph>
-      See also: <Link to="/blog/how-to-calculate-age-in-days" className="text-primary underline">days old</Link> · <Link to="/blog/how-many-seconds-old-am-i" className="text-primary underline">seconds old</Link> · <Link to="/blog/how-many-heartbeats-in-a-lifetime" className="text-primary underline">heartbeats in a lifetime</Link>
+      See also: <Link to="/blog/how-to-calculate-age-in-days/" className="text-primary underline">days old</Link> · <Link to="/blog/how-many-seconds-old-am-i/" className="text-primary underline">seconds old</Link> · <Link to="/blog/how-many-heartbeats-in-a-lifetime/" className="text-primary underline">heartbeats in a lifetime</Link>
     </Paragraph>
 
     <CtaBox title="Find your exact week count">
@@ -104,11 +104,11 @@ const WeeksOld = () => (
 
 
     <RelatedPosts posts={[
-      { tag: "How-to", title: "How to Calculate Your Age in Days", href: "/blog/how-to-calculate-age-in-days" },
-      { tag: "Numbers", title: "How Many Seconds Old Am I?", href: "/blog/how-many-seconds-old-am-i" },
-      { tag: "Biology", title: "How Many Heartbeats in a Lifetime?", href: "/blog/how-many-heartbeats-in-a-lifetime" },
-      { tag: "Astronomy", title: "How Many Full Moons in a Lifetime?", href: "/blog/how-many-full-moons-in-a-lifetime" },
-      { tag: "Time", title: "What Is a Life Clock?", href: "/blog/what-is-a-life-clock" },
+      { tag: "How-to", title: "How to Calculate Your Age in Days", href: "/blog/how-to-calculate-age-in-days/" },
+      { tag: "Numbers", title: "How Many Seconds Old Am I?", href: "/blog/how-many-seconds-old-am-i/" },
+      { tag: "Biology", title: "How Many Heartbeats in a Lifetime?", href: "/blog/how-many-heartbeats-in-a-lifetime/" },
+      { tag: "Astronomy", title: "How Many Full Moons in a Lifetime?", href: "/blog/how-many-full-moons-in-a-lifetime/" },
+      { tag: "Time", title: "What Is a Life Clock?", href: "/blog/what-is-a-life-clock/" },
     ]} />
   </UnitArticleShell>
 );

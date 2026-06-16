@@ -22,10 +22,10 @@ const clock = [
 ];
 
 const related = [
-  { tag: "Science", title: "How Many Heartbeats in a Human Lifetime?", href: "/blog/how-many-heartbeats-in-a-lifetime" },
-  { tag: "Astronomy", title: "How Many Full Moons Will You See in Your Lifetime?", href: "/blog/how-many-full-moons-in-a-lifetime" },
-  { tag: "Culture", title: "What Generation Am I? The Complete Guide", href: "/blog/what-generation-am-i" },
-  { tag: "How-to", title: "How to Calculate Your Exact Age in Days", href: "/blog/how-to-calculate-age-in-days" },
+  { tag: "Science", title: "How Many Heartbeats in a Human Lifetime?", href: "/blog/how-many-heartbeats-in-a-lifetime/" },
+  { tag: "Astronomy", title: "How Many Full Moons Will You See in Your Lifetime?", href: "/blog/how-many-full-moons-in-a-lifetime/" },
+  { tag: "Culture", title: "What Generation Am I? The Complete Guide", href: "/blog/what-generation-am-i/" },
+  { tag: "How-to", title: "How to Calculate Your Exact Age in Days", href: "/blog/how-to-calculate-age-in-days/" },
 ];
 
 const LifeClock = () => {
@@ -69,7 +69,7 @@ const LifeClock = () => {
       <Paragraph>A conventional <strong>life expectancy calculator</strong> estimates how many years you are likely to live based on health data, geography, and lifestyle factors. However, the life clock works differently. It does not predict. Instead, it reframes. Moreover, it takes whatever lifespan you choose — 80, 90, 100 — and shows you where in that arc you currently stand.</Paragraph>
       <Paragraph>Additionally, the life clock is not about <strong>time left to live</strong> in a morbid sense. Rather, it is about understanding the shape of a life in progress. Similarly, it is about recognising that 11 AM is not late — and that the afternoon, whenever it arrives, still contains enormous possibility.</Paragraph>
       <H2>How Your Life Clock Connects to Your Other Age Stats</H2>
-      <Paragraph>The life clock is one of several powerful ways to reframe what your age actually means. Furthermore, your <Link to="/blog/how-many-heartbeats-in-a-lifetime" className="text-primary underline">heartbeat total</Link> shows the biological machinery running behind those years. Additionally, your <Link to="/blog/how-many-full-moons-in-a-lifetime" className="text-primary underline">full moon count</Link> provides a poetic, astronomical measure of time. Moreover, your <Link to="/blog/how-to-calculate-age-in-days" className="text-primary underline">exact age in days</Link> gives you the raw, unvarnished total. Together, these numbers paint a portrait of a life that a single number in years can never fully convey.</Paragraph>
+      <Paragraph>The life clock is one of several powerful ways to reframe what your age actually means. Furthermore, your <Link to="/blog/how-many-heartbeats-in-a-lifetime/" className="text-primary underline">heartbeat total</Link> shows the biological machinery running behind those years. Additionally, your <Link to="/blog/how-many-full-moons-in-a-lifetime/" className="text-primary underline">full moon count</Link> provides a poetic, astronomical measure of time. Moreover, your <Link to="/blog/how-to-calculate-age-in-days/" className="text-primary underline">exact age in days</Link> gives you the raw, unvarnished total. Together, these numbers paint a portrait of a life that a single number in years can never fully convey.</Paragraph>
       <CtaBox title="What time is it on your life clock?">Enter your date of birth at whatismyage.me to find your exact life clock time — plus heartbeats, full moons, days alive, and your shareable life card.</CtaBox>
       <AuthorBio
         name="Snehal Patel"

@@ -246,10 +246,10 @@ const BornIn1993 = () => (
       </>
     }
     related={[
-      { tag: "Identity", title: "What Generation Am I?", href: "/blog/what-generation-am-i" },
-      { tag: "Trivia", title: "What Day of the Week Were You Born?", href: "/blog/what-day-of-the-week-was-i-born" },
-      { tag: "Astrology", title: "How to Find Your Zodiac Sign by Birth Date", href: "/blog/how-to-find-your-zodiac-sign-by-birth-date" },
-      { tag: "Culture", title: "Birthday Twins: Famous People Born on Your Birthday", href: "/blog/birthday-twins-famous-people-born-on-your-birthday" },
+      { tag: "Identity", title: "What Generation Am I?", href: "/blog/what-generation-am-i/" },
+      { tag: "Trivia", title: "What Day of the Week Were You Born?", href: "/blog/what-day-of-the-week-was-i-born/" },
+      { tag: "Astrology", title: "How to Find Your Zodiac Sign by Birth Date", href: "/blog/how-to-find-your-zodiac-sign-by-birth-date/" },
+      { tag: "Culture", title: "Birthday Twins: Famous People Born on Your Birthday", href: "/blog/birthday-twins-famous-people-born-on-your-birthday/" },
     ]}
   />
 );

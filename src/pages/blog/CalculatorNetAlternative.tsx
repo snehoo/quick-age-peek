@@ -207,10 +207,10 @@ const CalculatorNetAlternative = () => {
 
       <RelatedPosts
         posts={[
-          { tag: "Comparison", title: "How Many Weeks Old Am I?", href: "/blog/how-many-weeks-old-am-i" },
-          { tag: "Comparison", title: "How Many Seconds Old Am I?", href: "/blog/how-many-seconds-old-am-i" },
-          { tag: "Tools", title: "Calculator.net vs CalculatorSoup: Age Calculator Face-Off", href: "/blog/calculator-net-vs-calculatorsoup-age-calculator" },
-          { tag: "Tools", title: "What Day of the Week Was I Born?", href: "/blog/what-day-of-the-week-was-i-born" },
+          { tag: "Comparison", title: "How Many Weeks Old Am I?", href: "/blog/how-many-weeks-old-am-i/" },
+          { tag: "Comparison", title: "How Many Seconds Old Am I?", href: "/blog/how-many-seconds-old-am-i/" },
+          { tag: "Tools", title: "Calculator.net vs CalculatorSoup: Age Calculator Face-Off", href: "/blog/calculator-net-vs-calculatorsoup-age-calculator/" },
+          { tag: "Tools", title: "What Day of the Week Was I Born?", href: "/blog/what-day-of-the-week-was-i-born/" },
         ]}
       />
 

@@ -51,10 +51,10 @@ const ExternalLink = ({ href, children }: { href: string; children: React.ReactN
 );
 
 const related = [
-  { tag: "Time Milestones", title: "When Will I Be 1 Billion Seconds Old?", href: "/blog/when-will-i-be-1-billion-seconds-old" },
-  { tag: "Time Units", title: "How to Calculate Your Exact Age in Days", href: "/blog/how-to-calculate-age-in-days" },
-  { tag: "Time Units", title: "How Many Weeks Old Am I?", href: "/blog/how-many-weeks-old-am-i" },
-  { tag: "Philosophy", title: "What Is a Life Clock?", href: "/blog/what-is-a-life-clock" },
+  { tag: "Time Milestones", title: "When Will I Be 1 Billion Seconds Old?", href: "/blog/when-will-i-be-1-billion-seconds-old/" },
+  { tag: "Time Units", title: "How to Calculate Your Exact Age in Days", href: "/blog/how-to-calculate-age-in-days/" },
+  { tag: "Time Units", title: "How Many Weeks Old Am I?", href: "/blog/how-many-weeks-old-am-i/" },
+  { tag: "Philosophy", title: "What Is a Life Clock?", href: "/blog/what-is-a-life-clock/" },
 ];
 
 const WhatDayWillIBe10000DaysOld = () => {
@@ -165,16 +165,16 @@ const WhatDayWillIBe10000DaysOld = () => {
         ]}
       />
       <Paragraph>Find your exact day count at <Link to="/" className="text-primary underline">whatismyage.me</Link> — and see when you'll hit your next milestone.</Paragraph>
-      <Paragraph>Also read: <Link to="/blog/how-to-calculate-age-in-days" className="text-primary underline">How to calculate your age in days</Link></Paragraph>
+      <Paragraph>Also read: <Link to="/blog/how-to-calculate-age-in-days/" className="text-primary underline">How to calculate your age in days</Link></Paragraph>
 
       <H2>Related Reading</H2>
       <ul className="list-disc list-inside space-y-2 mb-5 text-foreground/90">
-        <li>📅 <Link to="/blog/how-to-calculate-age-in-days" className="text-primary underline">How to calculate your age in days</Link></li>
-        <li>🗓 <Link to="/blog/how-many-weeks-old-am-i" className="text-primary underline">How many weeks old am I?</Link></li>
-        <li>⏱ <Link to="/blog/when-will-i-be-1-billion-seconds-old" className="text-primary underline">When will I be 1 billion seconds old?</Link></li>
-        <li>❤️ <Link to="/blog/how-many-heartbeats-in-a-lifetime" className="text-primary underline">How many heartbeats in a lifetime?</Link></li>
-        <li>🌕 <Link to="/blog/how-many-full-moons-in-a-lifetime" className="text-primary underline">How many full moons in a lifetime?</Link></li>
-        <li>🕰 <Link to="/blog/what-is-a-life-clock" className="text-primary underline">What is a life clock?</Link></li>
+        <li>📅 <Link to="/blog/how-to-calculate-age-in-days/" className="text-primary underline">How to calculate your age in days</Link></li>
+        <li>🗓 <Link to="/blog/how-many-weeks-old-am-i/" className="text-primary underline">How many weeks old am I?</Link></li>
+        <li>⏱ <Link to="/blog/when-will-i-be-1-billion-seconds-old/" className="text-primary underline">When will I be 1 billion seconds old?</Link></li>
+        <li>❤️ <Link to="/blog/how-many-heartbeats-in-a-lifetime/" className="text-primary underline">How many heartbeats in a lifetime?</Link></li>
+        <li>🌕 <Link to="/blog/how-many-full-moons-in-a-lifetime/" className="text-primary underline">How many full moons in a lifetime?</Link></li>
+        <li>🕰 <Link to="/blog/what-is-a-life-clock/" className="text-primary underline">What is a life clock?</Link></li>
       </ul>
 
       <CtaBox title="Find when you'll be 10,000 days old">Enter your date of birth at whatismyage.me — see your exact 10,000-day date, plus all other major milestones.</CtaBox>

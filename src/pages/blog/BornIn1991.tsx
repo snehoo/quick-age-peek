@@ -229,10 +229,10 @@ const BornIn1991 = () => (
       </>
     }
     related={[
-      { tag: "Identity", title: "What Generation Am I?", href: "/blog/what-generation-am-i" },
-      { tag: "Biology", title: "How Many Heartbeats in a Lifetime?", href: "/blog/how-many-heartbeats-in-a-lifetime" },
-      { tag: "How-to", title: "How to Calculate Your Age in Days", href: "/blog/how-to-calculate-age-in-days" },
-      { tag: "Time", title: "What Is a Life Clock?", href: "/blog/what-is-a-life-clock" },
+      { tag: "Identity", title: "What Generation Am I?", href: "/blog/what-generation-am-i/" },
+      { tag: "Biology", title: "How Many Heartbeats in a Lifetime?", href: "/blog/how-many-heartbeats-in-a-lifetime/" },
+      { tag: "How-to", title: "How to Calculate Your Age in Days", href: "/blog/how-to-calculate-age-in-days/" },
+      { tag: "Time", title: "What Is a Life Clock?", href: "/blog/what-is-a-life-clock/" },
     ]}
   />
 );

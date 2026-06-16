@@ -222,10 +222,10 @@ const AgeBirthdaysGloballyStatistics = () => {
 
       <RelatedPosts
         posts={[
-          { tag: "Culture", title: "What Generation Am I? The Complete Birth Year Guide", href: "/blog/what-generation-am-i" },
-          { tag: "Curiosity", title: "Birthday Twins: Famous People Born on Your Birthday", href: "/blog/birthday-twins-famous-people-born-on-your-birthday" },
-          { tag: "Trivia", title: "What Day of the Week Were You Born?", href: "/blog/what-day-of-the-week-was-i-born" },
-          { tag: "Data", title: "Age Calculator Statistics (2025)", href: "/blog/age-calculator-statistics" },
+          { tag: "Culture", title: "What Generation Am I? The Complete Birth Year Guide", href: "/blog/what-generation-am-i/" },
+          { tag: "Curiosity", title: "Birthday Twins: Famous People Born on Your Birthday", href: "/blog/birthday-twins-famous-people-born-on-your-birthday/" },
+          { tag: "Trivia", title: "What Day of the Week Were You Born?", href: "/blog/what-day-of-the-week-was-i-born/" },
+          { tag: "Data", title: "Age Calculator Statistics (2025)", href: "/blog/age-calculator-statistics/" },
         ]}
       />
 

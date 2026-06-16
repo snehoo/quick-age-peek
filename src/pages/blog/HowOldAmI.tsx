@@ -50,7 +50,7 @@ const HowOldAmI = () => {
         Days are visceral. A 30-year-old has lived roughly 10,957 days. That number feels heavier than "30" — and it reveals invisible milestones. Your 10,000th day is a landmark you probably never celebrated.
       </Paragraph>
       <Paragraph>
-        <a href="/blog/age-in-days-calculator" className="text-primary underline">Calculate your exact age in days →</a>
+        <a href="/blog/age-in-days-calculator/" className="text-primary underline">Calculate your exact age in days →</a>
       </Paragraph>
 
       <H3>Age in Heartbeats</H3>
@@ -58,7 +58,7 @@ const HowOldAmI = () => {
         Your heart beats approximately 100,000 times per day. Over 30 years, that's roughly 1 billion heartbeats — each one automatic, each one keeping you here. When you know this number, time feels different.
       </Paragraph>
       <Paragraph>
-        <a href="/blog/how-many-heartbeats-in-a-lifetime" className="text-primary underline">Discover your heartbeat count →</a>
+        <a href="/blog/how-many-heartbeats-in-a-lifetime/" className="text-primary underline">Discover your heartbeat count →</a>
       </Paragraph>
 
       <H3>Age in Full Moons</H3>
@@ -66,7 +66,7 @@ const HowOldAmI = () => {
         There are roughly 13 full moons every year. In 30 years, you've witnessed only about 390 of them. The number is smaller than most expect — a reminder of how finite our time is.
       </Paragraph>
       <Paragraph>
-        <a href="/blog/how-many-full-moons-in-a-lifetime" className="text-primary underline">See your full moon count →</a>
+        <a href="/blog/how-many-full-moons-in-a-lifetime/" className="text-primary underline">See your full moon count →</a>
       </Paragraph>
 
       <H3>Life Clock — Age as a 24-Hour Day</H3>
@@ -74,7 +74,7 @@ const HowOldAmI = () => {
         Imagine your life as a single 24-hour day. What time is it now? A 30-year-old (assuming a global life expectancy of ~73 years) is at approximately 1:23 PM — early afternoon, with the whole day still ahead.
       </Paragraph>
       <Paragraph>
-        <a href="/blog/what-is-a-life-clock" className="text-primary underline">Find your life clock time →</a>
+        <a href="/blog/what-is-a-life-clock/" className="text-primary underline">Find your life clock time →</a>
       </Paragraph>
 
       <H3>Your Generation</H3>
@@ -82,7 +82,7 @@ const HowOldAmI = () => {
         Your birth year determines your generation — Gen Z, Millennial, Gen X, or Boomer. Each generation has shared cultural moments that shape worldview. Your generation's defining events are different from those who came before or after.
       </Paragraph>
       <Paragraph>
-        <a href="/blog/what-generation-am-i" className="text-primary underline">Discover your generation →</a>
+        <a href="/blog/what-generation-am-i/" className="text-primary underline">Discover your generation →</a>
       </Paragraph>
 
       <H3>Your Birth Day of the Week</H3>
@@ -90,7 +90,7 @@ const HowOldAmI = () => {
         A lesser-known detail: the exact day of the week you were born. Some cultures believe your birth day influences personality and life path. It's a small detail that shapes identity.
       </Paragraph>
       <Paragraph>
-        <a href="/blog/what-day-of-the-week-was-i-born" className="text-primary underline">Find your birth day →</a>
+        <a href="/blog/what-day-of-the-week-was-i-born/" className="text-primary underline">Find your birth day →</a>
       </Paragraph>
 
       <Note>
@@ -154,10 +154,10 @@ const HowOldAmI = () => {
 
       <RelatedPosts
         posts={[
-          { tag: "How-to", title: "Age in Days Calculator", href: "/blog/age-in-days-calculator" },
-          { tag: "Science", title: "How Many Heartbeats in a Lifetime?", href: "/blog/how-many-heartbeats-in-a-lifetime" },
-          { tag: "Perspective", title: "What Is a Life Clock?", href: "/blog/what-is-a-life-clock" },
-          { tag: "Identity", title: "What Generation Am I?", href: "/blog/what-generation-am-i" },
+          { tag: "How-to", title: "Age in Days Calculator", href: "/blog/age-in-days-calculator/" },
+          { tag: "Science", title: "How Many Heartbeats in a Lifetime?", href: "/blog/how-many-heartbeats-in-a-lifetime/" },
+          { tag: "Perspective", title: "What Is a Life Clock?", href: "/blog/what-is-a-life-clock/" },
+          { tag: "Identity", title: "What Generation Am I?", href: "/blog/what-generation-am-i/" },
         ]}
       />
 

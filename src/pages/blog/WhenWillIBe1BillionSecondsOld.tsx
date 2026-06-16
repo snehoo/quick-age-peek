@@ -51,10 +51,10 @@ const ExternalLink = ({ href, children }: { href: string; children: React.ReactN
 );
 
 const related = [
-  { tag: "Time Milestones", title: "What Day Will I Be 10,000 Days Old?", href: "/blog/what-day-will-i-be-10000-days-old" },
-  { tag: "Time Units", title: "How Many Seconds Old Am I?", href: "/blog/how-many-seconds-old-am-i" },
-  { tag: "Time Units", title: "How Many Weeks Old Am I?", href: "/blog/how-many-weeks-old-am-i" },
-  { tag: "Predictions", title: "How Old Will I Be in 2050?", href: "/blog/how-old-will-i-be-in-2050" },
+  { tag: "Time Milestones", title: "What Day Will I Be 10,000 Days Old?", href: "/blog/what-day-will-i-be-10000-days-old/" },
+  { tag: "Time Units", title: "How Many Seconds Old Am I?", href: "/blog/how-many-seconds-old-am-i/" },
+  { tag: "Time Units", title: "How Many Weeks Old Am I?", href: "/blog/how-many-weeks-old-am-i/" },
+  { tag: "Predictions", title: "How Old Will I Be in 2050?", href: "/blog/how-old-will-i-be-in-2050/" },
 ];
 
 const WhenWillIBe1BillionSecondsOld = () => {
@@ -174,16 +174,16 @@ const WhenWillIBe1BillionSecondsOld = () => {
         ]}
       />
       <Paragraph>See your live second count at <Link to="/" className="text-primary underline">whatismyage.me</Link> — updated in real time as you read.</Paragraph>
-      <Paragraph>Also read: <Link to="/blog/how-many-seconds-old-am-i" className="text-primary underline">How many seconds old am I?</Link></Paragraph>
+      <Paragraph>Also read: <Link to="/blog/how-many-seconds-old-am-i/" className="text-primary underline">How many seconds old am I?</Link></Paragraph>
 
       <H2>Related Reading</H2>
       <ul className="list-disc list-inside space-y-2 mb-5 text-foreground/90">
-        <li>⏱ <Link to="/blog/how-many-seconds-old-am-i" className="text-primary underline">How many seconds old am I?</Link></li>
-        <li>📅 <Link to="/blog/what-day-will-i-be-10000-days-old" className="text-primary underline">What day will I be 10,000 days old?</Link></li>
-        <li>🗓 <Link to="/blog/how-many-weeks-old-am-i" className="text-primary underline">How many weeks old am I?</Link></li>
-        <li>❤️ <Link to="/blog/how-many-heartbeats-in-a-lifetime" className="text-primary underline">How many heartbeats in a lifetime?</Link></li>
-        <li>🕰 <Link to="/blog/what-is-a-life-clock" className="text-primary underline">What is a life clock?</Link></li>
-        <li>🔮 <Link to="/blog/how-old-will-i-be-in-2050" className="text-primary underline">How old will I be in 2050?</Link></li>
+        <li>⏱ <Link to="/blog/how-many-seconds-old-am-i/" className="text-primary underline">How many seconds old am I?</Link></li>
+        <li>📅 <Link to="/blog/what-day-will-i-be-10000-days-old/" className="text-primary underline">What day will I be 10,000 days old?</Link></li>
+        <li>🗓 <Link to="/blog/how-many-weeks-old-am-i/" className="text-primary underline">How many weeks old am I?</Link></li>
+        <li>❤️ <Link to="/blog/how-many-heartbeats-in-a-lifetime/" className="text-primary underline">How many heartbeats in a lifetime?</Link></li>
+        <li>🕰 <Link to="/blog/what-is-a-life-clock/" className="text-primary underline">What is a life clock?</Link></li>
+        <li>🔮 <Link to="/blog/how-old-will-i-be-in-2050/" className="text-primary underline">How old will I be in 2050?</Link></li>
       </ul>
 
       <CtaBox title="Find when you'll be 1 billion seconds old">Enter your date of birth at whatismyage.me — see your exact billion-second milestone and all other major time measurements.</CtaBox>

@@ -263,10 +263,10 @@ const BornIn1994 = () => (
       </>
     }
     related={[
-      { tag: "Identity", title: "What Generation Am I?", href: "/blog/what-generation-am-i" },
-      { tag: "Trivia", title: "What Day of the Week Were You Born?", href: "/blog/what-day-of-the-week-was-i-born" },
-      { tag: "Astrology", title: "How to Find Your Zodiac Sign by Birth Date", href: "/blog/how-to-find-your-zodiac-sign-by-birth-date" },
-      { tag: "Numbers", title: "How Many Seconds Old Are You Right Now?", href: "/blog/how-many-seconds-old-am-i" },
+      { tag: "Identity", title: "What Generation Am I?", href: "/blog/what-generation-am-i/" },
+      { tag: "Trivia", title: "What Day of the Week Were You Born?", href: "/blog/what-day-of-the-week-was-i-born/" },
+      { tag: "Astrology", title: "How to Find Your Zodiac Sign by Birth Date", href: "/blog/how-to-find-your-zodiac-sign-by-birth-date/" },
+      { tag: "Numbers", title: "How Many Seconds Old Are You Right Now?", href: "/blog/how-many-seconds-old-am-i/" },
     ]}
   />
 );

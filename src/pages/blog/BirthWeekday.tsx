@@ -177,15 +177,15 @@ const BirthWeekday = () => {
       </Paragraph>
       <Paragraph>
         Additionally, it pairs naturally with the other numbers that define your time on Earth. Your{" "}
-        <Link to="/blog/how-to-calculate-age-in-days" className="text-primary underline">
+        <Link to="/blog/how-to-calculate-age-in-days/" className="text-primary underline">
           exact age in days
         </Link>
         , your{" "}
-        <Link to="/blog/how-many-heartbeats-in-a-lifetime" className="text-primary underline">
+        <Link to="/blog/how-many-heartbeats-in-a-lifetime/" className="text-primary underline">
           lifetime heartbeat count
         </Link>
         , and your{" "}
-        <Link to="/blog/what-is-a-life-clock" className="text-primary underline">
+        <Link to="/blog/what-is-a-life-clock/" className="text-primary underline">
           life clock time
         </Link>{" "}
         all tell different parts of the same story. Furthermore, they are all available at whatismyage.me
@@ -208,10 +208,10 @@ const BirthWeekday = () => {
 
       <RelatedPosts
         posts={[
-          { tag: "Science", title: "How Many Heartbeats in a Human Lifetime?", href: "/blog/how-many-heartbeats-in-a-lifetime" },
-          { tag: "Astronomy", title: "How Many Full Moons Will You See in Your Lifetime?", href: "/blog/how-many-full-moons-in-a-lifetime" },
-          { tag: "Culture", title: "What Generation Am I? The Complete Guide", href: "/blog/what-generation-am-i" },
-          { tag: "How-to", title: "How to Calculate Your Exact Age in Days", href: "/blog/how-to-calculate-age-in-days" },
+          { tag: "Science", title: "How Many Heartbeats in a Human Lifetime?", href: "/blog/how-many-heartbeats-in-a-lifetime/" },
+          { tag: "Astronomy", title: "How Many Full Moons Will You See in Your Lifetime?", href: "/blog/how-many-full-moons-in-a-lifetime/" },
+          { tag: "Culture", title: "What Generation Am I? The Complete Guide", href: "/blog/what-generation-am-i/" },
+          { tag: "How-to", title: "How to Calculate Your Exact Age in Days", href: "/blog/how-to-calculate-age-in-days/" },
         ]}
       />
 

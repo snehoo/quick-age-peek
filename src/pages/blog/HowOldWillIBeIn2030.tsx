@@ -51,10 +51,10 @@ const ExternalLink = ({ href, children }: { href: string; children: React.ReactN
 );
 
 const related = [
-  { tag: "Predictions", title: "How Old Will I Be in 2040?", href: "/blog/how-old-will-i-be-in-2040" },
-  { tag: "Predictions", title: "How Old Will I Be in 2050?", href: "/blog/how-old-will-i-be-in-2050" },
-  { tag: "Milestones", title: "When Will I Be 1 Billion Seconds Old?", href: "/blog/when-will-i-be-1-billion-seconds-old" },
-  { tag: "Time Units", title: "How to Calculate Your Exact Age in Days", href: "/blog/how-to-calculate-age-in-days" },
+  { tag: "Predictions", title: "How Old Will I Be in 2040?", href: "/blog/how-old-will-i-be-in-2040/" },
+  { tag: "Predictions", title: "How Old Will I Be in 2050?", href: "/blog/how-old-will-i-be-in-2050/" },
+  { tag: "Milestones", title: "When Will I Be 1 Billion Seconds Old?", href: "/blog/when-will-i-be-1-billion-seconds-old/" },
+  { tag: "Time Units", title: "How to Calculate Your Exact Age in Days", href: "/blog/how-to-calculate-age-in-days/" },
 ];
 
 const HowOldWillIBeIn2030 = () => {
@@ -155,7 +155,7 @@ const HowOldWillIBeIn2030 = () => {
           ["Full moons", "~496"],
         ]}
       />
-      <Paragraph>Explore more: <Link to="/blog/how-many-weeks-old-am-i" className="text-primary underline">How many weeks old are you?</Link> · <Link to="/blog/how-many-heartbeats-in-a-lifetime" className="text-primary underline">How many heartbeats in a lifetime?</Link> · <Link to="/blog/how-many-full-moons-in-a-lifetime" className="text-primary underline">How many full moons in a lifetime?</Link></Paragraph>
+      <Paragraph>Explore more: <Link to="/blog/how-many-weeks-old-am-i/" className="text-primary underline">How many weeks old are you?</Link> · <Link to="/blog/how-many-heartbeats-in-a-lifetime/" className="text-primary underline">How many heartbeats in a lifetime?</Link> · <Link to="/blog/how-many-full-moons-in-a-lifetime/" className="text-primary underline">How many full moons in a lifetime?</Link></Paragraph>
 
       <H2>Plan Ahead: Your Age in Other Future Years</H2>
       <Table
@@ -168,15 +168,15 @@ const HowOldWillIBeIn2030 = () => {
           ["2050", "64–65", "59–60", "54–55", "49–50", "44–45"],
         ]}
       />
-      <Paragraph>→ See also: <Link to="/blog/how-old-will-i-be-in-2040" className="text-primary underline">How old will I be in 2040?</Link> · <Link to="/blog/how-old-will-i-be-in-2050" className="text-primary underline">How old will I be in 2050?</Link></Paragraph>
+      <Paragraph>→ See also: <Link to="/blog/how-old-will-i-be-in-2040/" className="text-primary underline">How old will I be in 2040?</Link> · <Link to="/blog/how-old-will-i-be-in-2050/" className="text-primary underline">How old will I be in 2050?</Link></Paragraph>
 
       <H2>Find Your Exact Age on Any Future Date</H2>
       <Paragraph>The table above gives your age for the full year. For a precise figure — your age on a specific date in 2030, down to days and hours — use the <Link to="/" className="text-primary underline">whatismyage.me calculator</Link>. Enter your date of birth and any future date to see exactly where you'll be.</Paragraph>
       <Paragraph>Also explore:</Paragraph>
       <ul className="list-disc list-inside space-y-2 mb-5 text-foreground/90">
-        <li>🕰 <Link to="/blog/what-is-a-life-clock" className="text-primary underline">What is a life clock?</Link></li>
-        <li>👥 <Link to="/blog/what-generation-am-i" className="text-primary underline">What generation are you?</Link></li>
-        <li>📅 <Link to="/blog/how-to-calculate-age-in-days" className="text-primary underline">How to calculate your age in days</Link></li>
+        <li>🕰 <Link to="/blog/what-is-a-life-clock/" className="text-primary underline">What is a life clock?</Link></li>
+        <li>👥 <Link to="/blog/what-generation-am-i/" className="text-primary underline">What generation are you?</Link></li>
+        <li>📅 <Link to="/blog/how-to-calculate-age-in-days/" className="text-primary underline">How to calculate your age in days</Link></li>
       </ul>
 
       <CtaBox title="Find your exact age on any future date">Enter your date of birth at whatismyage.me — get your precise age in 2030, plus heartbeats, full moons, and shareable life card.</CtaBox>

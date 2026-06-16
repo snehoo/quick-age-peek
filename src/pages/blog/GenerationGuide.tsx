@@ -20,10 +20,10 @@ const generations = [
 ];
 
 const related = [
-  { tag: "Philosophy", title: "What Is a Life Clock? Your Age as a 24-Hour Day Explained", href: "/blog/what-is-a-life-clock" },
-  { tag: "Science", title: "How Many Heartbeats in a Human Lifetime?", href: "/blog/how-many-heartbeats-in-a-lifetime" },
-  { tag: "Astronomy", title: "How Many Full Moons Will You See in Your Lifetime?", href: "/blog/how-many-full-moons-in-a-lifetime" },
-  { tag: "How-to", title: "How to Calculate Your Exact Age in Days", href: "/blog/how-to-calculate-age-in-days" },
+  { tag: "Philosophy", title: "What Is a Life Clock? Your Age as a 24-Hour Day Explained", href: "/blog/what-is-a-life-clock/" },
+  { tag: "Science", title: "How Many Heartbeats in a Human Lifetime?", href: "/blog/how-many-heartbeats-in-a-lifetime/" },
+  { tag: "Astronomy", title: "How Many Full Moons Will You See in Your Lifetime?", href: "/blog/how-many-full-moons-in-a-lifetime/" },
+  { tag: "How-to", title: "How to Calculate Your Exact Age in Days", href: "/blog/how-to-calculate-age-in-days/" },
 ];
 
 const GenerationGuide = () => {
@@ -58,7 +58,7 @@ const GenerationGuide = () => {
       <H2>Generational Identity in India — A Different Historical Lens</H2>
       <Paragraph>Western generational frameworks do not map cleanly onto the Indian experience. For instance, India's economic liberalisation of 1991 was a more significant cultural rupture for many Indians than any global event in the standard Western generational timeline. Indians born before 1985 grew up in a largely socialist, licence-raj economy. Consequently, consumer choice, private television, and global brands arrived as sudden, transformative forces rather than gradual background shifts.</Paragraph>
       <Paragraph>Additionally, the mobile internet revolution arrived in India later but accelerated faster — Jio's 2016 launch compressed a decade of digital adoption into two years. As a result, Indian Millennials and early Gen Z experienced a uniquely compressed version of the digital transition. Therefore, generational identity in India is arguably better defined by economic inflection points than by the cultural touchstones of the Western framework.</Paragraph>
-      <Paragraph>To discover your generation alongside other personal life stats — <Link to="/blog/how-many-heartbeats-in-a-lifetime" className="text-primary underline">heartbeat count</Link>, <Link to="/blog/how-many-full-moons-in-a-lifetime" className="text-primary underline">full moons lived</Link>, and <Link to="/blog/what-is-a-life-clock" className="text-primary underline">life clock time</Link> — use our calculator at whatismyage.me.</Paragraph>
+      <Paragraph>To discover your generation alongside other personal life stats — <Link to="/blog/how-many-heartbeats-in-a-lifetime/" className="text-primary underline">heartbeat count</Link>, <Link to="/blog/how-many-full-moons-in-a-lifetime/" className="text-primary underline">full moons lived</Link>, and <Link to="/blog/what-is-a-life-clock/" className="text-primary underline">life clock time</Link> — use our calculator at whatismyage.me.</Paragraph>
       <CtaBox title="Discover your generation — and much more">Enter your date of birth to see your generational identity, heartbeat count, full moons, and personalised life card.</CtaBox>
       <AuthorBio
         name="Snehal Patel"

@@ -64,7 +64,7 @@ const AgeCalculator = () => {
         More granular than years. A 30-year-old has lived roughly 360 months. Months matter more when you're tracking babies or toddlers — "My child is 8 months old" says more than "less than 1 year."
       </Paragraph>
       <Paragraph>
-        <a href="/blog/how-many-months-old-am-i" className="text-primary underline">Calculate your age in months →</a>
+        <a href="/blog/how-many-months-old-am-i/" className="text-primary underline">Calculate your age in months →</a>
       </Paragraph>
 
       <H3>Age in Weeks</H3>
@@ -72,7 +72,7 @@ const AgeCalculator = () => {
         Weeks align with human projects and goals. A 30-year-old has lived roughly 1,560 weeks. When you think about your life in weeks, goals become more real — a year is 52 weeks, a career is maybe 2,000 weeks.
       </Paragraph>
       <Paragraph>
-        <a href="/blog/how-many-weeks-old-am-i" className="text-primary underline">Calculate your age in weeks →</a>
+        <a href="/blog/how-many-weeks-old-am-i/" className="text-primary underline">Calculate your age in weeks →</a>
       </Paragraph>
 
       <H3>Age in Days</H3>
@@ -80,7 +80,7 @@ const AgeCalculator = () => {
         Days are visceral. A 30-year-old has lived roughly 10,957 days. Milestones like the 10,000th day often go unnoticed — an invisible birthday worth celebrating.
       </Paragraph>
       <Paragraph>
-        <a href="/blog/age-in-days-calculator" className="text-primary underline">Calculate your exact age in days →</a>
+        <a href="/blog/age-in-days-calculator/" className="text-primary underline">Calculate your exact age in days →</a>
       </Paragraph>
 
       <H3>Age in Hours</H3>
@@ -88,7 +88,7 @@ const AgeCalculator = () => {
         Precision increases at this level. A 30-year-old has lived roughly 263,000 hours. The number is large enough to feel real, but still understandable.
       </Paragraph>
       <Paragraph>
-        <a href="/blog/how-many-hours-old-am-i" className="text-primary underline">Find your exact hour count →</a>
+        <a href="/blog/how-many-hours-old-am-i/" className="text-primary underline">Find your exact hour count →</a>
       </Paragraph>
 
       <H3>Age in Minutes</H3>
@@ -96,7 +96,7 @@ const AgeCalculator = () => {
         Getting very granular. A 30-year-old has lived roughly 15.7 million minutes. At this scale, age becomes almost incomprehensible — which is exactly the point.
       </Paragraph>
       <Paragraph>
-        <a href="/blog/how-many-minutes-old-am-i" className="text-primary underline">Calculate minutes lived →</a>
+        <a href="/blog/how-many-minutes-old-am-i/" className="text-primary underline">Calculate minutes lived →</a>
       </Paragraph>
 
       <H3>Age in Seconds</H3>
@@ -104,7 +104,7 @@ const AgeCalculator = () => {
         The billion-second milestone. A 30-year-old has lived roughly 950 million seconds. Most people pass this invisible milestone without knowing — a shame, because it deserves celebration.
       </Paragraph>
       <Paragraph>
-        <a href="/blog/how-many-seconds-old-am-i" className="text-primary underline">Discover your second count →</a>
+        <a href="/blog/how-many-seconds-old-am-i/" className="text-primary underline">Discover your second count →</a>
       </Paragraph>
 
       <H3>Age in Heartbeats</H3>
@@ -112,7 +112,7 @@ const AgeCalculator = () => {
         Your heart is your metronome. A 30-year-old with a typical resting heart rate has experienced roughly 1 billion heartbeats. Each one automatic, each one keeping you alive. When you know this number, mortality becomes real.
       </Paragraph>
       <Paragraph>
-        <a href="/blog/how-many-heartbeats-in-a-lifetime" className="text-primary underline">Calculate your heartbeat count →</a>
+        <a href="/blog/how-many-heartbeats-in-a-lifetime/" className="text-primary underline">Calculate your heartbeat count →</a>
       </Paragraph>
 
       <H3>Age in Full Moons</H3>
@@ -120,7 +120,7 @@ const AgeCalculator = () => {
         There are roughly 13 full moons per year. In a 76-year lifetime, you'll see only about 1,000. The number is smaller than most expect — a powerful reminder of finitude.
       </Paragraph>
       <Paragraph>
-        <a href="/blog/how-many-full-moons-in-a-lifetime" className="text-primary underline">See your full moon count →</a>
+        <a href="/blog/how-many-full-moons-in-a-lifetime/" className="text-primary underline">See your full moon count →</a>
       </Paragraph>
 
       <H2>Beyond Numbers: Contextual Age Measurements</H2>
@@ -130,7 +130,7 @@ const AgeCalculator = () => {
         If your entire life were a single 24-hour day, what time is it now? This shifts perspective dramatically. A 40-year-old sits at roughly 1:30 PM — early afternoon, with significant time still ahead.
       </Paragraph>
       <Paragraph>
-        <a href="/blog/what-is-a-life-clock" className="text-primary underline">Find your life clock time →</a>
+        <a href="/blog/what-is-a-life-clock/" className="text-primary underline">Find your life clock time →</a>
       </Paragraph>
 
       <H3>Your Generation</H3>
@@ -138,7 +138,7 @@ const AgeCalculator = () => {
         Your birth year places you in a generation — Gen Z, Millennial, Gen X, Boomer — each with shared cultural touchstones and experiences that shape how you see the world.
       </Paragraph>
       <Paragraph>
-        <a href="/blog/what-generation-am-i" className="text-primary underline">Discover your generation →</a>
+        <a href="/blog/what-generation-am-i/" className="text-primary underline">Discover your generation →</a>
       </Paragraph>
 
       <H3>Your Birth Day of the Week</H3>
@@ -146,7 +146,7 @@ const AgeCalculator = () => {
         A lesser-known detail: the specific day of the week you were born. Some cultures believe it influences personality and destiny. It's a small piece of identity worth knowing.
       </Paragraph>
       <Paragraph>
-        <a href="/blog/what-day-of-the-week-was-i-born" className="text-primary underline">Find your birth day →</a>
+        <a href="/blog/what-day-of-the-week-was-i-born/" className="text-primary underline">Find your birth day →</a>
       </Paragraph>
 
       <H3>Your Zodiac Sign</H3>
@@ -154,7 +154,7 @@ const AgeCalculator = () => {
         Whether you believe in Western, Vedic, or Chinese astrology, your birth date determines your sign — a symbolic framework for understanding personality and timing.
       </Paragraph>
       <Paragraph>
-        <a href="/blog/how-to-find-your-zodiac-sign-by-birth-date" className="text-primary underline">Find your zodiac sign →</a>
+        <a href="/blog/how-to-find-your-zodiac-sign-by-birth-date/" className="text-primary underline">Find your zodiac sign →</a>
       </Paragraph>
 
       <Note>
@@ -204,10 +204,10 @@ const AgeCalculator = () => {
 
       <RelatedPosts
         posts={[
-          { tag: "How-to", title: "Age in Days Calculator", href: "/blog/age-in-days-calculator" },
-          { tag: "Science", title: "How Many Heartbeats in a Lifetime?", href: "/blog/how-many-heartbeats-in-a-lifetime" },
-          { tag: "Perspective", title: "What Is a Life Clock?", href: "/blog/what-is-a-life-clock" },
-          { tag: "Identity", title: "What Generation Am I?", href: "/blog/what-generation-am-i" },
+          { tag: "How-to", title: "Age in Days Calculator", href: "/blog/age-in-days-calculator/" },
+          { tag: "Science", title: "How Many Heartbeats in a Lifetime?", href: "/blog/how-many-heartbeats-in-a-lifetime/" },
+          { tag: "Perspective", title: "What Is a Life Clock?", href: "/blog/what-is-a-life-clock/" },
+          { tag: "Identity", title: "What Generation Am I?", href: "/blog/what-generation-am-i/" },
         ]}
       />
 

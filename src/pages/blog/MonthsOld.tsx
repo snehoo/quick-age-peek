@@ -96,7 +96,7 @@ const MonthsOld = () => (
       ]}
     />
     <Paragraph>
-      Explore: <Link to="/blog/how-many-weeks-old-am-i" className="text-primary underline">weeks old</Link> · <Link to="/blog/how-to-calculate-age-in-days" className="text-primary underline">days old</Link> · <Link to="/blog/how-many-seconds-old-am-i" className="text-primary underline">seconds old</Link>
+      Explore: <Link to="/blog/how-many-weeks-old-am-i/" className="text-primary underline">weeks old</Link> · <Link to="/blog/how-to-calculate-age-in-days/" className="text-primary underline">days old</Link> · <Link to="/blog/how-many-seconds-old-am-i/" className="text-primary underline">seconds old</Link>
     </Paragraph>
 
     <CtaBox title="Find your exact age in months">
@@ -113,11 +113,11 @@ const MonthsOld = () => (
 
 
     <RelatedPosts posts={[
-      { tag: "How-to", title: "How to Calculate Your Age in Days", href: "/blog/how-to-calculate-age-in-days" },
-      { tag: "Time", title: "How Many Weeks Old Am I?", href: "/blog/how-many-weeks-old-am-i" },
-      { tag: "Numbers", title: "How Many Seconds Old Am I?", href: "/blog/how-many-seconds-old-am-i" },
-      { tag: "Astronomy", title: "How Many Full Moons in a Lifetime?", href: "/blog/how-many-full-moons-in-a-lifetime" },
-      { tag: "Time", title: "What Is a Life Clock?", href: "/blog/what-is-a-life-clock" },
+      { tag: "How-to", title: "How to Calculate Your Age in Days", href: "/blog/how-to-calculate-age-in-days/" },
+      { tag: "Time", title: "How Many Weeks Old Am I?", href: "/blog/how-many-weeks-old-am-i/" },
+      { tag: "Numbers", title: "How Many Seconds Old Am I?", href: "/blog/how-many-seconds-old-am-i/" },
+      { tag: "Astronomy", title: "How Many Full Moons in a Lifetime?", href: "/blog/how-many-full-moons-in-a-lifetime/" },
+      { tag: "Time", title: "What Is a Life Clock?", href: "/blog/what-is-a-life-clock/" },
     ]} />
   </UnitArticleShell>
 );

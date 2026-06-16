@@ -100,7 +100,7 @@ const MinutesOld = () => (
       ]}
     />
     <Paragraph>
-      Related: <Link to="/blog/how-many-hours-old-am-i" className="text-primary underline">hours old</Link> · <Link to="/blog/how-many-weeks-old-am-i" className="text-primary underline">weeks old</Link> · <Link to="/blog/how-many-seconds-old-am-i" className="text-primary underline">seconds old</Link>
+      Related: <Link to="/blog/how-many-hours-old-am-i/" className="text-primary underline">hours old</Link> · <Link to="/blog/how-many-weeks-old-am-i/" className="text-primary underline">weeks old</Link> · <Link to="/blog/how-many-seconds-old-am-i/" className="text-primary underline">seconds old</Link>
     </Paragraph>
 
     <CtaBox title="Find your exact minute count">
@@ -117,11 +117,11 @@ const MinutesOld = () => (
 
 
     <RelatedPosts posts={[
-      { tag: "Time", title: "How Many Hours Old Am I?", href: "/blog/how-many-hours-old-am-i" },
-      { tag: "Time", title: "How Many Weeks Old Am I?", href: "/blog/how-many-weeks-old-am-i" },
-      { tag: "How-to", title: "How to Calculate Your Age in Days", href: "/blog/how-to-calculate-age-in-days" },
-      { tag: "Numbers", title: "How Many Seconds Old Am I?", href: "/blog/how-many-seconds-old-am-i" },
-      { tag: "Time", title: "What Is a Life Clock?", href: "/blog/what-is-a-life-clock" },
+      { tag: "Time", title: "How Many Hours Old Am I?", href: "/blog/how-many-hours-old-am-i/" },
+      { tag: "Time", title: "How Many Weeks Old Am I?", href: "/blog/how-many-weeks-old-am-i/" },
+      { tag: "How-to", title: "How to Calculate Your Age in Days", href: "/blog/how-to-calculate-age-in-days/" },
+      { tag: "Numbers", title: "How Many Seconds Old Am I?", href: "/blog/how-many-seconds-old-am-i/" },
+      { tag: "Time", title: "What Is a Life Clock?", href: "/blog/what-is-a-life-clock/" },
     ]} />
   </UnitArticleShell>
 );

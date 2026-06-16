@@ -230,12 +230,12 @@ Extended output:
         </div>
         <div className="hp-articles">
           {[
-            { href: "/blog/how-many-seconds-old-am-i", tag: "Fun Facts", title: "How Many Seconds Old Am I?", desc: "The surprisingly large number behind a seemingly simple question." },
-            { href: "/blog/how-many-weeks-old-am-i", tag: "Fun Facts", title: "How Many Weeks Old Am I?", desc: "Your age in weeks — and why the number is always bigger than you expect." },
-            { href: "/blog/what-generation-am-i", tag: "Generations", title: "What Generation Am I?", desc: "Boomer, Gen X, Millennial, or Gen Z — find out which generation you belong to." },
-            { href: "/blog/when-will-i-be-1-billion-seconds-old", tag: "Milestones", title: "When Will I Be 1 Billion Seconds Old?", desc: "It happens at 31.7 years. Here's exactly when your billion-second birthday falls." },
-            { href: "/blog/what-day-of-the-week-was-i-born", tag: "Fun Facts", title: "What Day of the Week Was I Born?", desc: "Monday's child is fair of face — but which day were you actually born on?" },
-            { href: "/blog/how-to-calculate-age-in-days", tag: "Guide", title: "How to Calculate Age in Days", desc: "The step-by-step method for calculating exact age in days, manually or with a tool." },
+            { href: "/blog/how-many-seconds-old-am-i/", tag: "Fun Facts", title: "How Many Seconds Old Am I?", desc: "The surprisingly large number behind a seemingly simple question." },
+            { href: "/blog/how-many-weeks-old-am-i/", tag: "Fun Facts", title: "How Many Weeks Old Am I?", desc: "Your age in weeks — and why the number is always bigger than you expect." },
+            { href: "/blog/what-generation-am-i/", tag: "Generations", title: "What Generation Am I?", desc: "Boomer, Gen X, Millennial, or Gen Z — find out which generation you belong to." },
+            { href: "/blog/when-will-i-be-1-billion-seconds-old/", tag: "Milestones", title: "When Will I Be 1 Billion Seconds Old?", desc: "It happens at 31.7 years. Here's exactly when your billion-second birthday falls." },
+            { href: "/blog/what-day-of-the-week-was-i-born/", tag: "Fun Facts", title: "What Day of the Week Was I Born?", desc: "Monday's child is fair of face — but which day were you actually born on?" },
+            { href: "/blog/how-to-calculate-age-in-days/", tag: "Guide", title: "How to Calculate Age in Days", desc: "The step-by-step method for calculating exact age in days, manually or with a tool." },
           ].map((a) => (
             <Link key={a.href} className="hp-article-card" to={a.href}>
               <span className="hp-article-tag">{a.tag}</span>

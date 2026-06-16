@@ -222,10 +222,10 @@ const AgeGroupsOnlineStatistics = () => {
 
       <RelatedPosts
         posts={[
-          { tag: "Data", title: "Age Calculator Statistics (2025)", href: "/blog/age-calculator-statistics" },
-          { tag: "Culture", title: "What Generation Am I? The Complete Birth Year Guide", href: "/blog/what-generation-am-i" },
-          { tag: "How-to", title: "How to Calculate Your Exact Age in Days", href: "/blog/how-to-calculate-age-in-days" },
-          { tag: "Science", title: "How Many Seconds Old Are You Right Now?", href: "/blog/how-many-seconds-old-am-i" },
+          { tag: "Data", title: "Age Calculator Statistics (2025)", href: "/blog/age-calculator-statistics/" },
+          { tag: "Culture", title: "What Generation Am I? The Complete Birth Year Guide", href: "/blog/what-generation-am-i/" },
+          { tag: "How-to", title: "How to Calculate Your Exact Age in Days", href: "/blog/how-to-calculate-age-in-days/" },
+          { tag: "Science", title: "How Many Seconds Old Are You Right Now?", href: "/blog/how-many-seconds-old-am-i/" },
         ]}
       />
 

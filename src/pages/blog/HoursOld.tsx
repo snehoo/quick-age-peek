@@ -109,7 +109,7 @@ const HoursOld = () => (
       ]}
     />
     <Paragraph>
-      Related: <Link to="/blog/how-many-weeks-old-am-i" className="text-primary underline">how many weeks old are you?</Link> · <Link to="/blog/how-many-months-old-am-i" className="text-primary underline">how many months old are you?</Link> · <Link to="/blog/how-many-seconds-old-am-i" className="text-primary underline">how many seconds old are you?</Link> · <Link to="/blog/how-to-calculate-age-in-days" className="text-primary underline">how many days old are you?</Link>
+      Related: <Link to="/blog/how-many-weeks-old-am-i/" className="text-primary underline">how many weeks old are you?</Link> · <Link to="/blog/how-many-months-old-am-i/" className="text-primary underline">how many months old are you?</Link> · <Link to="/blog/how-many-seconds-old-am-i/" className="text-primary underline">how many seconds old are you?</Link> · <Link to="/blog/how-to-calculate-age-in-days/" className="text-primary underline">how many days old are you?</Link>
     </Paragraph>
 
     <CtaBox title="Find your exact hour count">
@@ -126,11 +126,11 @@ const HoursOld = () => (
 
 
     <RelatedPosts posts={[
-      { tag: "Time", title: "How Many Weeks Old Am I?", href: "/blog/how-many-weeks-old-am-i" },
-      { tag: "Time", title: "How Many Minutes Old Am I?", href: "/blog/how-many-minutes-old-am-i" },
-      { tag: "How-to", title: "How to Calculate Your Age in Days", href: "/blog/how-to-calculate-age-in-days" },
-      { tag: "Numbers", title: "How Many Seconds Old Am I?", href: "/blog/how-many-seconds-old-am-i" },
-      { tag: "Biology", title: "How Many Heartbeats in a Lifetime?", href: "/blog/how-many-heartbeats-in-a-lifetime" },
+      { tag: "Time", title: "How Many Weeks Old Am I?", href: "/blog/how-many-weeks-old-am-i/" },
+      { tag: "Time", title: "How Many Minutes Old Am I?", href: "/blog/how-many-minutes-old-am-i/" },
+      { tag: "How-to", title: "How to Calculate Your Age in Days", href: "/blog/how-to-calculate-age-in-days/" },
+      { tag: "Numbers", title: "How Many Seconds Old Am I?", href: "/blog/how-many-seconds-old-am-i/" },
+      { tag: "Biology", title: "How Many Heartbeats in a Lifetime?", href: "/blog/how-many-heartbeats-in-a-lifetime/" },
     ]} />
   </UnitArticleShell>
 );

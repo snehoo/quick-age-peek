@@ -204,10 +204,10 @@ const BodyOverTimeStatistics = () => {
 
       <RelatedPosts
         posts={[
-          { tag: "Science", title: "How Many Heartbeats Does a Human Have in a Lifetime?", href: "/blog/how-many-heartbeats-in-a-lifetime" },
-          { tag: "Science", title: "How Many Seconds Old Are You Right Now?", href: "/blog/how-many-seconds-old-am-i" },
-          { tag: "Philosophy", title: "What Is a Life Clock? Your Age as a 24-Hour Day Explained", href: "/blog/what-is-a-life-clock" },
-          { tag: "Astronomy", title: "How Many Full Moons Will You See in Your Lifetime?", href: "/blog/how-many-full-moons-in-a-lifetime" },
+          { tag: "Science", title: "How Many Heartbeats Does a Human Have in a Lifetime?", href: "/blog/how-many-heartbeats-in-a-lifetime/" },
+          { tag: "Science", title: "How Many Seconds Old Are You Right Now?", href: "/blog/how-many-seconds-old-am-i/" },
+          { tag: "Philosophy", title: "What Is a Life Clock? Your Age as a 24-Hour Day Explained", href: "/blog/what-is-a-life-clock/" },
+          { tag: "Astronomy", title: "How Many Full Moons Will You See in Your Lifetime?", href: "/blog/how-many-full-moons-in-a-lifetime/" },
         ]}
       />
 

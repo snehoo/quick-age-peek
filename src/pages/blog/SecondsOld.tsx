@@ -133,7 +133,7 @@ const SecondsOld = () => {
         average resting heart rate of 72 BPM is itself derived from a second-based measurement.
         Consequently, the two figures will always remain in this approximate 1.2:1 ratio throughout a human
         life. For more on the heartbeat count, see our full guide on{" "}
-        <Link to="/blog/how-many-heartbeats-in-a-lifetime" className="text-primary underline">
+        <Link to="/blog/how-many-heartbeats-in-a-lifetime/" className="text-primary underline">
           how many heartbeats a human has in a lifetime
         </Link>
         .
@@ -186,11 +186,11 @@ const SecondsOld = () => {
       </Paragraph>
       <Paragraph>
         This is, ultimately, the same insight that{" "}
-        <Link to="/blog/what-is-a-life-clock" className="text-primary underline">
+        <Link to="/blog/what-is-a-life-clock/" className="text-primary underline">
           the life clock metaphor
         </Link>{" "}
         delivers from a different direction. Similarly,{" "}
-        <Link to="/blog/how-to-calculate-age-in-days" className="text-primary underline">
+        <Link to="/blog/how-to-calculate-age-in-days/" className="text-primary underline">
           knowing your age in days
         </Link>{" "}
         creates the same effect at a different scale. As a result, each of these measures of time tells the
@@ -213,10 +213,10 @@ const SecondsOld = () => {
 
       <RelatedPosts
         posts={[
-          { tag: "Science", title: "How Many Heartbeats in a Human Lifetime?", href: "/blog/how-many-heartbeats-in-a-lifetime" },
-          { tag: "Astronomy", title: "How Many Full Moons Will You See in Your Lifetime?", href: "/blog/how-many-full-moons-in-a-lifetime" },
-          { tag: "Culture", title: "What Generation Am I? The Complete Guide", href: "/blog/what-generation-am-i" },
-          { tag: "How-to", title: "How to Calculate Your Exact Age in Days", href: "/blog/how-to-calculate-age-in-days" },
+          { tag: "Science", title: "How Many Heartbeats in a Human Lifetime?", href: "/blog/how-many-heartbeats-in-a-lifetime/" },
+          { tag: "Astronomy", title: "How Many Full Moons Will You See in Your Lifetime?", href: "/blog/how-many-full-moons-in-a-lifetime/" },
+          { tag: "Culture", title: "What Generation Am I? The Complete Guide", href: "/blog/what-generation-am-i/" },
+          { tag: "How-to", title: "How to Calculate Your Exact Age in Days", href: "/blog/how-to-calculate-age-in-days/" },
         ]}
       />
 

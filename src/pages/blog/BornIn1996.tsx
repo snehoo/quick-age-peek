@@ -255,10 +255,10 @@ const BornIn1996 = () => (
       </>
     }
     related={[
-      { tag: "Identity", title: "What Generation Am I?", href: "/blog/what-generation-am-i" },
-      { tag: "Astronomy", title: "How Many Full Moons in a Lifetime?", href: "/blog/how-many-full-moons-in-a-lifetime" },
-      { tag: "Perspective", title: "What Is a Life Clock?", href: "/blog/what-is-a-life-clock" },
-      { tag: "Numbers", title: "How Many Seconds Old Are You Right Now?", href: "/blog/how-many-seconds-old-am-i" },
+      { tag: "Identity", title: "What Generation Am I?", href: "/blog/what-generation-am-i/" },
+      { tag: "Astronomy", title: "How Many Full Moons in a Lifetime?", href: "/blog/how-many-full-moons-in-a-lifetime/" },
+      { tag: "Perspective", title: "What Is a Life Clock?", href: "/blog/what-is-a-life-clock/" },
+      { tag: "Numbers", title: "How Many Seconds Old Are You Right Now?", href: "/blog/how-many-seconds-old-am-i/" },
     ]}
   />
 );

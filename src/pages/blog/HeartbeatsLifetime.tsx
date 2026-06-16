@@ -264,10 +264,10 @@ const HeartbeatsLifetime = () => {
               age calculator on whatismyage.me
             </Link>
             . You may also enjoy{" "}
-            <Link to="/blog/how-many-full-moons-in-a-lifetime" className="text-primary underline">how many full moons you'll see in a lifetime</Link>,{" "}
-            <Link to="/blog/what-is-a-life-clock" className="text-primary underline">your life as a 24-hour clock</Link>,{" "}
-            <Link to="/blog/how-to-calculate-age-in-days" className="text-primary underline">your exact age in days</Link>, and{" "}
-            <Link to="/blog/what-generation-am-i" className="text-primary underline">which generation you belong to</Link>.
+            <Link to="/blog/how-many-full-moons-in-a-lifetime/" className="text-primary underline">how many full moons you'll see in a lifetime</Link>,{" "}
+            <Link to="/blog/what-is-a-life-clock/" className="text-primary underline">your life as a 24-hour clock</Link>,{" "}
+            <Link to="/blog/how-to-calculate-age-in-days/" className="text-primary underline">your exact age in days</Link>, and{" "}
+            <Link to="/blog/what-generation-am-i/" className="text-primary underline">which generation you belong to</Link>.
           </p>
 
           <div className="bg-primary text-primary-foreground rounded-2xl p-7 text-center my-10">

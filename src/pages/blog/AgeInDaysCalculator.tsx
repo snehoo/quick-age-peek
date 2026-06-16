@@ -133,12 +133,12 @@ const AgeInDaysCalculator = () => {
       </Paragraph>
 
       <ul className="list-disc pl-6 space-y-2 text-foreground/90 leading-relaxed mb-6">
-        <li><a href="/blog/how-many-heartbeats-in-a-lifetime" className="text-primary underline">Age in Heartbeats</a> — ~1 billion heartbeats in 30 years</li>
-        <li><a href="/blog/how-many-hours-old-am-i" className="text-primary underline">Age in Hours</a> — Precision down to the hour</li>
-        <li><a href="/blog/how-many-minutes-old-am-i" className="text-primary underline">Age in Minutes</a> — Over 15 million minutes by age 30</li>
-        <li><a href="/blog/how-many-seconds-old-am-i" className="text-primary underline">Age in Seconds</a> — Nearly 1 billion seconds</li>
-        <li><a href="/blog/how-many-weeks-old-am-i" className="text-primary underline">Age in Weeks</a> — ~1,560 weeks in 30 years</li>
-        <li><a href="/blog/how-many-months-old-am-i" className="text-primary underline">Age in Months</a> — ~360 months by age 30</li>
+        <li><a href="/blog/how-many-heartbeats-in-a-lifetime/" className="text-primary underline">Age in Heartbeats</a> — ~1 billion heartbeats in 30 years</li>
+        <li><a href="/blog/how-many-hours-old-am-i/" className="text-primary underline">Age in Hours</a> — Precision down to the hour</li>
+        <li><a href="/blog/how-many-minutes-old-am-i/" className="text-primary underline">Age in Minutes</a> — Over 15 million minutes by age 30</li>
+        <li><a href="/blog/how-many-seconds-old-am-i/" className="text-primary underline">Age in Seconds</a> — Nearly 1 billion seconds</li>
+        <li><a href="/blog/how-many-weeks-old-am-i/" className="text-primary underline">Age in Weeks</a> — ~1,560 weeks in 30 years</li>
+        <li><a href="/blog/how-many-months-old-am-i/" className="text-primary underline">Age in Months</a> — ~360 months by age 30</li>
       </ul>
 
       <H2>The Bottom Line: Life Measured in Days</H2>
@@ -166,10 +166,10 @@ const AgeInDaysCalculator = () => {
 
       <RelatedPosts
         posts={[
-          { tag: "How-to", title: "How to Calculate Your Age in Days", href: "/blog/how-to-calculate-age-in-days" },
-          { tag: "Science", title: "How Many Seconds Old Are You Right Now?", href: "/blog/how-many-seconds-old-am-i" },
-          { tag: "Perspective", title: "What Is a Life Clock?", href: "/blog/what-is-a-life-clock" },
-          { tag: "Milestones", title: "What Day Will You Be 10,000 Days Old?", href: "/blog/what-day-will-i-be-10000-days-old" },
+          { tag: "How-to", title: "How to Calculate Your Age in Days", href: "/blog/how-to-calculate-age-in-days/" },
+          { tag: "Science", title: "How Many Seconds Old Are You Right Now?", href: "/blog/how-many-seconds-old-am-i/" },
+          { tag: "Perspective", title: "What Is a Life Clock?", href: "/blog/what-is-a-life-clock/" },
+          { tag: "Milestones", title: "What Day Will You Be 10,000 Days Old?", href: "/blog/what-day-will-i-be-10000-days-old/" },
         ]}
       />
 

@@ -283,22 +283,22 @@ const AgeCalculatorStatistics = () => {
           {
             tag: "Tools",
             title: "GigaCalculator vs OmniCalculator Age Tool",
-            href: "/blog/gigacalculator-vs-omnicalculator",
+            href: "/blog/gigacalculator-vs-omnicalculator/",
           },
           {
             tag: "Tools",
             title: "OmniCalculator vs Calculator.net: Which Age Calculator Wins?",
-            href: "/blog/omnicalculator-vs-calculator-net",
+            href: "/blog/omnicalculator-vs-calculator-net/",
           },
           {
             tag: "How-to",
             title: "How to Calculate Your Exact Age in Days",
-            href: "/blog/how-to-calculate-age-in-days",
+            href: "/blog/how-to-calculate-age-in-days/",
           },
           {
             tag: "Science",
             title: "How Many Seconds Old Are You Right Now?",
-            href: "/blog/how-many-seconds-old-am-i",
+            href: "/blog/how-many-seconds-old-am-i/",
           },
         ]}
       />

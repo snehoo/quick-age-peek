@@ -51,10 +51,10 @@ const ExternalLink = ({ href, children }: { href: string; children: React.ReactN
 );
 
 const related = [
-  { tag: "Predictions", title: "How Old Will I Be in 2030?", href: "/blog/how-old-will-i-be-in-2030" },
-  { tag: "Predictions", title: "How Old Will I Be in 2050?", href: "/blog/how-old-will-i-be-in-2050" },
-  { tag: "Milestones", title: "When Will I Be 1 Billion Seconds Old?", href: "/blog/when-will-i-be-1-billion-seconds-old" },
-  { tag: "Culture", title: "What Generation Am I? The Complete Birth Year Guide", href: "/blog/what-generation-am-i" },
+  { tag: "Predictions", title: "How Old Will I Be in 2030?", href: "/blog/how-old-will-i-be-in-2030/" },
+  { tag: "Predictions", title: "How Old Will I Be in 2050?", href: "/blog/how-old-will-i-be-in-2050/" },
+  { tag: "Milestones", title: "When Will I Be 1 Billion Seconds Old?", href: "/blog/when-will-i-be-1-billion-seconds-old/" },
+  { tag: "Culture", title: "What Generation Am I? The Complete Birth Year Guide", href: "/blog/what-generation-am-i/" },
 ];
 
 const HowOldWillIBeIn2040 = () => {
@@ -159,7 +159,7 @@ const HowOldWillIBeIn2040 = () => {
           ["Full moons", "~620"],
         ]}
       />
-      <Paragraph>Explore: <Link to="/blog/how-many-weeks-old-am-i" className="text-primary underline">How many weeks old are you?</Link> · <Link to="/blog/how-many-heartbeats-in-a-lifetime" className="text-primary underline">How many heartbeats in a lifetime?</Link> · <Link to="/blog/what-is-a-life-clock" className="text-primary underline">What is a life clock?</Link></Paragraph>
+      <Paragraph>Explore: <Link to="/blog/how-many-weeks-old-am-i/" className="text-primary underline">How many weeks old are you?</Link> · <Link to="/blog/how-many-heartbeats-in-a-lifetime/" className="text-primary underline">How many heartbeats in a lifetime?</Link> · <Link to="/blog/what-is-a-life-clock/" className="text-primary underline">What is a life clock?</Link></Paragraph>
 
       <H2>Your Age Across All Future Years</H2>
       <Table
@@ -172,15 +172,15 @@ const HowOldWillIBeIn2040 = () => {
           ["2060", "74–75", "69–70", "64–65", "59–60", "54–55"],
         ]}
       />
-      <Paragraph>→ See also: <Link to="/blog/how-old-will-i-be-in-2030" className="text-primary underline">How old will I be in 2030?</Link> · <Link to="/blog/how-old-will-i-be-in-2050" className="text-primary underline">How old will I be in 2050?</Link></Paragraph>
+      <Paragraph>→ See also: <Link to="/blog/how-old-will-i-be-in-2030/" className="text-primary underline">How old will I be in 2030?</Link> · <Link to="/blog/how-old-will-i-be-in-2050/" className="text-primary underline">How old will I be in 2050?</Link></Paragraph>
 
       <H2>Find Your Exact Age on Any Date in 2040</H2>
       <Paragraph>The table above gives your age across the full year. For a precise answer — your age on a specific date in 2040 — visit <Link to="/" className="text-primary underline">whatismyage.me</Link> and enter your date of birth alongside any future date.</Paragraph>
       <Paragraph>Also explore:</Paragraph>
       <ul className="list-disc list-inside space-y-2 mb-5 text-foreground/90">
-        <li>👥 <Link to="/blog/what-generation-am-i" className="text-primary underline">What generation are you?</Link></li>
-        <li>🕰 <Link to="/blog/what-is-a-life-clock" className="text-primary underline">What is a life clock?</Link></li>
-        <li>⏱ <Link to="/blog/how-many-seconds-old-am-i" className="text-primary underline">How many seconds old are you?</Link></li>
+        <li>👥 <Link to="/blog/what-generation-am-i/" className="text-primary underline">What generation are you?</Link></li>
+        <li>🕰 <Link to="/blog/what-is-a-life-clock/" className="text-primary underline">What is a life clock?</Link></li>
+        <li>⏱ <Link to="/blog/how-many-seconds-old-am-i/" className="text-primary underline">How many seconds old are you?</Link></li>
       </ul>
 
       <CtaBox title="Find your exact age on any date in 2040">Enter your date of birth at whatismyage.me — get your precise age, plus heartbeats, full moons, and shareable life card.</CtaBox>

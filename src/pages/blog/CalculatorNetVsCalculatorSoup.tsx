@@ -189,10 +189,10 @@ const CalculatorNetVsCalculatorSoup = () => {
 
       <RelatedPosts
         posts={[
-          { tag: "How-to", title: "How to Calculate Your Exact Age in Days", href: "/blog/how-to-calculate-age-in-days" },
-          { tag: "Science", title: "How Many Seconds Old Are You Right Now?", href: "/blog/how-many-seconds-old-am-i" },
-          { tag: "Tools", title: "CalculatorSoup vs OmniCalculator: Best Age Calculator", href: "/blog/calculatorsoup-vs-omnicalculator" },
-          { tag: "Tools", title: "OmniCalculator vs Calculator.net", href: "/blog/omnicalculator-vs-calculator-net" },
+          { tag: "How-to", title: "How to Calculate Your Exact Age in Days", href: "/blog/how-to-calculate-age-in-days/" },
+          { tag: "Science", title: "How Many Seconds Old Are You Right Now?", href: "/blog/how-many-seconds-old-am-i/" },
+          { tag: "Tools", title: "CalculatorSoup vs OmniCalculator: Best Age Calculator", href: "/blog/calculatorsoup-vs-omnicalculator/" },
+          { tag: "Tools", title: "OmniCalculator vs Calculator.net", href: "/blog/omnicalculator-vs-calculator-net/" },
         ]}
       />
 

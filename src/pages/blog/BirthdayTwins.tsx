@@ -173,11 +173,11 @@ const BirthdayTwins = () => {
         figures from India and globally. Moreover, the selection prioritises the most culturally
         significant names to maximise that sense of connection. Additionally, your birthday twins appear
         alongside your heartbeat count,{" "}
-        <Link to="/blog/how-many-full-moons-in-a-lifetime" className="text-primary underline">
+        <Link to="/blog/how-many-full-moons-in-a-lifetime/" className="text-primary underline">
           full moon total
         </Link>
         ,{" "}
-        <Link to="/blog/what-generation-am-i" className="text-primary underline">
+        <Link to="/blog/what-generation-am-i/" className="text-primary underline">
           generational identity
         </Link>
         , and life clock time — creating a complete personal portrait from a single date of birth.
@@ -199,10 +199,10 @@ const BirthdayTwins = () => {
 
       <RelatedPosts
         posts={[
-          { tag: "Science", title: "How Many Heartbeats in a Human Lifetime?", href: "/blog/how-many-heartbeats-in-a-lifetime" },
-          { tag: "Astronomy", title: "How Many Full Moons Will You See in Your Lifetime?", href: "/blog/how-many-full-moons-in-a-lifetime" },
-          { tag: "Culture", title: "What Generation Am I? The Complete Guide", href: "/blog/what-generation-am-i" },
-          { tag: "How-to", title: "How to Calculate Your Exact Age in Days", href: "/blog/how-to-calculate-age-in-days" },
+          { tag: "Science", title: "How Many Heartbeats in a Human Lifetime?", href: "/blog/how-many-heartbeats-in-a-lifetime/" },
+          { tag: "Astronomy", title: "How Many Full Moons Will You See in Your Lifetime?", href: "/blog/how-many-full-moons-in-a-lifetime/" },
+          { tag: "Culture", title: "What Generation Am I? The Complete Guide", href: "/blog/what-generation-am-i/" },
+          { tag: "How-to", title: "How to Calculate Your Exact Age in Days", href: "/blog/how-to-calculate-age-in-days/" },
         ]}
       />
 

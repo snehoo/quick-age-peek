@@ -83,10 +83,10 @@ const CalculatorSoupAlternative = () => {
 
       <RelatedPosts
         posts={[
-          { tag: "Tools", title: "How Many Days Old Am I?", href: "/blog/age-in-days-calculator" },
-          { tag: "Tools", title: "How Many Weeks Old Am I?", href: "/blog/how-many-weeks-old-am-i" },
-          { tag: "Tools", title: "How Many Seconds Old Am I?", href: "/blog/how-many-seconds-old-am-i" },
-          { tag: "Age Guides", title: "Age Calculator — The Complete Guide", href: "/blog/age-calculator" },
+          { tag: "Tools", title: "How Many Days Old Am I?", href: "/blog/age-in-days-calculator/" },
+          { tag: "Tools", title: "How Many Weeks Old Am I?", href: "/blog/how-many-weeks-old-am-i/" },
+          { tag: "Tools", title: "How Many Seconds Old Am I?", href: "/blog/how-many-seconds-old-am-i/" },
+          { tag: "Age Guides", title: "Age Calculator — The Complete Guide", href: "/blog/age-calculator/" },
         ]}
       />
 

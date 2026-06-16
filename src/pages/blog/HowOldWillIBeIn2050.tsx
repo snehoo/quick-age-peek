@@ -51,10 +51,10 @@ const ExternalLink = ({ href, children }: { href: string; children: React.ReactN
 );
 
 const related = [
-  { tag: "Predictions", title: "How Old Will I Be in 2030?", href: "/blog/how-old-will-i-be-in-2030" },
-  { tag: "Predictions", title: "How Old Will I Be in 2040?", href: "/blog/how-old-will-i-be-in-2040" },
-  { tag: "Milestones", title: "When Will I Be 1 Billion Seconds Old?", href: "/blog/when-will-i-be-1-billion-seconds-old" },
-  { tag: "Time & Philosophy", title: "What Is a Life Clock?", href: "/blog/what-is-a-life-clock" },
+  { tag: "Predictions", title: "How Old Will I Be in 2030?", href: "/blog/how-old-will-i-be-in-2030/" },
+  { tag: "Predictions", title: "How Old Will I Be in 2040?", href: "/blog/how-old-will-i-be-in-2040/" },
+  { tag: "Milestones", title: "When Will I Be 1 Billion Seconds Old?", href: "/blog/when-will-i-be-1-billion-seconds-old/" },
+  { tag: "Time & Philosophy", title: "What Is a Life Clock?", href: "/blog/what-is-a-life-clock/" },
 ];
 
 const HowOldWillIBeIn2050 = () => {
@@ -158,7 +158,7 @@ const HowOldWillIBeIn2050 = () => {
           ["Full moons", "~744"],
         ]}
       />
-      <Paragraph>Explore: <Link to="/blog/how-many-weeks-old-am-i" className="text-primary underline">How many weeks old are you?</Link> · <Link to="/blog/how-many-heartbeats-in-a-lifetime" className="text-primary underline">How many heartbeats in a lifetime?</Link> · <Link to="/blog/how-many-full-moons-in-a-lifetime" className="text-primary underline">How many full moons in a lifetime?</Link> · <Link to="/blog/what-is-a-life-clock" className="text-primary underline">What is a life clock?</Link></Paragraph>
+      <Paragraph>Explore: <Link to="/blog/how-many-weeks-old-am-i/" className="text-primary underline">How many weeks old are you?</Link> · <Link to="/blog/how-many-heartbeats-in-a-lifetime/" className="text-primary underline">How many heartbeats in a lifetime?</Link> · <Link to="/blog/how-many-full-moons-in-a-lifetime/" className="text-primary underline">How many full moons in a lifetime?</Link> · <Link to="/blog/what-is-a-life-clock/" className="text-primary underline">What is a life clock?</Link></Paragraph>
 
       <H2>Your Age Across All Future Years</H2>
       <Table
@@ -171,15 +171,15 @@ const HowOldWillIBeIn2050 = () => {
           ["2075", "89–90", "84–85", "79–80", "74–75", "64–65"],
         ]}
       />
-      <Paragraph>→ See also: <Link to="/blog/how-old-will-i-be-in-2030" className="text-primary underline">How old will I be in 2030?</Link> · <Link to="/blog/how-old-will-i-be-in-2040" className="text-primary underline">How old will I be in 2040?</Link></Paragraph>
+      <Paragraph>→ See also: <Link to="/blog/how-old-will-i-be-in-2030/" className="text-primary underline">How old will I be in 2030?</Link> · <Link to="/blog/how-old-will-i-be-in-2040/" className="text-primary underline">How old will I be in 2040?</Link></Paragraph>
 
       <H2>Get Your Exact Age on Any Date in 2050</H2>
       <Paragraph>The table above gives your age across the full year 2050. For a precise answer tied to a specific date, visit <Link to="/" className="text-primary underline">whatismyage.me</Link> — enter your date of birth and any future date to see exactly where you'll be.</Paragraph>
       <Paragraph>Also explore:</Paragraph>
       <ul className="list-disc list-inside space-y-2 mb-5 text-foreground/90">
-        <li>👥 <Link to="/blog/what-generation-am-i" className="text-primary underline">What generation are you?</Link></li>
-        <li>⏳ <Link to="/blog/when-will-i-be-1-billion-seconds-old" className="text-primary underline">When will I be 1 billion seconds old?</Link></li>
-        <li>🕰 <Link to="/blog/what-is-a-life-clock" className="text-primary underline">What is a life clock?</Link></li>
+        <li>👥 <Link to="/blog/what-generation-am-i/" className="text-primary underline">What generation are you?</Link></li>
+        <li>⏳ <Link to="/blog/when-will-i-be-1-billion-seconds-old/" className="text-primary underline">When will I be 1 billion seconds old?</Link></li>
+        <li>🕰 <Link to="/blog/what-is-a-life-clock/" className="text-primary underline">What is a life clock?</Link></li>
       </ul>
 
       <CtaBox title="Find your exact age on any date in 2050">Enter your date of birth at whatismyage.me — get your precise age, plus heartbeats, full moons, and shareable life card.</CtaBox>

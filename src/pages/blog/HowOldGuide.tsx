@@ -45,7 +45,7 @@ const HowOldGuide = () => (
       headers={["Age", "Months"]}
       rows={[["20", "240"], ["30", "360"], ["40", "480"], ["50", "600"], ["60", "720"]]}
     />
-    <Paragraph>→ Full guide: <Link to="/blog/how-many-months-old-am-i" className="text-primary underline">How many months old am I?</Link></Paragraph>
+    <Paragraph>→ Full guide: <Link to="/blog/how-many-months-old-am-i/" className="text-primary underline">How many months old am I?</Link></Paragraph>
 
     <H3>Age in Weeks</H3>
     <Paragraph><strong>Formula:</strong> Age in years × 52.1775</Paragraph>
@@ -54,7 +54,7 @@ const HowOldGuide = () => (
       rows={[["20", "~1,044"], ["30", "~1,566"], ["40", "~2,087"], ["50", "~2,609"], ["60", "~3,131"]]}
     />
     <Paragraph>The average human life contains roughly {ext("https://waitbutwhy.com/2014/05/life-weeks.html", "4,000 weeks")}.</Paragraph>
-    <Paragraph>→ Full guide: <Link to="/blog/how-many-weeks-old-am-i" className="text-primary underline">How many weeks old am I?</Link></Paragraph>
+    <Paragraph>→ Full guide: <Link to="/blog/how-many-weeks-old-am-i/" className="text-primary underline">How many weeks old am I?</Link></Paragraph>
 
     <H3>Age in Days</H3>
     <Paragraph><strong>Formula:</strong> Age in years × 365.25</Paragraph>
@@ -62,7 +62,7 @@ const HowOldGuide = () => (
       headers={["Age", "Days"]}
       rows={[["20", "~7,305"], ["30", "~10,958"], ["40", "~14,610"], ["50", "~18,263"], ["60", "~21,915"]]}
     />
-    <Paragraph>→ Full guide: <Link to="/blog/how-to-calculate-age-in-days" className="text-primary underline">How to calculate your age in days</Link></Paragraph>
+    <Paragraph>→ Full guide: <Link to="/blog/how-to-calculate-age-in-days/" className="text-primary underline">How to calculate your age in days</Link></Paragraph>
 
     <H3>Age in Hours</H3>
     <Paragraph><strong>Formula:</strong> Age in years × 8,766</Paragraph>
@@ -71,7 +71,7 @@ const HowOldGuide = () => (
       rows={[["20", "~175,320"], ["30", "~262,980"], ["40", "~350,640"], ["50", "~438,300"]]}
     />
     <Paragraph>According to the {ext("https://www.bls.gov/tus/", "Bureau of Labor Statistics American Time Use Survey")}, the average 40-year-old has spent roughly a third of those hours asleep.</Paragraph>
-    <Paragraph>→ Full guide: <Link to="/blog/how-many-hours-old-am-i" className="text-primary underline">How many hours old am I?</Link></Paragraph>
+    <Paragraph>→ Full guide: <Link to="/blog/how-many-hours-old-am-i/" className="text-primary underline">How many hours old am I?</Link></Paragraph>
 
     <H3>Age in Minutes</H3>
     <Paragraph><strong>Formula:</strong> Age in years × 525,960</Paragraph>
@@ -80,7 +80,7 @@ const HowOldGuide = () => (
       rows={[["20", "~10.5 million"], ["30", "~15.8 million"], ["40", "~21 million"], ["50", "~26.3 million"]]}
     />
     <Paragraph>{ext("https://news.harvard.edu/gazette/story/2010/11/wandering-mind-not-a-happy-mind/", "Research from Harvard")} found that people spend roughly 47% of waking time mentally elsewhere.</Paragraph>
-    <Paragraph>→ Full guide: <Link to="/blog/how-many-minutes-old-am-i" className="text-primary underline">How many minutes old am I?</Link></Paragraph>
+    <Paragraph>→ Full guide: <Link to="/blog/how-many-minutes-old-am-i/" className="text-primary underline">How many minutes old am I?</Link></Paragraph>
 
     <H3>Age in Seconds</H3>
     <Paragraph><strong>Formula:</strong> Age in years × 31,557,600</Paragraph>
@@ -88,7 +88,7 @@ const HowOldGuide = () => (
       headers={["Age", "Seconds"]}
       rows={[["20", "~631 million"], ["30", "~946 million"], ["40", "~1.26 billion"], ["50", "~1.58 billion"]]}
     />
-    <Paragraph>→ Full guide: <Link to="/blog/how-many-seconds-old-am-i" className="text-primary underline">How many seconds old am I?</Link></Paragraph>
+    <Paragraph>→ Full guide: <Link to="/blog/how-many-seconds-old-am-i/" className="text-primary underline">How many seconds old am I?</Link></Paragraph>
 
     <H3>Age in Heartbeats</H3>
     <Paragraph><strong>Formula:</strong> Age in years × 36,500,000 (~100,000/day per the {ext("https://www.heart.org/en/healthy-living/fitness/fitness-basics/target-heart-rates", "American Heart Association")})</Paragraph>
@@ -96,7 +96,7 @@ const HowOldGuide = () => (
       headers={["Age", "Heartbeats"]}
       rows={[["20", "~730 million"], ["30", "~1.09 billion"], ["40", "~1.46 billion"], ["50", "~1.83 billion"]]}
     />
-    <Paragraph>→ Full guide: <Link to="/blog/how-many-heartbeats-in-a-lifetime" className="text-primary underline">How many heartbeats in a lifetime?</Link></Paragraph>
+    <Paragraph>→ Full guide: <Link to="/blog/how-many-heartbeats-in-a-lifetime/" className="text-primary underline">How many heartbeats in a lifetime?</Link></Paragraph>
 
     <H3>Age in Full Moons</H3>
     <Paragraph><strong>Formula:</strong> Age in days ÷ 29.5 ({ext("https://moon.nasa.gov/moon-in-motion/phases-eclipses-supermoons/moon-phases/", "the lunar cycle")})</Paragraph>
@@ -104,7 +104,7 @@ const HowOldGuide = () => (
       headers={["Age", "Full moons"]}
       rows={[["20", "~248"], ["30", "~372"], ["40", "~496"], ["50", "~620"]]}
     />
-    <Paragraph>→ Full guide: <Link to="/blog/how-many-full-moons-in-a-lifetime" className="text-primary underline">How many full moons in a lifetime?</Link></Paragraph>
+    <Paragraph>→ Full guide: <Link to="/blog/how-many-full-moons-in-a-lifetime/" className="text-primary underline">How many full moons in a lifetime?</Link></Paragraph>
 
     <H2>How Different Cultures Calculate Age</H2>
     <H3>Western (International) Age</H3>
@@ -121,7 +121,7 @@ const HowOldGuide = () => (
       Your <strong>chronological age</strong> is how long you've been alive. Your <strong>biological age</strong> is how old your body actually functions. According to {ext("https://www.nature.com/articles/s43587-021-00078-7", "research published in Nature Aging")}, the two can diverge significantly based on genetics, lifestyle, environment, and epigenetic clocks.
     </Paragraph>
     <Paragraph>Two people who are both 45 chronologically might have biological ages ranging from 38 to 55.</Paragraph>
-    <Paragraph>→ See also: <Link to="/blog/what-is-a-life-clock" className="text-primary underline">What is a life clock?</Link></Paragraph>
+    <Paragraph>→ See also: <Link to="/blog/what-is-a-life-clock/" className="text-primary underline">What is a life clock?</Link></Paragraph>
 
     <H2>Your Age on Other Planets</H2>
     <Paragraph>A "year" is just one orbit of the sun. If you're 35 on Earth:</Paragraph>
@@ -153,11 +153,11 @@ const HowOldGuide = () => (
         ["70", "11:01 PM"],
       ]}
     />
-    <Paragraph>→ Full guide: <Link to="/blog/what-is-a-life-clock" className="text-primary underline">What is a life clock?</Link></Paragraph>
+    <Paragraph>→ Full guide: <Link to="/blog/what-is-a-life-clock/" className="text-primary underline">What is a life clock?</Link></Paragraph>
 
     <H2>Famous People Born the Same Year as You</H2>
     <Paragraph>
-      → Find yours: <Link to="/blog/birthday-twins-famous-people-born-on-your-birthday" className="text-primary underline">Famous people born on your birthday</Link> · <Link to="/blog/what-day-of-the-week-was-i-born" className="text-primary underline">What day of the week were you born?</Link> · <Link to="/blog/how-to-find-your-zodiac-sign-by-birth-date" className="text-primary underline">What's your zodiac sign?</Link> · <Link to="/blog/what-generation-am-i" className="text-primary underline">What generation are you?</Link>
+      → Find yours: <Link to="/blog/birthday-twins-famous-people-born-on-your-birthday/" className="text-primary underline">Famous people born on your birthday</Link> · <Link to="/blog/what-day-of-the-week-was-i-born/" className="text-primary underline">What day of the week were you born?</Link> · <Link to="/blog/how-to-find-your-zodiac-sign-by-birth-date/" className="text-primary underline">What's your zodiac sign?</Link> · <Link to="/blog/what-generation-am-i/" className="text-primary underline">What generation are you?</Link>
     </Paragraph>
 
     <CtaBox title="Find your exact age right now">
@@ -174,12 +174,12 @@ const HowOldGuide = () => (
 
 
     <RelatedPosts posts={[
-      { tag: "Time", title: "How Many Months Old Am I?", href: "/blog/how-many-months-old-am-i" },
-      { tag: "Time", title: "How Many Weeks Old Am I?", href: "/blog/how-many-weeks-old-am-i" },
-      { tag: "Time", title: "How Many Hours Old Am I?", href: "/blog/how-many-hours-old-am-i" },
-      { tag: "Time", title: "How Many Minutes Old Am I?", href: "/blog/how-many-minutes-old-am-i" },
-      { tag: "Numbers", title: "How Many Seconds Old Am I?", href: "/blog/how-many-seconds-old-am-i" },
-      { tag: "Biology", title: "How Many Heartbeats in a Lifetime?", href: "/blog/how-many-heartbeats-in-a-lifetime" },
+      { tag: "Time", title: "How Many Months Old Am I?", href: "/blog/how-many-months-old-am-i/" },
+      { tag: "Time", title: "How Many Weeks Old Am I?", href: "/blog/how-many-weeks-old-am-i/" },
+      { tag: "Time", title: "How Many Hours Old Am I?", href: "/blog/how-many-hours-old-am-i/" },
+      { tag: "Time", title: "How Many Minutes Old Am I?", href: "/blog/how-many-minutes-old-am-i/" },
+      { tag: "Numbers", title: "How Many Seconds Old Am I?", href: "/blog/how-many-seconds-old-am-i/" },
+      { tag: "Biology", title: "How Many Heartbeats in a Lifetime?", href: "/blog/how-many-heartbeats-in-a-lifetime/" },
     ]} />
   </UnitArticleShell>
 );
