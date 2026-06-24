@@ -1,0 +1,15 @@
+/**
+ * Cloudflare Pages configuration for whatismyage.me
+ * Static Vite site — builds with npm run build, output in dist/
+ * Cloudflare Pages uses this config; do NOT run 'wrangler deploy' separately.
+ */
+{
+  "name": "whatismyage",
+  "type": "javascript",
+  "build": {
+    "command": "npm run build",
+    "cwd": "./",
+    "root": ".",
+    "output_directory": "dist"
+  }
+}
