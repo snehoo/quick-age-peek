@@ -3,12 +3,15 @@ import type { ReactNode } from "react";
 import {
   ArticleShell,
   BackToBlog,
+  ByLine,
   CtaBox,
+  ExternalLink,
   H2,
   H3,
   Lead,
   Paragraph,
   RelatedPosts,
+  TLDR,
 } from "./ArticleLayout";
 import { useArticleMeta } from "./articleMeta";
 
@@ -48,6 +51,7 @@ export type BornInYearProps = {
   lifeClock: ReactNode;
   finalNote: ReactNode;
   related: { tag: string; title: string; href: string }[];
+  publishedDate?: string;
 };
 
 const SimpleTable = ({ headers, rows }: { headers: [string, string]; rows: Row[] }) => (
@@ -90,11 +94,13 @@ const Figure = ({ src, alt, credit }: ImageBlock) => (
 
 export const BornInYearArticle = (p: BornInYearProps) => {
   const canonical = `https://whatismyage.me/blog/${p.slug}`;
+  const publishedDate = p.publishedDate || "2026-06-24";
   useArticleMeta({
     title: p.title,
     description: p.description,
     canonical,
     headline: p.title.replace(/ \| .+$/, ""),
+    publishedDate,
   });
 
   return (
@@ -109,12 +115,22 @@ export const BornInYearArticle = (p: BornInYearProps) => {
       <h1 className="font-display text-3xl sm:text-4xl text-foreground leading-tight mt-6 mb-4">
         How Old Am I If I Was Born in {p.year}?
       </h1>
+      <ByLine publishedDate={publishedDate} />
 
       <Figure {...p.topImage} />
 
       <Lead>{p.intro}</Lead>
 
-      <H2>Your Age in 2026: The Quick Answer</H2>
+      <TLDR
+        items={[
+          <>If you were born in {p.year}, you're {p.postBirthdayAge} or {p.preBirthdayAge} years old in 2026, depending on whether your birthday has passed.</>,
+          <>Days lived: {p.daysLived}</>,
+          <>Heartbeats: {p.heartbeats}</>,
+          <>You belong to the generation discussed below, shaped by the world events of your era.</>,
+        ]}
+      />
+
+      <H2>How old are you in 2026 if you were born in {p.year}?</H2>
       <SimpleTable
         headers={["If your birthday is…", "Your age in 2026"]}
         rows={[
@@ -124,10 +140,14 @@ export const BornInYearArticle = (p: BornInYearProps) => {
       />
       <Paragraph>
         The formula is simple: <strong>2026 − {p.year} = {p.postBirthdayAge}</strong>, then
-        subtract 1 if your birthday hasn't happened yet this year.
+        subtract 1 if your birthday hasn't happened yet this year. The exact day count depends on{" "}
+        <ExternalLink href="https://www.timeanddate.com/date/leapyear.html">
+          how many leap years fall within your lifetime
+        </ExternalLink>
+        .
       </Paragraph>
 
-      <H2>Your Life in Numbers</H2>
+      <H2>What does your life look like in numbers?</H2>
       {p.midImage && <Figure {...p.midImage} />}
 
       <H3>Days Lived</H3>
@@ -146,27 +166,27 @@ export const BornInYearArticle = (p: BornInYearProps) => {
       <H3>Breaths</H3>
       <Paragraph>{p.breaths}</Paragraph>
 
-      <H2>What Generation Are You?</H2>
+      <H2>What generation are you part of?</H2>
       {p.generation}
 
-      <H2>The World You Were Born Into</H2>
+      <H2>What was the world like when you were born?</H2>
       {p.worldImage && <Figure {...p.worldImage} />}
       <Paragraph>{p.worldIntro}</Paragraph>
       {p.worldEvents}
       {p.worldOutro && <Paragraph>{p.worldOutro}</Paragraph>}
 
-      <H2>How Old Will You Be in the Future?</H2>
+      <H2>How old will you be in the future?</H2>
       <SimpleTable headers={["Year", "Your Age"]} rows={p.futureRows} />
       {p.futureNote && <Paragraph>{p.futureNote}</Paragraph>}
 
-      <H2>Your Age on Other Planets</H2>
+      <H2>How old would you be on other planets?</H2>
       <SimpleTable headers={["Planet", "Your Age"]} rows={p.planetRows} />
       <Paragraph>{p.planetNote}</Paragraph>
 
-      <H2>Your Life Clock: Where Are You?</H2>
+      <H2>Where are you on your life clock?</H2>
       <Paragraph>{p.lifeClock}</Paragraph>
 
-      <H2>Calculate Your Exact Age</H2>
+      <H2>How do you calculate your exact age?</H2>
       <Paragraph>{p.finalNote}</Paragraph>
 
       <CtaBox title="See your exact age in numbers">

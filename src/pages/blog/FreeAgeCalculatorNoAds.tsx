@@ -8,6 +8,10 @@ import {
   AuthorBio,
   RelatedPosts,
   BackToBlog,
+  ByLine,
+  TLDR,
+  ExternalLink,
+  BulletList,
 } from "@/components/blog/ArticleLayout";
 import { useArticleMeta } from "@/components/blog/articleMeta";
 
@@ -17,7 +21,7 @@ const DESC = "Discover the best age calculator for your needs — accurate, fast
 const HEADLINE = "Best Ad-Free Age Calculator Online";
 
 const FreeAgeCalculatorNoAds = () => {
-  useArticleMeta({ title: TITLE, description: DESC, canonical: CANONICAL, headline: HEADLINE });
+  useArticleMeta({ title: TITLE, description: DESC, canonical: CANONICAL, headline: HEADLINE, publishedDate: "2026-06-24" });
 
   return (
     <ArticleShell>
@@ -26,15 +30,25 @@ const FreeAgeCalculatorNoAds = () => {
       <h1 className="font-display text-3xl sm:text-4xl text-foreground leading-tight mt-6 mb-4">
         {HEADLINE}
       </h1>
+      <ByLine publishedDate="2026-06-24" />
 
       <Lead>
         Finding the right age calculator for your specific needs is essential. Whether you're filling out official forms, need medical precision, or just want a quick calculation without sign-ups, the right tool makes all the difference.
       </Lead>
+      <TLDR
+        items={[
+    "Why Age Calculator Choice Matters",
+    "Key Features of a Quality Age Calculator",
+    "When You Need Precise Age Calculation",
+    "No Sign-Up, No Friction, No Ads",
+    "Finding the Right Age Calculator for Your Situation",
+        ]}
+      />
 
-      <H2>Why Age Calculator Choice Matters</H2>
+      <H2>Why Does Age Calculator Choice Matter?</H2>
 
       <Paragraph>
-        Age calculators seem simple on the surface — enter your birth date, get your age. But different use cases require different features. Some need legal precision, others need speed, and some need zero friction.
+        Age calculators seem simple on the surface — enter your birth date, get your age. But different use cases require different features, including the date-math edge cases described by the <ExternalLink href="https://en.wikipedia.org/wiki/Leap_year">Wikipedia leap year article</ExternalLink>. Some need legal precision, others need speed, and some need zero friction.
       </Paragraph>
 
       <Paragraph>
@@ -50,26 +64,37 @@ const FreeAgeCalculatorNoAds = () => {
         <li><strong>Simplicity</strong> — Minimal interface with the result as the main focus</li>
       </ul>
 
-      <H2>When You Need Precise Age Calculation</H2>
+      <H2>When Do You Need Precise Age Calculation?</H2>
 
       <Paragraph>
-        For legal documents, medical contexts, or official purposes, precision is non-negotiable. A single day can matter for age cutoffs, eligibility requirements, or dosing calculations. The right tool handles these edge cases correctly every single time.
+        For legal documents, medical contexts, or official purposes, precision is non-negotiable. A single day can matter for age cutoffs, eligibility requirements, or dosing calculations — the level of detail seen in demographic reporting from the <ExternalLink href="https://www.census.gov/">U.S. Census Bureau</ExternalLink>. The right tool handles these edge cases correctly every single time.
       </Paragraph>
 
-      <H2>No Sign-Up, No Friction, No Ads</H2>
+      <H2>Why Should an Age Calculation Require Sign-Up or Ads?</H2>
 
       <Paragraph>
-        Why should a simple age calculation require an account, email address, or exposure to ads? The best age calculators let you enter your birth date and get your answer immediately — nothing more, nothing less.
+        Why should a simple age calculation require an account, email address, or exposure to ads — the kind of friction that slows pages, per <ExternalLink href="https://en.wikipedia.org/wiki/Web_performance">Wikipedia's overview of web performance</ExternalLink>? The best age calculators let you enter your birth date and get your answer immediately — nothing more, nothing less.
       </Paragraph>
 
       <CtaBox title="Get Your Exact Age in Seconds">
         Enter your birth date and see how many days, hours, minutes, and seconds you've been alive. No sign-up. No ads. Just accurate, instant results.
       </CtaBox>
 
-      <H2>Finding the Right Age Calculator for Your Situation</H2>
+      <H2>How Do You Find the Right Age Calculator for Your Situation?</H2>
 
       <Paragraph>
-        The perfect age calculator depends on your specific needs. Whether you need legal precision, medical accuracy, zero friction, or just a quick lookup — there's a tool built for exactly what you're trying to do.
+        The perfect age calculator depends on your specific needs:
+      </Paragraph>
+      <BulletList
+        items={[
+          "Legal precision — for documents, eligibility checks, and age cutoffs.",
+          "Medical accuracy — for dosing calculations and clinical age reporting.",
+          "Zero friction — no sign-up, no email, no ads.",
+          "Quick lookup — a fast, simple answer with no extra steps.",
+        ]}
+      />
+      <Paragraph>
+        There's a tool built for exactly what you're trying to do.
       </Paragraph>
 
       <AuthorBio
@@ -79,7 +104,6 @@ const FreeAgeCalculatorNoAds = () => {
         bio="Snehal is a developer and data enthusiast from Mumbai who loves finding unexpected patterns in numbers. When not building calculators, they're probably wondering how many breaths they've taken so far. What Is My Age was born from a simple question: what does your age really mean?"
 
       />
-
 
       <RelatedPosts
         posts={[

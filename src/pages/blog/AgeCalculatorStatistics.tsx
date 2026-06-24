@@ -1,5 +1,5 @@
 import { ArticleShell, BackToBlog, AuthorBio,
-  RelatedPosts } from "@/components/blog/ArticleLayout";
+  RelatedPosts, ByLine, BulletList} from "@/components/blog/ArticleLayout";
 import { useArticleMeta } from "@/components/blog/articleMeta";
 
 const CANONICAL = "https://whatismyage.me/blog/age-calculator-statistics";
@@ -71,7 +71,7 @@ const Table = ({ headers, rows }: { headers: string[]; rows: React.ReactNode[][]
 );
 
 const AgeCalculatorStatistics = () => {
-  useArticleMeta({ title: TITLE, description: DESC, canonical: CANONICAL, headline: HEADLINE });
+  useArticleMeta({ title: TITLE, description: DESC, canonical: CANONICAL, headline: HEADLINE, publishedDate: "2026-06-24" });
 
   return (
     <ArticleShell>
@@ -80,13 +80,21 @@ const AgeCalculatorStatistics = () => {
       <h1 className="font-display text-3xl sm:text-4xl text-foreground leading-tight mt-6 mb-6">
         Age Calculator Statistics (2025): 50+ Data Points on Usage Trends, Demographics, and Digital Behavior
       </h1>
+      <ByLine publishedDate="2026-06-24" />
 
       <H2>Introduction</H2>
       <P>
-        <strong>Over 62% of global internet users have used a basic utility tool like an age calculator or date-difference tool in the past 12 months (Statista, Global Digital Tools Survey 2025).</strong> Utility-based searches such as “calculate my age” and “what is my age” collectively generate over 2.1 million monthly global queries (Google Keyword Planner Benchmark Data 2025). Meanwhile, mobile accounts for <strong>78% of all calculator-tool usage sessions</strong> (DataReportal Digital 2025 Global Overview).
+        Age calculators sit at the intersection of three converging trends in global digital behavior:
       </P>
+      <BulletList
+        items={[
+          <span key="usage"><strong>Over 62% of global internet users</strong> have used a basic utility tool like an age calculator or date-difference tool in the past 12 months (Statista, Global Digital Tools Survey 2025).</span>,
+          <span key="search">Utility-based searches such as "calculate my age" and "what is my age" collectively generate <strong>over 2.1 million monthly global queries</strong> (Google Keyword Planner Benchmark Data 2025).</span>,
+          <span key="mobile">Mobile accounts for <strong>78% of all calculator-tool usage sessions</strong> (DataReportal Digital 2025 Global Overview).</span>,
+        ]}
+      />
       <P>
-        We aggregated data from Statista, Pew Research Center, DataReportal, Google, and Our World in Data alongside dozens of primary datasets to compile this report. The takeaway: age calculators aren’t niche utilities—they’re part of a broader surge in instant, task-based search behavior.
+        We aggregated data from Statista, <ExternalLink href="https://www.pewresearch.org">Pew Research Center</ExternalLink>, DataReportal, Google, and <ExternalLink href="https://ourworldindata.org">Our World in Data</ExternalLink> alongside dozens of primary datasets to compile this report. The takeaway: age calculators aren’t niche utilities—they’re part of a broader surge in instant, task-based search behavior.
       </P>
 
       <Figure
@@ -241,8 +249,8 @@ const AgeCalculatorStatistics = () => {
 
       <Divider />
 
-      <H2>5. Technology Trends: Voice, AI, and Instant Answers</H2>
-      <P>Search is shifting toward conversational queries and zero-click answers.</P>
+      <H2>5. How are voice, AI, and instant answers changing search?</H2>
+      <P>Search is shifting toward conversational queries and zero-click answers, a trend documented in the <ExternalLink href="https://www.nngroup.com/articles/good-abandonment/">Nielsen Norman Group's research on searches that end without a click</ExternalLink>.</P>
 
       <Figure
         src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1600&q=80"
@@ -276,7 +284,6 @@ const AgeCalculatorStatistics = () => {
         bio="Snehal is a developer and data enthusiast from Mumbai who loves finding unexpected patterns in numbers. When not building calculators, they're probably wondering how many breaths they've taken so far. What Is My Age was born from a simple question: what does your age really mean?"
 
       />
-
 
       <RelatedPosts
         posts={[

@@ -1,12 +1,15 @@
 import { Link } from "react-router-dom";
 import { ArticleShell, BackToBlog, CtaBox, H2, H3, Lead, Paragraph, AuthorBio,
-  RelatedPosts, Quote } from "@/components/blog/ArticleLayout";
+  RelatedPosts, Quote, ByLine,
+  TLDR, BulletList,
+} from "@/components/blog/ArticleLayout";
 import { useArticleMeta } from "@/components/blog/articleMeta";
 
 const meta = {
   title: "What Day Will I Be 10,000 Days Old? Find Your Exact Date",
   description: "The 10,000th day of your life is a milestone hiding in plain sight. Find out exactly when it arrives — and why this number says something profound about a human life.",
   canonical: "https://whatismyage.me/blog/what-day-will-i-be-10000-days-old",
+  publishedDate: "2026-06-24",
   headline: "What Day Will I Be 10,000 Days Old?",
 };
 
@@ -64,7 +67,18 @@ const WhatDayWillIBe10000DaysOld = () => {
     <ArticleShell>
       <BackToBlog />
       <h1 className="font-display text-3xl sm:text-4xl text-foreground leading-tight mt-6 mb-4">What Day Will I Be 10,000 Days Old?</h1>
+      <ByLine publishedDate="2026-06-24" />
       <Lead>Somewhere between your 27th and 28th birthday, something quietly extraordinary happens: you turn 10,000 days old. Most people have no idea when this happens. There's no greeting card for it. And yet it's a milestone that lands in your late twenties — often a pivotal, transitional period of life — with a number that has genuine weight.</Lead>
+      <TLDR
+        items={[
+    "How to Calculate Your 10,000th Day",
+    "Your 10,000th Day by Birth Year",
+    "Why 10,000 Days?",
+    "What Else Happens Around Day 10,000?",
+    "Other Day Milestones Worth Tracking",
+    "How Many Days Old Are You Right Now?",
+        ]}
+      />
 
       <Figure
         src="https://images.unsplash.com/photo-1506784983877-45594efa4cbe?w=1200&q=75&auto=format&fit=crop"
@@ -82,7 +96,7 @@ const WhatDayWillIBe10000DaysOld = () => {
       <H2>How to Calculate Your 10,000th Day</H2>
       <Paragraph>The maths is simple:</Paragraph>
       <Paragraph className="font-semibold text-foreground"><strong>10,000th birthday = Date of birth + 10,000 days</strong></Paragraph>
-      <Paragraph>The tricky part is that months have different lengths and leap years add extra days, so you can't simply count forward 10,000 ÷ 365. The exact date requires careful day-by-day counting — or a calculator.</Paragraph>
+      <Paragraph>The tricky part is that months have different lengths and <ExternalLink href="https://en.wikipedia.org/wiki/Leap_year">leap years</ExternalLink> add extra days, so you can't simply count forward 10,000 ÷ 365. The exact date requires careful day-by-day counting — or a calculator.</Paragraph>
       <Paragraph>Use the <Link to="/" className="text-primary underline">whatismyage.me calculator</Link> to find your exact 10,000th day: enter your date of birth, check your total days lived, and work out when you'll hit — or already hit — 10,000.</Paragraph>
 
       <H2>Your 10,000th Day by Birth Year</H2>
@@ -107,7 +121,7 @@ const WhatDayWillIBe10000DaysOld = () => {
       />
       <Paragraph className="text-sm text-muted-foreground"><em>These are based on January 1 of each birth year. Your exact date depends on your specific birthday.</em></Paragraph>
 
-      <H2>Why 10,000 Days?</H2>
+      <H2>Why Is 10,000 Days Such a Meaningful Milestone?</H2>
       <Figure
         src="https://images.unsplash.com/photo-1508739773434-c26b3d09e071?w=1200&q=75&auto=format&fit=crop"
         alt="A close-up of the face of an ornate vintage clock, Roman numerals in warm amber"
@@ -123,15 +137,17 @@ const WhatDayWillIBe10000DaysOld = () => {
       <Paragraph>Ten thousand has a particular quality as a number: it's large enough to feel significant, round enough to feel clean, and human-scaled enough to be imaginable. You can picture ten thousand of something — ten thousand days is comprehensible in a way that a billion seconds isn't.</Paragraph>
       <Paragraph>There's a famous concept in performance psychology — often attributed to <ExternalLink href="https://psycnet.apa.org/doiLanding?doi=10.1037%2F0033-295X.100.3.363">Anders Ericsson's research on expertise</ExternalLink> — sometimes summarised as the 10,000 hour rule: the idea that world-class expertise in a field requires approximately 10,000 hours of deliberate practice. The principle (though nuanced) speaks to why 10,000 feels like a threshold number — it represents mastery, accumulation, the completion of something major.</Paragraph>
       <Paragraph>10,000 days is in the same spirit. It's the point at which you've genuinely accumulated something: experience, perspective, survival, growth. You've navigated more than 27 years of a complicated world. That deserves acknowledgment.</Paragraph>
-      <Quote>According to <ExternalLink href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3818148/">research on autobiographical memory</ExternalLink>, people's sense of personal identity is strongly shaped by accumulated daily experience — the texture of thousands of ordinary days more than by single dramatic events. In that sense, 10,000 days is a better measure of who you've become than almost any other milestone.</Quote>
+      <Quote>According to research on <ExternalLink href="https://en.wikipedia.org/wiki/Autobiographical_memory">autobiographical memory</ExternalLink>, people's sense of personal identity is strongly shaped by accumulated daily experience — the texture of thousands of ordinary days more than by single dramatic events. In that sense, 10,000 days is a better measure of who you've become than almost any other milestone.</Quote>
 
-      <H2>What Else Happens Around Day 10,000?</H2>
+      <H2>What Else Happens Around Day 10,000 in Human Development?</H2>
       <Paragraph>The 10,000th day falls in your <strong>late twenties</strong> — typically between 27 and 28. This is a period that <ExternalLink href="https://www.apa.org/pubs/journals/dev">developmental psychologists</ExternalLink> often identify as a key transition point:</Paragraph>
-      <ul className="list-disc list-inside space-y-2 mb-5 text-foreground/90">
-        <li>It's typically when the brain's prefrontal cortex — the seat of long-term planning, impulse control, and risk assessment — <ExternalLink href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2892678/">reaches full maturation</ExternalLink>.</li>
-        <li>It often coincides with major life decisions: careers solidifying, relationships deepening, identities clarifying.</li>
-        <li><ExternalLink href="https://www.pnas.org/doi/10.1073/pnas.1604022113">Research on life satisfaction</ExternalLink> suggests the late twenties is a period where people often experience a dip in happiness before a longer upward arc through their thirties and forties.</li>
-      </ul>
+      <BulletList
+        items={[
+          <>It's typically when the brain's prefrontal cortex — the seat of long-term planning, impulse control, and risk assessment — <ExternalLink href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2892678/">reaches full maturation</ExternalLink>.</>,
+          "It often coincides with major life decisions: careers solidifying, relationships deepening, identities clarifying.",
+          <><ExternalLink href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9096900/">Research on life satisfaction across the lifespan</ExternalLink> suggests the late twenties can mark the start of a dip in happiness before a longer upward arc through the thirties and forties.</>,
+        ]}
+      />
       <Paragraph>The 10,000th day lands right in the middle of this crucible. It's worth noting.</Paragraph>
 
       <H2>Other Day Milestones Worth Tracking</H2>

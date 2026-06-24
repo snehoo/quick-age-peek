@@ -12,6 +12,10 @@ import {
   AuthorBio,
   RelatedPosts,
   BackToBlog,
+  ByLine,
+  TLDR,
+  BulletList,
+  ExternalLink,
 } from "@/components/blog/ArticleLayout";
 import { useArticleMeta } from "@/components/blog/articleMeta";
 
@@ -31,7 +35,7 @@ const StatCard = ({ n, l }: { n: string; l: string }) => (
 );
 
 const BirthWeekday = () => {
-  useArticleMeta({ title: TITLE, description: DESC, canonical: CANONICAL, headline: HEADLINE });
+  useArticleMeta({ title: TITLE, description: DESC, canonical: CANONICAL, headline: HEADLINE, publishedDate: "2026-06-24" });
 
   return (
     <ArticleShell>
@@ -42,12 +46,23 @@ const BirthWeekday = () => {
       <h1 className="font-display text-3xl sm:text-4xl text-foreground leading-tight mt-6 mb-4">
         {HEADLINE}
       </h1>
+      <ByLine publishedDate="2026-06-24" />
 
       <Lead>
         Most people know their birth date. However, far fewer know what day of the week they arrived on.
         Furthermore, the method for calculating it reveals something genuinely fascinating about how our
         calendar works.
       </Lead>
+      <TLDR
+        items={[
+    "How to Calculate What Day of the Week You Were Born",
+    "What Day of the Week Sees the Most Births?",
+    "The Folklore of Birth Weekdays — Monday's Child and Beyond",
+    "Famous People and Their Birth Weekdays",
+    "What the Gregorian Calendar Tells Us About Birth Dates",
+    "Your Birth Weekday — One More Thread in the Tapestry",
+        ]}
+      />
 
       <Paragraph>
         Your birth weekday is more than a piece of trivia. Moreover, it connects to a rich tradition of
@@ -83,7 +98,7 @@ const BirthWeekday = () => {
       <H2>What Day of the Week Sees the Most Births?</H2>
       <Paragraph>
         Birth statistics reveal a notable pattern. Specifically, fewer babies are born on weekends than on
-        weekdays. Furthermore, Tuesday and Wednesday consistently show the highest birth rates in most
+        weekdays, according to <ExternalLink href="https://www.cdc.gov/nchs/index.htm">CDC National Center for Health Statistics</ExternalLink> birth data. Furthermore, Tuesday and Wednesday consistently show the highest birth rates in most
         countries — a direct result of planned caesarean sections and induced labours being scheduled on
         working days.
       </Paragraph>
@@ -101,18 +116,24 @@ const BirthWeekday = () => {
         show a much flatter distribution across all seven days.
       </Paragraph>
 
-      <H2>The Folklore of Birth Weekdays — Monday's Child and Beyond</H2>
+      <H2>What Does Birth Weekday Folklore Say? Monday's Child and Beyond</H2>
       <Paragraph>
         The most famous expression of birth-day personality theory is the English nursery rhyme{" "}
         <em>Monday's Child</em>, which dates to at least the 1830s. Moreover, it assigns a distinct
         character to each day of the week:
       </Paragraph>
 
-      <Note>
-        Monday's child is fair of face. Tuesday's child is full of grace. Wednesday's child is full of woe.
-        Thursday's child has far to go. Friday's child is loving and giving. Saturday's child works hard for
-        a living. And the child born on the Sabbath Day is bonny and blithe and good and gay.
-      </Note>
+      <BulletList
+        items={[
+          "Monday's child is fair of face.",
+          "Tuesday's child is full of grace.",
+          "Wednesday's child is full of woe.",
+          "Thursday's child has far to go.",
+          "Friday's child is loving and giving.",
+          "Saturday's child works hard for a living.",
+          "The child born on the Sabbath Day is bonny and blithe and good and gay.",
+        ]}
+      />
 
       <Paragraph>
         Of course, no scientific evidence supports these personality assignments. Nevertheless, the rhyme
@@ -147,9 +168,9 @@ const BirthWeekday = () => {
       <H2>What the Gregorian Calendar Tells Us About Birth Dates</H2>
       <Paragraph>
         The <strong>Gregorian calendar</strong> was introduced in October 1582 by Pope Gregory XIII as a
-        correction to the Julian calendar. Furthermore, it is the calendar system used in virtually every
+        correction to the Julian calendar, as detailed by the <ExternalLink href="https://en.wikipedia.org/wiki/Gregorian_calendar">Gregorian calendar overview on Wikipedia</ExternalLink>. Furthermore, it is the calendar system used in virtually every
         country today. Additionally, the Gregorian calendar's leap year rule — adding a day every four
-        years with exceptions at century marks — is what makes weekday calculation across centuries
+        years with exceptions at century marks, explained by <ExternalLink href="https://www.timeanddate.com/date/leapyear.html">timeanddate.com's leap year guide</ExternalLink> — is what makes weekday calculation across centuries
         complicated.
       </Paragraph>
       <Paragraph>
@@ -204,7 +225,6 @@ const BirthWeekday = () => {
         bio="Snehal is a developer and data enthusiast from Mumbai who loves finding unexpected patterns in numbers. When not building calculators, they're probably wondering how many breaths they've taken so far. What Is My Age was born from a simple question: what does your age really mean?"
 
       />
-
 
       <RelatedPosts
         posts={[

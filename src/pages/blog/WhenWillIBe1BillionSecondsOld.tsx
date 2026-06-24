@@ -1,12 +1,15 @@
 import { Link } from "react-router-dom";
 import { ArticleShell, BackToBlog, CtaBox, H2, H3, Lead, Paragraph, AuthorBio,
-  RelatedPosts } from "@/components/blog/ArticleLayout";
+  RelatedPosts, ByLine,
+  TLDR, BulletList,
+} from "@/components/blog/ArticleLayout";
 import { useArticleMeta } from "@/components/blog/articleMeta";
 
 const meta = {
   title: "When Will I Be 1 Billion Seconds Old? Find Your Exact Date",
   description: "One billion seconds is roughly 31.7 years — a hidden milestone most people don't know they've crossed. Find out when yours arrives, and why it's worth celebrating.",
   canonical: "https://whatismyage.me/blog/when-will-i-be-1-billion-seconds-old",
+  publishedDate: "2026-06-24",
   headline: "When Will I Be 1 Billion Seconds Old?",
 };
 
@@ -64,7 +67,19 @@ const WhenWillIBe1BillionSecondsOld = () => {
     <ArticleShell>
       <BackToBlog />
       <h1 className="font-display text-3xl sm:text-4xl text-foreground leading-tight mt-6 mb-4">When Will I Be 1 Billion Seconds Old?</h1>
+      <ByLine publishedDate="2026-06-24" />
       <Lead>Here's a milestone most people don't know they have: your 1 billionth second of life. One billion sounds abstract — impossibly large. But one billion seconds is actually quite human-scaled: it equals approximately 31 years, 8 months, and 8 days. Which means if you're in your early-to-mid thirties, this milestone is either just behind you or just ahead.</Lead>
+      <TLDR
+        items={[
+    "How Long Is 1 Billion Seconds?",
+    "When Will You Hit 1 Billion Seconds?",
+    "Why Is This Milestone Worth Celebrating?",
+    "What Comes After?",
+    "How Many Seconds Old Are You Right Now?",
+    "Related Reading",
+        ]}
+      />
+
       <Paragraph>Unlike your yearly birthday — which repeats annually and can start to blur — your 1 billion second milestone happens exactly once. There's something genuinely remarkable about that.</Paragraph>
 
       <Figure
@@ -92,14 +107,16 @@ const WhenWillIBe1BillionSecondsOld = () => {
           ["Years", "~31.69 years"],
         ]}
       />
-      <Paragraph>More precisely: <strong>31 years, 8 months, and approximately 8 days</strong>.</Paragraph>
+      <Paragraph>More precisely: <strong>31 years, 8 months, and approximately 8 days</strong> — a calculation that accounts for the leap years (per the <ExternalLink href="https://en.wikipedia.org/wiki/Gregorian_calendar">Gregorian calendar</ExternalLink>) that fall within that span.</Paragraph>
       <Paragraph>For comparison:</Paragraph>
-      <ul className="list-disc list-inside space-y-1 mb-5 text-foreground/90">
-        <li>1 <strong>million</strong> seconds = about 11.5 days</li>
-        <li>1 <strong>billion</strong> seconds = about 31.7 years</li>
-        <li>1 <strong>trillion</strong> seconds = about 31,710 years</li>
-      </ul>
-      <Paragraph>The jump from million to billion — a factor of 1,000 — takes you from less than two weeks to over three decades. This is why humans are famously bad at intuitively grasping the difference between these numbers. <ExternalLink href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3814557/">Research in numerical cognition</ExternalLink> consistently shows that our brains treat "million" and "billion" as roughly similar when they're logarithmically worlds apart.</Paragraph>
+      <BulletList
+        items={[
+          <>1 <strong>million</strong> seconds = about 11.5 days</>,
+          <>1 <strong>billion</strong> seconds = about 31.7 years</>,
+          <>1 <strong>trillion</strong> seconds = about 31,710 years</>,
+        ]}
+      />
+      <Paragraph>The jump from million to billion — a factor of 1,000 — takes you from less than two weeks to over three decades. This is why humans are famously bad at intuitively grasping the difference between these numbers. Research on <ExternalLink href="https://en.wikipedia.org/wiki/Number_sense">number sense</ExternalLink> consistently shows that our brains treat "million" and "billion" as roughly similar when they're logarithmically worlds apart.</Paragraph>
 
       <H2>When Will You Hit 1 Billion Seconds?</H2>
       <Paragraph>The exact date depends entirely on your date — and ideally, time — of birth. Here's a table showing the approximate 1 billion second milestone by birth year:</Paragraph>
@@ -145,7 +162,7 @@ const WhenWillIBe1BillionSecondsOld = () => {
       <Paragraph><ExternalLink href="https://www.timeanddate.com/date/birthday.html">timeanddate.com</ExternalLink> — one of the world's most authoritative time-tracking resources — highlights the billion-second birthday as one of the most popular "special age" calculations people seek out, alongside planetary age milestones.</Paragraph>
       <Paragraph>The <ExternalLink href="https://billionbirthday.com/">billionbirthday.com</ExternalLink> project, which invites people to mark and celebrate this moment, puts it well: "One billion seconds is a way to measure your life that makes it feel both enormous and precise. It makes time feel real."</Paragraph>
 
-      <H2>What Comes After?</H2>
+      <H2>What Milestones Come After 1 Billion Seconds?</H2>
       <Paragraph>Once you've passed 1 billion seconds, the next milestones on the clock are:</Paragraph>
       <Table
         headers={["Milestone", "How long after 1 billion seconds", "Age when reached"]}
@@ -156,7 +173,7 @@ const WhenWillIBe1BillionSecondsOld = () => {
           ["2.5 billion seconds", "~47.5 more years", "~79 years"],
         ]}
       />
-      <Paragraph>The 2 billion second mark arrives at approximately <strong>63.4 years</strong> — a meaningful milestone in its own right, and one that <ExternalLink href="https://www.nature.com/articles/s43587-021-00078-7">longevity researchers suggest</ExternalLink> future generations may routinely surpass in good health.</Paragraph>
+      <Paragraph>The 2 billion second mark arrives at approximately <strong>63.4 years</strong> — a meaningful milestone in its own right, and one that <ExternalLink href="https://www.who.int/news-room/fact-sheets/detail/ageing-and-health">longevity researchers suggest</ExternalLink> future generations may routinely surpass in good health.</Paragraph>
       <Paragraph>And the <strong>π billion second mark</strong> — 3.14159... billion seconds — arrives at just under 100 years. Mathematically elegant, biologically remarkable.</Paragraph>
 
       <H2>How Many Seconds Old Are You Right Now?</H2>

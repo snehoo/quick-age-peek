@@ -1,5 +1,5 @@
 import { ArticleShell, BackToBlog, AuthorBio,
-  RelatedPosts } from "@/components/blog/ArticleLayout";
+  RelatedPosts, ByLine} from "@/components/blog/ArticleLayout";
 import { useArticleMeta } from "@/components/blog/articleMeta";
 
 const CANONICAL = "https://whatismyage.me/blog/how-people-measure-time-and-life-statistics";
@@ -57,7 +57,7 @@ const Table = ({ headers, rows }: { headers: string[]; rows: React.ReactNode[][]
 );
 
 const MeasureTimeAndLifeStatistics = () => {
-  useArticleMeta({ title: TITLE, description: DESC, canonical: CANONICAL, headline: HEADLINE });
+  useArticleMeta({ title: TITLE, description: DESC, canonical: CANONICAL, headline: HEADLINE, publishedDate: "2026-06-24" });
 
   return (
     <ArticleShell>
@@ -66,13 +66,24 @@ const MeasureTimeAndLifeStatistics = () => {
       <h1 className="font-display text-3xl sm:text-4xl text-foreground leading-tight mt-6 mb-6">
         How People Measure Time and Life Statistics (2025): 52+ Data Points on Lifespan, Time Perception, and Life Milestones
       </h1>
+      <ByLine publishedDate="2026-06-24" />
 
-      <H2>Introduction</H2>
+      <H2>How Do People Actually Measure Time and Life?</H2>
       <P>
-        <strong>The global average life expectancy reached 73.4 years in 2023 (World Health Organization, World Health Statistics 2024).</strong> That translates to roughly 26,800 days or 3,800 weeks lived per person on average. Meanwhile, research shows that perceived time accelerates with age, with adults over 50 reporting time feels “twice as fast” as in childhood (American Psychological Association, Time Perception Studies 2022 – most recent available). Across cultures, over 60% of people still measure life primarily in years rather than days or weeks (Pew Research Center, Global Attitudes Survey 2023).
+        <strong>The global average life expectancy reached 73.4 years in 2023 (<ExternalLink href="https://www.who.int/">World Health Organization</ExternalLink>, World Health Statistics 2024).</strong> That translates to roughly 26,800 days or 3,800 weeks lived per person on average — a framing popularized by <ExternalLink href="https://en.wikipedia.org/wiki/Four_Thousand_Weeks">Oliver Burkeman's "Four Thousand Weeks"</ExternalLink>. Meanwhile, research shows that perceived time accelerates with age, with adults over 50 reporting time feels “twice as fast” as in childhood (American Psychological Association, Time Perception Studies 2022 – most recent available). Across cultures, over 60% of people still measure life primarily in years rather than days or weeks (<ExternalLink href="https://www.pewresearch.org/">Pew Research Center</ExternalLink>, Global Attitudes Survey 2023).
       </P>
       <P>
-        We aggregated data from World Health Organization, United Nations, Our World in Data, Pew Research Center, and American Psychological Association along with dozens of other primary sources to compile this report. These numbers matter because digital tools, longevity research, and cultural shifts are changing how people quantify—and emotionally experience—time.
+        We aggregated data from these primary sources to compile this report:
+      </P>
+      <ul className="list-disc pl-5 space-y-2 text-foreground/90 text-[17px] leading-relaxed mb-6">
+        <li><ExternalLink href="https://www.who.int/">World Health Organization</ExternalLink></li>
+        <li>United Nations</li>
+        <li><ExternalLink href="https://ourworldindata.org/">Our World in Data</ExternalLink></li>
+        <li><ExternalLink href="https://www.pewresearch.org/">Pew Research Center</ExternalLink></li>
+        <li><ExternalLink href="https://www.apa.org/">American Psychological Association</ExternalLink></li>
+      </ul>
+      <P>
+        These numbers matter because digital tools, longevity research, and cultural shifts are changing how people quantify—and emotionally experience—time.
       </P>
 
       <H2>Key Takeaways</H2>
@@ -91,7 +102,7 @@ const MeasureTimeAndLifeStatistics = () => {
 
       <Divider />
 
-      <H2>1. Global Lifespan and Life in Weeks</H2>
+      <H2>1. What Does Global Lifespan Look Like in Weeks?</H2>
       <P>Converting lifespan into weeks or days reframes time as finite and measurable. This shift is driving behavioral changes in productivity, goal-setting, and life planning.</P>
       <Figure src="https://images.unsplash.com/photo-1506784983877-45594efa4cbe" alt="life calendar visualization" />
       <Table
@@ -224,17 +235,17 @@ const MeasureTimeAndLifeStatistics = () => {
       />
 
       <H2>Methodology and Sources</H2>
-      <P>Primary datasets and peer-reviewed research were prioritized. Cross-referencing ensured consistency and recency.</P>
+      <P>Primary datasets and peer-reviewed research were prioritized. Cross-referencing ensured consistency and recency. Sources include:</P>
       <ul className="list-disc pl-5 space-y-2 text-foreground/90 text-[17px] leading-relaxed mb-6">
-        <li>WHO — World Health Statistics</li>
-        <li>UN — Population Prospects</li>
-        <li>World Bank — Life Expectancy</li>
-        <li>OECD — Reports</li>
-        <li>Pew Research</li>
-        <li>APA</li>
-        <li>Nature</li>
+        <li><ExternalLink href="https://www.who.int/">WHO</ExternalLink> — World Health Statistics</li>
+        <li><ExternalLink href="https://population.un.org/wpp/">UN</ExternalLink> — Population Prospects</li>
+        <li><ExternalLink href="https://data.worldbank.org/">World Bank</ExternalLink> — Life Expectancy</li>
+        <li><ExternalLink href="https://www.oecd.org/">OECD</ExternalLink> — Reports</li>
+        <li><ExternalLink href="https://www.pewresearch.org/">Pew Research</ExternalLink></li>
+        <li><ExternalLink href="https://www.apa.org/">APA</ExternalLink></li>
+        <li><ExternalLink href="https://www.nature.com/">Nature</ExternalLink></li>
         <li>Statista</li>
-        <li>Gallup</li>
+        <li><ExternalLink href="https://www.gallup.com/">Gallup</ExternalLink></li>
         <li>McKinsey</li>
       </ul>
       <P><strong>Last updated: May 2026</strong></P>
@@ -253,7 +264,6 @@ const MeasureTimeAndLifeStatistics = () => {
         bio="Snehal is a developer and data enthusiast from Mumbai who loves finding unexpected patterns in numbers. When not building calculators, they're probably wondering how many breaths they've taken so far. What Is My Age was born from a simple question: what does your age really mean?"
 
       />
-
 
       <RelatedPosts
         posts={[

@@ -13,6 +13,10 @@ import {
   AuthorBio,
   RelatedPosts,
   BackToBlog,
+  ByLine,
+  TLDR,
+  BulletList,
+  ExternalLink,
 } from "@/components/blog/ArticleLayout";
 import { useArticleMeta } from "@/components/blog/articleMeta";
 
@@ -25,7 +29,7 @@ const HEADLINE =
   "CalculatorSoup vs OmniCalculator: Best Age Calculator Compared";
 
 const CalculatorSoupVsOmniCalculator = () => {
-  useArticleMeta({ title: TITLE, description: DESC, canonical: CANONICAL, headline: HEADLINE });
+  useArticleMeta({ title: TITLE, description: DESC, canonical: CANONICAL, headline: HEADLINE, publishedDate: "2026-06-24" });
 
   return (
     <ArticleShell>
@@ -34,12 +38,22 @@ const CalculatorSoupVsOmniCalculator = () => {
       <h1 className="font-display text-3xl sm:text-4xl text-foreground leading-tight mt-6 mb-4">
         {HEADLINE}
       </h1>
+      <ByLine publishedDate="2026-06-24" />
 
       <Lead>
         Two of the internet's most-visited calculator sites both offer free age tools — but they take very
         different approaches. Here's an honest look at CalculatorSoup vs OmniCalculator so you can choose the
         right one for your exact situation.
       </Lead>
+      <TLDR
+        items={[
+    "What Does Each Age Calculator Actually Calculate?",
+    "How Accurate Are the Results?",
+    "Feature-by-Feature Comparison",
+    "Who Should Use Which Tool?",
+    "The Bottom Line",
+        ]}
+      />
 
       <Paragraph>
         Searching "how old am I" or "calculate age from date of birth" returns dozens of tools. Most of the
@@ -59,10 +73,14 @@ const CalculatorSoupVsOmniCalculator = () => {
       <H3>CalculatorSoup's Age Tool: Depth Without Clutter</H3>
       <Paragraph>
         CalculatorSoup's age calculator gives results in years, months, days, total weeks, total days, total
-        hours, total minutes, and total seconds. It also handles two less-common use cases: finding the date
-        of birth from a known age, and calculating the age someone was at the time of their death. That
-        second feature makes it useful for genealogy research and history projects.
+        hours, total minutes, and total seconds. It also handles two less-common use cases:
       </Paragraph>
+      <BulletList
+        items={[
+          "Finding the date of birth from a known age.",
+          <span key="death-calc">Calculating the age someone was at the time of their death — useful for genealogy research and history projects, the kind catalogued by the <ExternalLink href="https://www.archives.gov/">U.S. National Archives</ExternalLink>.</span>,
+        ]}
+      />
       <Paragraph>
         Additionally, the tool shows how many days remain until your next birthday. It even displays weeks
         and months automatically for newborns and infants — a genuinely thoughtful touch for new parents who
@@ -86,7 +104,7 @@ const CalculatorSoupVsOmniCalculator = () => {
       <Paragraph>
         Both tools use the most common Western age system: age increases on each birthday, and the fractional
         part of a year is measured in complete months and then remaining days. Neither tool invents its own
-        calendar; both follow the Gregorian standard. For virtually all practical purposes, their outputs
+        calendar; both follow the <ExternalLink href="https://en.wikipedia.org/wiki/Gregorian_calendar">Gregorian calendar standard</ExternalLink>. For virtually all practical purposes, their outputs
         match when you enter the same date.
       </Paragraph>
       <Paragraph>
@@ -130,7 +148,7 @@ const CalculatorSoupVsOmniCalculator = () => {
       <ProsConsList
         title="Choose CalculatorSoup if you…"
         items={[
-          "Need to find out how old a historical person was at death.",
+          <span key="hist-death">Need to find out how old a historical person was at death — useful with records from sources like the <ExternalLink href="https://www.archives.gov/">National Archives</ExternalLink>.</span>,
           "Want automatic infant age display in weeks for a newborn.",
           "Prefer a straightforward layout with no extra steps.",
           "Need a birthday countdown displayed alongside the age.",
@@ -141,7 +159,7 @@ const CalculatorSoupVsOmniCalculator = () => {
         title="Choose OmniCalculator if you…"
         items={[
           "Want to know your exact age to the second or millisecond.",
-          "Need detailed explanations of how age is mathematically defined.",
+          <span key="math-def">Need detailed explanations of how age is mathematically defined, similar to leap year math covered by <ExternalLink href="https://www.timeanddate.com/date/leapyear.html">timeanddate.com</ExternalLink>.</span>,
           "Are curious about related calculators (dog age, days alive, etc.).",
           "Appreciate a tool backed by physics and science experts.",
         ]}
@@ -174,7 +192,6 @@ const CalculatorSoupVsOmniCalculator = () => {
         bio="Snehal is a developer and data enthusiast from Mumbai who loves finding unexpected patterns in numbers. When not building calculators, they're probably wondering how many breaths they've taken so far. What Is My Age was born from a simple question: what does your age really mean?"
 
       />
-
 
       <RelatedPosts
         posts={[

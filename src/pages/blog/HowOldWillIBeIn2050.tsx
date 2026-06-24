@@ -1,12 +1,15 @@
 import { Link } from "react-router-dom";
 import { ArticleShell, BackToBlog, CtaBox, H2, Lead, Paragraph, AuthorBio,
-  RelatedPosts } from "@/components/blog/ArticleLayout";
+  RelatedPosts, ByLine,
+  TLDR, BulletList,
+} from "@/components/blog/ArticleLayout";
 import { useArticleMeta } from "@/components/blog/articleMeta";
 
 const meta = {
   title: "How Old Will I Be in 2050? Age Calculator by Birth Year",
   description: "How old will you be in 2050? Find your age instantly by birth year — plus a fascinating look at what the world might look like in 24 years time.",
   canonical: "https://whatismyage.me/blog/how-old-will-i-be-in-2050",
+  publishedDate: "2026-06-24",
   headline: "How Old Will I Be in 2050?",
 };
 
@@ -64,7 +67,19 @@ const HowOldWillIBeIn2050 = () => {
     <ArticleShell>
       <BackToBlog />
       <h1 className="font-display text-3xl sm:text-4xl text-foreground leading-tight mt-6 mb-4">How Old Will I Be in 2050?</h1>
+      <ByLine publishedDate="2026-06-24" />
       <Lead>2050 sounds like science fiction — but it's just 24 years away. A child born today will be in their mid-twenties. Someone in their twenties today will be approaching fifty. And the choices made between now and then will have shaped the world in ways both predictable and entirely surprising.</Lead>
+      <TLDR
+        items={[
+    "How to Calculate Your Age in 2050",
+    "Age in 2050 by Birth Year — Complete Table",
+    "What Milestone Ages Does 2050 Bring?",
+    "What the World Might Look Like in 2050",
+    "Your Life in Numbers at Your 2050 Age",
+    "Your Age Across All Future Years",
+        ]}
+      />
+
       <Paragraph>But first: how old will you be in 2050?</Paragraph>
 
       <Figure
@@ -87,7 +102,7 @@ const HowOldWillIBeIn2050 = () => {
         <li><strong>If your birthday has passed by the point in 2050 you're asking about</strong> → use the result</li>
         <li><strong>If your birthday hasn't happened yet</strong> → subtract 1</li>
       </ul>
-      <Paragraph>Example: born in <strong>1988</strong> → 2050 − 1988 = <strong>62</strong>. If asking about a date before your birthday in 2050, you'll be 61.</Paragraph>
+      <Paragraph>Example: born in <strong>1988</strong> → 2050 − 1988 = <strong>62</strong>. If asking about a date before your birthday in 2050, you'll be 61. This calculation relies on the standard <ExternalLink href="https://en.wikipedia.org/wiki/Gregorian_calendar">Gregorian calendar</ExternalLink> used internationally for dating.</Paragraph>
       <Paragraph>For a precise figure on a specific date, use the <Link to="/" className="text-primary underline">whatismyage.me calculator</Link>.</Paragraph>
 
       <H2>Age in 2050 by Birth Year — Complete Table</H2>
@@ -113,16 +128,18 @@ const HowOldWillIBeIn2050 = () => {
 
       <H2>What Milestone Ages Does 2050 Bring?</H2>
       <Paragraph>2050 is a year of significant round-number milestones for a huge swath of people alive today:</Paragraph>
-      <ul className="list-disc list-inside space-y-2 mb-5 text-foreground/90">
-        <li><strong>Born in 1990?</strong> You'll turn <strong>60</strong> in 2050 — the threshold of what many still consider "older" but what medicine is increasingly treating as mid-life.</li>
-        <li><strong>Born in 2000?</strong> You'll hit <strong>50</strong>.</li>
-        <li><strong>Born in 1980?</strong> You'll reach <strong>70</strong>.</li>
-        <li><strong>Born in 2010?</strong> You'll be <strong>40</strong> — the same milestone age that feels so significant today.</li>
-        <li><strong>Born in 2025?</strong> You'll turn <strong>25</strong> in 2050 — just getting started.</li>
-      </ul>
-      <Paragraph>There's something genuinely interesting about looking at 2050 as a milestone year: it's the year that appears in virtually every major <ExternalLink href="https://unfccc.int/process-and-meetings/the-paris-agreement">climate target</ExternalLink>, <ExternalLink href="https://www.nature.com/articles/s43587-021-00078-7">longevity research horizon</ExternalLink>, and <ExternalLink href="https://www.un.org/development/desa/pd/content/world-population-prospects-2022">global demographic projection</ExternalLink>. The year that determines so much about the world will also be the year you cross a personal milestone.</Paragraph>
+      <BulletList
+        items={[
+          <span key="1990"><strong>Born in 1990?</strong> You'll turn <strong>60</strong> in 2050 — the threshold of what many still consider "older" but what medicine is increasingly treating as mid-life.</span>,
+          <span key="2000"><strong>Born in 2000?</strong> You'll hit <strong>50</strong>.</span>,
+          <span key="1980"><strong>Born in 1980?</strong> You'll reach <strong>70</strong>.</span>,
+          <span key="2010"><strong>Born in 2010?</strong> You'll be <strong>40</strong> — the same milestone age that feels so significant today.</span>,
+          <span key="2025"><strong>Born in 2025?</strong> You'll turn <strong>25</strong> in 2050 — just getting started.</span>,
+        ]}
+      />
+      <Paragraph>There's something genuinely interesting about looking at 2050 as a milestone year: it's the year that appears in virtually every major <ExternalLink href="https://unfccc.int/process-and-meetings/the-paris-agreement">climate target</ExternalLink>, <ExternalLink href="https://www.who.int/news-room/fact-sheets/detail/ageing-and-health">longevity research horizon</ExternalLink>, and <ExternalLink href="https://www.un.org/development/desa/pd/content/world-population-prospects-2022">global demographic projection</ExternalLink>. The year that determines so much about the world will also be the year you cross a personal milestone.</Paragraph>
 
-      <H2>What the World Might Look Like in 2050</H2>
+      <H2>What Might the World Look Like in 2050?</H2>
       <Figure
         src="https://images.unsplash.com/photo-1452696193712-6cabf5103b63?w=1200&q=75&auto=format&fit=crop"
         alt="Light refracting through a glass building facade, a symbol of the transparency of the future"
@@ -139,7 +156,7 @@ const HowOldWillIBeIn2050 = () => {
       <ul className="list-disc list-inside space-y-3 mb-5 text-foreground/90">
         <li><strong>Climate:</strong> The <ExternalLink href="https://unfccc.int/process-and-meetings/the-paris-agreement">Paris Agreement</ExternalLink> targets net-zero global emissions by 2050. Whether that goal is met will define the physical conditions of the world you'll inhabit.</li>
         <li><strong>Population:</strong> The <ExternalLink href="https://www.un.org/development/desa/pd/content/world-population-prospects-2022">UN projects</ExternalLink> global population will reach approximately 9.7 billion by 2050. Europe, Japan, and China will face significant population decline.</li>
-        <li><strong>Life expectancy:</strong> <ExternalLink href="https://www.nature.com/articles/s43587-021-00078-7">WHO and academic longevity researchers</ExternalLink> suggest that by 2050, healthy life expectancy in developed countries could reach into the 80s as a norm.</li>
+        <li><strong>Life expectancy:</strong> <ExternalLink href="https://www.who.int/news-room/fact-sheets/detail/ageing-and-health">WHO and academic longevity researchers</ExternalLink> suggest that by 2050, healthy life expectancy in developed countries could reach into the 80s as a norm.</li>
         <li><strong>Work and economy:</strong> <ExternalLink href="https://www.weforum.org/reports/the-future-of-jobs-report-2023/">The World Economic Forum projects</ExternalLink> that AI and automation will have created as many new job categories as they've eliminated.</li>
         <li><strong>Space:</strong> <ExternalLink href="https://www.nasa.gov/artemis/">NASA's Artemis programme</ExternalLink> and commercial operators aim to establish a sustained human presence on the Moon well before 2050.</li>
       </ul>

@@ -9,6 +9,10 @@ import {
   AuthorBio,
   RelatedPosts,
   BackToBlog,
+  ByLine,
+  TLDR,
+  BulletList,
+  ExternalLink,
 } from "@/components/blog/ArticleLayout";
 import { useArticleMeta } from "@/components/blog/articleMeta";
 
@@ -34,7 +38,7 @@ const ZODIAC = [
 ];
 
 const ZodiacByBirthDate = () => {
-  useArticleMeta({ title: TITLE, description: DESC, canonical: CANONICAL, headline: HEADLINE });
+  useArticleMeta({ title: TITLE, description: DESC, canonical: CANONICAL, headline: HEADLINE, publishedDate: "2026-06-24" });
 
   return (
     <ArticleShell>
@@ -45,6 +49,7 @@ const ZodiacByBirthDate = () => {
       <h1 className="font-display text-3xl sm:text-4xl text-foreground leading-tight mt-6 mb-4">
         {HEADLINE}
       </h1>
+      <ByLine publishedDate="2026-06-24" />
 
       <Lead>
         Your zodiac sign is one of the first things people want to know about you — and one of the first
@@ -52,6 +57,16 @@ const ZodiacByBirthDate = () => {
         Western sun sign. Furthermore, there are two other major astrological systems that assign entirely
         different signs to the same birth date.
       </Lead>
+      <TLDR
+        items={[
+    "Western Zodiac Sign Dates — The Complete List by Birth Date",
+    "What Is a Cusp Sign? Understanding Zodiac Borderlines",
+    "Sun Sign, Moon Sign, and Rising Sign — What's the Difference?",
+    "Vedic Astrology — A Different Zodiac for the Same Birth Date",
+    "Chinese Zodiac — Your Sign by Birth Year",
+    "Your Zodiac Sign at whatismyage.me",
+        ]}
+      />
 
       <Paragraph>
         Additionally, even within Western astrology, your sun sign is only one of three primary placements.
@@ -93,9 +108,30 @@ const ZodiacByBirthDate = () => {
 
       <H2>Sun Sign, Moon Sign, and Rising Sign — What's the Difference?</H2>
       <Paragraph>
-        Your <strong>sun sign</strong> — the one based purely on birth date — represents your core identity
-        and conscious self. Additionally, it is the sign most people mean when they say "I'm a Scorpio" or
-        "she's a Leo." However, it is only one of three fundamental placements in a Western birth chart.
+        A complete Western{" "}
+        <ExternalLink href="https://en.wikipedia.org/wiki/Astrological_sign">astrological sign</ExternalLink>{" "}
+        profile actually involves three separate placements:
+      </Paragraph>
+      <BulletList
+        items={[
+          <>
+            <strong>Sun sign</strong> — based purely on birth date, it represents your core identity and
+            conscious self. It is the sign most people mean when they say "I'm a Scorpio" or "she's a Leo."
+          </>,
+          <>
+            <strong>Moon sign</strong> — determined by the moon's position at your birth, it governs your
+            emotional inner world, instincts, and subconscious patterns.
+          </>,
+          <>
+            <strong>Rising sign (ascendant)</strong> — determined by which zodiac sign was on the eastern
+            horizon at your exact moment and place of birth, it governs your outward personality and first
+            impressions.
+          </>,
+        ]}
+      />
+      <Paragraph>
+        Your <strong>sun sign</strong> is only one of these three fundamental placements in a Western birth
+        chart, though it remains the most commonly cited.
       </Paragraph>
       <Paragraph>
         Furthermore, your <strong>moon sign</strong> — determined by the moon's position at your birth —
@@ -188,7 +224,6 @@ const ZodiacByBirthDate = () => {
         bio="Snehal is a developer and data enthusiast from Mumbai who loves finding unexpected patterns in numbers. When not building calculators, they're probably wondering how many breaths they've taken so far. What Is My Age was born from a simple question: what does your age really mean?"
 
       />
-
 
       <RelatedPosts
         posts={[

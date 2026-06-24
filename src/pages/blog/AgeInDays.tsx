@@ -1,12 +1,15 @@
 import { Link } from "react-router-dom";
 import { ArticleShell, BackToBlog, CtaBox, FormulaBox, H2, H3, Lead, Paragraph, Quote, AuthorBio,
-  RelatedPosts, StatBox } from "@/components/blog/ArticleLayout";
+  RelatedPosts, StatBox, ByLine,
+  TLDR, OrderedList, BulletList, ExternalLink,
+} from "@/components/blog/ArticleLayout";
 import { useArticleMeta } from "@/components/blog/articleMeta";
 
 const meta = {
   title: "How to Calculate Your Exact Age in Days | whatismyage.me",
   description: "Learn how to calculate your exact age in days, account for leap years correctly, and what milestone day counts mean — or find your number instantly.",
   canonical: "https://whatismyage.me/blog/how-to-calculate-age-in-days",
+  publishedDate: "2026-06-24",
   headline: "How to Calculate Your Exact Age in Days",
 };
 
@@ -33,34 +36,45 @@ const AgeInDays = () => {
     <ArticleShell>
       <BackToBlog />
       <h1 className="font-display text-3xl sm:text-4xl text-foreground leading-tight mt-6 mb-4">How to Calculate Your Exact Age in Days</h1>
+      <ByLine publishedDate="2026-06-24" />
       <Lead>Most people know their age in years. However, your age in days is a fundamentally different kind of number — precise, personal, and surprisingly difficult to calculate correctly because of leap years.</Lead>
+      <TLDR
+        items={[
+    "Step-by-Step: How to Calculate Age in Days from Date of Birth",
+    "Why Leap Year Calculation Makes Age in Days Difficult",
+    "Milestone Days Alive Worth Knowing",
+    "From Days to Seconds, Minutes, and Heartbeats",
+    "Why Your Age in Days Matters Beyond Curiosity",
+        ]}
+      />
+
       <Paragraph>If you were born on 15 March 1988 and today is 20 April 2026, your age in years is 38. However, your exact age in days is 13,915 — not 13,870 (which is simply 38 × 365). The difference comes entirely from leap years. Moreover, most online calculators get this wrong when accounting for partial years.</Paragraph>
       <StatBox number="13,915" label="Exact days alive for someone born 15 March 1988, as of 20 April 2026 — accounting for all leap years" />
       <H2>Step-by-Step: How to Calculate Age in Days from Date of Birth</H2>
       <Paragraph>The manual method requires several sequential steps. Furthermore, each step builds on the previous, so an error early on compounds throughout the calculation.</Paragraph>
-      <div className="space-y-4 my-7">
-        {steps.map((step, index) => (
-          <div key={step} className="flex items-start gap-4">
-            <span className="bg-primary text-primary-foreground rounded-full w-7 h-7 flex items-center justify-center text-sm font-bold shrink-0 mt-1">{index + 1}</span>
-            <Paragraph>{step}</Paragraph>
-          </div>
-        ))}
-      </div>
+      <OrderedList items={steps} />
       <FormulaBox title="Quick estimate formula for days alive">Days alive ≈ (completed years × 365) + leap years lived + days since last birthday<br />Example: (38 × 365) + 10 leap days + 36 days = <strong className="text-foreground">~13,916</strong></FormulaBox>
-      <H2>Why Leap Year Calculation Makes Age in Days Difficult</H2>
+      <H2>Why does the leap year calculation make age in days difficult?</H2>
       <Paragraph>A solar year is not exactly 365 days. In fact, it is <strong>365.2422 days</strong>. Consequently, without any correction, our calendar would drift by approximately 6 hours per year. Over a century, that drift would shift seasons by 25 days — January would arrive in what we currently call early December.</Paragraph>
-      <Paragraph>The leap year system corrects for this. Therefore, every year divisible by 4 gains an extra day — except century years, which must additionally be divisible by 400. As a result, the year 2000 was a leap year, but 1900 was not. Between 1988 and 2026, there are precisely <strong>10 leap years</strong>: 1988, 1992, 1996, 2000, 2004, 2008, 2012, 2016, 2020, and 2024.</Paragraph>
+      <Paragraph>The <ExternalLink href="https://en.wikipedia.org/wiki/Leap_year">leap year system</ExternalLink> corrects for this. Therefore, every year divisible by 4 gains an extra day — except century years, which must additionally be divisible by 400. As a result, the year 2000 was a leap year, but 1900 was not. Between 1988 and 2026, there are precisely <strong>10 leap years</strong>: 1988, 1992, 1996, 2000, 2004, 2008, 2012, 2016, 2020, and 2024.</Paragraph>
       <Quote>If you were born on 29 February — a leap day — your calendar birthday appears only every four years. Nevertheless, you still age one day every day regardless.</Quote>
       <H3>Why most manual calculations get the wrong answer</H3>
       <Paragraph>The most common error is treating every year as exactly 365 days. Furthermore, many people forget that the birth year itself may be a leap year, adding an additional complication. Similarly, calculating the days in the current partial year requires knowing whether February has 28 or 29 days. Consequently, even careful manual calculation frequently produces a result that is several days off.</Paragraph>
       <H2>Milestone Days Alive Worth Knowing</H2>
       <Paragraph>Certain day counts carry particular cultural and personal significance. Moreover, knowing them in advance gives you something to mark and celebrate that most people around you will never notice.</Paragraph>
-      <Paragraph>Your <strong>5,000th day</strong> alive falls at approximately age 13 years and 8 months — deep in secondary school for most people. Furthermore, your <strong>10,000th day</strong> arrives at roughly age 27 years and 5 months — a milestone many people find surprisingly meaningful when they encounter it.</Paragraph>
-      <Paragraph>Additionally, your <strong>15,000th day</strong> falls at approximately age 41, and your <strong>20,000th day</strong> at around age 54. In fact, some people use these 5,000-day intervals as personal review points — occasions to reflect on the past five thousand days and set intentions for the next.</Paragraph>
+      <BulletList
+        items={[
+          <span key="5000"><strong>5,000th day</strong> alive — approximately age 13 years and 8 months, deep in secondary school for most people.</span>,
+          <span key="10000"><strong>10,000th day</strong> — roughly age 27 years and 5 months, a milestone many people find surprisingly meaningful when they encounter it.</span>,
+          <span key="15000"><strong>15,000th day</strong> — approximately age 41.</span>,
+          <span key="20000"><strong>20,000th day</strong> — around age 54.</span>,
+        ]}
+      />
+      <Paragraph>Some people use these 5,000-day intervals as personal review points — occasions to reflect on the past five thousand days and set intentions for the next.</Paragraph>
       <H3>The 10,000-day milestone</H3>
       <Paragraph>The 10,000-day birthday has become particularly popular online. Moreover, it falls in the late twenties for most people — a natural inflection point between early adulthood and the thirties. Consequently, it is often framed as a prompt to take stock of what has been accomplished and what remains undone. Furthermore, the number is large enough to feel substantial but small enough to make the remaining thousands feel consequential.</Paragraph>
       <H2>From Days to Seconds, Minutes, and Heartbeats</H2>
-      <Paragraph>Once you know your exact age in days, every other unit of time follows directly. Specifically, multiply by 24 for hours, by 1,440 for minutes, and by 86,400 for seconds. As a result, a 38-year-old has lived approximately <strong>1.2 billion seconds</strong>.</Paragraph>
+      <Paragraph>Once you know your exact age in days, every other unit of time follows directly. Specifically, multiply by 24 for hours, by 1,440 for minutes, and by 86,400 for seconds — the same base units of time tracked by official references like <ExternalLink href="https://www.time.gov">time.gov</ExternalLink> and date calculators such as <ExternalLink href="https://www.timeanddate.com/date/duration.html">timeanddate.com</ExternalLink>. As a result, a 38-year-old has lived approximately <strong>1.2 billion seconds</strong>.</Paragraph>
       <Paragraph>Interestingly, that figure is closely comparable to their <Link to="/blog/how-many-heartbeats-in-a-lifetime/" className="text-primary underline">total heartbeat count of 1.43 billion</Link>. Therefore, your heart has beaten slightly more times than the number of seconds you have been alive — a genuinely surprising relationship between two seemingly unrelated body clocks.</Paragraph>
       <Paragraph>Similarly, converting days to <Link to="/blog/how-many-full-moons-in-a-lifetime/" className="text-primary underline">full moons</Link> provides another satisfying unit: divide your total days by 29.53. Furthermore, you can find <Link to="/blog/what-is-a-life-clock/" className="text-primary underline">what time it currently is on your life clock</Link> — your age expressed as a moment in a 24-hour day.</Paragraph>
       <H2>Why Your Age in Days Matters Beyond Curiosity</H2>

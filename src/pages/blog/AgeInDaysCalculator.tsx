@@ -10,6 +10,10 @@ import {
   AuthorBio,
   RelatedPosts,
   BackToBlog,
+  ByLine,
+  TLDR,
+  BulletList,
+  ExternalLink,
 } from "@/components/blog/ArticleLayout";
 import { useArticleMeta } from "@/components/blog/articleMeta";
 
@@ -19,7 +23,7 @@ const DESC = "Calculate your exact age in days with precision. Discover mileston
 const HEADLINE = "Age in Days Calculator — Find Your Exact Day Count";
 
 const AgeInDaysCalculator = () => {
-  useArticleMeta({ title: TITLE, description: DESC, canonical: CANONICAL, headline: HEADLINE });
+  useArticleMeta({ title: TITLE, description: DESC, canonical: CANONICAL, headline: HEADLINE, publishedDate: "2026-06-24" });
 
   return (
     <ArticleShell>
@@ -28,15 +32,26 @@ const AgeInDaysCalculator = () => {
       <h1 className="font-display text-3xl sm:text-4xl text-foreground leading-tight mt-6 mb-4">
         {HEADLINE}
       </h1>
+      <ByLine publishedDate="2026-06-24" />
 
       <Lead>
         Your life in days. Not years — days. Enter your birth date and discover exactly how many days you've lived, and what the major milestones mean.
       </Lead>
+      <TLDR
+        items={[
+    "What is an Age in Days Calculator?",
+    "Why Count Your Age in Days?",
+    "How to Calculate Age in Days: The Math",
+    "Major Day Count Milestones",
+    "How Leap Years Affect Your Day Count",
+    "Other Ways to Measure Your Age",
+        ]}
+      />
 
       <H2>What is an Age in Days Calculator?</H2>
 
       <Paragraph>
-        An age in days calculator takes your birth date and counts every single day you've been alive. It's more precise than years because it accounts for leap years, month variations, timezone differences, and even the time of day you were born.
+        An age in days calculator takes your birth date and counts every single day you've been alive. It's more precise than years because it accounts for <ExternalLink href="https://www.timeanddate.com/date/leapyear.html">leap years</ExternalLink>, month variations, timezone differences, and even the time of day you were born.
       </Paragraph>
 
       <Paragraph>
@@ -89,7 +104,7 @@ const AgeInDaysCalculator = () => {
         <strong>Accuracy matters:</strong> A quality calculator accounts for leap years, varying month lengths, timezone differences, and birth time. Small details add up when counting thousands of days.
       </Note>
 
-      <H2>Major Day Count Milestones</H2>
+      <H2>What are the major day count milestones?</H2>
 
       <Paragraph>
         These invisible birthdays mark turning points in your life:
@@ -109,18 +124,20 @@ const AgeInDaysCalculator = () => {
         The 10,000-day milestone deserves special mention: it's a threshold that most 25–30-year-olds silently cross without noticing. When you reach it, you've lived through 27 years of birthdays, school, relationships, jobs, and growth — all compressed into four digits.
       </Paragraph>
 
-      <H2>How Leap Years Affect Your Day Count</H2>
+      <H2>How do leap years affect your day count?</H2>
 
       <Paragraph>
-        Leap years add complexity to day calculations, but they're essential for accuracy:
+        Leap years add complexity to day calculations, but they're essential for accuracy. The rules, as defined by the <ExternalLink href="https://en.wikipedia.org/wiki/Gregorian_calendar">Gregorian calendar</ExternalLink>, break down into a few clear cases:
       </Paragraph>
 
-      <ul className="list-disc pl-6 space-y-2 text-foreground/90 leading-relaxed mb-6">
-        <li><strong>Every 4 years:</strong> February gets an extra day (Feb 29)</li>
-        <li><strong>Century exception:</strong> Years divisible by 100 are NOT leap years (1900, 2100)</li>
-        <li><strong>400-year exception:</strong> Except years divisible by 400 ARE leap years (2000, 2400)</li>
-        <li><strong>Impact:</strong> Missing a single leap day throws your count off by 1. Over 30 years, that's 7–8 days.</li>
-      </ul>
+      <BulletList
+        items={[
+          <span key="every4"><strong>Every 4 years:</strong> February gets an extra day (Feb 29).</span>,
+          <span key="century"><strong>Century exception:</strong> Years divisible by 100 are NOT leap years (1900, 2100).</span>,
+          <span key="400"><strong>400-year exception:</strong> Except years divisible by 400 ARE leap years (2000, 2400).</span>,
+          <span key="impact"><strong>Impact:</strong> Missing a single leap day throws your count off by 1. Over 30 years, that's 7–8 days.</span>,
+        ]}
+      />
 
       <Paragraph>
         A proper age in days calculator accounts for all of these rules automatically.
@@ -144,7 +161,7 @@ const AgeInDaysCalculator = () => {
       <H2>The Bottom Line: Life Measured in Days</H2>
 
       <Paragraph>
-        Your age in days is a more visceral number than years. It shows that life isn't measured in neat calendar blocks — it's measured in sunrise after sunrise after sunrise. Each day is a small unit of time that accumulates into a lifetime.
+        Your age in days is a more visceral number than years. It shows that life isn't measured in neat calendar blocks — it's measured in sunrise after sunrise after sunrise, each one defined by the same 24-hour solar day tracked by <ExternalLink href="https://www.time.gov/">official time standards</ExternalLink>. Each day is a small unit of time that accumulates into a lifetime.
       </Paragraph>
 
       <Paragraph>
@@ -162,7 +179,6 @@ const AgeInDaysCalculator = () => {
         bio="Snehal is a developer and data enthusiast from Mumbai who loves finding unexpected patterns in numbers. When not building calculators, they're probably wondering how many breaths they've taken so far. What Is My Age was born from a simple question: what does your age really mean?"
 
       />
-
 
       <RelatedPosts
         posts={[

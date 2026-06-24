@@ -1,12 +1,15 @@
 import { Link } from "react-router-dom";
 import { ArticleShell, BackToBlog, CtaBox, H2, H3, Lead, Paragraph, AuthorBio,
-  RelatedPosts } from "@/components/blog/ArticleLayout";
+  RelatedPosts, ByLine,
+  TLDR, BulletList,
+} from "@/components/blog/ArticleLayout";
 import { useArticleMeta } from "@/components/blog/articleMeta";
 
 const meta = {
   title: "How Old Will I Be in 2040? Age Calculator by Birth Year",
   description: "Wondering how old you'll be in 2040? Find your age instantly with our complete birth year table — plus what the world could look like in fourteen years.",
   canonical: "https://whatismyage.me/blog/how-old-will-i-be-in-2040",
+  publishedDate: "2026-06-24",
   headline: "How Old Will I Be in 2040?",
 };
 
@@ -64,7 +67,19 @@ const HowOldWillIBeIn2040 = () => {
     <ArticleShell>
       <BackToBlog />
       <h1 className="font-display text-3xl sm:text-4xl text-foreground leading-tight mt-6 mb-4">How Old Will I Be in 2040?</h1>
+      <ByLine publishedDate="2026-06-24" />
       <Lead>2040 is fourteen years away — close enough to plan for, far enough to feel like a different world. But your age in 2040 is something you can calculate exactly, right now.</Lead>
+      <TLDR
+        items={[
+    "How to Calculate Your Age in 2040",
+    "Age in 2040 by Birth Year — Complete Table",
+    "Milestone Ages in 2040",
+    "What Might the World Look Like in 2040?",
+    "Your Life in Numbers in 2040",
+    "Your Age Across All Future Years",
+        ]}
+      />
+
       <Paragraph>A lot can happen in fourteen years. In 2010, fourteen years before today, there was no Instagram, no Uber, no ChatGPT, no iPad. The world of 2040 will likely contain things equally hard to anticipate right now.</Paragraph>
 
       <Figure
@@ -88,7 +103,7 @@ const HowOldWillIBeIn2040 = () => {
         <li><strong>If your birthday has passed by the date in 2040 you're asking about</strong> → use the result</li>
         <li><strong>If your birthday hasn't happened yet</strong> → subtract 1</li>
       </ul>
-      <Paragraph>Example: born in <strong>1995</strong> → 2040 − 1995 = <strong>45</strong>. If you're asking about a date before your birthday in 2040, you'll still be 44.</Paragraph>
+      <Paragraph>Example: born in <strong>1995</strong> → 2040 − 1995 = <strong>45</strong>. If you're asking about a date before your birthday in 2040, you'll still be 44. As with any future-dated calculation, this assumes the standard <ExternalLink href="https://en.wikipedia.org/wiki/Leap_year">leap year rules</ExternalLink> of the Gregorian calendar.</Paragraph>
       <Paragraph>For your exact age on a specific date, use the <Link to="/" className="text-primary underline">whatismyage.me calculator</Link>.</Paragraph>
 
       <H2>Age in 2040 by Birth Year — Complete Table</H2>
@@ -114,17 +129,19 @@ const HowOldWillIBeIn2040 = () => {
 
       <H2>Milestone Ages in 2040</H2>
       <Paragraph>2040 delivers a wave of significant birthdays:</Paragraph>
-      <ul className="list-disc list-inside space-y-2 mb-5 text-foreground/90">
-        <li><strong>Born in 1990?</strong> You'll hit <strong>50</strong> in 2040 — half a century.</li>
-        <li><strong>Born in 1980?</strong> You'll reach <strong>60</strong>.</li>
-        <li><strong>Born in 1970?</strong> You'll turn <strong>70</strong>.</li>
-        <li><strong>Born in 2000?</strong> You'll be <strong>40</strong> — your first major milestone.</li>
-        <li><strong>Born in 2010?</strong> You'll turn <strong>30</strong>, entering adulthood fully.</li>
-        <li><strong>Born in 2020?</strong> You'll turn <strong>20</strong>, just reaching the start of independent life.</li>
-      </ul>
+      <BulletList
+        items={[
+          <span key="1990"><strong>Born in 1990?</strong> You'll hit <strong>50</strong> in 2040 — half a century.</span>,
+          <span key="1980"><strong>Born in 1980?</strong> You'll reach <strong>60</strong>.</span>,
+          <span key="1970"><strong>Born in 1970?</strong> You'll turn <strong>70</strong>.</span>,
+          <span key="2000"><strong>Born in 2000?</strong> You'll be <strong>40</strong> — your first major milestone.</span>,
+          <span key="2010"><strong>Born in 2010?</strong> You'll turn <strong>30</strong>, entering adulthood fully.</span>,
+          <span key="2020"><strong>Born in 2020?</strong> You'll turn <strong>20</strong>, just reaching the start of independent life.</span>,
+        ]}
+      />
       <Paragraph>For those born around 1989–1991, 2040 brings the crossing of 50 — a milestone that <ExternalLink href="https://www.apa.org/monitor/2020/07/life-after-50">research consistently finds is associated with a shift in life priorities</ExternalLink> toward meaning, relationships, and legacy over achievement and status.</Paragraph>
 
-      <H2>What Might the World Look Like in 2040?</H2>
+      <H2>What Might the World Look Like by 2040?</H2>
       <Figure
         src="https://images.unsplash.com/photo-1452696193712-6cabf5103b63?w=1200&q=75&auto=format&fit=crop"
         alt="A glass-facade skyscraper reflecting a dramatic sky, architectural and forward-looking"

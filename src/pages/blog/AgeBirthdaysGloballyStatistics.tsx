@@ -1,5 +1,5 @@
 import { ArticleShell, BackToBlog, AuthorBio,
-  RelatedPosts } from "@/components/blog/ArticleLayout";
+  RelatedPosts, ByLine, BulletList } from "@/components/blog/ArticleLayout";
 import { useArticleMeta } from "@/components/blog/articleMeta";
 
 const CANONICAL = "https://whatismyage.me/blog/how-age-and-birthdays-distribute-globally-statistics";
@@ -57,7 +57,7 @@ const Table = ({ headers, rows }: { headers: string[]; rows: React.ReactNode[][]
 );
 
 const AgeBirthdaysGloballyStatistics = () => {
-  useArticleMeta({ title: TITLE, description: DESC, canonical: CANONICAL, headline: HEADLINE });
+  useArticleMeta({ title: TITLE, description: DESC, canonical: CANONICAL, headline: HEADLINE, publishedDate: "2026-06-24" });
 
   return (
     <ArticleShell>
@@ -66,14 +66,24 @@ const AgeBirthdaysGloballyStatistics = () => {
       <h1 className="font-display text-3xl sm:text-4xl text-foreground leading-tight mt-6 mb-6">
         How Age and Birthdays Distribute Globally Statistics (2025): 52+ Data Points on Population Age, Birth Trends, and Birthday Patterns
       </h1>
+      <ByLine publishedDate="2026-06-24" />
 
       <H2>Introduction</H2>
       <P>
-        <strong>The global median age reached 30.5 years in 2024 (United Nations, World Population Prospects 2024).</strong> This marks a steady increase from 24 years in 1990, highlighting rapid population aging worldwide. At the same time, birth patterns remain uneven, with certain dates seeing up to 30% more births than others (U.S. National Center for Health Statistics, Natality Data 2023). Meanwhile, more than 65% of the global population now lives in countries with below-replacement fertility rates (World Bank Fertility Report 2024).
+        <strong>The global median age reached 30.5 years in 2024 (<ExternalLink href="https://population.un.org/wpp/">United Nations, World Population Prospects 2024</ExternalLink>).</strong> This marks a steady increase from 24 years in 1990, highlighting rapid population aging worldwide. At the same time, birth patterns remain uneven, with certain dates seeing up to 30% more births than others (U.S. National Center for Health Statistics, Natality Data 2023). Meanwhile, more than 65% of the global population now lives in countries with below-replacement fertility rates (World Bank Fertility Report 2024).
       </P>
       <P>
-        We aggregated data from United Nations, World Bank, Our World in Data, OECD, and national statistical agencies along with dozens of primary datasets. Understanding how age and birthdays distribute globally is critical for planning healthcare, education, and economic systems.
+        Understanding how age and birthdays distribute globally is critical for planning healthcare, education, and economic systems. We aggregated data from several primary sources:
       </P>
+      <BulletList
+        items={[
+          "United Nations — World Population Prospects",
+          "World Bank — Demographics and fertility data",
+          "Our World in Data — long-run population trends",
+          "OECD — population and birth statistics",
+          "National statistical agencies (e.g. CDC/NCHS) — birth and natality records",
+        ]}
+      />
 
       <H2>Key Takeaways</H2>
       <ul className="list-disc pl-5 space-y-2 text-foreground/90 text-[17px] leading-relaxed mb-6">
@@ -123,8 +133,8 @@ const AgeBirthdaysGloballyStatistics = () => {
       <P><ExternalLink href="https://data.worldbank.org">Source</ExternalLink></P>
 
       <H2>3. Birthday Distribution Statistics</H2>
-      <H3>Most Common Birth Dates</H3>
-      <P>Birthdays are not evenly distributed. Medical scheduling and seasonal trends create spikes on specific dates.</P>
+      <H3>Which birth dates are most common?</H3>
+      <P>Birthdays are not evenly distributed. Medical scheduling and seasonal trends create spikes on specific dates, a pattern documented by the <ExternalLink href="https://www.cdc.gov/nchs/index.htm">CDC's National Center for Health Statistics</ExternalLink>.</P>
       <Figure src="https://images.unsplash.com/photo-1464349095431-e9a21285b5f3" alt="calendar birthdays" />
       <Table
         headers={["Metric", "Value", "Source"]}
@@ -136,8 +146,8 @@ const AgeBirthdaysGloballyStatistics = () => {
       />
       <P><ExternalLink href="https://www.cdc.gov/nchs/">Source</ExternalLink></P>
 
-      <H3>Birth Trends by Month</H3>
-      <P>Seasonality reflects environmental, cultural, and behavioral factors influencing conception timing.</P>
+      <H3>How do birth trends vary by month?</H3>
+      <P>Seasonality reflects environmental, cultural, and behavioral factors influencing conception timing, with patterns tracked across member countries by the <ExternalLink href="https://www.oecd.org/en/data.html">OECD's population statistics</ExternalLink>.</P>
       <Figure src="https://images.unsplash.com/photo-1506784983877-45594efa4cbe" alt="seasonal births" />
       <Table
         headers={["Metric", "Value", "Source"]}
@@ -218,7 +228,6 @@ const AgeBirthdaysGloballyStatistics = () => {
         bio="Snehal is a developer and data enthusiast from Mumbai who loves finding unexpected patterns in numbers. When not building calculators, they're probably wondering how many breaths they've taken so far. What Is My Age was born from a simple question: what does your age really mean?"
 
       />
-
 
       <RelatedPosts
         posts={[

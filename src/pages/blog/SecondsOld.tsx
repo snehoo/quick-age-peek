@@ -12,6 +12,10 @@ import {
   AuthorBio,
   RelatedPosts,
   BackToBlog,
+  ByLine,
+  TLDR,
+  BulletList,
+  ExternalLink,
 } from "@/components/blog/ArticleLayout";
 import { useArticleMeta } from "@/components/blog/articleMeta";
 
@@ -29,7 +33,7 @@ const StatCard = ({ n, l }: { n: string; l: string }) => (
 );
 
 const SecondsOld = () => {
-  useArticleMeta({ title: TITLE, description: DESC, canonical: CANONICAL, headline: HEADLINE });
+  useArticleMeta({ title: TITLE, description: DESC, canonical: CANONICAL, headline: HEADLINE, publishedDate: "2026-06-24" });
 
   return (
     <ArticleShell>
@@ -40,12 +44,23 @@ const SecondsOld = () => {
       <h1 className="font-display text-3xl sm:text-4xl text-foreground leading-tight mt-6 mb-4">
         {HEADLINE}
       </h1>
+      <ByLine publishedDate="2026-06-24" />
 
       <Lead>
         Your age in years is a round, comfortable number. However, your age in seconds is something else
         entirely — a figure so large it barely fits in your head. Furthermore, what it reveals about time
         is genuinely startling.
       </Lead>
+      <TLDR
+        items={[
+    "How to Calculate Your Age in Seconds from Your Date of Birth",
+    "When Do You Turn 1 Billion Seconds Old?",
+    "How Does Age in Seconds Compare to Your Heartbeat Count?",
+    "What 1.2 Billion Seconds Feels Like — The Psychology of Large Numbers",
+    "Age in Minutes and Hours — the Middle Ground",
+    "Why Measuring Age in Seconds Changes How You Think About Time",
+        ]}
+      />
 
       <Paragraph>
         A 38-year-old has lived approximately <strong>1.2 billion seconds</strong>. Not thousand. Not
@@ -74,7 +89,8 @@ const SecondsOld = () => {
       </div>
 
       <Paragraph>
-        Therefore, your age in seconds equals your total days alive multiplied by 86,400. For a 38-year-old
+        Therefore, your age in seconds equals your total days alive multiplied by 86,400 — the standard{" "}
+        <ExternalLink href="https://en.wikipedia.org/wiki/Unit_of_time">number of seconds in a day</ExternalLink>. For a 38-year-old
         with 13,915 days alive: 13,915 × 86,400 = approximately 1.20 billion seconds. However, this figure
         changes every single second. Consequently, any number you calculate is outdated before the ink
         dries.
@@ -109,16 +125,20 @@ const SecondsOld = () => {
       <Note>
         Your 1 billion second birthday falls at age 31 years, 8 months, and approximately 17 days. Your 2
         billion second birthday falls at age 63 years and 3 months — a milestone that only roughly 60% of
-        people will reach.
+        people will reach. See{" "}
+        <ExternalLink href="https://www.timeanddate.com/date/birthday.html">timeanddate.com's birthday calculator</ExternalLink>{" "}
+        for similar milestone tracking.
       </Note>
 
-      <H3>Other remarkable second milestones</H3>
-      <Paragraph>
-        Your 500 million second milestone arrives at approximately age 15 years and 10 months — squarely in
-        adolescence. Conversely, your 1.5 billion second mark falls at around age 47 and a half. Moreover,
-        reaching 2 billion seconds places you in your early 60s — a genuine achievement worth
-        acknowledging.
-      </Paragraph>
+      <H3>What Other Second Milestones Are Worth Knowing About?</H3>
+      <Paragraph>Beyond the billion-second mark, several other milestones stand out:</Paragraph>
+      <BulletList
+        items={[
+          "500 million seconds — approximately age 15 years and 10 months, squarely in adolescence",
+          "1.5 billion seconds — approximately age 47 and a half",
+          "2 billion seconds — your early 60s, a genuine achievement worth acknowledging",
+        ]}
+      />
 
       <H2>How Does Age in Seconds Compare to Your Heartbeat Count?</H2>
       <Paragraph>
@@ -132,7 +152,11 @@ const SecondsOld = () => {
         Furthermore, this relationship is not coincidental. It emerges directly from the fact that the
         average resting heart rate of 72 BPM is itself derived from a second-based measurement.
         Consequently, the two figures will always remain in this approximate 1.2:1 ratio throughout a human
-        life. For more on the heartbeat count, see our full guide on{" "}
+        life, in line with typical resting heart rate ranges described by{" "}
+        <ExternalLink href="https://www.health.harvard.edu/heart-health/what-your-heart-rate-is-telling-you">
+          Harvard Health
+        </ExternalLink>
+        . For more on the heartbeat count, see our full guide on{" "}
         <Link to="/blog/how-many-heartbeats-in-a-lifetime/" className="text-primary underline">
           how many heartbeats a human has in a lifetime
         </Link>
@@ -153,7 +177,7 @@ const SecondsOld = () => {
         than the entire history of the Roman Empire from founding to fall, measured in seconds.
       </Paragraph>
 
-      <H3>The difference between a million and a billion seconds</H3>
+      <H3>What's the Difference Between a Million and a Billion Seconds?</H3>
       <Paragraph>
         One million seconds is approximately <strong>11.6 days</strong>. One billion seconds is
         approximately <strong>31.7 years</strong>. Consequently, a billion is not "a really big million" —
@@ -209,7 +233,6 @@ const SecondsOld = () => {
         bio="Snehal is a developer and data enthusiast from Mumbai who loves finding unexpected patterns in numbers. When not building calculators, they're probably wondering how many breaths they've taken so far. What Is My Age was born from a simple question: what does your age really mean?"
 
       />
-
 
       <RelatedPosts
         posts={[

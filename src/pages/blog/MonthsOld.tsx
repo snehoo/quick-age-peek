@@ -1,11 +1,13 @@
 import { Link } from "react-router-dom";
 import { CtaBox, Figure, H2, H3, Lead, Paragraph, AuthorBio,
   RelatedPosts, SimpleTable, UnitArticleShell, credit, ext } from "@/components/blog/UnitArticle";
+import { BulletList } from "@/components/blog/ArticleLayout";
 
 const meta = {
   title: "How Many Months Old Am I? Calculate Your Age in Months | whatismyage.me",
   description: "Wondering how many months old you are? Get the formula, a quick reference table, and the fascinating reason months are one of the most meaningful ways to measure a human life.",
   canonical: "https://whatismyage.me/blog/how-many-months-old-am-i",
+  publishedDate: "2026-06-24",
   headline: "How Many Months Old Am I?",
 };
 
@@ -47,17 +49,17 @@ const MonthsOld = () => (
       ]}
     />
 
-    <H2>Why the Month Is One of Humanity's Oldest Units of Time</H2>
+    <H2>Why Is the Month One of Humanity's Oldest Units of Time?</H2>
     <Figure
       src="https://images.unsplash.com/photo-1523251343397-9225e4cb6319?w=1200&q=75&auto=format&fit=crop"
       alt="A vintage hourglass with golden sand, soft and contemplative"
       credit={credit("Nathan Dumlao", "https://unsplash.com/photos/brown-and-blue-hourglass-on-stones-5Hl5reICevY")}
     />
     <Paragraph>
-      The month is rooted in something real. The {ext("https://moon.nasa.gov/moon-in-motion/phases-eclipses-supermoons/moon-phases/", "lunar cycle")} takes approximately 29.5 days to complete. {ext("https://www.britannica.com/science/calendar/The-earliest-calendars", "Archaeological evidence")} suggests lunar calendars date back at least 30,000 years — making the month one of the oldest measuring tools in human history.
+      The month is rooted in something real. The {ext("https://moon.nasa.gov/moon-in-motion/phases-eclipses-supermoons/moon-phases/", "lunar cycle")} takes approximately 29.5 days to complete. {ext("https://www.britannica.com/science/calendar/The-earliest-calendars", "Archaeological evidence")} suggests lunar calendars date back at least 30,000 years — making the month one of the oldest measuring tools in human history. The modern {ext("https://en.wikipedia.org/wiki/Gregorian_calendar", "Gregorian calendar")}, which standardised months into the 28–31 day lengths used today, wasn't adopted until 1582.
     </Paragraph>
     <Paragraph>
-      According to {ext("https://www.nature.com/articles/s41562-022-01393-3", "research on psychological time")}, months sit at a unique point in our sense of time: short enough to feel recent, long enough to feel like genuine history.
+      According to research on {ext("https://en.wikipedia.org/wiki/Time_perception", "psychological time perception")}, months sit at a unique point in our sense of time: short enough to feel recent, long enough to feel like genuine history.
     </Paragraph>
 
     <H2>Months as a Window Into Your Life</H2>
@@ -66,7 +68,15 @@ const MonthsOld = () => (
       Based on {ext("https://www.who.int/data/gho/indicator-metadata-registry/imr-details/65", "WHO global life expectancy data")}, average life expectancy is approximately 73 years — or <strong>876 months</strong>. A 35-year-old (420 months) has approximately <strong>456 months</strong> remaining on that average.
     </Paragraph>
     <H3>What have you spent your months on?</H3>
-    <Paragraph>If you're 40 years old (480 months): ~160 months asleep, ~100 months working, ~13 months eating, leaving ~200 months that were genuinely yours.</Paragraph>
+    <Paragraph>If you're 40 years old (480 months), here's roughly how those months break down:</Paragraph>
+    <BulletList
+      items={[
+        "~160 months asleep",
+        "~100 months working",
+        "~13 months eating",
+        "~200 months that were genuinely yours",
+      ]}
+    />
 
     <H2>Milestone Month Numbers</H2>
     <SimpleTable
@@ -110,7 +120,6 @@ const MonthsOld = () => (
       bio="Snehal is a developer and data enthusiast from Mumbai who loves finding unexpected patterns in numbers. When not building calculators, they're probably wondering how many breaths they've taken so far. What Is My Age was born from a simple question: what does your age really mean?"
 
     />
-
 
     <RelatedPosts posts={[
       { tag: "How-to", title: "How to Calculate Your Age in Days", href: "/blog/how-to-calculate-age-in-days/" },

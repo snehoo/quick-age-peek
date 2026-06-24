@@ -13,6 +13,10 @@ import {
   AuthorBio,
   RelatedPosts,
   BackToBlog,
+  ByLine,
+  TLDR,
+  BulletList,
+  ExternalLink,
 } from "@/components/blog/ArticleLayout";
 import { useArticleMeta } from "@/components/blog/articleMeta";
 
@@ -23,7 +27,7 @@ const DESC =
 const HEADLINE = "GigaCalculator vs OmniCalculator Age Tool";
 
 const GigaCalculatorVsOmniCalculator = () => {
-  useArticleMeta({ title: TITLE, description: DESC, canonical: CANONICAL, headline: HEADLINE });
+  useArticleMeta({ title: TITLE, description: DESC, canonical: CANONICAL, headline: HEADLINE, publishedDate: "2026-06-24" });
 
   return (
     <ArticleShell>
@@ -32,6 +36,7 @@ const GigaCalculatorVsOmniCalculator = () => {
       <h1 className="font-display text-3xl sm:text-4xl text-foreground leading-tight mt-6 mb-4">
         {HEADLINE}
       </h1>
+      <ByLine publishedDate="2026-06-24" />
 
       <Lead>
         Two of the internet's most-visited calculator sites both offer free age tools — but they work
@@ -39,6 +44,16 @@ const GigaCalculatorVsOmniCalculator = () => {
         actually matters: output depth, accuracy, ease of use, and what each tool does that the other
         simply doesn't.
       </Lead>
+      <TLDR
+        items={[
+    "What Does GigaCalculator's Age Tool Actually Do?",
+    "How GigaCalculator vs OmniCalculator Differ on Age Features",
+    "Feature-by-Feature Comparison",
+    "Which Tool Is More Accurate?",
+    "When a Dedicated Age Calculator Wins",
+    "Final Verdict",
+        ]}
+      />
 
       <Paragraph>
         If you've searched for a quick answer to "how old am I?", you've almost certainly landed on one
@@ -78,7 +93,7 @@ const GigaCalculatorVsOmniCalculator = () => {
         Beyond standard age output, GigaCalculator explicitly distinguishes between "completed age" and
         "running age." This matters more than it sounds. Your completed age is the years you've fully
         lived. Your running age counts the current year even if your birthday hasn't arrived yet — which
-        is the Korean age convention. Furthermore, the tool's supporting text explains the calculation
+        is the <ExternalLink href="https://en.wikipedia.org/wiki/East_Asian_age_reckoning">Korean age convention</ExternalLink>. Furthermore, the tool's supporting text explains the calculation
         logic, so you understand exactly how the number was reached.
       </Paragraph>
 
@@ -152,7 +167,7 @@ const GigaCalculatorVsOmniCalculator = () => {
       </Paragraph>
       <Paragraph>
         The accuracy question becomes more interesting in edge cases. Consider a person born on 29
-        February in a leap year. Both tools handle this correctly, defaulting to either February 28 or
+        February in a <ExternalLink href="https://en.wikipedia.org/wiki/Leap_year">leap year</ExternalLink>. Both tools handle this correctly, defaulting to either February 28 or
         March 1 in non-leap years depending on the convention used.
       </Paragraph>
 
@@ -172,7 +187,7 @@ const GigaCalculatorVsOmniCalculator = () => {
         calculating precise elapsed time, it matters.
       </Paragraph>
 
-      <H2>When a Dedicated Age Calculator Wins</H2>
+      <H2>When Does a Dedicated Age Calculator Win?</H2>
       <Paragraph>
         Both GigaCalculator and OmniCalculator are general-purpose calculator sites. Age is one of
         hundreds of tools they each offer. That breadth is great for variety, but it means neither is
@@ -192,17 +207,12 @@ const GigaCalculatorVsOmniCalculator = () => {
       <Paragraph>
         Choosing between GigaCalculator and OmniCalculator depends entirely on what you need.
       </Paragraph>
-      <Paragraph>
-        Pick <strong>GigaCalculator</strong> if you want a fast, clean answer in years, months, and
-        days — with a clear explanation of how it was calculated. The interface is lean, the page loads
-        quickly, and the year-only input is a genuinely helpful shortcut. It's the right tool for
-        everyday use.
-      </Paragraph>
-      <Paragraph>
-        Pick <strong>OmniCalculator</strong> if you need unusual time units (hours, seconds), sub-day
-        precision via time-of-birth input, or deeper educational content about how age is counted. It's
-        the better choice for researchers, educators, and anyone with a specific or technical use case.
-      </Paragraph>
+      <BulletList
+        items={[
+          <span key="giga"><strong>Pick GigaCalculator</strong> if you want a fast, clean answer in years, months, and days — with a clear explanation of how it was calculated. The interface is lean, the page loads quickly, and the year-only input is a genuinely helpful shortcut. It's the right tool for everyday use.</span>,
+          <span key="omni"><strong>Pick OmniCalculator</strong> if you need unusual time units (hours, seconds), sub-day precision via time-of-birth input, or deeper educational content about how age is counted. It's the better choice for researchers, educators, and anyone with a specific or technical use case.</span>,
+        ]}
+      />
 
       <CtaBox title="Try a faster, simpler age calculator">
         Skip the clutter. Get your exact age in years, months, and days — instantly, for free.
@@ -215,7 +225,6 @@ const GigaCalculatorVsOmniCalculator = () => {
         bio="Snehal is a developer and data enthusiast from Mumbai who loves finding unexpected patterns in numbers. When not building calculators, they're probably wondering how many breaths they've taken so far. What Is My Age was born from a simple question: what does your age really mean?"
 
       />
-
 
       <RelatedPosts
         posts={[

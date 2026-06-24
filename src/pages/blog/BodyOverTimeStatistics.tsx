@@ -1,5 +1,5 @@
 import { ArticleShell, BackToBlog, AuthorBio,
-  RelatedPosts } from "@/components/blog/ArticleLayout";
+  RelatedPosts, ByLine, BulletList} from "@/components/blog/ArticleLayout";
 import { useArticleMeta } from "@/components/blog/articleMeta";
 
 const CANONICAL = "https://whatismyage.me/blog/what-happens-inside-your-body-over-time-statistics";
@@ -53,7 +53,7 @@ const Table = ({ headers, rows }: { headers: string[]; rows: React.ReactNode[][]
 );
 
 const BodyOverTimeStatistics = () => {
-  useArticleMeta({ title: TITLE, description: DESC, canonical: CANONICAL, headline: HEADLINE });
+  useArticleMeta({ title: TITLE, description: DESC, canonical: CANONICAL, headline: HEADLINE, publishedDate: "2026-06-24" });
 
   return (
     <ArticleShell>
@@ -62,14 +62,23 @@ const BodyOverTimeStatistics = () => {
       <h1 className="font-display text-3xl sm:text-4xl text-foreground leading-tight mt-6 mb-6">
         What Happens Inside Your Body Over Time Statistics (2025): 55+ Data Points on Sleep, Heartbeats, and Biological Aging
       </h1>
+      <ByLine publishedDate="2026-06-24" />
 
-      <H2>Introduction</H2>
+      <H2>What Happens Inside Your Body Over a Lifetime?</H2>
       <P>
-        <strong>The human heart beats approximately 2.5 billion times over an average lifetime (American Heart Association, Cardiovascular Statistics 2024).</strong> At the same time, people spend nearly one-third of their lives asleep—equivalent to over 26 years for the average person (CDC Sleep Study 2024). Meanwhile, total lifetime calorie expenditure exceeds 50 million kcal depending on activity levels (WHO Metabolic Health Data 2024).
+        <strong>The human heart beats approximately 2.5 billion times over an average lifetime (<ExternalLink href="https://www.heart.org/">American Heart Association</ExternalLink>, Cardiovascular Statistics 2024).</strong> At the same time, people spend nearly one-third of their lives asleep—equivalent to over 26 years for the average person (<ExternalLink href="https://www.cdc.gov/sleep/index.html">CDC Sleep Study 2024</ExternalLink>). Meanwhile, total lifetime calorie expenditure exceeds 50 million kcal depending on activity levels (<ExternalLink href="https://www.who.int/">WHO Metabolic Health Data 2024</ExternalLink>).
       </P>
       <P>
-        We aggregated data from World Health Organization, CDC, American Heart Association, OECD, and peer-reviewed biological studies. Understanding what happens inside your body over time helps quantify aging, optimize health, and contextualize daily habits.
+        We aggregated data from the following sources, cross-referenced with peer-reviewed biological studies. Understanding what happens inside your body over time helps quantify aging, optimize health, and contextualize daily habits.
       </P>
+      <BulletList
+        items={[
+          <span key="who">World Health Organization (<ExternalLink href="https://www.who.int/">who.int</ExternalLink>)</span>,
+          <span key="cdc">CDC (<ExternalLink href="https://www.cdc.gov/">cdc.gov</ExternalLink>)</span>,
+          <span key="aha">American Heart Association (<ExternalLink href="https://www.heart.org/">heart.org</ExternalLink>)</span>,
+          <span key="oecd">OECD (<ExternalLink href="https://www.oecd.org/">oecd.org</ExternalLink>)</span>,
+        ]}
+      />
 
       <H2>Key Takeaways</H2>
       <ul className="list-disc pl-5 space-y-2 text-foreground/90 text-[17px] leading-relaxed mb-6">
@@ -88,7 +97,7 @@ const BodyOverTimeStatistics = () => {
       <Divider />
 
       <H2>1. Heartbeats and Cardiovascular Lifetime Metrics</H2>
-      <P>Your cardiovascular system operates continuously, making it one of the most measurable biological systems over a lifetime.</P>
+      <P>Your cardiovascular system operates continuously, making it one of the most measurable biological systems over a lifetime, per the <ExternalLink href="https://www.nih.gov/">National Institutes of Health</ExternalLink>.</P>
       <Figure src="https://images.unsplash.com/photo-1581595219315-a187dd40c322?auto=format&fit=crop&w=1600&q=80" alt="heartbeat monitor" />
       <Table
         headers={["Metric", "Value", "Source"]}
@@ -174,7 +183,7 @@ const BodyOverTimeStatistics = () => {
         ]}
       />
 
-      <H2>Methodology and Sources</H2>
+      <H2>What Sources Were Used for This Data?</H2>
       <P>We prioritized primary medical datasets and peer-reviewed biological research, cross-referencing multiple institutions to ensure accuracy.</P>
       <ul className="list-disc pl-5 space-y-2 text-foreground/90 text-[17px] leading-relaxed mb-6">
         <li>World Health Organization — Health Metrics</li>
@@ -200,7 +209,6 @@ const BodyOverTimeStatistics = () => {
         bio="Snehal is a developer and data enthusiast from Mumbai who loves finding unexpected patterns in numbers. When not building calculators, they're probably wondering how many breaths they've taken so far. What Is My Age was born from a simple question: what does your age really mean?"
 
       />
-
 
       <RelatedPosts
         posts={[

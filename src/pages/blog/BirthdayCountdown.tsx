@@ -10,6 +10,11 @@ import {
   AuthorBio,
   RelatedPosts,
   BackToBlog,
+  ByLine,
+  TLDR,
+  BulletList,
+  OrderedList,
+  ExternalLink,
 } from "@/components/blog/ArticleLayout";
 import { useArticleMeta } from "@/components/blog/articleMeta";
 
@@ -29,7 +34,7 @@ const Milestone = ({ label, children }: { label: string; children: React.ReactNo
 );
 
 const BirthdayCountdown = () => {
-  useArticleMeta({ title: TITLE, description: DESC, canonical: CANONICAL, headline: HEADLINE });
+  useArticleMeta({ title: TITLE, description: DESC, canonical: CANONICAL, headline: HEADLINE, publishedDate: "2026-06-24" });
 
   return (
     <ArticleShell>
@@ -40,12 +45,22 @@ const BirthdayCountdown = () => {
       <h1 className="font-display text-3xl sm:text-4xl text-foreground leading-tight mt-6 mb-4">
         {HEADLINE}
       </h1>
+      <ByLine publishedDate="2026-06-24" />
 
       <Lead>
         Your next birthday is already approaching. Moreover, knowing exactly how many days away it is
         changes your relationship to time in a subtle but real way. Furthermore, the calculation itself is
         more interesting than it first appears.
       </Lead>
+      <TLDR
+        items={[
+    "How to Calculate the Exact Days to Your Next Birthday",
+    "Why the Days-to-Birthday Number Feels Different at Every Age",
+    "Birthday Countdown Milestones Worth Tracking",
+    "What to Do With 331 Days Until Your Birthday",
+    "The Birthday Countdown at whatismyage.me",
+        ]}
+      />
 
       <Paragraph>
         Most people check days to birthday out of idle curiosity. However, the number that comes back
@@ -54,13 +69,21 @@ const BirthdayCountdown = () => {
         pleasure of counting down to something.
       </Paragraph>
 
-      <H2>How to Calculate the Exact Days to Your Next Birthday</H2>
+      <H2>How Do You Calculate the Exact Days to Your Next Birthday?</H2>
       <Paragraph>
         The calculation starts by identifying the next occurrence of your birth date. Specifically, this
-        means finding whether your birthday has already occurred in the current calendar year.
-        Consequently, if it has, you count forward to the same date in the following year. Conversely, if
-        it has not yet occurred this year, you count forward to that date in the current year.
+        means finding whether your birthday has already occurred in the current calendar year. The steps
+        break down as follows:
       </Paragraph>
+      <OrderedList
+        items={[
+          "Check whether your birth date has already occurred in the current calendar year.",
+          "If it has, count forward to the same date in the following year.",
+          "If it has not yet occurred this year, count forward to that date in the current year.",
+          "Sum the days remaining in the current month plus the full days in each subsequent month until the target date.",
+          "Adjust the total if a leap year falls within the count.",
+        ]}
+      />
 
       <FormulaBox title="Days to next birthday — the logic">
         If today is 20 April and your birthday is 15 March:
@@ -78,7 +101,8 @@ const BirthdayCountdown = () => {
       </FormulaBox>
 
       <Paragraph>
-        Furthermore, this calculation must account for whether the upcoming year is a leap year. Moreover,
+        Furthermore, this calculation must account for whether the upcoming year is a leap year, per the
+        leap year rules explained by <ExternalLink href="https://www.timeanddate.com/date/leapyear.html">timeanddate.com</ExternalLink>. Moreover,
         if your birthday is on 29 February, additional logic applies — specifically, the next occurrence
         may be 4 years away rather than 1. As a result, a leap-day birthday requires its own special
         handling in any reliable birthday countdown calculator.
@@ -92,7 +116,7 @@ const BirthdayCountdown = () => {
         familiar fraction of the year — significant but not overwhelming.
       </Paragraph>
       <Paragraph>
-        Furthermore, research in developmental psychology suggests that the experience of time accelerates
+        Furthermore, research in developmental psychology, summarized by the <ExternalLink href="https://www.apa.org/topics/aging">American Psychological Association's resources on aging</ExternalLink>, suggests that the experience of time accelerates
         as we age. Moreover, this is partly because each new year represents a smaller fraction of total
         life experience. As a result, adults consistently underestimate elapsed time while children
         consistently overestimate it — a divergence that becomes more pronounced with each decade.
@@ -154,7 +178,7 @@ const BirthdayCountdown = () => {
 
       <H3>Birthday goal-setting — a psychological advantage</H3>
       <Paragraph>
-        Research in goal-setting psychology suggests that personal temporal landmarks — birthdays,
+        Research in goal-setting psychology, including the concept described on <ExternalLink href="https://en.wikipedia.org/wiki/Fresh_start_effect">Wikipedia's Fresh Start Effect entry</ExternalLink>, suggests that personal temporal landmarks — birthdays,
         anniversaries, the start of the school year — create what researchers call "fresh start effects."
         Moreover, these landmarks make people more likely to pursue goals because they represent a
         psychological break from past failures and a sense of new beginning. Consequently, your birthday is
@@ -207,7 +231,6 @@ const BirthdayCountdown = () => {
         bio="Snehal is a developer and data enthusiast from Mumbai who loves finding unexpected patterns in numbers. When not building calculators, they're probably wondering how many breaths they've taken so far. What Is My Age was born from a simple question: what does your age really mean?"
 
       />
-
 
       <RelatedPosts
         posts={[

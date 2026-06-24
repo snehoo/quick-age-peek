@@ -9,6 +9,10 @@ import {
   AuthorBio,
   RelatedPosts,
   BackToBlog,
+  ByLine,
+  TLDR,
+  BulletList,
+  ExternalLink,
 } from "@/components/blog/ArticleLayout";
 import { useArticleMeta } from "@/components/blog/articleMeta";
 
@@ -18,7 +22,7 @@ const DESC = "You think you know your age. But do you really? Discover dozens of
 const HEADLINE = "How Old Am I? The Ultimate Age Calculator Guide";
 
 const HowOldAmI = () => {
-  useArticleMeta({ title: TITLE, description: DESC, canonical: CANONICAL, headline: HEADLINE });
+  useArticleMeta({ title: TITLE, description: DESC, canonical: CANONICAL, headline: HEADLINE, publishedDate: "2026-06-24" });
 
   return (
     <ArticleShell>
@@ -27,27 +31,39 @@ const HowOldAmI = () => {
       <h1 className="font-display text-3xl sm:text-4xl text-foreground leading-tight mt-6 mb-4">
         {HEADLINE}
       </h1>
+      <ByLine publishedDate="2026-06-24" />
 
       <Lead>
         You think you know your age. But do you really? There are dozens of ways to measure how old you actually are — and each one tells a different story about your life.
       </Lead>
+      <TLDR
+        items={[
+    "Quick Answer: Your Age in Numbers",
+    "Different Ways to Calculate Your Age",
+    "Age in Other Units: The Granular Truth",
+    "Why Different Measurements Tell Different Stories",
+    "The Bottom Line: You're Older Than You Think",
+        ]}
+      />
 
-      <H2>Quick Answer: Your Age in Numbers</H2>
+      <H2>How Old Am I Really, in Numbers?</H2>
       <Paragraph>
         If you're 30 years old right now, you're also:
       </Paragraph>
-      <ul className="list-disc pl-6 space-y-2 text-foreground/90 leading-relaxed mb-6">
-        <li><strong>10,957 days old</strong> (and counting)</li>
-        <li><strong>~2.5 billion heartbeats</strong> in your lifetime</li>
-        <li><strong>~1,000 full moons</strong> witnessed</li>
-        <li><strong>950+ million seconds</strong> lived</li>
-      </ul>
+      <BulletList
+        items={[
+          "10,957 days old (and counting)",
+          "~2.5 billion heartbeats in your lifetime",
+          "~1,000 full moons witnessed",
+          "950+ million seconds lived",
+        ]}
+      />
 
       <H2>Different Ways to Calculate Your Age</H2>
 
       <H3>Age in Days</H3>
       <Paragraph>
-        Days are visceral. A 30-year-old has lived roughly 10,957 days. That number feels heavier than "30" — and it reveals invisible milestones. Your 10,000th day is a landmark you probably never celebrated.
+        Days are visceral. A 30-year-old has lived roughly 10,957 days, calculated the same way <ExternalLink href="https://en.wikipedia.org/wiki/Calculation_of_age">standard age calculation methods</ExternalLink> count elapsed days between two dates. That number feels heavier than "30" — and it reveals invisible milestones. Your 10,000th day is a landmark you probably never celebrated.
       </Paragraph>
       <Paragraph>
         <a href="/blog/age-in-days-calculator/" className="text-primary underline">Calculate your exact age in days →</a>
@@ -71,7 +87,7 @@ const HowOldAmI = () => {
 
       <H3>Life Clock — Age as a 24-Hour Day</H3>
       <Paragraph>
-        Imagine your life as a single 24-hour day. What time is it now? A 30-year-old (assuming a global life expectancy of ~73 years) is at approximately 1:23 PM — early afternoon, with the whole day still ahead.
+        Imagine your life as a single 24-hour day. What time is it now? A 30-year-old (assuming a global life expectancy of ~73 years, per <ExternalLink href="https://www.who.int/">World Health Organization</ExternalLink> estimates) is at approximately 1:23 PM — early afternoon, with the whole day still ahead.
       </Paragraph>
       <Paragraph>
         <a href="/blog/what-is-a-life-clock/" className="text-primary underline">Find your life clock time →</a>
@@ -103,13 +119,15 @@ const HowOldAmI = () => {
         The deeper you look, the more interesting age becomes. A 30-year-old has lived:
       </Paragraph>
 
-      <ul className="list-disc pl-6 space-y-2 text-foreground/90 leading-relaxed mb-6">
-        <li><strong>~360 months</strong> — More granular than years, but still too broad</li>
-        <li><strong>~1,560 weeks</strong> — Weeks align with human projects and goals</li>
-        <li><strong>~263,000 hours</strong> — Hours start to feel personal</li>
-        <li><strong>~15.7 million minutes</strong> — Minutes are where life actually happens</li>
-        <li><strong>~950 million seconds</strong> — Seconds reveal the weight of time</li>
-      </ul>
+      <BulletList
+        items={[
+          "~360 months — more granular than years, but still too broad",
+          "~1,560 weeks — weeks align with human projects and goals",
+          "~263,000 hours — hours start to feel personal",
+          "~15.7 million minutes — minutes are where life actually happens",
+          "~950 million seconds — seconds reveal the weight of time",
+        ]}
+      />
 
       <Paragraph>
         Most people pass the 1-billion-second mark without knowing it. That's a shame, because it's worth celebrating.
@@ -121,13 +139,15 @@ const HowOldAmI = () => {
         Years are legal and official. But they miss the texture of life. When you know your age in:
       </Paragraph>
 
-      <ul className="list-disc pl-6 space-y-2 text-foreground/90 leading-relaxed mb-6">
-        <li><strong>Days</strong>, you can spot invisible 10,000-day milestones</li>
-        <li><strong>Heartbeats</strong>, you feel the weight of mortality and finitude</li>
-        <li><strong>Full moons</strong>, you realize 1,000 is not a large number</li>
-        <li><strong>Seconds</strong>, you grasp the science of aging</li>
-        <li><strong>Life clock</strong>, you see your life stage with clarity</li>
-      </ul>
+      <BulletList
+        items={[
+          "Days, you can spot invisible 10,000-day milestones",
+          "Heartbeats, you feel the weight of mortality and finitude",
+          "Full moons, you realize 1,000 is not a large number",
+          "Seconds, you grasp the science of aging",
+          "Life clock, you see your life stage with clarity",
+        ]}
+      />
 
       <H2>The Bottom Line: You're Older Than You Think</H2>
 
@@ -150,7 +170,6 @@ const HowOldAmI = () => {
         bio="Snehal is a developer and data enthusiast from Mumbai who loves finding unexpected patterns in numbers. When not building calculators, they're probably wondering how many breaths they've taken so far. What Is My Age was born from a simple question: what does your age really mean?"
 
       />
-
 
       <RelatedPosts
         posts={[

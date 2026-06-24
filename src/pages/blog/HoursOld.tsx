@@ -1,11 +1,13 @@
 import { Link } from "react-router-dom";
 import { CtaBox, Figure, H2, H3, Lead, Paragraph, AuthorBio,
   RelatedPosts, SimpleTable, UnitArticleShell, credit, ext } from "@/components/blog/UnitArticle";
+import { BulletList } from "@/components/blog/ArticleLayout";
 
 const meta = {
   title: "How Many Hours Old Am I? Calculate Your Exact Age in Hours | whatismyage.me",
   description: "How many hours old are you? Find out with our formula and quick reference table — plus what your hour count reveals about the extraordinary scale of a human life.",
   canonical: "https://whatismyage.me/blog/how-many-hours-old-am-i",
+  publishedDate: "2026-06-24",
   headline: "How Many Hours Old Am I?",
 };
 
@@ -70,15 +72,29 @@ const HoursOld = () => (
       ]}
     />
     <Paragraph>
-      The most confronting figure: if you're 40, you've already spent roughly a third of your life asleep. That's not wasted — {ext("https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6267703/", "sleep is essential for memory consolidation, immune function, and cellular repair")}. But it does mean the number of waking hours is considerably smaller.
+      The most confronting figure: if you're 40, you've already spent roughly a third of your life asleep. That's not wasted — {ext("https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6267703/", "sleep is essential for memory consolidation, immune function, and cellular repair")}. Broken down, a 40-year-old's roughly 350,000 hours split out like this:
+    </Paragraph>
+    <BulletList
+      items={[
+        "Sleeping: ~116,800 hours (33%)",
+        "Working: ~80,000 hours (23%)",
+        "Leisure and screens: ~52,000 hours (15%)",
+        "Other or travel: ~52,600 hours (15%)",
+        "Household tasks: ~21,000 hours (6%)",
+        "Socialising: ~17,000 hours (5%)",
+        "Eating and drinking: ~10,600 hours (3%)",
+      ]}
+    />
+    <Paragraph>
+      But it does mean the number of waking hours is considerably smaller than the headline total.
     </Paragraph>
 
-    <H2>The History of the Hour</H2>
+    <H2>Where Did the Hour Come From?</H2>
     <Paragraph>
-      {ext("https://www.britannica.com/science/hour", "Ancient Egyptians")} divided the day into two periods of 12 hours each. Because days and nights vary in length across seasons, an Egyptian "hour" in summer was longer than one in winter. These were called <em>seasonal hours</em>, and they remained the standard for thousands of years.
+      {ext("https://www.britannica.com/science/hour", "Ancient Egyptians")} divided the day into two periods of 12 hours each. Because days and nights vary in length across seasons, an Egyptian "hour" in summer was longer than one in winter. These were called <em>seasonal hours</em>, and they remained the standard for thousands of years. The modern, fixed-length hour is one of several units defined by the {ext("https://en.wikipedia.org/wiki/Unit_of_time", "International System of Units")} for measuring time consistently.
     </Paragraph>
     <Paragraph>
-      It wasn't until the invention of mechanical clocks in medieval Europe that fixed, equal-length hours became practical and widespread.
+      It wasn't until the invention of mechanical clocks in medieval Europe that fixed, equal-length hours became practical and widespread. Calendar irregularities like the {ext("https://en.wikipedia.org/wiki/Leap_year", "leap year")} are also why the 8,766-hour average above isn't a round number — every fourth year adds an extra day, and those extra hours have to be smoothed across the average.
     </Paragraph>
 
     <H2>Milestone Hours</H2>
@@ -123,7 +139,6 @@ const HoursOld = () => (
       bio="Snehal is a developer and data enthusiast from Mumbai who loves finding unexpected patterns in numbers. When not building calculators, they're probably wondering how many breaths they've taken so far. What Is My Age was born from a simple question: what does your age really mean?"
 
     />
-
 
     <RelatedPosts posts={[
       { tag: "Time", title: "How Many Weeks Old Am I?", href: "/blog/how-many-weeks-old-am-i/" },

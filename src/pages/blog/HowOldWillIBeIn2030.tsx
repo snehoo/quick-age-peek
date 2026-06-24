@@ -1,12 +1,15 @@
 import { Link } from "react-router-dom";
 import { ArticleShell, BackToBlog, CtaBox, H2, H3, Lead, Paragraph, AuthorBio,
-  RelatedPosts, Note } from "@/components/blog/ArticleLayout";
+  RelatedPosts, Note, ByLine,
+  TLDR, BulletList,
+} from "@/components/blog/ArticleLayout";
 import { useArticleMeta } from "@/components/blog/articleMeta";
 
 const meta = {
   title: "How Old Will I Be in 2030? Age Calculator by Birth Year",
   description: "Find out exactly how old you'll be in 2030 with our complete birth year table, plus what the world might look like when you get there.",
   canonical: "https://whatismyage.me/blog/how-old-will-i-be-in-2030",
+  publishedDate: "2026-06-24",
   headline: "How Old Will I Be in 2030?",
 };
 
@@ -64,7 +67,19 @@ const HowOldWillIBeIn2030 = () => {
     <ArticleShell>
       <BackToBlog />
       <h1 className="font-display text-3xl sm:text-4xl text-foreground leading-tight mt-6 mb-4">How Old Will I Be in 2030?</h1>
+      <ByLine publishedDate="2026-06-24" />
       <Lead>2030 is closer than it feels — just four years from now. By the time it arrives, the world will have shifted measurably in technology, climate, and demographics. But the most immediate question is personal: how old will you be?</Lead>
+      <TLDR
+        items={[
+    "How to Calculate Your Age in 2030",
+    "Age in 2030 by Birth Year — Complete Table",
+    "What Milestone Ages Will 2030 Bring?",
+    "What the World Might Look Like When You Get There",
+    "Your Life in Numbers in 2030",
+    "Plan Ahead: Your Age in Other Future Years",
+        ]}
+      />
+
       <Paragraph>The answer depends entirely on your birth year and the month of your birthday relative to whatever date in 2030 you're asking about. Here's everything you need to know.</Paragraph>
 
       <Figure
@@ -88,7 +103,7 @@ const HowOldWillIBeIn2030 = () => {
         <li><strong>If your birthday falls before or on the date in 2030 you're thinking about</strong> → use the result as-is</li>
         <li><strong>If your birthday falls after that date</strong> → subtract 1</li>
       </ul>
-      <Paragraph>For example, someone born in <strong>1990</strong> will turn <strong>40</strong> in 2030. If their birthday is in March and you're asking about January 1, 2030, they'll still be 39 on that date.</Paragraph>
+      <Paragraph>For example, someone born in <strong>1990</strong> will turn <strong>40</strong> in 2030. If their birthday is in March and you're asking about January 1, 2030, they'll still be 39 on that date. This subtraction method follows the standard <ExternalLink href="https://en.wikipedia.org/wiki/Gregorian_calendar">Gregorian calendar</ExternalLink>, the dating system used for these calculations.</Paragraph>
 
       <H2>Age in 2030 by Birth Year — Complete Table</H2>
       <Table
@@ -112,16 +127,18 @@ const HowOldWillIBeIn2030 = () => {
 
       <H2>What Milestone Ages Will 2030 Bring?</H2>
       <Paragraph>For millions of people, 2030 carries a round-number milestone:</Paragraph>
-      <ul className="list-disc list-inside space-y-2 mb-5 text-foreground/90">
-        <li><strong>Born in 1990?</strong> You'll turn <strong>40</strong> in 2030 — the big one for most late millennials.</li>
-        <li><strong>Born in 1980?</strong> You'll hit <strong>50</strong> — half a century.</li>
-        <li><strong>Born in 1970?</strong> You'll reach <strong>60</strong>.</li>
-        <li><strong>Born in 2000?</strong> You'll turn <strong>30</strong> — your first major decade marker.</li>
-        <li><strong>Born in 2010?</strong> You'll turn <strong>20</strong> — crossing into adulthood.</li>
-      </ul>
+      <BulletList
+        items={[
+          <span key="1990"><strong>Born in 1990?</strong> You'll turn <strong>40</strong> in 2030 — the big one for most late millennials.</span>,
+          <span key="1980"><strong>Born in 1980?</strong> You'll hit <strong>50</strong> — half a century.</span>,
+          <span key="1970"><strong>Born in 1970?</strong> You'll reach <strong>60</strong>.</span>,
+          <span key="2000"><strong>Born in 2000?</strong> You'll turn <strong>30</strong> — your first major decade marker.</span>,
+          <span key="2010"><strong>Born in 2010?</strong> You'll turn <strong>20</strong> — crossing into adulthood.</span>,
+        ]}
+      />
       <Paragraph>2030 is a mathematically satisfying year for milestone birthdays because it's a round number in a round decade. Whatever age it brings you to, it's a natural moment for reflection and forward-planning.</Paragraph>
 
-      <H2>What the World Might Look Like When You Get There</H2>
+      <H2>What Might the World Look Like When You Get There?</H2>
       <Figure
         src="https://images.unsplash.com/photo-1452696193712-6cabf5103b63?w=1200&q=75&auto=format&fit=crop"
         alt="Glass skyscrapers reflecting a blue sky — the architecture of the near future"

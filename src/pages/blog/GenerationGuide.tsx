@@ -1,12 +1,15 @@
 import { Link } from "react-router-dom";
 import { ArticleShell, BackToBlog, CtaBox, H2, H3, Lead, Paragraph, Quote, AuthorBio,
-  RelatedPosts } from "@/components/blog/ArticleLayout";
+  RelatedPosts, ByLine,
+  TLDR, BulletList, ExternalLink,
+} from "@/components/blog/ArticleLayout";
 import { useArticleMeta } from "@/components/blog/articleMeta";
 
 const meta = {
   title: "What Generation Am I? Complete Guide | whatismyage.me",
   description: "Find out which generation you belong to — Gen Z, Millennial, Gen X, Boomer — with birth year ranges, defining traits, and what makes each generation unique.",
   canonical: "https://whatismyage.me/blog/what-generation-am-i",
+  publishedDate: "2026-06-24",
   headline: "What Generation Am I? The Complete Birth Year Guide",
 };
 
@@ -33,9 +36,19 @@ const GenerationGuide = () => {
     <ArticleShell>
       <BackToBlog />
       <h1 className="font-display text-3xl sm:text-4xl text-foreground leading-tight mt-6 mb-4">What Generation Am I? The Complete Birth Year Guide</h1>
+      <ByLine publishedDate="2026-06-24" />
       <Lead>You have probably been called a Millennial or a Boomer in an argument online. However, do you actually know which generation you belong to — where the boundaries sit and what genuinely defines each one?</Lead>
+      <TLDR
+        items={[
+    "What Generation Am I by Birth Year — The Complete Breakdown",
+    "Am I a Millennial or Gen Z? The Zillennial Micro-Generation Explained",
+    "Why Generational Labels Are Useful — and Where They Fail",
+    "Generational Identity in India — A Different Historical Lens",
+        ]}
+      />
+
       <Paragraph>Generational labels are sociological shorthand. Moreover, they are imperfect tools — broad brushes applied to enormously diverse groups of people. Nevertheless, they capture something real: the shared historical events, economic conditions, and technologies that shape people born within the same window of time.</Paragraph>
-      <H2>What Generation Am I by Birth Year — The Complete Breakdown</H2>
+      <H2>What Generation Am I Based on My Birth Year?</H2>
       <div className="space-y-4 my-7">
         {generations.map(([name, years, tagline, body]) => (
           <section key={name} className="bg-card border border-border rounded-xl p-5">
@@ -47,17 +60,24 @@ const GenerationGuide = () => {
         ))}
       </div>
       <H2>Am I a Millennial or Gen Z? The Zillennial Micro-Generation Explained</H2>
-      <Paragraph>If you were born between approximately 1993 and 1998, you may feel that neither Millennial nor Gen Z quite fits your experience. This borderline cohort is increasingly referred to as <strong>Zillennials</strong>. Specifically, they were old enough to experience childhood without a smartphone, yet young enough to have grown up with social media during their formative teenage years.</Paragraph>
+      <Paragraph>If you were born between approximately 1993 and 1998, you may feel that neither Millennial nor Gen Z quite fits your experience. This borderline cohort is increasingly referred to as <strong>Zillennials</strong> — a term covered alongside the standard generational breakdown used by <ExternalLink href="https://www.pewresearch.org/">Pew Research Center</ExternalLink>. Specifically, they were old enough to experience childhood without a smartphone, yet young enough to have grown up with social media during their formative teenage years.</Paragraph>
       <Paragraph>Furthermore, Zillennials tend to share Millennial nostalgia for early internet culture alongside Gen Z fluency with modern platforms. As a result, many find that the Zillennial label captures their dual digital identity more accurately than either adjacent generation.</Paragraph>
-      <H3>Other notable micro-generations</H3>
-      <Paragraph>Similarly, people born between 1965 and 1969 are sometimes called <strong>Generation Jones</strong> — named for the experience of being promised Boomer idealism but coming of age just as that optimism faded. Additionally, those born after 2025 are beginning to be labelled <strong>Generation Beta</strong>, though the cultural contours of that cohort remain entirely undefined.</Paragraph>
+      <H3>What other micro-generations are there?</H3>
+      <Paragraph>Beyond the Zillennial cohort, a few other micro-generations are worth knowing:</Paragraph>
+      <BulletList
+        items={[
+          <span key="jones"><strong>Generation Jones</strong> — people born between 1965 and 1969, named for the experience of being promised Boomer idealism but coming of age just as that optimism faded.</span>,
+          <span key="beta"><strong>Generation Beta</strong> — those born after 2025, a label that has begun circulating even though the cultural contours of that cohort remain entirely undefined.</span>,
+        ]}
+      />
+      <Paragraph>See <ExternalLink href="https://en.wikipedia.org/wiki/Generation">Wikipedia's overview of generational naming conventions</ExternalLink> for more on how these labels have evolved.</Paragraph>
       <H2>Why Generational Labels Are Useful — and Where They Fail</H2>
       <Paragraph>Generational labels work best as shorthand for shared economic contexts. For instance, a Millennial who grew up in rural Maharashtra and one who grew up in Manhattan both navigated the same post-2008 labour market. They adopted the same social media platforms. Moreover, they confronted the same global pandemic at the same life stage. The label captures those macro-level convergences even when individual experiences diverge dramatically.</Paragraph>
       <Quote>"Generations are not defined by birth years alone — they are defined by the events that marked their coming of age."</Quote>
       <Paragraph>Conversely, labels fail when applied as stereotypes. Not every Boomer owns property. Not every Millennial is financially struggling. Furthermore, generational identity intersects with class, geography, and culture in ways that simple birth-year brackets cannot capture.</Paragraph>
       <H2>Generational Identity in India — A Different Historical Lens</H2>
       <Paragraph>Western generational frameworks do not map cleanly onto the Indian experience. For instance, India's economic liberalisation of 1991 was a more significant cultural rupture for many Indians than any global event in the standard Western generational timeline. Indians born before 1985 grew up in a largely socialist, licence-raj economy. Consequently, consumer choice, private television, and global brands arrived as sudden, transformative forces rather than gradual background shifts.</Paragraph>
-      <Paragraph>Additionally, the mobile internet revolution arrived in India later but accelerated faster — Jio's 2016 launch compressed a decade of digital adoption into two years. As a result, Indian Millennials and early Gen Z experienced a uniquely compressed version of the digital transition. Therefore, generational identity in India is arguably better defined by economic inflection points than by the cultural touchstones of the Western framework.</Paragraph>
+      <Paragraph>Additionally, the mobile internet revolution arrived in India later but accelerated faster — Jio's 2016 launch compressed a decade of digital adoption into two years. As a result, Indian Millennials and early Gen Z experienced a uniquely compressed version of the digital transition. Therefore, generational identity in India is arguably better defined by economic inflection points than by the cultural touchstones of the Western framework used by sources such as the <ExternalLink href="https://www.census.gov/">U.S. Census Bureau</ExternalLink>.</Paragraph>
       <Paragraph>To discover your generation alongside other personal life stats — <Link to="/blog/how-many-heartbeats-in-a-lifetime/" className="text-primary underline">heartbeat count</Link>, <Link to="/blog/how-many-full-moons-in-a-lifetime/" className="text-primary underline">full moons lived</Link>, and <Link to="/blog/what-is-a-life-clock/" className="text-primary underline">life clock time</Link> — use our calculator at whatismyage.me.</Paragraph>
       <CtaBox title="Discover your generation — and much more">Enter your date of birth to see your generational identity, heartbeat count, full moons, and personalised life card.</CtaBox>
       <AuthorBio

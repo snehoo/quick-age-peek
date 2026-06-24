@@ -1,11 +1,13 @@
 import { Link } from "react-router-dom";
 import { CtaBox, Figure, H2, H3, Lead, Paragraph, AuthorBio,
   RelatedPosts, SimpleTable, UnitArticleShell, credit, ext } from "@/components/blog/UnitArticle";
+import { BulletList } from "@/components/blog/ArticleLayout";
 
 const meta = {
   title: "How Many Minutes Old Am I? Calculate Your Age in Minutes | whatismyage.me",
   description: "How many minutes old are you? Probably more than you think. Find your age in minutes instantly, understand the formula, and discover what that enormous number really means.",
   canonical: "https://whatismyage.me/blog/how-many-minutes-old-am-i",
+  publishedDate: "2026-06-24",
   headline: "How Many Minutes Old Am I?",
 };
 
@@ -57,22 +59,30 @@ const MinutesOld = () => (
     <ul className="list-disc pl-5 space-y-2 text-foreground/90 text-[17px] leading-relaxed mb-5">
       <li>Your heart beats approximately {ext("https://www.heart.org/en/healthy-living/fitness/fitness-basics/target-heart-rates", "70 times")}</li>
       <li>You take roughly 15 breaths</li>
-      <li>Your body produces around {ext("https://www.ncbi.nlm.nih.gov/books/NBK259/", "25 million new red blood cells")}</li>
+      <li>Your body produces around {ext("https://en.wikipedia.org/wiki/Red_blood_cell", "25 million new red blood cells")}</li>
       <li>The Earth travels approximately {ext("https://www.nasa.gov/solar-system/earth/", "1,800 kilometres")} in its orbit</li>
     </ul>
 
-    <H2>The History of the Minute</H2>
+    <H2>Where Does the Minute Come From?</H2>
     <Paragraph>
-      The minute has roots stretching back to {ext("https://www.britannica.com/science/minute-time-measurement", "ancient Babylon")}. Babylonian astronomers used a base-60 system, which is why both hours and minutes are divided into 60 units — a system so practical it has survived unchanged for over 4,000 years.
+      The minute has roots stretching back to {ext("https://www.britannica.com/science/minute-time-measurement", "ancient Babylon")}. Babylonian astronomers used a {ext("https://en.wikipedia.org/wiki/Sexagesimal", "base-60 system")}, which is why both hours and minutes are divided into 60 units — a system so practical it has survived unchanged for over 4,000 years.
     </Paragraph>
     <Paragraph>The word "minute" comes from the Latin <em>pars minuta prima</em> — "first small part" of an hour.</Paragraph>
 
-    <H2>Your Waking Minutes</H2>
+    <H2>Where Do Your Waking Minutes Go?</H2>
     <Paragraph>
-      Of all the minutes you've lived, roughly a third have been spent asleep. According to {ext("https://www.sleepfoundation.org/how-sleep-works/how-much-sleep-do-we-really-need", "the Sleep Foundation")}, adults need 7–9 hours per night.
+      Of all the minutes you've lived, roughly a third have been spent asleep. According to {ext("https://www.sleepfoundation.org/how-sleep-works/how-much-sleep-do-we-really-need", "the Sleep Foundation")}, adults need 7–9 hours per night. For a 40-year-old, the breakdown looks like this:
     </Paragraph>
+    <BulletList
+      items={[
+        "~21 million total minutes lived",
+        "~7 million spent asleep",
+        "~14 million waking minutes remaining",
+        "~6.6 million of those waking minutes spent mentally elsewhere, according to research from Harvard on attention",
+      ]}
+    />
     <Paragraph>
-      Over 40 years: ~21 million total minutes, ~7 million asleep, leaving ~14 million waking minutes. According to {ext("https://news.harvard.edu/gazette/story/2010/11/wandering-mind-not-a-happy-mind/", "research from Harvard on attention")}, people spend roughly 47% of their waking time thinking about something other than what they're doing — that's ~6.6 million of those 14 million minutes spent mentally elsewhere.
+      That last figure comes from {ext("https://news.harvard.edu/gazette/story/2010/11/wandering-mind-not-a-happy-mind/", "Harvard research on mind-wandering")}, which found people spend roughly 47% of their waking time thinking about something other than what they're doing.
     </Paragraph>
 
     <H2>Milestone Minute Numbers</H2>
@@ -114,7 +124,6 @@ const MinutesOld = () => (
       bio="Snehal is a developer and data enthusiast from Mumbai who loves finding unexpected patterns in numbers. When not building calculators, they're probably wondering how many breaths they've taken so far. What Is My Age was born from a simple question: what does your age really mean?"
 
     />
-
 
     <RelatedPosts posts={[
       { tag: "Time", title: "How Many Hours Old Am I?", href: "/blog/how-many-hours-old-am-i/" },

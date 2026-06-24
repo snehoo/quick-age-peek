@@ -8,6 +8,10 @@ import {
   AuthorBio,
   RelatedPosts,
   BackToBlog,
+  ByLine,
+  TLDR,
+  BulletList,
+  ExternalLink,
 } from "@/components/blog/ArticleLayout";
 import { useArticleMeta } from "@/components/blog/articleMeta";
 
@@ -17,7 +21,7 @@ const DESC = "Discover the best age calculator for your needs — accurate, fast
 const HEADLINE = "Age Calculator for Medical Professionals";
 
 const AgeCalculatorMedicalProfessionals = () => {
-  useArticleMeta({ title: TITLE, description: DESC, canonical: CANONICAL, headline: HEADLINE });
+  useArticleMeta({ title: TITLE, description: DESC, canonical: CANONICAL, headline: HEADLINE, publishedDate: "2026-06-24" });
 
   return (
     <ArticleShell>
@@ -26,10 +30,20 @@ const AgeCalculatorMedicalProfessionals = () => {
       <h1 className="font-display text-3xl sm:text-4xl text-foreground leading-tight mt-6 mb-4">
         {HEADLINE}
       </h1>
+      <ByLine publishedDate="2026-06-24" />
 
       <Lead>
         Finding the right age calculator for your specific needs is essential. Whether you're filling out official forms, need medical precision, or just want a quick calculation without sign-ups, the right tool makes all the difference.
       </Lead>
+      <TLDR
+        items={[
+    "Why Age Calculator Choice Matters",
+    "Key Features of a Quality Age Calculator",
+    "When You Need Precise Age Calculation",
+    "No Sign-Up, No Friction, No Ads",
+    "Finding the Right Age Calculator for Your Situation",
+        ]}
+      />
 
       <H2>Why Age Calculator Choice Matters</H2>
 
@@ -50,11 +64,20 @@ const AgeCalculatorMedicalProfessionals = () => {
         <li><strong>Simplicity</strong> — Minimal interface with the result as the main focus</li>
       </ul>
 
-      <H2>When You Need Precise Age Calculation</H2>
+      <H2>When do you need precise age calculation in medical settings?</H2>
 
       <Paragraph>
-        For legal documents, medical contexts, or official purposes, precision is non-negotiable. A single day can matter for age cutoffs, eligibility requirements, or dosing calculations. The right tool handles these edge cases correctly every single time.
+        For legal documents, medical contexts, or official purposes, precision is non-negotiable. A single day can matter for age cutoffs, eligibility requirements, or dosing calculations. The right tool handles these edge cases correctly every single time. In clinical practice, exact age commonly factors into:
       </Paragraph>
+
+      <BulletList
+        items={[
+          <span key="dosing"><strong>Pediatric medication dosing</strong> — many drug doses are calculated by age in months or weight-for-age, where the <ExternalLink href="https://www.aap.org/">American Academy of Pediatrics (AAP)</ExternalLink> publishes guidance on age-appropriate care</span>,
+          <span key="gestational"><strong>Gestational and corrected age</strong> — for newborns and premature infants, clinicians distinguish chronological age from <ExternalLink href="https://en.wikipedia.org/wiki/Gestational_age">gestational age</ExternalLink> when assessing development</span>,
+          <span key="screening"><strong>Screening and immunization schedules</strong> — the <ExternalLink href="https://www.cdc.gov/">CDC</ExternalLink> publishes age-based schedules for vaccines and screenings that depend on a patient's exact age at the visit</span>,
+          <span key="growth"><strong>Growth chart percentiles</strong> — plotting a child's height and weight against standardized growth charts requires precise age in days or weeks, particularly in the first two years of life</span>,
+        ]}
+      />
 
       <H2>No Sign-Up, No Friction, No Ads</H2>
 
@@ -66,10 +89,10 @@ const AgeCalculatorMedicalProfessionals = () => {
         Enter your birth date and see how many days, hours, minutes, and seconds you've been alive. No sign-up. No ads. Just accurate, instant results.
       </CtaBox>
 
-      <H2>Finding the Right Age Calculator for Your Situation</H2>
+      <H2>How do you find the right age calculator for your situation?</H2>
 
       <Paragraph>
-        The perfect age calculator depends on your specific needs. Whether you need legal precision, medical accuracy, zero friction, or just a quick lookup — there's a tool built for exactly what you're trying to do.
+        The perfect age calculator depends on your specific needs. Whether you need legal precision, medical accuracy, zero friction, or just a quick lookup — there's a tool built for exactly what you're trying to do. For broader reference on age-related health guidance, organizations like the <ExternalLink href="https://www.who.int/">World Health Organization (WHO)</ExternalLink> and the <ExternalLink href="https://www.nih.gov/">National Institutes of Health (NIH)</ExternalLink> publish age-specific health data that underpins many clinical age calculations.
       </Paragraph>
 
       <AuthorBio
@@ -79,7 +102,6 @@ const AgeCalculatorMedicalProfessionals = () => {
         bio="Snehal is a developer and data enthusiast from Mumbai who loves finding unexpected patterns in numbers. When not building calculators, they're probably wondering how many breaths they've taken so far. What Is My Age was born from a simple question: what does your age really mean?"
 
       />
-
 
       <RelatedPosts
         posts={[

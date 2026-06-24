@@ -9,6 +9,10 @@ import {
   AuthorBio,
   RelatedPosts,
   BackToBlog,
+  ByLine,
+  TLDR,
+  BulletList,
+  ExternalLink,
 } from "@/components/blog/ArticleLayout";
 import { useArticleMeta } from "@/components/blog/articleMeta";
 
@@ -18,7 +22,7 @@ const DESC = "The ultimate age calculator guide. Calculate your age in years, da
 const HEADLINE = "Age Calculator — The Complete Guide";
 
 const AgeCalculator = () => {
-  useArticleMeta({ title: TITLE, description: DESC, canonical: CANONICAL, headline: HEADLINE });
+  useArticleMeta({ title: TITLE, description: DESC, canonical: CANONICAL, headline: HEADLINE, publishedDate: "2026-06-24" });
 
   return (
     <ArticleShell>
@@ -27,10 +31,21 @@ const AgeCalculator = () => {
       <h1 className="font-display text-3xl sm:text-4xl text-foreground leading-tight mt-6 mb-4">
         {HEADLINE}
       </h1>
+      <ByLine publishedDate="2026-06-24" />
 
       <Lead>
         Calculating your age sounds simple. But there are dozens of ways to measure it — and each one tells a different story about your life.
       </Lead>
+      <TLDR
+        items={[
+    "What is an Age Calculator?",
+    "Why Use an Age Calculator?",
+    "Age in Different Units: The Full Spectrum",
+    "Beyond Numbers: Contextual Age Measurements",
+    "Why Different Calculators Give Different Results",
+    "The Bottom Line: Perspective Through Numbers",
+        ]}
+      />
 
       <H2>What is an Age Calculator?</H2>
 
@@ -56,7 +71,7 @@ const AgeCalculator = () => {
 
       <H3>Age in Years</H3>
       <Paragraph>
-        The standard. Years are convenient for legal and official contexts — voting, retirement, age of majority. But years are an artificial unit invented for calendars, not a reflection of how time actually feels.
+        The standard. Years are convenient for legal and official contexts — voting, retirement, the <ExternalLink href="https://www.ssa.gov/benefits/retirement/planner/agereduction.html">Social Security Administration's full retirement age</ExternalLink>, age of majority. But years are an artificial unit invented for calendars, not a reflection of how time actually feels.
       </Paragraph>
 
       <H3>Age in Months</H3>
@@ -109,7 +124,7 @@ const AgeCalculator = () => {
 
       <H3>Age in Heartbeats</H3>
       <Paragraph>
-        Your heart is your metronome. A 30-year-old with a typical resting heart rate has experienced roughly 1 billion heartbeats. Each one automatic, each one keeping you alive. When you know this number, mortality becomes real.
+        Your heart is your metronome. A 30-year-old with a typical resting heart rate — about 60 to 100 beats per minute according to <ExternalLink href="https://www.health.harvard.edu/heart-health/what-your-heart-rate-is-telling-you">Harvard Health Publishing</ExternalLink> — has experienced roughly 1 billion heartbeats. Each one automatic, each one keeping you alive. When you know this number, mortality becomes real.
       </Paragraph>
       <Paragraph>
         <a href="/blog/how-many-heartbeats-in-a-lifetime/" className="text-primary underline">Calculate your heartbeat count →</a>
@@ -161,19 +176,21 @@ const AgeCalculator = () => {
         <strong>Key insight:</strong> Each age measurement reveals something different. Years are for legal contexts. Days are for personal milestones. Heartbeats are for understanding mortality. There's no "best" way to measure age — only different perspectives on the same time.
       </Note>
 
-      <H2>Why Different Calculators Give Different Results</H2>
+      <H2>Why do different calculators give different results?</H2>
 
       <Paragraph>
         Not all age calculators are equal. Differences arise from:
       </Paragraph>
 
-      <ul className="list-disc pl-6 space-y-2 text-foreground/90 leading-relaxed mb-6">
-        <li><strong>Leap year handling</strong> — Some miss Feb 29 entirely</li>
-        <li><strong>Month variation accounting</strong> — Days per month differ, creating rounding issues</li>
-        <li><strong>Birth time precision</strong> — Does it ask for time, or just date?</li>
-        <li><strong>Timezone awareness</strong> — Your birth timezone affects precise calculations</li>
-        <li><strong>Rounding methods</strong> — Different approaches to incomplete years/months</li>
-      </ul>
+      <BulletList
+        items={[
+          <span key="leap"><strong>Leap year handling</strong> — Some miss Feb 29 entirely, miscounting years that include February 29 (per the <ExternalLink href="https://www.timeanddate.com/date/leapyear.html">leap year rules at timeanddate.com</ExternalLink>)</span>,
+          <span key="month"><strong>Month variation accounting</strong> — Days per month differ, creating rounding issues</span>,
+          <span key="time"><strong>Birth time precision</strong> — Does it ask for time, or just date?</span>,
+          <span key="tz"><strong>Timezone awareness</strong> — Your birth timezone affects precise calculations</span>,
+          <span key="round"><strong>Rounding methods</strong> — Different approaches to incomplete years/months</span>,
+        ]}
+      />
 
       <Paragraph>
         A quality age calculator is transparent about its methods and asks for enough detail to be accurate.
@@ -200,7 +217,6 @@ const AgeCalculator = () => {
         bio="Snehal is a developer and data enthusiast from Mumbai who loves finding unexpected patterns in numbers. When not building calculators, they're probably wondering how many breaths they've taken so far. What Is My Age was born from a simple question: what does your age really mean?"
 
       />
-
 
       <RelatedPosts
         posts={[

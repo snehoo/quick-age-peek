@@ -1,5 +1,5 @@
 import { ArticleShell, BackToBlog, AuthorBio,
-  RelatedPosts } from "@/components/blog/ArticleLayout";
+  RelatedPosts, ByLine} from "@/components/blog/ArticleLayout";
 import { useArticleMeta } from "@/components/blog/articleMeta";
 
 const CANONICAL = "https://whatismyage.me/blog/how-different-age-groups-behave-online-statistics";
@@ -57,7 +57,7 @@ const Table = ({ headers, rows }: { headers: string[]; rows: React.ReactNode[][]
 );
 
 const AgeGroupsOnlineStatistics = () => {
-  useArticleMeta({ title: TITLE, description: DESC, canonical: CANONICAL, headline: HEADLINE });
+  useArticleMeta({ title: TITLE, description: DESC, canonical: CANONICAL, headline: HEADLINE, publishedDate: "2026-06-24" });
 
   return (
     <ArticleShell>
@@ -66,13 +66,20 @@ const AgeGroupsOnlineStatistics = () => {
       <h1 className="font-display text-3xl sm:text-4xl text-foreground leading-tight mt-6 mb-6">
         How Different Age Groups Behave Online Statistics (2025): 55+ Data Points on Gen Z, Screen Time, and Digital Habits
       </h1>
+      <ByLine publishedDate="2026-06-24" />
 
       <H2>Introduction</H2>
       <P>
-        <strong>Gen Z spends an average of 7 hours per day online excluding school or work (Statista Digital Consumer Report 2024).</strong> Millennials follow closely at 6.5 hours, while older generations show significantly lower engagement levels. At the same time, over 95% of people aged 18–29 use the internet daily compared to just 61% of those over 65 (Pew Research Center Internet Survey 2024). Meanwhile, mobile devices now account for more than 58% of total global web traffic (DataReportal Digital Report 2025).
+        Digital behavior varies sharply by generation. Here are the headline figures that set the stage for everything below:
       </P>
+      <ul className="list-disc pl-5 space-y-2 text-foreground/90 text-[17px] leading-relaxed mb-6">
+        <li><strong>Gen Z spends an average of 7 hours per day online</strong> excluding school or work (Statista Digital Consumer Report 2024).</li>
+        <li>Millennials follow closely at <strong>6.5 hours</strong>, while older generations show significantly lower engagement levels.</li>
+        <li>Over <strong>95% of people aged 18–29</strong> use the internet daily, compared to just <strong>61% of those over 65</strong> (<ExternalLink href="https://www.pewresearch.org/internet/">Pew Research Center Internet Survey 2024</ExternalLink>).</li>
+        <li>Mobile devices now account for more than <strong>58% of total global web traffic</strong> (DataReportal Digital Report 2025).</li>
+      </ul>
       <P>
-        We aggregated data from Pew Research Center, Statista, DataReportal, OECD, and global digital usage reports. Understanding digital behavior by age group is critical for marketers, product builders, and anyone designing for modern attention spans.
+        We aggregated data from <ExternalLink href="https://www.pewresearch.org/internet/">Pew Research Center</ExternalLink>, Statista, DataReportal, <ExternalLink href="https://www.oecd.org/digital/">OECD</ExternalLink>, and global digital usage reports. Understanding digital behavior by age group is critical for marketers, product builders, and anyone designing for modern attention spans.
       </P>
 
       <H2>Key Takeaways</H2>
@@ -91,7 +98,7 @@ const AgeGroupsOnlineStatistics = () => {
 
       <Divider />
 
-      <H2>1. Internet Usage by Age Group</H2>
+      <H2>1. How Does Internet Usage Differ by Age Group?</H2>
       <P>Internet adoption is nearly universal among younger populations but still varies significantly with age, especially in frequency and usage depth.</P>
       <Figure src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1600&q=80" alt="internet usage by age" />
       <Table
@@ -163,7 +170,7 @@ const AgeGroupsOnlineStatistics = () => {
       />
       <P><ExternalLink href="https://datareportal.com">Source</ExternalLink></P>
 
-      <H2>5. Generational Digital Behavior Trends</H2>
+      <H2>5. How Do Generational Digital Behavior Trends Compare?</H2>
       <P>Each generation interacts with technology differently, shaping long-term digital trends.</P>
       <Figure src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1600&q=80" alt="digital behavior trends" />
       <Table
@@ -218,7 +225,6 @@ const AgeGroupsOnlineStatistics = () => {
         bio="Snehal is a developer and data enthusiast from Mumbai who loves finding unexpected patterns in numbers. When not building calculators, they're probably wondering how many breaths they've taken so far. What Is My Age was born from a simple question: what does your age really mean?"
 
       />
-
 
       <RelatedPosts
         posts={[

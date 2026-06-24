@@ -13,6 +13,9 @@ interface ArticleMetaOptions {
   canonical: string;
   headline?: string;
   ogImage?: string;
+  publishedDate: string;
+  updatedDate?: string;
+  author?: { name: string; bio?: string };
 }
 
 // ── Helper: ensure URL ends with exactly one trailing slash ──────
@@ -66,6 +69,9 @@ export function useArticleMeta({
   canonical,
   headline,
   ogImage,
+  publishedDate,
+  updatedDate,
+  author,
 }: ArticleMetaOptions): void {
   useEffect(() => {
     // ── Normalise canonical: ALWAYS trailing slash ──
@@ -103,10 +109,11 @@ export function useArticleMeta({
       headline: articleTitle,
       description: description,
       url: canonicalUrl,                               // ← trailing slash
-      dateModified: new Date().toISOString().split("T")[0],
+      datePublished: publishedDate,
+      dateModified: updatedDate || publishedDate,
       author: {
         "@type": "Person",
-        name: "Snehal Patel",
+        name: author?.name || "Snehal Patel",
       },
       publisher: {
         "@type": "Organization",
@@ -119,5 +126,5 @@ export function useArticleMeta({
       },
     });
 
-  }, [title, description, canonical, headline, ogImage]);
+  }, [title, description, canonical, headline, ogImage, publishedDate, updatedDate, author]);
 }

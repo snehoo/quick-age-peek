@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import type { ReactNode } from "react";
-import { ArticleShell, AuthorBio, BackToBlog, CtaBox, H2, H3, Lead, Paragraph, RelatedPosts } from "@/components/blog/ArticleLayout";
+import { ArticleShell, AuthorBio, BackToBlog, ByLine, CtaBox, H2, H3, Lead, Paragraph, RelatedPosts } from "@/components/blog/ArticleLayout";
 import { useArticleMeta } from "@/components/blog/articleMeta";
 
 export const Figure = ({ src, alt, credit }: { src: string; alt: string; credit: ReactNode }) => (
@@ -49,15 +49,17 @@ export const UnitArticleShell = ({
   title,
   children,
 }: {
-  meta: { title: string; description: string; canonical: string; headline: string };
+  meta: { title: string; description: string; canonical: string; headline: string; publishedDate?: string };
   title: string;
   children: ReactNode;
 }) => {
-  useArticleMeta(meta);
+  const publishedDate = meta.publishedDate || "2026-06-24";
+  useArticleMeta({ ...meta, publishedDate });
   return (
     <ArticleShell>
       <BackToBlog />
       <h1 className="font-display text-3xl sm:text-4xl text-foreground leading-tight mt-6 mb-4">{title}</h1>
+      <ByLine publishedDate={publishedDate} />
       {children}
     </ArticleShell>
   );

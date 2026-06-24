@@ -1,11 +1,13 @@
 import { Link } from "react-router-dom";
 import { CtaBox, Figure, H2, H3, Lead, Paragraph, AuthorBio,
   RelatedPosts, SimpleTable, UnitArticleShell, credit, ext } from "@/components/blog/UnitArticle";
+import { BulletList } from "@/components/blog/ArticleLayout";
 
 const meta = {
   title: "How Old Am I? Every Way to Calculate Your Exact Age (2026) | whatismyage.me",
   description: "How old are you, really? Beyond years — learn how to calculate your age in months, weeks, days, hours, minutes, and heartbeats. The complete guide with formulas, tables, and tools.",
   canonical: "https://whatismyage.me/blog/how-old-am-i-complete-guide",
+  publishedDate: "2026-06-24",
   headline: "How Old Am I? The Complete Guide to Calculating Your Age",
 };
 
@@ -20,13 +22,24 @@ const HowOldGuide = () => (
       "How old am I?" sounds like the simplest question in the world. Subtract your birth year from the current year. Done. But the single-number answer — "I'm 34" — is actually the least interesting way to think about your age.
     </Lead>
     <Paragraph>
-      You are not simply 34. You are approximately 408 months, 1,774 weeks, 12,419 days, 298,000 hours, and 17.8 million minutes old. Your heart has beaten over a billion times. You've seen more than 400 full moons.
+      You are not simply 34. At that age, you are approximately:
     </Paragraph>
+    <BulletList
+      items={[
+        "408 months old",
+        "1,774 weeks old",
+        "12,419 days old",
+        "298,000 hours old",
+        "17.8 million minutes old",
+        "Over a billion heartbeats in",
+        "More than 400 full moons seen",
+      ]}
+    />
 
     <H2>The Basic Calculation: How to Find Your Age in Years</H2>
     <H3>The Simple Formula</H3>
     <Paragraph><strong>Age = Current year − Birth year</strong></Paragraph>
-    <Paragraph>If you were born in 1991 and the current year is 2026: 2026 − 1991 = 35 years old. But this gives you your age <em>at some point during the year</em>, not necessarily right now.</Paragraph>
+    <Paragraph>If you were born in 1991 and the current year is 2026: 2026 − 1991 = 35 years old. But this gives you your age <em>at some point during the year</em>, not necessarily right now — and it gets slightly more complex around {ext("https://en.wikipedia.org/wiki/Leap_year", "leap years")}, when February has an extra day.</Paragraph>
     <Paragraph><strong>If your birthday has passed:</strong> Current year − Birth year = your age. <strong>If not:</strong> Current year − Birth year − 1.</Paragraph>
     <H3>The Exact Method</H3>
     <Paragraph>For someone born March 15, 1990, on May 6, 2026: <strong>36 years, 1 month, 21 days old</strong>. The <Link to="/" className="text-primary underline">whatismyage.me calculator</Link> computes this instantly.</Paragraph>
@@ -118,13 +131,13 @@ const HowOldGuide = () => (
 
     <H2>Biological Age vs. Chronological Age</H2>
     <Paragraph>
-      Your <strong>chronological age</strong> is how long you've been alive. Your <strong>biological age</strong> is how old your body actually functions. According to {ext("https://www.nature.com/articles/s43587-021-00078-7", "research published in Nature Aging")}, the two can diverge significantly based on genetics, lifestyle, environment, and epigenetic clocks.
+      Your <strong>chronological age</strong> is how long you've been alive. Your <strong>biological age</strong> is how old your body actually functions. According to research on {ext("https://en.wikipedia.org/wiki/Epigenetic_clock", "epigenetic clocks")}, the two can diverge significantly based on genetics, lifestyle, environment, and biomarkers of aging.
     </Paragraph>
     <Paragraph>Two people who are both 45 chronologically might have biological ages ranging from 38 to 55.</Paragraph>
     <Paragraph>→ See also: <Link to="/blog/what-is-a-life-clock/" className="text-primary underline">What is a life clock?</Link></Paragraph>
 
     <H2>Your Age on Other Planets</H2>
-    <Paragraph>A "year" is just one orbit of the sun. If you're 35 on Earth:</Paragraph>
+    <Paragraph>A "year" is just one {ext("https://en.wikipedia.org/wiki/Unit_of_time", "orbit of the sun")} — and {ext("https://www.timeanddate.com/astronomy/", "orbital periods")} vary enormously by planet. If you're 35 on Earth:</Paragraph>
     <SimpleTable
       headers={["Planet", "Orbital period", "Your age"]}
       rows={[
@@ -138,7 +151,7 @@ const HowOldGuide = () => (
     />
     <Paragraph>On Neptune, no human has ever lived through even a single complete "year."</Paragraph>
 
-    <H2>Your Life Clock: Where Are You?</H2>
+    <H2>Where Are You on Your Life Clock?</H2>
     <Paragraph>If a human life were a 24-hour clock — midnight at birth, midnight at the end — where would you be? Based on {ext("https://www.who.int/data/gho/indicator-metadata-registry/imr-details/65", "WHO global life expectancy")} of ~73 years:</Paragraph>
     <SimpleTable
       headers={["Chronological age", "Life clock time"]}
@@ -171,7 +184,6 @@ const HowOldGuide = () => (
       bio="Snehal is a developer and data enthusiast from Mumbai who loves finding unexpected patterns in numbers. When not building calculators, they're probably wondering how many breaths they've taken so far. What Is My Age was born from a simple question: what does your age really mean?"
 
     />
-
 
     <RelatedPosts posts={[
       { tag: "Time", title: "How Many Months Old Am I?", href: "/blog/how-many-months-old-am-i/" },

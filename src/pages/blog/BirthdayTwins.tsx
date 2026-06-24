@@ -10,6 +10,10 @@ import {
   AuthorBio,
   RelatedPosts,
   BackToBlog,
+  ByLine,
+  TLDR,
+  BulletList,
+  ExternalLink,
 } from "@/components/blog/ArticleLayout";
 import { useArticleMeta } from "@/components/blog/articleMeta";
 
@@ -28,7 +32,7 @@ const StatCard = ({ n, l }: { n: string; l: string }) => (
 );
 
 const BirthdayTwins = () => {
-  useArticleMeta({ title: TITLE, description: DESC, canonical: CANONICAL, headline: HEADLINE });
+  useArticleMeta({ title: TITLE, description: DESC, canonical: CANONICAL, headline: HEADLINE, publishedDate: "2026-06-24" });
 
   return (
     <ArticleShell>
@@ -39,12 +43,23 @@ const BirthdayTwins = () => {
       <h1 className="font-display text-3xl sm:text-4xl text-foreground leading-tight mt-6 mb-4">
         {HEADLINE}
       </h1>
+      <ByLine publishedDate="2026-06-24" />
 
       <Lead>
         Somewhere in the world, several thousand people share your exact birth date. Furthermore, among the
         billions who have ever lived, dozens of famous figures arrived on the same day of the same month as
         you — just in different years. This is the phenomenon of birthday twins.
       </Lead>
+      <TLDR
+        items={[
+    "What Is a Birthday Twin? Definition and Variations",
+    "The Probability of Sharing a Birthday With a Famous Person",
+    "Famous Birthday Twins — Remarkable Examples Across History",
+    "Does Sharing a Birthday Mean Anything? The Science and the Feeling",
+    "How to Find Your Famous Birthday Twins",
+    "Birthday Twins at whatismyage.me",
+        ]}
+      />
 
       <Paragraph>
         Moreover, the idea that you share a calendar date with a celebrity, historical figure, or cultural
@@ -68,9 +83,9 @@ const BirthdayTwins = () => {
         notably different charts, even if their sun signs are identical.
       </Paragraph>
 
-      <H2>The Probability of Sharing a Birthday With a Famous Person</H2>
+      <H2>What Is the Probability of Sharing a Birthday With a Famous Person?</H2>
       <Paragraph>
-        The <strong>birthday paradox</strong> is one of the most counterintuitive results in probability
+        The <strong>birthday paradox</strong>, described in detail on <ExternalLink href="https://en.wikipedia.org/wiki/Birthday_problem">Wikipedia's birthday problem entry</ExternalLink>, is one of the most counterintuitive results in probability
         theory. Specifically, in a group of just 23 people, there is a 50% chance that two people share a
         birthday. Moreover, in a group of 70, the probability rises above 99.9%.
       </Paragraph>
@@ -102,14 +117,31 @@ const BirthdayTwins = () => {
       <Paragraph>
         Some birth dates have an almost uncanny concentration of remarkable people. For instance, 14 March
         — Pi Day — is the birth date of both Albert Einstein and Stephen Hawking. Moreover, both were
-        theoretical physicists who fundamentally changed our understanding of the universe. Additionally,
-        astronomer Giovanni Schiaparelli was also born on 14 March. As a result, 3/14 has become something
-        of a sacred date in scientific culture.
+        theoretical physicists who fundamentally changed our understanding of the universe. As a result,
+        3/14 has become something of a sacred date in scientific culture. Notable birthday twins on 14
+        March include:
       </Paragraph>
+      <BulletList
+        items={[
+          "Albert Einstein — theoretical physicist, born 14 March 1879.",
+          "Stephen Hawking — theoretical physicist and cosmologist, born 14 March 1942.",
+          "Giovanni Schiaparelli — astronomer known for mapping Mars, also born 14 March.",
+        ]}
+      />
       <Paragraph>
-        Similarly, 15 March shares a remarkable range of birthday twins: Stephen Curry, Sushmita Sen, Aamir
-        Khan, Eva Longoria, and musician will.i.am all share this date across different birth years.
-        Furthermore, 15 March also corresponds to the Ides of March — the date of Julius Caesar's
+        Similarly, 15 March shares a remarkable range of birthday twins across different birth years:
+      </Paragraph>
+      <BulletList
+        items={[
+          "Stephen Curry — professional basketball player.",
+          "Sushmita Sen — actress and former Miss Universe.",
+          "Aamir Khan — actor and filmmaker.",
+          "Eva Longoria — actress and producer.",
+          "will.i.am — musician and producer.",
+        ]}
+      />
+      <Paragraph>
+        Furthermore, 15 March also corresponds to the <ExternalLink href="https://en.wikipedia.org/wiki/Ides_of_March">Ides of March</ExternalLink> — the date of Julius Caesar's
         assassination in 44 BC — giving it considerable historical weight regardless of anyone's birth
         year.
       </Paragraph>
@@ -120,7 +152,7 @@ const BirthdayTwins = () => {
       <Paragraph>
         From a scientific standpoint, sharing a birth date with a famous person has no causal significance
         whatsoever. Nevertheless, psychologically it matters considerably. Moreover, research in social
-        psychology consistently shows that perceived similarity — even trivial similarity — increases
+        psychology, as catalogued on <ExternalLink href="https://en.wikipedia.org/wiki/Similarity_(psychology)">Wikipedia's overview of similarity in psychology</ExternalLink>, consistently shows that perceived similarity — even trivial similarity — increases
         liking and a sense of connection between people.
       </Paragraph>
       <Paragraph>
@@ -195,7 +227,6 @@ const BirthdayTwins = () => {
         bio="Snehal is a developer and data enthusiast from Mumbai who loves finding unexpected patterns in numbers. When not building calculators, they're probably wondering how many breaths they've taken so far. What Is My Age was born from a simple question: what does your age really mean?"
 
       />
-
 
       <RelatedPosts
         posts={[

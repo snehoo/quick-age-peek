@@ -141,6 +141,61 @@ export const AuthorBio = ({ name, bio }: { name: string; bio: string }) => (
   </div>
 );
 
+export const TLDR = ({ items }: { items: (string | ReactNode)[] }) => (
+  <div className="bg-secondary/40 border border-secondary rounded-xl p-5 my-7">
+    <div className="font-semibold text-foreground mb-3 text-sm uppercase tracking-wider">Key takeaways</div>
+    <ul className="list-disc pl-5 space-y-1.5 text-foreground/90 text-[16px] leading-relaxed">
+      {items.map((it, i) => (
+        <li key={i}>{it}</li>
+      ))}
+    </ul>
+  </div>
+);
+
+export const BulletList = ({ items }: { items: (string | ReactNode)[] }) => (
+  <ul className="list-disc pl-6 space-y-2 text-foreground/90 text-[17px] leading-relaxed my-5">
+    {items.map((it, i) => (
+      <li key={i}>{it}</li>
+    ))}
+  </ul>
+);
+
+export const OrderedList = ({ items }: { items: (string | ReactNode)[] }) => (
+  <ol className="list-decimal pl-6 space-y-2 text-foreground/90 text-[17px] leading-relaxed my-5">
+    {items.map((it, i) => (
+      <li key={i}>{it}</li>
+    ))}
+  </ol>
+);
+
+export const ByLine = ({
+  author = "Snehal Patel",
+  publishedDate,
+  updatedDate,
+}: {
+  author?: string;
+  publishedDate: string;
+  updatedDate?: string;
+}) => (
+  <div className="text-sm text-muted-foreground mb-6">
+    By <span className="text-foreground/80 font-medium">{author}</span>
+    <span aria-hidden> · </span>
+    Published {publishedDate}
+    {updatedDate && updatedDate !== publishedDate && (
+      <>
+        <span aria-hidden> · </span>
+        Updated {updatedDate}
+      </>
+    )}
+  </div>
+);
+
+export const ExternalLink = ({ href, children }: { href: string; children: ReactNode }) => (
+  <a href={href} target="_blank" rel="noopener noreferrer" className="text-primary underline">
+    {children}
+  </a>
+);
+
 export const BackToBlog = () => (
   <p className="text-sm">
     <Link to="/blog" className="text-primary hover:underline">
@@ -201,7 +256,7 @@ export const ProsConsList = ({
   items,
 }: {
   title: string;
-  items: string[];
+  items: (string | ReactNode)[];
 }) => (
   <div className="bg-card border border-border rounded-xl p-5 my-6">
     <div className="font-semibold text-foreground mb-3">{title}</div>

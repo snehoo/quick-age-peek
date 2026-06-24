@@ -12,6 +12,10 @@ import {
   AuthorBio,
   RelatedPosts,
   BackToBlog,
+  ByLine,
+  TLDR,
+  BulletList,
+  ExternalLink,
 } from "@/components/blog/ArticleLayout";
 import { useArticleMeta } from "@/components/blog/articleMeta";
 
@@ -25,7 +29,7 @@ const HEADLINE =
   "Calculator.net vs CalculatorSoup Age Calculator: Which Is More Accurate?";
 
 const CalculatorNetVsCalculatorSoup = () => {
-  useArticleMeta({ title: TITLE, description: DESC, canonical: CANONICAL, headline: HEADLINE });
+  useArticleMeta({ title: TITLE, description: DESC, canonical: CANONICAL, headline: HEADLINE, publishedDate: "2026-06-24" });
 
   return (
     <ArticleShell>
@@ -34,12 +38,22 @@ const CalculatorNetVsCalculatorSoup = () => {
       <h1 className="font-display text-3xl sm:text-4xl text-foreground leading-tight mt-6 mb-4">
         {HEADLINE}
       </h1>
+      <ByLine publishedDate="2026-06-24" />
 
       <Lead>
         Two of the most visited online calculation tools both offer free age calculators — but they take
         different approaches to date arithmetic, leap years, and output detail. Here is what you actually
         need to know before you trust either one.
       </Lead>
+      <TLDR
+        items={[
+    "How Does Calculator.net's Age Calculator Actually Work?",
+    "How Does CalculatorSoup's Age Calculator Compare on Accuracy?",
+    "Side-by-Side Feature Comparison",
+    "Which Result Should You Trust for Official Use?",
+    "Is There a More Accurate Alternative to Both Tools?",
+        ]}
+      />
 
       <Paragraph>
         When people search for a quick way to find their exact age, <strong>calculator.net vs calculatorsoup</strong>{" "}
@@ -65,7 +79,8 @@ const CalculatorNetVsCalculatorSoup = () => {
 
       <H3>What Edge Cases Does Calculator.net Handle?</H3>
       <Paragraph>
-        Calculator.net acknowledges cultural differences in age counting. It notes that the traditional Chinese
+        Calculator.net acknowledges cultural differences in age counting, similar to those described on{" "}
+        <ExternalLink href="https://en.wikipedia.org/wiki/East_Asian_age_reckoning">Wikipedia's East Asian age reckoning entry</ExternalLink>. It notes that the traditional Chinese
         system — where a person is born at age 1 and gains another year at each Lunar New Year — differs from
         the Western system it uses. The tool does not, however, offer a toggle to switch between methods.
         Leap year handling is implicit rather than explicit; the tool uses standard date functions which handle
@@ -97,11 +112,18 @@ const CalculatorNetVsCalculatorSoup = () => {
 
       <H3>CalculatorSoup's Unique Reverse Calculation Feature</H3>
       <Paragraph>
-        One area where CalculatorSoup pulls clearly ahead is reverse calculation. You can input an age — say,
-        25 years and 4 months — and the tool works backwards to find the probable date of birth. It also
-        calculates date of death if you supply a birth date and an age at death, which is valuable for
-        genealogy research. Calculator.net does not offer these reverse-lookup modes in the same integrated
-        way.
+        One area where CalculatorSoup pulls clearly ahead is reverse calculation, useful for the kind of work
+        described in genealogical research guidance from sources like the <ExternalLink href="https://www.archives.gov/">National Archives</ExternalLink>:
+      </Paragraph>
+      <BulletList
+        items={[
+          "Input an age — say, 25 years and 4 months — and the tool works backwards to find the probable date of birth.",
+          "Supply a birth date and an age at death, and it calculates the date of death.",
+          "Both reverse-lookup modes are valuable for genealogy and historical research.",
+        ]}
+      />
+      <Paragraph>
+        Calculator.net does not offer these reverse-lookup modes in the same integrated way.
       </Paragraph>
 
       <H2>Side-by-Side Feature Comparison</H2>
@@ -152,7 +174,8 @@ const CalculatorNetVsCalculatorSoup = () => {
 
       <H3>The Leap Year February 29 Problem</H3>
       <Paragraph>
-        People born on February 29 — roughly 1 in 1,461 births — face a unique challenge. In non-leap years,
+        People born on February 29 — roughly 1 in 1,461 births, per the leap year math explained by{" "}
+        <ExternalLink href="https://www.timeanddate.com/date/leapyear.html">timeanddate.com</ExternalLink> — face a unique challenge. In non-leap years,
         their "calendar birthday" does not exist. Calculator.net and CalculatorSoup both default to the
         Western convention: age increases on March 1 in non-leap years. Neither tool lets you toggle this
         preference, which matters in countries where the legal birthday differs.
@@ -185,7 +208,6 @@ const CalculatorNetVsCalculatorSoup = () => {
         bio="Snehal is a developer and data enthusiast from Mumbai who loves finding unexpected patterns in numbers. When not building calculators, they're probably wondering how many breaths they've taken so far. What Is My Age was born from a simple question: what does your age really mean?"
 
       />
-
 
       <RelatedPosts
         posts={[

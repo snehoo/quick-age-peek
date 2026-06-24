@@ -552,7 +552,7 @@ export function injectRouteMeta(template, route) {
       image: OG_IMAGE,
       datePublished: "2026-04-20",
       dateModified: "2026-04-20",
-      author: { "@type": "Organization", name: "whatismyage.me", url: SITE },
+      author: { "@type": "Person", name: "Snehal Patel", url: `${SITE}/about/` },
       publisher: { "@type": "Organization", name: "What Is My Age", url: SITE },
       mainEntityOfPage: meta.canonical,
     });
