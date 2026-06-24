@@ -4,7 +4,7 @@
  * Cloudflare Pages uses this config; do NOT run 'wrangler deploy' separately.
  */
 {
-  "name": "whatismyage",
+  "name": "quick-age-peek",
   "type": "javascript",
   "build": {
     "command": "npm run build",
