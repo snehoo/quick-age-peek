@@ -1,15 +1,12 @@
 /**
- * Cloudflare Pages configuration for whatismyage.me
- * Static Vite site — builds with npm run build, output in dist/
- * Cloudflare Pages uses this config; do NOT run 'wrangler deploy' separately.
+ * Cloudflare Workers static assets config for whatismyage.me
+ * Static Vite site — build output (dist/) is deployed as Worker assets.
  */
 {
   "name": "quick-age-peek",
-  "type": "javascript",
-  "build": {
-    "command": "npm run build",
-    "cwd": "./",
-    "root": ".",
-    "output_directory": "dist"
+  "compatibility_date": "2026-06-24",
+  "assets": {
+    "directory": "./dist",
+    "not_found_handling": "single-page-application"
   }
 }
