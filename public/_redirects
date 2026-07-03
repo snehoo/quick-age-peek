@@ -1,11 +1,7 @@
 # Cloudflare Pages _redirects
-# Canonicalizes to non-www version and enforces trailing slashes
-
-# Remove www subdomain: www.whatismyage.me → whatismyage.me (301)
-https://www.whatismyage.me/*  https://whatismyage.me/:splat  301
+# Enforces trailing slashes on all routes
 
 # Blog post URLs: /blog/* without trailing slash → add trailing slash (301)
-# This catches both www and non-www after the www rule above
 /blog/*  /blog/:splat/  301
 
 # Top-level pages: add trailing slash (301)

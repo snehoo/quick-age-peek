@@ -1,10 +1,12 @@
 /**
  * Cloudflare Workers static assets config for whatismyage.me
  * Static Vite site — build output (dist/) is deployed as Worker assets.
+ * Uses _worker.js from public dir for redirects (www canonicalization & trailing slashes).
  */
 {
   "name": "quick-age-peek",
   "compatibility_date": "2026-06-24",
+  "main": "public/_worker.js",
   "assets": {
     "directory": "./dist",
     "not_found_handling": "single-page-application"
