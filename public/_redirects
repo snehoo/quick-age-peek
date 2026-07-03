@@ -1,5 +1,8 @@
 # Cloudflare Pages _redirects
-# Enforces trailing slash on all URLs — fixes canonical tag mismatch
+# Canonicalizes to non-www version and enforces trailing slashes
+
+# Remove www subdomain: www.whatismyage.me → whatismyage.me (301)
+https://www.whatismyage.me/*  https://whatismyage.me/:splat  301
 
 # Blog post URLs: /blog/slug → /blog/slug/ (301)
 /blog/:slug  /blog/:slug/  301
