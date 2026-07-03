@@ -4,10 +4,11 @@
 # Remove www subdomain: www.whatismyage.me → whatismyage.me (301)
 https://www.whatismyage.me/*  https://whatismyage.me/:splat  301
 
-# Blog post URLs: /blog/slug → /blog/slug/ (301)
-/blog/:slug  /blog/:slug/  301
+# Blog post URLs: /blog/* without trailing slash → add trailing slash (301)
+# This catches both www and non-www after the www rule above
+/blog/*  /blog/:splat/  301
 
-# Top-level pages: /privacy → /privacy/ etc.
+# Top-level pages: add trailing slash (301)
 /privacy  /privacy/  301
 /about    /about/    301
 /contact  /contact/  301
