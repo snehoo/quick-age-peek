@@ -19,10 +19,10 @@ import {
 import { useArticleMeta } from "@/components/blog/articleMeta";
 
 const CANONICAL = "https://whatismyage.me/blog/what-does-days-to-birthday-mean";
-const TITLE = "Days Until Your Birthday: The Countdown Explained | whatismyage.me";
+const TITLE = "How Many Days Till My Birthday? Countdown Calculator";
 const DESC =
-  "Find out exactly how many days until your next birthday — how the countdown is calculated, what to do with the number, and why birthdays matter more than we admit.";
-const HEADLINE = "Days to Your Next Birthday: How the Countdown Works";
+  "Find out exactly how many days until your birthday — enter your birth date for a live countdown, or count it yourself with the simple method explained here.";
+const HEADLINE = "How Many Days Till My Birthday? The Countdown, Explained";
 
 const Milestone = ({ label, children }: { label: string; children: React.ReactNode }) => (
   <div className="flex gap-4 items-start mb-4 pb-4 border-b border-border last:border-b-0">
@@ -34,7 +34,7 @@ const Milestone = ({ label, children }: { label: string; children: React.ReactNo
 );
 
 const BirthdayCountdown = () => {
-  useArticleMeta({ title: TITLE, description: DESC, canonical: CANONICAL, headline: HEADLINE, publishedDate: "2026-06-24" });
+  useArticleMeta({ title: TITLE, description: DESC, canonical: CANONICAL, headline: HEADLINE, publishedDate: "2026-06-24", updatedDate: "2026-07-11" });
 
   return (
     <ArticleShell>
@@ -54,13 +54,25 @@ const BirthdayCountdown = () => {
       </Lead>
       <TLDR
         items={[
-    "How to Calculate the Exact Days to Your Next Birthday",
-    "Why the Days-to-Birthday Number Feels Different at Every Age",
-    "Birthday Countdown Milestones Worth Tracking",
-    "What to Do With 331 Days Until Your Birthday",
-    "The Birthday Countdown at whatismyage.me",
+    "Days till your birthday = days from today to the next occurrence of your birth month and day — always between 0 and 365 (366 across a leap year).",
+    "Quick method: days left in this month + full days of each month in between + your birth day-of-month.",
+    "Leap-day birthdays (Feb 29) need special handling — the next exact date can be 4 years away.",
+    "Enter your birth date at whatismyage.me for a live, exact countdown.",
+    "Your birthday is a psychologically potent 'fresh start' date — worth using as a goal-setting horizon.",
         ]}
       />
+
+      <H2>How Many Days Until My Birthday? (Quick Answer)</H2>
+      <Paragraph>
+        The number of days until your birthday is simply the count from today to the next time your birth
+        month and day come around. If your birthday already passed this year, count to that date next year;
+        if it hasn't, count to it this year. The answer is always between <strong>0 and 365 days</strong>{" "}
+        (or 366 if a February 29 falls inside the count). For the exact number — updated live, down to the
+        day — enter your date of birth at{" "}
+        <Link to="/" className="text-primary underline">whatismyage.me</Link>. A handy shortcut: your{" "}
+        <strong>half-birthday</strong> sits 182–183 days out, so if your birthday feels far away, you're
+        never more than about six months from the halfway marker.
+      </Paragraph>
 
       <Paragraph>
         Most people check days to birthday out of idle curiosity. However, the number that comes back

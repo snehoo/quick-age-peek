@@ -19,10 +19,10 @@ import { useArticleMeta } from "@/components/blog/articleMeta";
 
 const CANONICAL =
   "https://whatismyage.me/blog/birthday-twins-famous-people-born-on-your-birthday";
-const TITLE = "Birthday Twins: Famous People Born on Your Birthday | whatismyage.me";
+const TITLE = "Birthday Twin Meaning: Who Is Famous Born on Your Birthday?";
 const DESC =
-  "Discover who shares your birthday — the science of birthday coincidences, famous birthday twins, and what it actually means to share a birth date with a celebrity.";
-const HEADLINE = "Birthday Twins: Famous People Born on Your Birthday";
+  "A birthday twin is someone who shares your exact birth date. Learn what birthday twins mean, the odds of having one, and find celebrities born on your birthday.";
+const HEADLINE = "Birthday Twin Meaning: Famous People Born on Your Birthday";
 
 const StatCard = ({ n, l }: { n: string; l: string }) => (
   <div className="bg-card border border-border rounded-xl p-4 text-center">
@@ -52,12 +52,11 @@ const BirthdayTwins = () => {
       </Lead>
       <TLDR
         items={[
-    "What Is a Birthday Twin? Definition and Variations",
-    "The Probability of Sharing a Birthday With a Famous Person",
-    "Famous Birthday Twins — Remarkable Examples Across History",
-    "Does Sharing a Birthday Mean Anything? The Science and the Feeling",
-    "How to Find Your Famous Birthday Twins",
-    "Birthday Twins at whatismyage.me",
+    "Birthday twin meaning: someone who shares your birth month and day — regardless of year. Same date and year is a 'time twin'.",
+    "Roughly 22 million people alive today share your exact birth date.",
+    "In a group of just 23 people, there's a 50% chance two share a birthday (the birthday paradox).",
+    "Virtually everyone has dozens of famous birthday twins across history.",
+    "Sharing a birthday has no scientific significance — but psychologically it creates a real sense of connection.",
         ]}
       />
 
@@ -68,10 +67,11 @@ const BirthdayTwins = () => {
         same register of time as someone remarkable.
       </Paragraph>
 
-      <H2>What Is a Birthday Twin? Definition and Variations</H2>
+      <H2>What Does Birthday Twin Mean? Definition and Variations</H2>
       <Paragraph>
-        A <strong>birthday twin</strong> — also called a birthday double or calendar twin — is someone who
-        shares your birth month and day, regardless of year. Consequently, you might share a birthday with
+        <strong>Birthday twin meaning:</strong> a birthday twin — also called a birthday double or calendar twin — is someone who
+        shares your birth month and day, regardless of year. It's a term of affectionate coincidence, not a
+        family relationship: your birthday twin can be a friend, a stranger, or a celebrity born a century before you. Consequently, you might share a birthday with
         a person born decades before or after you. Furthermore, the more precise variant — sharing both
         date <em>and</em> year — is sometimes called a <strong>time twin</strong>. This is considerably
         rarer, as it narrows the field dramatically.

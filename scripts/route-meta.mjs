@@ -7,9 +7,9 @@ const OG_IMAGE = `${SITE}/og-image.png`;
 
 export const ROUTE_META = {
   "/": {
-    title: "What Is My Age? — Your life in numbers",
+    title: "What Is My Age? Free Age Calculator — Exact Age in Years, Days & Seconds",
     description:
-      "Calculate your age beyond years. Discover how many heartbeats, full moons, days, and seconds you've lived. Enter your birth date and see your life in numbers.",
+      "Free age calculator: enter your birth date to see exactly how old you are today — in years, months, days, seconds, heartbeats, and full moons. No sign-up, instant answer.",
     canonical: `${SITE}/`,
     ogType: "website",
   },
@@ -47,6 +47,20 @@ export const ROUTE_META = {
       "Your heart beats 2.5 billion times in a lifetime. Calculate your exact heartbeat total by age — plus discover how resting heart rate affects your personal count.",
     canonical: `${SITE}/blog/how-many-heartbeats-in-a-lifetime/`,
     ogType: "article",
+    faq: [
+      {
+        q: "How many times does your heart beat in a lifetime?",
+        a: "About 2.5 billion times over a typical 76-year lifespan, assuming an average resting heart rate of around 65 beats per minute. The exact number depends on your heart rate and how long you live.",
+      },
+      {
+        q: "How many heartbeats per day?",
+        a: "At an average 65 beats per minute, your heart beats about 93,600 times per day — roughly 34 million times per year.",
+      },
+      {
+        q: "Does a lower resting heart rate mean more years of heartbeats?",
+        a: "A lower resting heart rate spends your lifetime 'heartbeat budget' more slowly. Athletes with resting rates near 50 bpm use about 26 million beats/year versus 39 million at 75 bpm.",
+      },
+    ],
   },
   "/blog/how-many-full-moons-in-a-lifetime": {
     title: "How Many Full Moons Will You See in Your Lifetime? | whatismyage.me",
@@ -70,11 +84,29 @@ export const ROUTE_META = {
     ogType: "article",
   },
   "/blog/what-is-a-life-clock": {
-    title: "Life Clock Calculator — What Time Is Your Life?",
+    title: "Life Clock: If Your Life Was a 24-Hour Day, What Time Is It?",
     description:
-      "See your age as a 24-hour clock. If your life were one day, what time is it now? Calculate your life clock in seconds and discover your personal time.",
+      "If your life was a 24 hour day, what time would it be right now? At 30 you're at 9:00 AM, at 40 it's noon. See the full age-to-time table and calculate yours.",
     canonical: `${SITE}/blog/what-is-a-life-clock/`,
     ogType: "article",
+    faq: [
+      {
+        q: "If my life was 24 hours, what time would it be?",
+        a: "Divide your age by your assumed lifespan and multiply by 24. Assuming an 80-year lifespan: at age 20 it's 6:00 AM, at 30 it's 9:00 AM, at 40 it's 12:00 PM (noon), at 50 it's 3:00 PM, and at 60 it's 6:00 PM.",
+      },
+      {
+        q: "What is a life clock?",
+        a: "A life clock compresses your entire life into a single 24-hour day — midnight is birth, the next midnight is the end of an assumed lifespan. Your current age then maps to a time of day, e.g. a 38-year-old assuming 80 years is at 11:24 AM.",
+      },
+      {
+        q: "How do I calculate my life clock time?",
+        a: "Life clock time = (current age ÷ assumed lifespan) × 24 hours. For a 38-year-old assuming 80 years: 38 ÷ 80 × 24 = 11.4 hours = 11:24 AM.",
+      },
+      {
+        q: "Does the life clock predict how long I will live?",
+        a: "No. Unlike a life expectancy calculator, the life clock doesn't predict anything — it simply reframes where you stand within whatever lifespan you choose (70, 80, 90, or 100 years).",
+      },
+    ],
   },
   "/blog/what-day-of-the-week-was-i-born": {
     title: "What Day of the Week Were You Born? Calculator",
@@ -91,11 +123,29 @@ export const ROUTE_META = {
     ogType: "article",
   },
   "/blog/birthday-twins-famous-people-born-on-your-birthday": {
-    title: "Find Famous People Born on Your Birthday",
+    title: "Birthday Twin Meaning: Who Is Famous Born on Your Birthday?",
     description:
-      "Discover who shares your birthday — celebrities, athletes, and historical figures. Plus the science of birthday coincidences and twin birth date odds.",
+      "A birthday twin is someone who shares your exact birth date. Learn what birthday twins mean, the odds of having one, and find celebrities born on your birthday.",
     canonical: `${SITE}/blog/birthday-twins-famous-people-born-on-your-birthday/`,
     ogType: "article",
+    faq: [
+      {
+        q: "What does birthday twin mean?",
+        a: "A birthday twin is someone who shares your birth date — the same day and month, and sometimes the same year. It's a term of affectionate coincidence, not a family relationship.",
+      },
+      {
+        q: "How rare is it to have a birthday twin?",
+        a: "Not rare at all — roughly 1 in 365 people share your day and month, meaning about 21 million people worldwide share your birthday. Sharing the exact same date including the year is much rarer.",
+      },
+      {
+        q: "How do I find my famous birthday twins?",
+        a: "Enter your date of birth at whatismyage.me to see famous people born on your birthday, or browse curated 'born on this day' lists by date.",
+      },
+      {
+        q: "Does sharing a birthday with someone mean anything?",
+        a: "Scientifically, no — birthdays are distributed fairly evenly across the year. But psychologically, shared birthdays create an instant sense of connection researchers call the 'birthday effect' in social bonding.",
+      },
+    ],
   },
   "/blog/how-to-find-your-zodiac-sign-by-birth-date": {
     title: "Find Your Zodiac Sign — Sun, Moon & Rising Signs Explained | whatismyage.me",
@@ -105,11 +155,29 @@ export const ROUTE_META = {
     ogType: "article",
   },
   "/blog/what-does-days-to-birthday-mean": {
-    title: "Days Until Your Birthday Calculator — Count Your Days | whatismyage.me",
+    title: "How Many Days Till My Birthday? Countdown Calculator",
     description:
-      "Calculate days until your next birthday and understand what that countdown reveals about time perception, milestone celebration, and life's invisible moments.",
+      "Find out exactly how many days until your birthday — enter your birth date for a live countdown, or count it yourself with the simple method explained here.",
     canonical: `${SITE}/blog/what-does-days-to-birthday-mean/`,
     ogType: "article",
+    faq: [
+      {
+        q: "How many days till my birthday?",
+        a: "Count from today's date to the next occurrence of your birth month and day. If your birthday has already passed this year, count to the same date next year. The answer is always between 0 and 365 days (366 across a leap year). Enter your birth date at whatismyage.me for the exact live count.",
+      },
+      {
+        q: "How do I calculate days until my birthday by hand?",
+        a: "Add the days left in the current month to the full days of each month between now and your birth month, then add the day of the month you were born. Adjust by one day if February 29 falls inside the count.",
+      },
+      {
+        q: "What if my birthday is February 29?",
+        a: "If you were born on a leap day, your next exact birthday may be up to four years away. Most leap-day babies count to February 28 or March 1 in non-leap years.",
+      },
+      {
+        q: "What is a half-birthday?",
+        a: "Your half-birthday falls 182–183 days after your birthday — the exact midpoint of your personal year, and a popular milestone for people whose birthdays fall near major holidays.",
+      },
+    ],
   },
   "/blog/calculator-net-vs-calculatorsoup-age-calculator": {
     title: "Calculator.net vs CalculatorSoup — Which Age Calculator Wins? | whatismyage.me",
@@ -460,11 +528,29 @@ export const ROUTE_META = {
     ogType: "article",
   },
   "/blog/when-will-i-be-1-billion-seconds-old": {
-    title: "When Will I Be 1 Billion Seconds Old? Find Your Milestone Date | whatismyage.me",
+    title: "1 Billion Seconds in Years: 31.7 Years — When Will You Hit It?",
     description:
-      "Calculate when you'll reach 1 billion seconds old — an invisible milestone at ~31.7 years. Find your exact date and why this matters.",
+      "1 billion seconds equals 31.69 years — exactly 31 years, 8 months, and 8 days. See the conversion for 2 and 3 billion seconds, and find your exact billion-second birthday.",
     canonical: `${SITE}/blog/when-will-i-be-1-billion-seconds-old/`,
     ogType: "article",
+    faq: [
+      {
+        q: "How many years is 1 billion seconds?",
+        a: "1 billion seconds equals approximately 31.69 years — exactly 31 years, 8 months, and about 8 days, accounting for leap years. That's 11,574 days or 277,778 hours.",
+      },
+      {
+        q: "How many years is 2 billion seconds?",
+        a: "2 billion seconds equals approximately 63.4 years. You reach your 2 billionth second of life around age 63 years and 5 months.",
+      },
+      {
+        q: "When will I be 1 billion seconds old?",
+        a: "You turn 1 billion seconds old at 31 years, 8 months, and about 8 days after your birth. Someone born in January 1995 hits it around September 2026.",
+      },
+      {
+        q: "How long is 1 million vs 1 billion seconds?",
+        a: "1 million seconds is about 11.5 days, while 1 billion seconds is about 31.7 years — a factor-of-1,000 jump that takes you from under two weeks to over three decades.",
+      },
+    ],
   },
 };
 
@@ -584,53 +670,20 @@ export function injectRouteMeta(template, route) {
         ],
       });
 
-      // Add FAQ schema for article pages
-      jsonLdSchemas.push({
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        mainEntity: [
-          {
+      // Add FAQ schema for article pages that define page-specific FAQs.
+      // (A sitewide duplicate FAQ block is treated as boilerplate by Google,
+      // so only routes with their own `faq` entries emit FAQPage markup.)
+      if (Array.isArray(meta.faq) && meta.faq.length > 0) {
+        jsonLdSchemas.push({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: meta.faq.map(({ q, a }) => ({
             "@type": "Question",
-            name: "How do I calculate my exact age?",
-            acceptedAnswer: {
-              "@type": "Answer",
-              text: "Enter your birth date into an age calculator to get your exact age in years, months, days, hours, minutes, and seconds. The calculator accounts for leap years and varying month lengths to ensure accuracy.",
-            },
-          },
-          {
-            "@type": "Question",
-            name: "Why would I want to know my age in different units?",
-            acceptedAnswer: {
-              "@type": "Answer",
-              text: "Measuring age in different units like days, heartbeats, or full moons provides perspective on your life. For example, seeing your age as 1+ billion seconds or 10,000+ days can feel more meaningful than years alone.",
-            },
-          },
-          {
-            "@type": "Question",
-            name: "How accurate are online age calculators?",
-            acceptedAnswer: {
-              "@type": "Answer",
-              text: "Accurate age calculators properly account for leap years, varying month lengths, and your birth time. Most online calculators are accurate to the day. The key is whether they handle leap years and month variations correctly.",
-            },
-          },
-          {
-            "@type": "Question",
-            name: "What is the 10,000-day milestone?",
-            acceptedAnswer: {
-              "@type": "Answer",
-              text: "The 10,000-day milestone represents approximately 27.4 years of life. It's an invisible birthday that most people pass without noticing, but it serves as an interesting marker of how many actual days you've lived.",
-            },
-          },
-          {
-            "@type": "Question",
-            name: "How many full moons will I see in my lifetime?",
-            acceptedAnswer: {
-              "@type": "Answer",
-              text: "There are approximately 13 full moons per year, so over a typical 76-year lifetime, you'll see roughly 1,000 full moons — fewer than most people expect.",
-            },
-          },
-        ],
-      });
+            name: q,
+            acceptedAnswer: { "@type": "Answer", text: a },
+          })),
+        });
+      }
     }
   } else if (route !== "/") {
     // Other pages (privacy, etc): WebSite schema

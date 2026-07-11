@@ -4,12 +4,21 @@ import { ArticleShell, BackToBlog, CtaBox, FormulaBox, H2, H3, Lead, Paragraph, 
 import { useArticleMeta } from "@/components/blog/articleMeta";
 
 const meta = {
-  title: "What Is a Life Clock? Your Age as a 24-Hour Day | whatismyage.me",
-  description: "If your life were a 24-hour day, what time is it right now? The life clock converts your age into a clock time — a powerful way to understand your time and what remains.",
+  title: "Life Clock: If Your Life Was a 24-Hour Day, What Time Is It?",
+  description: "If your life was a 24 hour day, what time would it be right now? At 30 you're at 9:00 AM, at 40 it's noon. See the full age-to-time table and calculate yours.",
   canonical: "https://whatismyage.me/blog/what-is-a-life-clock",
-  headline: "What Is a Life Clock? Your Age as a 24-Hour Day Explained",
+  headline: "Life Clock: If Your Life Was a 24-Hour Day, What Time Would It Be?",
   publishedDate: "2026-06-24",
+  updatedDate: "2026-07-11",
 };
+
+// Age → life clock time assuming an 80-year lifespan
+const ageToTime = [
+  ["15", "4:30 AM"], ["18", "5:24 AM"], ["20", "6:00 AM"], ["25", "7:30 AM"],
+  ["30", "9:00 AM"], ["35", "10:30 AM"], ["38", "11:24 AM"], ["40", "12:00 PM"],
+  ["45", "1:30 PM"], ["50", "3:00 PM"], ["55", "4:30 PM"], ["60", "6:00 PM"],
+  ["65", "7:30 PM"], ["70", "9:00 PM"], ["75", "10:30 PM"], ["80", "12:00 AM"],
+];
 
 const clock = [
   ["12:00 AM – 3:00 AM", "Ages 0–10 · deep night", "Childhood. The world is entirely new and endlessly large."],
@@ -35,7 +44,7 @@ const LifeClock = () => {
   return (
     <ArticleShell>
       <BackToBlog />
-      <h1 className="font-display text-3xl sm:text-4xl text-foreground leading-tight mt-6 mb-4">What Is a Life Clock? Your Age as a 24-Hour Day Explained</h1>
+      <h1 className="font-display text-3xl sm:text-4xl text-foreground leading-tight mt-6 mb-4">Life Clock: If Your Life Was a 24-Hour Day, What Time Would It Be?</h1>
       <ByLine publishedDate={meta.publishedDate} />
       <Lead>Imagine your entire life — from birth to its natural end — compressed into a single 24-hour day. Midnight is birth. The following midnight is the end. Consequently, the question becomes simple and quietly profound: what time is it for you right now?</Lead>
       <TLDR
@@ -52,6 +61,27 @@ const LifeClock = () => {
         <div className="text-5xl font-bold text-primary leading-none">11:23 AM</div>
         <div className="text-xs text-background/70 mt-3">Life clock time for a 38-year-old assuming an 80-year lifespan — late morning, long afternoon ahead</div>
       </div>
+      <H2>If Your Life Was a 24-Hour Day, What Time Would It Be? (Quick Answer by Age)</H2>
+      <Paragraph>Assuming an 80-year lifespan, here is exactly what time it is on your life clock at every age. Find your age below — or use the <Link to="/" className="text-primary underline">calculator</Link> for a precise, to-the-minute answer.</Paragraph>
+      <div className="my-6 overflow-x-auto rounded-xl border border-border">
+        <table className="w-full text-sm border-collapse">
+          <thead>
+            <tr className="bg-secondary/60">
+              <th className="text-left font-semibold px-4 py-3 text-foreground">Your age</th>
+              <th className="text-left font-semibold px-4 py-3 text-foreground">Time on your life clock (80-year lifespan)</th>
+            </tr>
+          </thead>
+          <tbody>
+            {ageToTime.map(([age, time]) => (
+              <tr key={age} className="even:bg-secondary/30">
+                <td className="px-4 py-3 border-t border-border text-foreground/90">{age} years old</td>
+                <td className="px-4 py-3 border-t border-border font-semibold text-foreground">{time}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <Paragraph>So if your life was 24 hours: at 20 the sun is just rising, at 30 the workday is barely underway, at 40 it's exactly noon, and even at 60 there's a whole evening ahead. Most people who ask this question are surprised by how early their time actually is.</Paragraph>
       <H2>How to Calculate Your Life Clock Time from Your Age</H2>
       <Paragraph>The calculation is elegantly simple. Specifically, divide your current age by your assumed lifespan to produce a decimal fraction. Subsequently, multiply that fraction by 24 to convert it into hours. Finally, convert the decimal remainder to minutes.</Paragraph>
       <Paragraph>For a 38-year-old assuming 80 years: 38 ÷ 80 = 0.475. Multiply by 24 = 11.4 hours. The 0.4 remainder converts to 24 minutes. Therefore, life clock time: <strong>11:24 AM</strong>.</Paragraph>

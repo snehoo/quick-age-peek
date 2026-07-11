@@ -58,7 +58,7 @@ const Index = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <h1 style={{ position: "absolute", width: "1px", height: "1px", overflow: "hidden", clip: "rect(0,0,0,0)" }}>
-        What Is My Age — Age Calculator
+        What Is My Age? Free Age Calculator — Your Exact Age in Years, Days &amp; Seconds
       </h1>
       <main className="flex-1 flex flex-col items-center px-5 pt-8 sm:pt-12 pb-16">
         <AdSlot slotId="home-top" />
