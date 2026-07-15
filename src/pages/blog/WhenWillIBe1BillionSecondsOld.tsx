@@ -7,7 +7,7 @@ import { useArticleMeta } from "@/components/blog/articleMeta";
 
 const meta = {
   title: "1 Billion Seconds in Years: 31.7 Years — When Will You Hit It?",
-  description: "1 billion seconds equals 31.69 years — exactly 31 years, 8 months, and 8 days. See the conversion for 2 and 3 billion seconds, and find your exact billion-second birthday.",
+  description: "1 billion seconds = 31.69 years (31 years, 8 months, 8 days). Find your exact billion-second birthday and see 2B and 3B second milestones too.",
   canonical: "https://whatismyage.me/blog/when-will-i-be-1-billion-seconds-old",
   publishedDate: "2026-06-24",
   updatedDate: "2026-07-11",
