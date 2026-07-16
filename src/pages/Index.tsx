@@ -92,7 +92,7 @@ const Index = () => {
         <nav aria-label="Blog posts" className="sr-only">
           <a href="/blog">All blog posts</a>
           {BLOG_POSTS.map((p) => (
-            <a key={p.slug} href={`/blog/${p.slug}`}>
+            <a key={p.slug} href={`/blog/${p.slug}/`}>
               {p.title}
             </a>
           ))}

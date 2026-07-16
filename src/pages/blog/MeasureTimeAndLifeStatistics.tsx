@@ -2,7 +2,7 @@ import { ArticleShell, BackToBlog, AuthorBio,
   RelatedPosts, ByLine} from "@/components/blog/ArticleLayout";
 import { useArticleMeta } from "@/components/blog/articleMeta";
 
-const CANONICAL = "https://whatismyage.me/blog/how-people-measure-time-and-life-statistics";
+const CANONICAL = "https://whatismyage.me/blog/how-people-measure-time-and-life-statistics/";
 const TITLE = "How People Measure Time and Life Statistics (2025)";
 const DESC =
   "52+ data points on lifespan, time perception, life milestones, and how people measure life across cultures in 2025.";

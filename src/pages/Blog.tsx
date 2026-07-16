@@ -532,7 +532,7 @@ const Blog = () => {
           {posts.map((p, idx) => (
             <Fragment key={p.slug}>
               <Link
-                to={`/blog/${p.slug}`}
+                to={`/blog/${p.slug}/`}
                 className="block rounded-xl border border-border bg-card p-6 transition-all duration-300 hover:shadow-md hover:-translate-y-0.5"
               >
                 <div className="flex items-center gap-3 mb-3 text-xs uppercase tracking-wider text-muted-foreground">
