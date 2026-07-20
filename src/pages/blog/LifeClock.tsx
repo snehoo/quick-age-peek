@@ -6,7 +6,7 @@ import { useArticleMeta } from "@/components/blog/articleMeta";
 const meta = {
   title: "Life Clock: If Your Life Was a 24-Hour Day, What Time Is It?",
   description: "If your life was a 24 hour day, what time would it be right now? At 30 you're at 9:00 AM, at 40 it's noon. See the full age-to-time table and calculate yours.",
-  canonical: "https://whatismyage.me/blog/what-is-a-life-clock",
+  canonical: "https://whatismyage.me/blog/what-is-a-life-clock/",
   headline: "Life Clock: If Your Life Was a 24-Hour Day, What Time Would It Be?",
   publishedDate: "2026-06-24",
   updatedDate: "2026-07-11",
@@ -33,9 +33,9 @@ const clock = [
 
 const related = [
   { tag: "Science", title: "How Many Heartbeats in a Human Lifetime?", href: "/blog/how-many-heartbeats-in-a-lifetime/" },
-  { tag: "Astronomy", title: "How Many Full Moons Will You See in Your Lifetime?", href: "/blog/how-many-full-moons-in-a-lifetime/" },
+  { tag: "Time Milestone", title: "1 Billion Seconds in Years: When Will You Hit It?", href: "/blog/when-will-i-be-1-billion-seconds-old/" },
+  { tag: "Culture", title: "Birthday Twin Meaning: Famous People Born on Your Birthday", href: "/blog/birthday-twins-famous-people-born-on-your-birthday/" },
   { tag: "Culture", title: "What Generation Am I? The Complete Guide", href: "/blog/what-generation-am-i/" },
-  { tag: "How-to", title: "How to Calculate Your Exact Age in Days", href: "/blog/how-to-calculate-age-in-days/" },
 ];
 
 const LifeClock = () => {
@@ -117,7 +117,7 @@ const LifeClock = () => {
       <Paragraph>A conventional <strong>life expectancy calculator</strong>, such as the <ExternalLink href="https://www.ssa.gov/oact/STATS/table4c6.html">Social Security Administration's actuarial life tables</ExternalLink>, estimates how many years you are likely to live based on health data, geography, and lifestyle factors. However, the life clock works differently. It does not predict. Instead, it reframes. Moreover, it takes whatever lifespan you choose — 80, 90, 100 — and shows you where in that arc you currently stand.</Paragraph>
       <Paragraph>Additionally, the life clock is not about <strong>time left to live</strong> in a morbid sense. Rather, it is about understanding the shape of a life in progress. Similarly, it is about recognising that 11 AM is not late — and that the afternoon, whenever it arrives, still contains enormous possibility.</Paragraph>
       <H2>How Your Life Clock Connects to Your Other Age Stats</H2>
-      <Paragraph>The life clock is one of several powerful ways to reframe what your age actually means. Furthermore, your <Link to="/blog/how-many-heartbeats-in-a-lifetime/" className="text-primary underline">heartbeat total</Link> shows the biological machinery running behind those years. Additionally, your <Link to="/blog/how-many-full-moons-in-a-lifetime/" className="text-primary underline">full moon count</Link> provides a poetic, astronomical measure of time. Moreover, your <Link to="/blog/how-to-calculate-age-in-days/" className="text-primary underline">exact age in days</Link> gives you the raw, unvarnished total. Together, these numbers paint a portrait of a life that a single number in years can never fully convey.</Paragraph>
+      <Paragraph>The life clock is one of several powerful ways to reframe what your age actually means. Furthermore, your <Link to="/blog/how-many-heartbeats-in-a-lifetime/" className="text-primary underline">heartbeat total</Link> shows the biological machinery running behind those years. Your <Link to="/blog/when-will-i-be-1-billion-seconds-old/" className="text-primary underline">1 billion second milestone</Link> — which arrives in your early thirties — gives you another fixed, unrepeatable marker to hold on to. Additionally, your <Link to="/blog/birthday-twins-famous-people-born-on-your-birthday/" className="text-primary underline">famous birthday twins</Link> place you in a broader historical register. Together, these numbers paint a portrait of a life that a single number in years can never fully convey.</Paragraph>
       <CtaBox title="What time is it on your life clock?">Enter your date of birth at whatismyage.me to find your exact life clock time — plus heartbeats, full moons, days alive, and your shareable life card.</CtaBox>
       <AuthorBio
         name="Snehal Patel"

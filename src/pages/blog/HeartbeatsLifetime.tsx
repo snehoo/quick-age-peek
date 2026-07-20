@@ -2,8 +2,8 @@ import { Link } from "react-router-dom";
 import { useEffect } from "react";
 
 
-const CANONICAL = "https://whatismyage.me/blog/how-many-heartbeats-in-a-lifetime";
-const TITLE = "How Many Heartbeats in a Human Lifetime? | whatismyage.me";
+const CANONICAL = "https://whatismyage.me/blog/how-many-heartbeats-in-a-lifetime/";
+const TITLE = "How Many Heartbeats in a Human Lifetime?";
 const DESC =
   "The average human heart beats 2.5 billion times in a lifetime. Discover resting heart rate science, cardiac output, and how to calculate your personal heartbeat total.";
 
@@ -57,7 +57,7 @@ const HeartbeatsLifetime = () => {
       description: DESC,
       url: CANONICAL,
       datePublished: "2026-04-20",
-      dateModified: "2026-04-20",
+      dateModified: "2026-07-17",
       author: { "@type": "Organization", name: "whatismyage.me", url: "https://whatismyage.me" },
       publisher: { "@type": "Organization", name: "What Is My Age", url: "https://whatismyage.me" },
       mainEntityOfPage: CANONICAL,
@@ -210,7 +210,10 @@ const HeartbeatsLifetime = () => {
           <p className="text-foreground/90 leading-relaxed mb-5 text-[17px]">
             This is where the biology becomes genuinely surprising. Research
             across the animal kingdom reveals a remarkable pattern: most
-            mammals accumulate roughly <strong>one billion heartbeats</strong>{" "}
+            mammals accumulate roughly{" "}
+            <Link to="/blog/when-will-i-be-1-billion-seconds-old/" className="text-primary underline">
+              one billion heartbeats
+            </Link>{" "}
             over their lifespan, regardless of body size.
           </p>
 

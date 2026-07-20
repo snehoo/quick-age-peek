@@ -8,7 +8,7 @@ import { useArticleMeta } from "@/components/blog/articleMeta";
 const meta = {
   title: "1 Billion Seconds in Years: 31.7 Years — When Will You Hit It?",
   description: "1 billion seconds = 31.69 years (31 years, 8 months, 8 days). Find your exact billion-second birthday and see 2B and 3B second milestones too.",
-  canonical: "https://whatismyage.me/blog/when-will-i-be-1-billion-seconds-old",
+  canonical: "https://whatismyage.me/blog/when-will-i-be-1-billion-seconds-old/",
   publishedDate: "2026-06-24",
   updatedDate: "2026-07-11",
   headline: "1 Billion Seconds in Years: How Long Is It, and When Will You Hit It?",
@@ -55,10 +55,33 @@ const ExternalLink = ({ href, children }: { href: string; children: React.ReactN
 );
 
 const related = [
+  { tag: "Life Reframe", title: "Life Clock: If Your Life Was a 24-Hour Day, What Time Is It?", href: "/blog/what-is-a-life-clock/" },
   { tag: "Time Milestones", title: "What Day Will I Be 10,000 Days Old?", href: "/blog/what-day-will-i-be-10000-days-old/" },
   { tag: "Time Units", title: "How Many Seconds Old Am I?", href: "/blog/how-many-seconds-old-am-i/" },
-  { tag: "Time Units", title: "How Many Weeks Old Am I?", href: "/blog/how-many-weeks-old-am-i/" },
-  { tag: "Predictions", title: "How Old Will I Be in 2050?", href: "/blog/how-old-will-i-be-in-2050/" },
+  { tag: "Science", title: "How Many Heartbeats in a Human Lifetime?", href: "/blog/how-many-heartbeats-in-a-lifetime/" },
+];
+
+const faqItems = [
+  {
+    q: "How many years is 1 billion seconds?",
+    a: "1 billion seconds equals exactly 31.69 years — or 31 years, 8 months, and approximately 8 days. It's the most counterintuitive number in everyday life: most people guess around 30 years but don't realise how precise that milestone is.",
+  },
+  {
+    q: "When will I be 1 billion seconds old?",
+    a: "Everyone hits 1 billion seconds in their early thirties — specifically at age 31 years and 8 months from birth. To find your exact date and time down to the hour, enter your date of birth into the whatismyage.me calculator.",
+  },
+  {
+    q: "How many years is 2 billion seconds?",
+    a: "2 billion seconds equals approximately 63.4 years. You hit this milestone in your early sixties. 3 billion seconds equals about 95.1 years — a milestone only the longest-lived humans reach.",
+  },
+  {
+    q: "How does 1 billion seconds compare to 1 million seconds?",
+    a: "1 million seconds is only 11.5 days. 1 billion seconds is 31.7 years. The factor of 1,000 between them is logarithmically enormous — yet our brains treat \"million\" and \"billion\" as roughly similar, which is why this milestone surprises almost everyone.",
+  },
+  {
+    q: "Is 1 billion seconds a meaningful milestone?",
+    a: "Unlike an annual birthday — which repeats — your billion-second mark happens exactly once. It's defined not by a calendar convention but by the continuous tick of seconds since your first breath. That makes it a genuinely unrepeatable milestone in a way that a birthday isn't.",
+  },
 ];
 
 const WhenWillIBe1BillionSecondsOld = () => {
@@ -203,6 +226,14 @@ const WhenWillIBe1BillionSecondsOld = () => {
         <li>🕰 <Link to="/blog/what-is-a-life-clock/" className="text-primary underline">What is a life clock?</Link></li>
         <li>🔮 <Link to="/blog/how-old-will-i-be-in-2050/" className="text-primary underline">How old will I be in 2050?</Link></li>
       </ul>
+
+      <H2>Frequently Asked Questions</H2>
+      {faqItems.map(({ q, a }) => (
+        <div key={q}>
+          <H3>{q}</H3>
+          <Paragraph>{a}</Paragraph>
+        </div>
+      ))}
 
       <CtaBox title="Find when you'll be 1 billion seconds old">Enter your date of birth at whatismyage.me — see your exact billion-second milestone and all other major time measurements.</CtaBox>
       <AuthorBio

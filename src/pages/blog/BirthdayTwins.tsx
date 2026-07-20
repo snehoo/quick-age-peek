@@ -18,7 +18,7 @@ import {
 import { useArticleMeta } from "@/components/blog/articleMeta";
 
 const CANONICAL =
-  "https://whatismyage.me/blog/birthday-twins-famous-people-born-on-your-birthday";
+  "https://whatismyage.me/blog/birthday-twins-famous-people-born-on-your-birthday/";
 const TITLE = "Birthday Twin Meaning: Who Is Famous Born on Your Birthday?";
 const DESC =
   "A birthday twin is someone who shares your exact birth date. Learn what birthday twins mean, the odds of having one, and find celebrities born on your birthday.";
@@ -30,6 +30,29 @@ const StatCard = ({ n, l }: { n: string; l: string }) => (
     <div className="text-[11px] uppercase tracking-wider text-muted-foreground mt-1">{l}</div>
   </div>
 );
+
+const birthdayFaq = [
+  {
+    q: "What does birthday twin mean?",
+    a: "A birthday twin is someone who shares your birth month and day, regardless of year. It's a term of coincidence, not a family relationship — your birthday twin can be a friend, stranger, or a celebrity born a century before you. Sharing both date and year is the rarer variant, sometimes called a time twin.",
+  },
+  {
+    q: "How many people share my birthday?",
+    a: "Approximately 22 million people alive today share your exact birth date. Across all of recorded human history, virtually every calendar day contains at least one famous person — so finding your birthday twin is not a matter of luck, just of looking.",
+  },
+  {
+    q: "What is the birthday paradox?",
+    a: "The birthday paradox is the counterintuitive probability result that in a group of just 23 people, there is a 50% chance that two people share a birthday. In a group of 70, that probability exceeds 99.9%. It feels surprising because we compare each person to ourselves (1 in 365 odds), not to every possible pair (253 pairs among 23 people).",
+  },
+  {
+    q: "Is a birthday twin the same as a time twin or astro twin?",
+    a: "No. A birthday twin shares your birth month and day but not necessarily your year. A time twin shares your exact date and year. An astro twin also shares date, year, and typically location — producing an almost identical astrological chart.",
+  },
+  {
+    q: "Does sharing a birthday with a famous person mean anything?",
+    a: "Scientifically, no — sharing a birth date has no causal significance. But psychologically, research on the similarity-attraction effect consistently shows that perceived similarity, even trivial similarity like a shared birthday, increases feelings of warmth and connection between people.",
+  },
+];
 
 const BirthdayTwins = () => {
   useArticleMeta({ title: TITLE, description: DESC, canonical: CANONICAL, headline: HEADLINE, publishedDate: "2026-06-24" });
@@ -205,15 +228,27 @@ const BirthdayTwins = () => {
         figures from India and globally. Moreover, the selection prioritises the most culturally
         significant names to maximise that sense of connection. Additionally, your birthday twins appear
         alongside your heartbeat count,{" "}
-        <Link to="/blog/how-many-full-moons-in-a-lifetime/" className="text-primary underline">
-          full moon total
-        </Link>
-        ,{" "}
         <Link to="/blog/what-generation-am-i/" className="text-primary underline">
           generational identity
         </Link>
-        , and life clock time — creating a complete personal portrait from a single date of birth.
+        ,{" "}
+        <Link to="/blog/what-is-a-life-clock/" className="text-primary underline">
+          life clock time
+        </Link>
+        , and your{" "}
+        <Link to="/blog/when-will-i-be-1-billion-seconds-old/" className="text-primary underline">
+          1 billion second milestone
+        </Link>
+        {" "}— creating a complete personal portrait from a single date of birth.
       </Paragraph>
+
+      <H2>Frequently Asked Questions</H2>
+      {birthdayFaq.map(({ q, a }) => (
+        <div key={q}>
+          <H3>{q}</H3>
+          <Paragraph>{a}</Paragraph>
+        </div>
+      ))}
 
       <CtaBox title="Discover your famous birthday twins">
         Enter your date of birth at whatismyage.me — find who shares your birthday alongside your
@@ -230,10 +265,10 @@ const BirthdayTwins = () => {
 
       <RelatedPosts
         posts={[
+          { tag: "Life Reframe", title: "Life Clock: If Your Life Was a 24-Hour Day, What Time Is It?", href: "/blog/what-is-a-life-clock/" },
+          { tag: "Time Milestone", title: "1 Billion Seconds in Years: When Will You Hit It?", href: "/blog/when-will-i-be-1-billion-seconds-old/" },
           { tag: "Science", title: "How Many Heartbeats in a Human Lifetime?", href: "/blog/how-many-heartbeats-in-a-lifetime/" },
-          { tag: "Astronomy", title: "How Many Full Moons Will You See in Your Lifetime?", href: "/blog/how-many-full-moons-in-a-lifetime/" },
           { tag: "Culture", title: "What Generation Am I? The Complete Guide", href: "/blog/what-generation-am-i/" },
-          { tag: "How-to", title: "How to Calculate Your Exact Age in Days", href: "/blog/how-to-calculate-age-in-days/" },
         ]}
       />
 
