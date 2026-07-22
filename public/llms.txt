@@ -1,0 +1,31 @@
+# What Is My Age? — whatismyage.me
+> Free age calculator that converts a date of birth into age in years, days, seconds, heartbeats, full moons, generational identity, and life-clock position. No login, instant, mobile-friendly.
+
+## Primary Tool
+- https://whatismyage.me/: Enter a date of birth — get exact age in years/months/days plus heartbeat count, full moons, 1 billion second milestone, and generation.
+
+## Key Pages
+- https://whatismyage.me/blog/how-many-heartbeats-in-a-lifetime/: How many times does the human heart beat in a lifetime? Answer: ~2.5 billion. Includes formula, resting BPM table, and mammal comparison.
+- https://whatismyage.me/blog/what-is-a-life-clock/: If your life was a 24-hour day, what time is it? Life clock concept with formula and interactive reframe of age as time-of-day.
+- https://whatismyage.me/blog/when-will-i-be-1-billion-seconds-old/: 1 billion seconds = 31.69 years. Find your exact billion-second birthday; includes 2B and 3B milestones.
+- https://whatismyage.me/blog/birthday-twins-famous-people-born-on-your-birthday/: What does birthday twin mean? Odds of sharing a birthday, birthday paradox explained, famous examples.
+- https://whatismyage.me/blog/what-generation-am-i/: Generation cutoff years — Gen Alpha, Gen Z, Millennial, Gen X, Boomer — with defining traits.
+- https://whatismyage.me/blog/how-many-full-moons-in-a-lifetime/: How many full moons does a person see in a lifetime? ~960–1000 over 80 years.
+- https://whatismyage.me/blog/how-many-seconds-old-am-i/: How to calculate your age in seconds — formula and lookup table.
+- https://whatismyage.me/blog/gigacalculator-vs-omnicalculator/: GigaCalculator vs OmniCalculator age tool comparison — features, accuracy, speed.
+- https://whatismyage.me/blog/what-day-will-i-be-10000-days-old/: When will you be 10,000 days old? How to find your exact date.
+- https://whatismyage.me/blog/how-old-will-i-be-in-2050/: Age projection calculator — how old will I be in 2030, 2040, 2050?
+
+## Blog
+- https://whatismyage.me/blog/: Age and time milestone articles — heartbeats, full moons, life clock, generation guides, seconds, days, comparisons.
+
+## About
+- https://whatismyage.me/about/: Built by Snehal Patel, developer and data enthusiast from Mumbai. The site answers: what does your age really mean beyond years?
+
+## Key Facts (for AI extraction)
+- 1 billion seconds = 31 years, 8 months, 8 days (31.69 years)
+- Average human lifespan = ~2.5 billion heartbeats at 70 BPM over 77.5 years
+- Gen Z: born 1997–2012; Millennials: 1981–1996; Gen X: 1965–1980
+- Full moons per year: ~12.4 (lunar cycle = 29.5 days)
+- Age formula: (today − date of birth) in complete years; subtract 1 if birthday not yet passed this year
+- Age in days: years × 365 + leap years + days since last birthday

@@ -47,6 +47,8 @@ export const ROUTE_META = {
       "Your heart beats 2.5 billion times in a lifetime. Calculate your exact heartbeat total by age — plus discover how resting heart rate affects your personal count.",
     canonical: `${SITE}/blog/how-many-heartbeats-in-a-lifetime/`,
     ogType: "article",
+    datePublished: "2026-04-20",
+    dateModified: "2026-07-22",
     faq: [
       {
         q: "How many times does your heart beat in a lifetime?",
@@ -89,6 +91,8 @@ export const ROUTE_META = {
       "If your life was a 24 hour day, what time would it be right now? At 30 you're at 9:00 AM, at 40 it's noon. See the full age-to-time table and calculate yours.",
     canonical: `${SITE}/blog/what-is-a-life-clock/`,
     ogType: "article",
+    datePublished: "2026-06-10",
+    dateModified: "2026-07-22",
     faq: [
       {
         q: "If my life was 24 hours, what time would it be?",
@@ -128,6 +132,8 @@ export const ROUTE_META = {
       "A birthday twin is someone who shares your exact birth date. Learn what birthday twins mean, the odds of having one, and find celebrities born on your birthday.",
     canonical: `${SITE}/blog/birthday-twins-famous-people-born-on-your-birthday/`,
     ogType: "article",
+    datePublished: "2026-06-24",
+    dateModified: "2026-07-22",
     faq: [
       {
         q: "What does birthday twin mean?",
@@ -211,6 +217,8 @@ export const ROUTE_META = {
     title: "GigaCalculator vs OmniCalculator: Which Age Calculator Wins?",
     description:
       "GigaCalculator vs OmniCalculator: which age tool wins on accuracy, features, and speed? Full side-by-side comparison to pick the best free age calculator.",
+    datePublished: "2026-06-24",
+    dateModified: "2026-07-22",
     canonical: `${SITE}/blog/gigacalculator-vs-omnicalculator/`,
     ogType: "article",
     faq: [
@@ -551,6 +559,8 @@ export const ROUTE_META = {
       "1 billion seconds equals 31.69 years — exactly 31 years, 8 months, and 8 days. See the conversion for 2 and 3 billion seconds, and find your exact billion-second birthday.",
     canonical: `${SITE}/blog/when-will-i-be-1-billion-seconds-old/`,
     ogType: "article",
+    datePublished: "2026-06-24",
+    dateModified: "2026-07-22",
     faq: [
       {
         q: "How many years is 1 billion seconds?",
@@ -603,7 +613,7 @@ export function injectRouteMeta(template, route) {
   // Build array of JSON-LD schemas for this route
   const jsonLdSchemas = [];
 
-  // Homepage: WebApplication schema
+  // Homepage: WebApplication + Organization + FAQPage schemas
   if (route === "/") {
     jsonLdSchemas.push({
       "@context": "https://schema.org",
@@ -618,6 +628,75 @@ export function injectRouteMeta(template, route) {
         price: "0",
         priceCurrency: "USD",
       },
+    });
+    jsonLdSchemas.push({
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      name: "What Is My Age",
+      url: SITE,
+      logo: { "@type": "ImageObject", url: `${SITE}/favicon.png` },
+      sameAs: [
+        "https://twitter.com/whatismyage",
+      ],
+      contactPoint: {
+        "@type": "ContactPoint",
+        contactType: "customer support",
+        url: `${SITE}/contact/`,
+      },
+    });
+    jsonLdSchemas.push({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: [
+        {
+          "@type": "Question",
+          name: "How is age calculated from a date of birth?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Subtract the birth year from the current year; subtract 1 if the birthday hasn't occurred yet this year. Example: born July 10, 2000, as of July 22, 2026 = 26 years old. For exact age in days: count all calendar days from birth date to today, including leap years.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "How many days old am I?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Multiply your completed years by 365, add 1 for each leap year since your birth, then add the days elapsed since your last birthday. A 26-year-old born July 10, 2000 is approximately 9,509 days old as of July 22, 2026.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "What generation am I if I was born in a given year?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Gen Alpha: born 2013–2025. Gen Z: born 1997–2012. Millennial: born 1981–1996. Gen X: born 1965–1980. Baby Boomer: born 1946–1964.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "How many heartbeats does a person have in a lifetime?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Approximately 2.5 to 3 billion beats over an 80-year lifespan, based on an average resting heart rate of 70 BPM. The formula is: age in years × 365.25 × 24 × 60 × resting BPM. A 38-year-old has accumulated approximately 1.43 billion beats.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "When will I be 1 billion seconds old?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "1 billion seconds equals 31.69 years — 31 years, 8 months, and about 8 days. Everyone hits this milestone in their early thirties. Enter your birth date at whatismyage.me to find your exact date and time.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "How many full moons occur in a human lifetime?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Approximately 960 to 1,000 full moons over an 80-year lifespan. The moon completes a full cycle every 29.5 days, giving roughly 12.4 full moons per year.",
+          },
+        },
+      ],
     });
   }
 
@@ -654,8 +733,8 @@ export function injectRouteMeta(template, route) {
       description: meta.description,
       url: meta.canonical,
       image: OG_IMAGE,
-      datePublished: "2026-04-20",
-      dateModified: "2026-04-20",
+      datePublished: meta.datePublished || "2026-04-20",
+      dateModified: meta.dateModified || meta.datePublished || "2026-07-22",
       author: { "@type": "Person", name: "Snehal Patel", url: `${SITE}/about/` },
       publisher: { "@type": "Organization", name: "What Is My Age", url: SITE },
       mainEntityOfPage: meta.canonical,
