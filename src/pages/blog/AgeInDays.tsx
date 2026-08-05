@@ -4,6 +4,26 @@ import { ArticleShell, BackToBlog, CtaBox, FormulaBox, H2, H3, Lead, Paragraph, 
   TLDR, OrderedList, BulletList, ExternalLink,
 } from "@/components/blog/ArticleLayout";
 import { useArticleMeta } from "@/components/blog/articleMeta";
+import { useFaqMeta } from "@/components/blog/faqMeta";
+
+const FAQ_ITEMS = [
+  {
+    q: "How do I calculate my exact age in days?",
+    a: "Subtract your birth date from today's date to get your total days alive. You must account for leap years — each one adds an extra day. A 30-year-old is approximately 10,950 days old, plus 7–8 leap days. The whatismyage.me calculator handles this precisely.",
+  },
+  {
+    q: "How many days old am I if I was born in 1990?",
+    a: "Someone born on 1 January 1990 turns 13,000 days old around 17 August 2025. Your exact count depends on your specific birthday. Use the whatismyage.me calculator for a precise figure.",
+  },
+  {
+    q: "What is 10,000 days old in years?",
+    a: "10,000 days is approximately 27 years and 4–5 months, depending on how many leap years fall within that span. It is a milestone many people celebrate as a meaningful alternative birthday.",
+  },
+  {
+    q: "Do leap years affect age in days?",
+    a: "Yes. Each leap year adds one extra day. Between birth and age 30, most people live through 7–8 leap years, meaning their day count is 7–8 higher than 30 × 365 = 10,950 would suggest.",
+  },
+];
 
 const meta = {
   title: "How to Calculate Your Exact Age in Days | whatismyage.me",
@@ -31,6 +51,7 @@ const related = [
 
 const AgeInDays = () => {
   useArticleMeta(meta);
+  useFaqMeta(FAQ_ITEMS);
 
   return (
     <ArticleShell>

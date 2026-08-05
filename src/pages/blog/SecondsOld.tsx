@@ -18,6 +18,26 @@ import {
   ExternalLink,
 } from "@/components/blog/ArticleLayout";
 import { useArticleMeta } from "@/components/blog/articleMeta";
+import { useFaqMeta } from "@/components/blog/faqMeta";
+
+const FAQ_ITEMS = [
+  {
+    q: "How many seconds old am I?",
+    a: "To find your exact age in seconds, multiply your age in days by 86,400 (the number of seconds in a day). A 30-year-old is approximately 946,728,000 seconds old. Use the whatismyage.me calculator for a precise count.",
+  },
+  {
+    q: "When will I be 1 billion seconds old?",
+    a: "You reach 1 billion seconds at age 31 years and approximately 8 months. For the exact date and time down to the hour, enter your date of birth in the whatismyage.me calculator.",
+  },
+  {
+    q: "How do you calculate age in seconds from a date of birth?",
+    a: "Step 1: count your total days alive (today's date minus your birth date). Step 2: multiply by 86,400. The result is your age in seconds. For example, 10,000 days × 86,400 = 864,000,000 seconds.",
+  },
+  {
+    q: "What is the difference between 1 million and 1 billion seconds?",
+    a: "1 million seconds is about 11.5 days. 1 billion seconds is about 31.7 years. The factor of 1,000 between them is enormous — yet most people intuitively treat the two numbers as similar in scale.",
+  },
+];
 
 const CANONICAL = "https://whatismyage.me/blog/how-many-seconds-old-am-i";
 const TITLE = "How Many Seconds Old Are You Right Now? | whatismyage.me";
@@ -34,6 +54,7 @@ const StatCard = ({ n, l }: { n: string; l: string }) => (
 
 const SecondsOld = () => {
   useArticleMeta({ title: TITLE, description: DESC, canonical: CANONICAL, headline: HEADLINE, publishedDate: "2026-06-24" });
+  useFaqMeta(FAQ_ITEMS);
 
   return (
     <ArticleShell>

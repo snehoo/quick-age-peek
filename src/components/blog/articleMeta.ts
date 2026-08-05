@@ -50,13 +50,15 @@ function setMeta(attrKey: string, attrVal: string, content: string): void {
 }
 
 // ── Helper: set or create a <script type="application/ld+json"> ─
-function setJsonLd(data: object): void {
-  let el = document.querySelector(
-    'script[type="application/ld+json"]'
-  ) as HTMLScriptElement | null;
+function setJsonLd(data: object, id?: string): void {
+  const selector = id
+    ? `script[type="application/ld+json"][id="${id}"]`
+    : 'script[type="application/ld+json"]:not([id])';
+  let el = document.querySelector(selector) as HTMLScriptElement | null;
   if (!el) {
     el = document.createElement("script");
     el.type = "application/ld+json";
+    if (id) el.id = id;
     document.head.appendChild(el);
   }
   el.textContent = JSON.stringify(data);
@@ -125,6 +127,17 @@ export function useArticleMeta({
         },
       },
     });
+
+    // ── BreadcrumbList JSON-LD (auto-injected for every article) ──
+    setJsonLd({
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: "https://whatismyage.me/" },
+        { "@type": "ListItem", position: 2, name: "Blog", item: "https://whatismyage.me/blog/" },
+        { "@type": "ListItem", position: 3, name: articleTitle, item: canonicalUrl },
+      ],
+    }, "breadcrumb-jsonld");
 
   }, [title, description, canonical, headline, ogImage, publishedDate, updatedDate, author]);
 }

@@ -4,6 +4,7 @@ import { ArticleShell, BackToBlog, CtaBox, H2, H3, Lead, Paragraph, AuthorBio,
   TLDR, BulletList,
 } from "@/components/blog/ArticleLayout";
 import { useArticleMeta } from "@/components/blog/articleMeta";
+import { useFaqMeta } from "@/components/blog/faqMeta";
 
 const meta = {
   title: "1 Billion Seconds in Years: 31.7 Years — When Will You Hit It?",
@@ -86,6 +87,7 @@ const faqItems = [
 
 const WhenWillIBe1BillionSecondsOld = () => {
   useArticleMeta(meta);
+  useFaqMeta(faqItems);
 
   return (
     <ArticleShell>

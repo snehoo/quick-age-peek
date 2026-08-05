@@ -4,6 +4,26 @@ import { ArticleShell, BackToBlog, CtaBox, H2, H3, Lead, Paragraph, Quote, Autho
   TLDR, BulletList, ExternalLink,
 } from "@/components/blog/ArticleLayout";
 import { useArticleMeta } from "@/components/blog/articleMeta";
+import { useFaqMeta } from "@/components/blog/faqMeta";
+
+const FAQ_ITEMS = [
+  {
+    q: "How many full moons are there in a lifetime?",
+    a: "Over an average lifetime of 79 years, a person sees approximately 976 full moons. There are roughly 12.37 full moons per year (one every 29.53 days), so the count is 79 × 12.37 ≈ 977.",
+  },
+  {
+    q: "How often does a full moon occur?",
+    a: "A full moon occurs every 29.53 days — this is the lunar synodic month. Most calendar months therefore contain one full moon, but roughly every 2–3 years a month contains two, with the second called a Blue Moon.",
+  },
+  {
+    q: "How many full moons are there in a year?",
+    a: "There are approximately 12.37 full moons per year. Most years have 12; occasionally a year has 13 full moons when the lunar cycle and calendar year align to produce an extra one.",
+  },
+  {
+    q: "How many full moons will I see by age 30?",
+    a: "By age 30, a person will have experienced approximately 371 full moons (30 × 12.37 = 371.1). The exact number depends on your specific birth date and which full moons fell before and after your birthday.",
+  },
+];
 
 const meta = {
   title: "How Many Full Moons in a Lifetime? | whatismyage.me",
@@ -32,6 +52,7 @@ const related = [
 
 const FullMoonsLifetime = () => {
   useArticleMeta(meta);
+  useFaqMeta(FAQ_ITEMS);
 
   return (
     <ArticleShell>

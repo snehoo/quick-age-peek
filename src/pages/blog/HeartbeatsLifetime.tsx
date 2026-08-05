@@ -64,11 +64,64 @@ const HeartbeatsLifetime = () => {
     });
     document.head.appendChild(ld);
 
+    // BreadcrumbList JSON-LD
+    const bcExisting = document.getElementById("breadcrumb-jsonld");
+    if (bcExisting) bcExisting.remove();
+    const bcLd = document.createElement("script");
+    bcLd.type = "application/ld+json";
+    bcLd.id = "breadcrumb-jsonld";
+    bcLd.textContent = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: "https://whatismyage.me/" },
+        { "@type": "ListItem", position: 2, name: "Blog", item: "https://whatismyage.me/blog/" },
+        { "@type": "ListItem", position: 3, name: "How Many Heartbeats in a Human Lifetime?", item: CANONICAL },
+      ],
+    });
+    document.head.appendChild(bcLd);
+
+    // FAQPage JSON-LD
+    const faqExisting = document.getElementById("faq-jsonld");
+    if (faqExisting) faqExisting.remove();
+    const faqLd = document.createElement("script");
+    faqLd.type = "application/ld+json";
+    faqLd.id = "faq-jsonld";
+    faqLd.textContent = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: [
+        {
+          "@type": "Question",
+          name: "How many heartbeats does a human have in a lifetime?",
+          acceptedAnswer: { "@type": "Answer", text: "The average human heart beats approximately 2.5 billion times in a lifetime. Based on a resting heart rate of 70 beats per minute and a life expectancy of 79 years, the calculation is: 70 bpm × 60 min × 24 hr × 365 days × 79 years ≈ 2,912,000,000 beats." },
+        },
+        {
+          "@type": "Question",
+          name: "What is a normal resting heart rate?",
+          acceptedAnswer: { "@type": "Answer", text: "A normal resting heart rate for adults is 60–100 beats per minute. Well-trained athletes often have resting rates of 40–60 bpm because their hearts pump more blood per beat, requiring fewer beats overall." },
+        },
+        {
+          "@type": "Question",
+          name: "How many heartbeats per day does a human have?",
+          acceptedAnswer: { "@type": "Answer", text: "At a resting rate of 70 bpm, the heart beats approximately 100,800 times per day. At a higher rate of 80 bpm, that rises to about 115,200 beats per day." },
+        },
+        {
+          "@type": "Question",
+          name: "How many times does the heart beat per year?",
+          acceptedAnswer: { "@type": "Answer", text: "At 70 beats per minute, the heart beats approximately 36.8 million times per year (70 × 60 × 24 × 365 = 36,792,000)." },
+        },
+      ],
+    });
+    document.head.appendChild(faqLd);
+
     return () => {
       // restore site default canonical on unmount
       setMeta('link[rel="canonical"]', "href", "https://whatismyage.me/");
       const el = document.getElementById("article-jsonld");
       if (el) el.remove();
+      document.getElementById("breadcrumb-jsonld")?.remove();
+      document.getElementById("faq-jsonld")?.remove();
     };
   }, []);
 

@@ -14,6 +14,7 @@ import {
   TLDR,
 } from "./ArticleLayout";
 import { useArticleMeta } from "./articleMeta";
+import { useFaqMeta } from "./faqMeta";
 
 type ImageBlock = {
   src: string;
@@ -95,6 +96,8 @@ const Figure = ({ src, alt, credit }: ImageBlock) => (
 export const BornInYearArticle = (p: BornInYearProps) => {
   const canonical = `https://whatismyage.me/blog/${p.slug}`;
   const publishedDate = p.publishedDate || "2026-06-24";
+  const currentYear = 2026;
+  const approxAge = currentYear - p.year;
   useArticleMeta({
     title: p.title,
     description: p.description,
@@ -102,6 +105,24 @@ export const BornInYearArticle = (p: BornInYearProps) => {
     headline: p.title.replace(/ \| .+$/, ""),
     publishedDate,
   });
+  useFaqMeta([
+    {
+      q: `How old am I if I was born in ${p.year}?`,
+      a: `If you were born in ${p.year}, you are ${approxAge - 1} or ${approxAge} years old in ${currentYear}, depending on whether your birthday has already occurred this year.`,
+    },
+    {
+      q: `How many days old am I if I was born in ${p.year}?`,
+      a: `Someone born on 1 January ${p.year} is approximately ${Math.round((approxAge * 365.25))} days old in ${currentYear}. Your exact count depends on your specific birth date and the leap years in between.`,
+    },
+    {
+      q: `What generation is someone born in ${p.year}?`,
+      a: p.year >= 2013 ? `Someone born in ${p.year} is Generation Alpha.`
+        : p.year >= 1997 ? `Someone born in ${p.year} is Generation Z (Gen Z), born between 1997 and 2012.`
+        : p.year >= 1981 ? `Someone born in ${p.year} is a Millennial (Generation Y), born between 1981 and 1996.`
+        : p.year >= 1965 ? `Someone born in ${p.year} is Generation X, born between 1965 and 1980.`
+        : `Someone born in ${p.year} is a Baby Boomer, born between 1946 and 1964.`,
+    },
+  ]);
 
   return (
     <ArticleShell>

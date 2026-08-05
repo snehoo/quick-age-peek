@@ -4,6 +4,26 @@ import { ArticleShell, BackToBlog, CtaBox, H2, H3, Lead, Paragraph, Quote, Autho
   TLDR, BulletList, ExternalLink,
 } from "@/components/blog/ArticleLayout";
 import { useArticleMeta } from "@/components/blog/articleMeta";
+import { useFaqMeta } from "@/components/blog/faqMeta";
+
+const FAQ_ITEMS = [
+  {
+    q: "What generation am I if I was born in 1990?",
+    a: "If you were born in 1990, you are a Millennial (Generation Y), defined as those born between 1981 and 1996. Millennials are the first generation to grow up with the internet and came of age around the 2008 financial crisis.",
+  },
+  {
+    q: "Am I a Millennial or Gen Z?",
+    a: "The boundary between Millennials and Gen Z is typically set at 1996–1997. Those born in 1996 or earlier are Millennials; those born in 1997 or later are Gen Z. People born right on the boundary (1995–1998) are sometimes called 'Zillennials' — a micro-generation with traits of both.",
+  },
+  {
+    q: "What are the birth year ranges for each generation?",
+    a: "Silent Generation: 1928–1945. Baby Boomers: 1946–1964. Generation X: 1965–1980. Millennials: 1981–1996. Generation Z: 1997–2012. Generation Alpha: 2013–present. These ranges vary slightly by source.",
+  },
+  {
+    q: "What generation is someone born in 2000?",
+    a: "Someone born in 2000 is Generation Z (Gen Z), born between 1997 and 2012. In 2025, they are 24–25 years old.",
+  },
+];
 
 const meta = {
   title: "What Generation Am I? Complete Guide | whatismyage.me",
@@ -31,6 +51,7 @@ const related = [
 
 const GenerationGuide = () => {
   useArticleMeta(meta);
+  useFaqMeta(FAQ_ITEMS);
 
   return (
     <ArticleShell>
