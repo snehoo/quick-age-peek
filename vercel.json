@@ -32,11 +32,6 @@
   ],
   "redirects": [
     {
-      "source": "/",
-      "destination": "https://whatismyage.me",
-      "permanent": true
-    },
-    {
       "source": "/:path(.*)",
       "has": [
         {

@@ -1,269 +1,309 @@
+import { useState } from "react";
+import { Link } from "react-router-dom";
+
+const faqs = [
+  {
+    q: "How do I calculate my exact age in years, months, and days?",
+    a: "Enter your date of birth — day, month, and year — into the calculator above. The result immediately shows your complete age in years, months, days, hours, minutes, and seconds. No manual counting required. The calculator handles leap years, varying month lengths, and all edge cases automatically.",
+  },
+  {
+    q: "Is this age calculator accurate for official documents and forms?",
+    a: "Yes. The calculator uses the standard Western chronological age method — the same system used by governments, schools, and legal institutions worldwide. For visa applications, school admissions, insurance forms, and similar documents, the result in completed years is what you need. For critical legal purposes, always cross-check against your birth certificate as the authoritative source.",
+  },
+  {
+    q: "Can I calculate my age as of a specific past or future date?",
+    a: "Yes. The calculator defaults to today's date, but you can change the target date to any date you choose. This is useful for forms that ask for your age as of an application closing date, an exam date, or any other specific reference point. Simply adjust the second date field before calculating.",
+  },
+  {
+    q: "What is the difference between completed age and running age?",
+    a: "Your completed age is the number of full years you have lived since your last birthday. Your running age is the year you are currently working through — effectively your completed age plus one. Most official documents, medical records, and legal contexts ask for completed age. For example, someone who turned 35 last month has a completed age of 35 and a running age of 36.",
+  },
+  {
+    q: "How does the calculator handle people born on February 29?",
+    a: "For people born on February 29 (leap day), the calculator treats February 28 as their birthday in non-leap years. This is the internationally accepted convention used by most governments and legal systems. In leap years, February 29 is used as normal. The total age calculation remains accurate regardless.",
+  },
+  {
+    q: "Does the calculator store my date of birth?",
+    a: "No. The calculation happens entirely within your browser. Your date of birth is never sent to a server, stored in a database, or linked to any account. There is no account to create, no email required, and no data retained after you close the page. See our privacy policy for full details.",
+  },
+  {
+    q: "How old am I in days, hours, and seconds?",
+    a: "The calculator shows all of these simultaneously in your result. A 30-year-old is approximately 10,957 days old, 262,980 hours old, and 946,728,000 seconds old. These numbers vary slightly depending on your exact birth date due to leap years. Use the calculator above for a precise figure based on your specific birthday.",
+  },
+  {
+    q: "Why does my age in months differ from calculator to calculator?",
+    a: "Different calculators handle month-end edge cases differently. For example, if you were born on January 31 and you check your age on March 31, some tools count two full months while others count one month and a variable number of days. WhatIsMyAge.me uses the most common Western convention: a full month is counted when the same day-of-month is reached in the following month.",
+  },
+];
+
 const HomepageContent = () => {
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
+
+  const toggleFaq = (i: number) => setOpenFaq(openFaq === i ? null : i);
+
   return (
-    <section
-      className="px-5 pb-16 text-left"
-      aria-label="Age calculator guide"
-    >
-      <div className="max-w-2xl mx-auto space-y-10 text-sm leading-relaxed">
+    <section className="hp-content-section" aria-label="About this age calculator">
+      <div className="hp-content-inner">
 
-        {/* Stat-backed intro — first 30% of content */}
-        <p className="text-muted-foreground">
-          <strong className="text-foreground">How old am I?</strong> Enter your date of birth above
-          and this free age calculator answers instantly — your exact age today in years, months,
-          and days, plus your age in seconds, heartbeats, and full moons. The average human
-          lifetime equals approximately{" "}
-          <strong className="text-foreground">2.5 billion heartbeats</strong>, 960 full moons, and
-          31.69 years to your first billion seconds. No sign-up. Works on any device. Your date of
-          birth is never stored or sent to any server.
-        </p>
-
-        {/* Section: What does this calculator show? */}
-        <div>
-          <h2 className="text-base font-semibold text-foreground mb-3">
-            What does this age calculator show?
-          </h2>
-          <p className="text-muted-foreground mb-3">
-            Most age calculators return one number: years. This one converts your birth date into
-            every meaningful unit of time and life experience in a single result.
-          </p>
-          <ul className="list-disc list-inside space-y-1 text-muted-foreground">
-            <li>Exact age in years, months, and days</li>
-            <li>Age in weeks, total days, hours, minutes, and seconds</li>
-            <li>Approximate heartbeat count (based on 70 BPM resting average)</li>
-            <li>Full moon count since the day you were born</li>
-            <li>Your generation — Gen Z, Millennial, Gen X, and more</li>
-            <li>The day of the week you were born</li>
-            <li>Your zodiac sign by date of birth</li>
-            <li>Countdown in days to your next birthday</li>
-            <li>Your 10,000th day alive — exact date</li>
-            <li>Your 1 billion second milestone — exact date and time</li>
-          </ul>
+        {/* INTRO — indexable summary block for AI/search snippet extraction */}
+        <div className="px-5 pb-2 text-center">
+          <div className="max-w-xl mx-auto text-sm text-muted-foreground leading-relaxed space-y-3">
+            <p>
+              <strong className="text-foreground">How old am I?</strong> Enter your date of birth above and
+              this free age calculator answers instantly — your exact age today in years, months, and days,
+              plus your age in weeks, hours, seconds, and heartbeats. It accounts for leap years
+              automatically, works on any device, and needs no sign-up.
+            </p>
+            <p>
+              You'll also see your generation, the day of the week you were born, a live countdown to your
+              next birthday, and milestones like your 10,000th day and 1 billionth second alive. Your birth
+              date is processed entirely in your browser and never stored.
+            </p>
+          </div>
         </div>
 
-        {/* Section: How is age calculated */}
-        <div>
-          <h2 className="text-base font-semibold text-foreground mb-3">
-            How is age calculated from a date of birth?
-          </h2>
-          <p className="text-muted-foreground mb-3">
-            Subtract your birth year from the current year. If your birthday has not yet passed
-            this year, subtract 1. That gives your age in complete years. For age in days, multiply
-            completed years by 365, add one extra day for each leap year since birth, then add the
-            days elapsed since your most recent birthday.
-          </p>
-          <p className="text-muted-foreground mb-3">
-            <strong className="text-foreground">Example:</strong> Born 10 July 2000. Today is
-            22 July 2026. Age = 2026 − 2000 = 26 years, 0 months, 12 days = approximately
-            9,509 days old.
-          </p>
-          <ul className="list-disc list-inside space-y-1 text-muted-foreground">
-            <li>Leap years add one extra day every four years (with century-year exceptions)</li>
-            <li>The calendar average is 365.2425 days per year over a 400-year cycle</li>
-            <li>Age in hours = age in days × 24</li>
-            <li>Age in minutes = age in hours × 60</li>
-            <li>Age in seconds = age in minutes × 60</li>
-            <li>Age in heartbeats = age in seconds ÷ 60 × resting BPM</li>
-          </ul>
-        </div>
-
-        {/* Section: What generation am I */}
-        <div>
-          <h2 className="text-base font-semibold text-foreground mb-3">
-            What generation am I?
-          </h2>
-          <p className="text-muted-foreground mb-3">
-            Your generation is determined by your birth year. Each generation is shaped by the
-            technology and world events present during childhood and young adulthood. The standard
-            cutoff years used by researchers and demographers are:
-          </p>
-          <ul className="list-disc list-inside space-y-1 text-muted-foreground mb-3">
-            <li><strong className="text-foreground">Gen Alpha:</strong> born 2013–2025 (ages 1–13 in 2026)</li>
-            <li><strong className="text-foreground">Gen Z:</strong> born 1997–2012 (ages 14–29 in 2026)</li>
-            <li><strong className="text-foreground">Millennials:</strong> born 1981–1996 (ages 30–45 in 2026)</li>
-            <li><strong className="text-foreground">Gen X:</strong> born 1965–1980 (ages 46–61 in 2026)</li>
-            <li><strong className="text-foreground">Baby Boomers:</strong> born 1946–1964 (ages 62–80 in 2026)</li>
-            <li><strong className="text-foreground">Silent Generation:</strong> born 1928–1945 (ages 81–98 in 2026)</li>
-          </ul>
-          <p className="text-muted-foreground">
-            Researchers disagree on exact cutoff years by one to two years at the boundaries. The
-            ranges above are the most widely cited. Millennials grew up alongside the early
-            internet; Gen Z are the first truly mobile-native generation; Gen Alpha has never known
-            a world without smartphones and AI assistants.
-          </p>
-        </div>
-
-        {/* Section: How many heartbeats */}
-        <div>
-          <h2 className="text-base font-semibold text-foreground mb-3">
-            How many heartbeats does a person have in a lifetime?
-          </h2>
-          <p className="text-muted-foreground mb-3">
-            A typical resting heart rate is 60–80 beats per minute. Over an 80-year life at
-            70 BPM, the heart beats approximately{" "}
-            <strong className="text-foreground">2.94 billion times</strong>. The formula: age in
-            years × 365.25 × 24 × 60 × resting BPM.
-          </p>
-          <p className="text-muted-foreground mb-2">Lifetime heartbeats by fitness level:</p>
-          <ul className="list-disc list-inside space-y-1 text-muted-foreground mb-3">
-            <li>Elite athletes (40–50 BPM): approximately 1.7 billion beats over 80 years</li>
-            <li>Average adult (60–80 BPM): approximately 2.5–3.0 billion beats over 80 years</li>
-            <li>Higher resting rate (80–100 BPM): approximately 3.0–3.7 billion beats over 80 years</li>
-          </ul>
-          <p className="text-muted-foreground mb-2">Cumulative heartbeat milestones at 70 BPM:</p>
-          <ul className="list-disc list-inside space-y-1 text-muted-foreground">
-            <li>Age 10: approximately 295 million beats</li>
-            <li>Age 20: approximately 591 million beats</li>
-            <li>Age 30: approximately 887 million beats</li>
-            <li>Age 38: approximately 1.12 billion beats</li>
-            <li>Age 50: approximately 1.48 billion beats</li>
-            <li>Age 80: approximately 2.37 billion beats</li>
-          </ul>
-        </div>
-
-        {/* Section: 1 billion seconds */}
-        <div>
-          <h2 className="text-base font-semibold text-foreground mb-3">
-            When will I be 1 billion seconds old?
-          </h2>
-          <p className="text-muted-foreground mb-3">
-            One billion seconds equals{" "}
-            <strong className="text-foreground">31 years, 8 months, and approximately 8 days</strong>{" "}
-            (31.69 years exactly). Every person alive reaches this milestone in their early
-            thirties. It is one of the most striking numerical coincidences in human experience: a
-            number that sounds astronomical yet fits inside a single human lifetime.
-          </p>
-          <p className="text-muted-foreground mb-2">Second milestones by age:</p>
-          <ul className="list-disc list-inside space-y-1 text-muted-foreground">
-            <li>500 million seconds: age 15.85 (mid-teens)</li>
-            <li>1 billion seconds: age 31.69 (early thirties)</li>
-            <li>1.5 billion seconds: age 47.54 (late forties)</li>
-            <li>2 billion seconds: age 63.38 (early sixties)</li>
-            <li>2.5 billion seconds: age 79.23 (late seventies)</li>
-            <li>3 billion seconds: age 95.08 (mid-nineties)</li>
-          </ul>
-        </div>
-
-        {/* Section: Full moons */}
-        <div>
-          <h2 className="text-base font-semibold text-foreground mb-3">
-            How many full moons will I see in my lifetime?
-          </h2>
-          <p className="text-muted-foreground mb-3">
-            The Moon completes one full cycle every{" "}
-            <strong className="text-foreground">29.5 days</strong>, giving roughly 12.4 full moons
-            per year. Over an 80-year lifetime, a person witnesses approximately{" "}
-            <strong className="text-foreground">960 to 1,000 full moons</strong> in total — fewer
-            than 1,000, which makes each one worth pausing to notice.
-          </p>
-          <p className="text-muted-foreground mb-2">Full moons seen by age:</p>
-          <ul className="list-disc list-inside space-y-1 text-muted-foreground">
-            <li>Age 10: approximately 124 full moons</li>
-            <li>Age 20: approximately 248 full moons</li>
-            <li>Age 30: approximately 373 full moons</li>
-            <li>Age 40: approximately 497 full moons</li>
-            <li>Age 50: approximately 621 full moons</li>
-            <li>Age 60: approximately 745 full moons</li>
-            <li>Age 80: approximately 992 full moons</li>
-          </ul>
-        </div>
-
-        {/* Section: Milestone reference */}
-        <div>
-          <h2 className="text-base font-semibold text-foreground mb-3">
-            Notable age milestones to look out for
-          </h2>
-          <p className="text-muted-foreground mb-2">In days:</p>
-          <ul className="list-disc list-inside space-y-1 text-muted-foreground mb-3">
-            <li>1,000 days: age 2 years, 8 months</li>
-            <li>5,000 days: age 13 years, 8 months</li>
-            <li>10,000 days: age 27 years, 4 months</li>
-            <li>20,000 days: age 54 years, 9 months</li>
-            <li>25,000 days: age 68 years, 6 months</li>
-          </ul>
-          <p className="text-muted-foreground mb-2">In heartbeats (at 70 BPM):</p>
-          <ul className="list-disc list-inside space-y-1 text-muted-foreground mb-3">
-            <li>500 million heartbeats: approximately age 13.6</li>
-            <li>1 billion heartbeats: approximately age 27.2</li>
-            <li>2 billion heartbeats: approximately age 54.4</li>
-            <li>3 billion heartbeats: approximately age 81.6</li>
-          </ul>
-          <p className="text-muted-foreground mb-2">In full moons:</p>
-          <ul className="list-disc list-inside space-y-1 text-muted-foreground">
-            <li>100th full moon: approximately age 8</li>
-            <li>250th full moon: approximately age 20</li>
-            <li>500th full moon: approximately age 40</li>
-            <li>750th full moon: approximately age 60</li>
-            <li>1,000th full moon: approximately age 80</li>
-          </ul>
-        </div>
-
-        {/* Section: FAQ */}
-        <div>
-          <h2 className="text-base font-semibold text-foreground mb-4">
-            Common age calculator questions
-          </h2>
-          <div className="space-y-5">
-            <div>
-              <p className="font-medium text-foreground mb-1">
-                How old am I if I was born in a specific year?
-              </p>
-              <p className="text-muted-foreground">
-                Subtract your birth year from 2026. If your birthday has not yet passed this year,
-                subtract one more. Example: born in 1990 → 2026 − 1990 = 36, or 35 if your
-                birthday falls later in the year.
+        {/* BLOCK 1: ABOUT THE TOOL */}
+        <div className="hp-about">
+          <div className="hp-section-label">About This Tool</div>
+          <h2 className="hp-section-title">The age calculator built for people who want a real answer</h2>
+          <div className="hp-section-body">
+            <p>
+              WhatIsMyAge.me is a free, focused age calculator that tells you exactly how old you are —
+              not just in years, but in months, days, hours, minutes, and seconds. Enter your date of birth
+              and your complete age appears instantly, no account required.
+            </p>
+            <p>
+              Most age calculator sites are built around general-purpose calculator hubs, where your
+              question is one of hundreds competing for space. This site exists for one reason only:
+              to give you a precise, accurate age from a date of birth, as fast as possible.
+            </p>
+          </div>
+          <div className="hp-about-grid">
+            <div className="hp-about-col">
+              <h3>What it calculates</h3>
+              <p>
+                Your exact chronological age in years, months, days, hours, minutes, and seconds.
+                All units appear together in one result — no dropdowns, no page switching.
               </p>
             </div>
-            <div>
-              <p className="font-medium text-foreground mb-1">
-                Why does my age differ by one day on different calculators?
-              </p>
-              <p className="text-muted-foreground">
-                Some calculators count the birth date itself as day 1; others start counting the
-                day after birth. Whatismyage.me uses the standard convention: age is 0 at birth
-                and increments to 1 on the first birthday.
+            <div className="hp-about-col">
+              <h3>Who it's for</h3>
+              <p>
+                Anyone who needs a precise age — parents filling in school admission forms, professionals
+                verifying dates for documents, healthcare workers checking patient ages, or simply
+                curious people who want to know how many seconds they have been alive.
               </p>
             </div>
-            <div>
-              <p className="font-medium text-foreground mb-1">
-                How do I calculate my exact age without a calculator?
-              </p>
-              <p className="text-muted-foreground">
-                Subtract your birth year from the current year for an approximate answer. For
-                exactness, also check whether your current-year birthday has passed. If not,
-                subtract one additional year. For age in days, multiply your completed years by 365,
-                add leap-year days, then add days since your last birthday.
+            <div className="hp-about-col">
+              <h3>How it handles edge cases</h3>
+              <p>
+                The calculator accounts for leap years, varying month lengths, and end-of-month
+                date boundaries. A person born on February 29 is handled correctly.
               </p>
             </div>
-            <div>
-              <p className="font-medium text-foreground mb-1">
-                What is the most accurate free age calculator?
-              </p>
-              <p className="text-muted-foreground">
-                Any calculator that accounts for leap years and checks whether the current-year
-                birthday has passed gives the correct result in years. This calculator additionally
-                shows age in seconds, heartbeats, full moons, and generational identity — all in a
-                single result, with no account required.
-              </p>
-            </div>
-            <div>
-              <p className="font-medium text-foreground mb-1">
-                Is my date of birth stored when I use this calculator?
-              </p>
-              <p className="text-muted-foreground">
-                No. All calculations run entirely in your browser. Your birth date is never sent to
-                any server and is not stored, tracked, or shared.
+            <div className="hp-about-col">
+              <h3>Your privacy</h3>
+              <p>
+                Your date of birth is processed entirely within your browser. Nothing is transmitted
+                to a server. Nothing is stored or linked to you. The calculation happens locally.
               </p>
             </div>
           </div>
         </div>
 
-        {/* Visible author + date line */}
-        <p className="text-xs text-muted-foreground/60 border-t border-border pt-4">
-          Last updated: 22 July 2026 · Written by{" "}
-          <a href="/about/" className="hover:text-foreground transition-colors underline">
-            Snehal Patel
-          </a>
-        </p>
+        {/* BLOCK 2: WHO USES IT */}
+        <div className="hp-section-label">Common Uses</div>
+        <h2 className="hp-section-title">When exact age actually matters</h2>
+        <div className="hp-section-body">
+          <p>
+            Age is rarely just a number in the contexts where it truly counts.
+            Here are the situations where people reach for a precise age calculator most often.
+          </p>
+        </div>
+        <div className="hp-use-cases">
+          {[
+            { icon: "🏫", title: "School Admissions", body: "Many schools and districts require children to meet an age cutoff to the day. Being one day short of the threshold can mean waiting another full year. Exact age calculation removes all guesswork." },
+            { icon: "🛂", title: "Visa & Passport Forms", body: "Working holiday visas, dependent child entries, and many immigration categories require age in years and months on the date of application — not just a birth year." },
+            { icon: "🏥", title: "Healthcare & Clinical", body: "Doctors, nurses, and pharmacists use exact age for dosing calculations, developmental assessments, vaccine schedules, and screening eligibility — often to the month or day." },
+            { icon: "💼", title: "HR & Employment", body: "Many competitive exams, government roles, and age-gated job categories have strict minimum and maximum age limits calculated as of a specific date. One day past the cutoff can mean disqualification." },
+            { icon: "🎉", title: "Milestones & Curiosity", body: "How many days have you been alive? When will you turn exactly 1 billion seconds old? What day of the week were you born? These questions make for surprisingly memorable birthday moments." },
+            { icon: "📋", title: "Legal & Official Documents", body: "Courts, solicitors, insurance providers, and pension administrators all work with completed age — the number of full years elapsed — calculated from your exact date of birth to a specific reference date." },
+          ].map((uc) => (
+            <div key={uc.title} className="hp-uc-card">
+              <span className="hp-uc-icon">{uc.icon}</span>
+              <div className="hp-uc-title">{uc.title}</div>
+              <p className="hp-uc-body">{uc.body}</p>
+            </div>
+          ))}
+        </div>
+
+        <hr className="hp-divider" />
+
+        {/* BLOCK 3: HOW IT WORKS */}
+        <div className="hp-section-label">How It Works</div>
+        <h2 className="hp-section-title">The calculation behind your exact age</h2>
+        <div className="hp-section-body">
+          <p>
+            Age calculation looks simple. Subtract your birth year from the current year and
+            you get a number. But that rough figure is wrong roughly half the time — because it
+            does not account for whether your birthday has passed yet this year, how many days
+            are in each month, or how leap years affect the total day count.
+          </p>
+          <p>
+            A precise age calculation works differently. It computes the number of full years
+            elapsed, then the remaining months, then the remaining days — accounting for every
+            calendar edge case along the way.
+          </p>
+        </div>
+        <div className="hp-formula">{`Age = Today's Date − Date of Birth
+
+Step 1: Count full years elapsed since last birthday
+Step 2: Count full months elapsed since last birthday month
+Step 3: Count remaining days since last full month
+
+Example: Born 15 March 1990 → Today 6 August 2026
+  → 36 full years elapsed (birthday passed in March 2026)
+  → 4 full months since birthday (March → August)
+  → 22 remaining days (15 Jul → 6 Aug)
+  → Result: 36 years, 4 months, 22 days
+
+Extended output:
+  → Multiply days × 24 → hours lived
+  → Multiply hours × 60 → minutes lived
+  → Multiply minutes × 60 → seconds lived`}</div>
+        <div className="hp-steps">
+          {[
+            { n: "1", title: "Enter your date of birth", body: "Select your day, month, and year of birth using the date picker above. The full date is required for precise results — year alone is not enough." },
+            { n: "2", title: "Choose a target date (optional)", body: "By default, the calculator uses today's date. You can change this to any past or future date — useful for forms that ask for your age as of a specific deadline." },
+            { n: "3", title: "Read your complete result", body: "Your age appears in all units simultaneously — years, months, days, hours, minutes, and seconds — in a single result screen. No dropdowns. No extra pages." },
+            { n: "4", title: "Explore more", body: "Curious about your age in days, what generation you belong to, or when you'll hit one billion seconds? The blog below covers these and dozens more age-related questions." },
+          ].map((s) => (
+            <div key={s.n} className="hp-step">
+              <div className="hp-step-num">{s.n}</div>
+              <div className="hp-step-title">{s.title}</div>
+              <p className="hp-step-body">{s.body}</p>
+            </div>
+          ))}
+        </div>
+        <div className="hp-highlight">
+          <strong>A note on accuracy:</strong> WhatIsMyAge.me uses the Western chronological age system —
+          age increases on each birthday, starting from zero at birth. This is the standard used by
+          governments, schools, hospitals, and legal systems across most of the world.
+          For forms and official documents, always use the completed age (full years elapsed),
+          not the running age (the year currently being lived).
+        </div>
+
+        <hr className="hp-divider" />
+
+        {/* BLOCK 4: STATS */}
+        <div className="hp-section-label">By the Numbers</div>
+        <h2 className="hp-section-title">Age in perspective</h2>
+        <div className="hp-section-body">
+          <p>Most people think of age in years. Here is what those years look like in other units.</p>
+        </div>
+        <div className="hp-stats">
+          {[
+            { num: "365.25", label: "Days in an average year (including leap years)" },
+            { num: "8,766", label: "Hours in one year" },
+            { num: "~1 billion", label: "Seconds in 31.7 years" },
+            { num: "10,000", label: "Days old at approximately age 27.4" },
+            { num: "Feb 29", label: "The edge case every age calculator must handle correctly" },
+            { num: "~2.5 bn", label: "Seconds lived by age 80" },
+          ].map((s) => (
+            <div key={s.label} className="hp-stat">
+              <span className="hp-stat-num">{s.num}</span>
+              <span className="hp-stat-label">{s.label}</span>
+            </div>
+          ))}
+        </div>
+
+        <hr className="hp-divider" />
+
+        {/* BLOCK 5: FAQ */}
+        <div className="hp-section-label">Frequently Asked Questions</div>
+        <h2 className="hp-section-title">Questions about age calculation</h2>
+        <div className="hp-faq">
+          {faqs.map((faq, i) => (
+            <div key={i} className={`hp-faq-item${openFaq === i ? " open" : ""}`}>
+              <button className="hp-faq-q" onClick={() => toggleFaq(i)} type="button">
+                {faq.q}
+                <span className="hp-faq-icon">+</span>
+              </button>
+              <div className="hp-faq-a">{faq.a}</div>
+            </div>
+          ))}
+        </div>
+
+        <hr className="hp-divider" />
+
+        {/* BLOCK 6: FROM THE BLOG */}
+        <div className="hp-section-label">From the Blog</div>
+        <h2 className="hp-section-title">Explore more age-related questions</h2>
+        <div className="hp-section-body">
+          <p>
+            Beyond your exact age, there is a lot more to discover. The WhatIsMyAge.me blog
+            covers age curiosities, calculation guides, and tools for specific use cases.
+          </p>
+        </div>
+        <div className="hp-articles">
+          {[
+            { href: "/blog/how-many-seconds-old-am-i/", tag: "Fun Facts", title: "How Many Seconds Old Am I?", desc: "The surprisingly large number behind a seemingly simple question." },
+            { href: "/blog/how-many-weeks-old-am-i/", tag: "Fun Facts", title: "How Many Weeks Old Am I?", desc: "Your age in weeks — and why the number is always bigger than you expect." },
+            { href: "/blog/what-generation-am-i/", tag: "Generations", title: "What Generation Am I?", desc: "Boomer, Gen X, Millennial, or Gen Z — find out which generation you belong to." },
+            { href: "/blog/when-will-i-be-1-billion-seconds-old/", tag: "Milestones", title: "When Will I Be 1 Billion Seconds Old?", desc: "It happens at 31.7 years. Here's exactly when your billion-second birthday falls." },
+            { href: "/blog/what-day-of-the-week-was-i-born/", tag: "Fun Facts", title: "What Day of the Week Was I Born?", desc: "Monday's child is fair of face — but which day were you actually born on?" },
+            { href: "/blog/how-to-calculate-age-in-days/", tag: "Guide", title: "How to Calculate Age in Days", desc: "The step-by-step method for calculating exact age in days, manually or with a tool." },
+          ].map((a) => (
+            <Link key={a.href} className="hp-article-card" to={a.href}>
+              <span className="hp-article-tag">{a.tag}</span>
+              <span className="hp-article-title">{a.title}</span>
+              <span className="hp-article-desc">{a.desc}</span>
+            </Link>
+          ))}
+        </div>
+
+        <hr className="hp-divider" />
+
+        {/* BLOCK 7: ABOUT THE SITE (E-E-A-T) */}
+        <div className="hp-section-label">About This Site</div>
+        <h2 className="hp-section-title">Built for accuracy, not for clicks</h2>
+        <div className="hp-section-body">
+          <p>
+            WhatIsMyAge.me was created because most age calculator sites bury the tool under
+            advertising, require you to navigate between multiple pages for different units,
+            or deliver a result surrounded by so much surrounding content that finding the
+            actual answer takes longer than it should.
+          </p>
+          <p>
+            This site does one thing: it tells you how old you are, precisely, in every unit
+            that matters, immediately. The blog adds educational context for people who want
+            to understand the calculation, explore what their age means in different units,
+            or learn when a precise age calculation is legally or clinically important.
+          </p>
+          <p>
+            Every calculation uses the Gregorian calendar standard and handles all known
+            edge cases — leap years, month-end dates, and year-end boundaries — correctly.
+            If you notice a result that seems wrong, use the contact page to let us know.
+          </p>
+        </div>
+        <div className="hp-author-strip">
+          <div className="hp-author-avatar">🧮</div>
+          <div className="hp-author-text">
+            <div className="hp-author-name">WhatIsMyAge.me — Built by Snehal Patel</div>
+            <p className="hp-author-bio">
+              Developer and data enthusiast from Mumbai. Built this because age calculators
+              shouldn't make you work for a simple answer. Every number here is calculated
+              correctly, every edge case handled.{" "}
+              <Link to="/about" className="hp-author-link" style={{ display: "inline", border: "none", padding: 0, fontSize: "inherit", color: "inherit" }}>Read the full story →</Link>
+            </p>
+            <div className="hp-author-links">
+              <Link className="hp-author-link" to="/about">About</Link>
+              <Link className="hp-author-link" to="/contact">Contact</Link>
+              <Link className="hp-author-link" to="/privacy">Privacy</Link>
+              <Link className="hp-author-link" to="/blog">Blog</Link>
+            </div>
+          </div>
+        </div>
 
       </div>
     </section>
