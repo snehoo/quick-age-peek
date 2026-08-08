@@ -77,7 +77,7 @@ const About = () => {
             <p className="text-foreground/90 leading-relaxed">
               Your date of birth is processed entirely in your browser. We don't
               store it, track it, or sell it. See our{" "}
-              <Link to="/privacy" className="text-primary underline">
+              <Link to="/privacy/" className="text-primary underline">
                 privacy policy
               </Link>{" "}
               for more details.
@@ -88,7 +88,7 @@ const About = () => {
             <h2 className="text-xl text-foreground">Questions?</h2>
             <p className="text-foreground/90 leading-relaxed">
               Have feedback, found a bug, or just want to say hi? Feel free to{" "}
-              <Link to="/contact" className="text-primary underline">
+              <Link to="/contact/" className="text-primary underline">
                 get in touch
               </Link>
               .

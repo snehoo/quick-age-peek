@@ -127,7 +127,7 @@ export const BornInYearArticle = (p: BornInYearProps) => {
   return (
     <ArticleShell>
       <Link
-        to="/blog"
+        to="/blog/"
         className="text-sm text-muted-foreground hover:text-foreground transition-colors"
       >
         ← All posts

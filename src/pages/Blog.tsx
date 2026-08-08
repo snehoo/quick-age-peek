@@ -566,9 +566,9 @@ const Blog = () => {
           whatismyage.me
         </Link>
         <span aria-hidden>·</span>
-        <Link to="/blog" className="hover:text-foreground transition-colors">Blog</Link>
+        <Link to="/blog/" className="hover:text-foreground transition-colors">Blog</Link>
         <span aria-hidden>·</span>
-        <Link to="/privacy" className="hover:text-foreground transition-colors">
+        <Link to="/privacy/" className="hover:text-foreground transition-colors">
           Privacy
         </Link>
       </footer>

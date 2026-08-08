@@ -294,13 +294,13 @@ Extended output:
               Developer and data enthusiast from Mumbai. Built this because age calculators
               shouldn't make you work for a simple answer. Every number here is calculated
               correctly, every edge case handled.{" "}
-              <Link to="/about" className="hp-author-link" style={{ display: "inline", border: "none", padding: 0, fontSize: "inherit", color: "inherit" }}>Read the full story →</Link>
+              <Link to="/about/" className="hp-author-link" style={{ display: "inline", border: "none", padding: 0, fontSize: "inherit", color: "inherit" }}>Read the full story →</Link>
             </p>
             <div className="hp-author-links">
-              <Link className="hp-author-link" to="/about">About</Link>
-              <Link className="hp-author-link" to="/contact">Contact</Link>
-              <Link className="hp-author-link" to="/privacy">Privacy</Link>
-              <Link className="hp-author-link" to="/blog">Blog</Link>
+              <Link className="hp-author-link" to="/about/">About</Link>
+              <Link className="hp-author-link" to="/contact/">Contact</Link>
+              <Link className="hp-author-link" to="/privacy/">Privacy</Link>
+              <Link className="hp-author-link" to="/blog/">Blog</Link>
             </div>
           </div>
         </div>

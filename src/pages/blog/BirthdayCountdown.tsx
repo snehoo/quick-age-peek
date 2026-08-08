@@ -38,7 +38,7 @@ const BirthdayCountdown = () => {
 
   return (
     <ArticleShell>
-      <Link to="/blog" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+      <Link to="/blog/" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
         ← All posts
       </Link>
 

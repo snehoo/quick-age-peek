@@ -144,7 +144,7 @@ const HeartbeatsLifetime = () => {
       <main className="flex-1">
         <article className="max-w-2xl mx-auto px-5 py-12">
           <Link
-            to="/blog"
+            to="/blog/"
             className="text-sm text-muted-foreground hover:text-foreground transition-colors"
           >
             ← All posts
@@ -343,7 +343,7 @@ const HeartbeatsLifetime = () => {
           </div>
 
           <p className="text-sm">
-            <Link to="/blog" className="text-primary hover:underline">
+            <Link to="/blog/" className="text-primary hover:underline">
               ← All posts
             </Link>
           </p>
@@ -355,11 +355,11 @@ const HeartbeatsLifetime = () => {
           whatismyage.me
         </Link>
         <span aria-hidden>·</span>
-        <Link to="/blog" className="hover:text-foreground transition-colors">
+        <Link to="/blog/" className="hover:text-foreground transition-colors">
           Blog
         </Link>
         <span aria-hidden>·</span>
-        <Link to="/privacy" className="hover:text-foreground transition-colors">
+        <Link to="/privacy/" className="hover:text-foreground transition-colors">
           Privacy
         </Link>
       </footer>

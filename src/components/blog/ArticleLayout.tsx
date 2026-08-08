@@ -30,9 +30,9 @@ export const ArticleFooter = () => (
       whatismyage.me
     </Link>
     <span aria-hidden>·</span>
-    <Link to="/blog" className="hover:text-foreground transition-colors">Blog</Link>
+    <Link to="/blog/" className="hover:text-foreground transition-colors">Blog</Link>
     <span aria-hidden>·</span>
-    <Link to="/privacy" className="hover:text-foreground transition-colors">
+    <Link to="/privacy/" className="hover:text-foreground transition-colors">
       Privacy
     </Link>
   </footer>
@@ -198,7 +198,7 @@ export const ExternalLink = ({ href, children }: { href: string; children: React
 
 export const BackToBlog = () => (
   <p className="text-sm">
-    <Link to="/blog" className="text-primary hover:underline">
+    <Link to="/blog/" className="text-primary hover:underline">
       ← All posts
     </Link>
   </p>
