@@ -2,7 +2,7 @@ import { ArticleShell, BackToBlog, AuthorBio,
   RelatedPosts, ByLine, BulletList} from "@/components/blog/ArticleLayout";
 import { useArticleMeta } from "@/components/blog/articleMeta";
 
-const CANONICAL = "https://whatismyage.me/blog/what-happens-inside-your-body-over-time-statistics";
+const CANONICAL = "https://whatismyage.me/blog/what-happens-inside-your-body-over-time-statistics/";
 const TITLE = "What Happens Inside Your Body Over Time Statistics (2025)";
 const DESC =
   "55+ data points on sleep, heartbeats, calories, and biological aging across a human lifetime in 2025.";

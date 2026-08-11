@@ -6,7 +6,7 @@ import { BulletList } from "@/components/blog/ArticleLayout";
 const meta = {
   title: "How Many Hours Old Am I? Calculate Your Exact Age in Hours | whatismyage.me",
   description: "How many hours old are you? Find out with our formula and quick reference table — plus what your hour count reveals about the extraordinary scale of a human life.",
-  canonical: "https://whatismyage.me/blog/how-many-hours-old-am-i",
+  canonical: "https://whatismyage.me/blog/how-many-hours-old-am-i/",
   publishedDate: "2026-06-24",
   headline: "How Many Hours Old Am I?",
 };

@@ -16,7 +16,7 @@ import {
 } from "@/components/blog/ArticleLayout";
 import { useArticleMeta } from "@/components/blog/articleMeta";
 
-const CANONICAL = "https://whatismyage.me/blog/how-old-am-i";
+const CANONICAL = "https://whatismyage.me/blog/how-old-am-i/";
 const TITLE = "How Old Am I? The Ultimate Age Calculator Guide | whatismyage.me";
 const DESC = "You think you know your age. But do you really? Discover dozens of ways to measure how old you actually are — from days to heartbeats and full moons.";
 const HEADLINE = "How Old Am I? The Ultimate Age Calculator Guide";

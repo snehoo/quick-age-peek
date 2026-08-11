@@ -39,7 +39,7 @@ const FAQ_ITEMS = [
   },
 ];
 
-const CANONICAL = "https://whatismyage.me/blog/how-many-seconds-old-am-i";
+const CANONICAL = "https://whatismyage.me/blog/how-many-seconds-old-am-i/";
 const TITLE = "How Many Seconds Old Are You Right Now? | whatismyage.me";
 const DESC =
   "Find out how many seconds old you are — and what that number reveals about time, the billion-second milestone, and how seconds compare to heartbeats.";

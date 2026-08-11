@@ -28,7 +28,7 @@ const FAQ_ITEMS = [
 const meta = {
   title: "How to Calculate Your Exact Age in Days | whatismyage.me",
   description: "Learn how to calculate your exact age in days, account for leap years correctly, and what milestone day counts mean — or find your number instantly.",
-  canonical: "https://whatismyage.me/blog/how-to-calculate-age-in-days",
+  canonical: "https://whatismyage.me/blog/how-to-calculate-age-in-days/",
   publishedDate: "2026-06-24",
   headline: "How to Calculate Your Exact Age in Days",
 };

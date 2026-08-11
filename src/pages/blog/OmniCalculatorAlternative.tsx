@@ -15,7 +15,7 @@ import {
 } from "@/components/blog/ArticleLayout";
 import { useArticleMeta } from "@/components/blog/articleMeta";
 
-const CANONICAL = "https://whatismyage.me/blog/omnicalculator-alternative-age-tool";
+const CANONICAL = "https://whatismyage.me/blog/omnicalculator-alternative-age-tool/";
 const TITLE = "Omni Calculator Alternative for Age | WhatIsMyAge.me";
 const DESC = "Discover the best age calculator for your needs — accurate, fast, and designed specifically for ease of use.";
 const HEADLINE = "Omni Calculator Alternative for Age";

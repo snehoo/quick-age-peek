@@ -19,7 +19,7 @@ import {
 } from "@/components/blog/ArticleLayout";
 import { useArticleMeta } from "@/components/blog/articleMeta";
 
-const CANONICAL = "https://whatismyage.me/blog/what-day-of-the-week-was-i-born";
+const CANONICAL = "https://whatismyage.me/blog/what-day-of-the-week-was-i-born/";
 const TITLE = "What Day of the Week Were You Born? | whatismyage.me";
 const DESC =
   "Find out what day of the week you were born — and what it means. Discover the Doomsday algorithm, birth day personality theories, and weekday statistics.";

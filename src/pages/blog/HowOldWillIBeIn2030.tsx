@@ -8,7 +8,7 @@ import { useArticleMeta } from "@/components/blog/articleMeta";
 const meta = {
   title: "How Old Will I Be in 2030? Age Calculator by Birth Year",
   description: "Find out exactly how old you'll be in 2030 with our complete birth year table, plus what the world might look like when you get there.",
-  canonical: "https://whatismyage.me/blog/how-old-will-i-be-in-2030",
+  canonical: "https://whatismyage.me/blog/how-old-will-i-be-in-2030/",
   publishedDate: "2026-06-24",
   headline: "How Old Will I Be in 2030?",
 };

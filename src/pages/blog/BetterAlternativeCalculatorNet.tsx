@@ -15,7 +15,7 @@ import {
 } from "@/components/blog/ArticleLayout";
 import { useArticleMeta } from "@/components/blog/articleMeta";
 
-const CANONICAL = "https://whatismyage.me/blog/better-alternative-to-calculator-net";
+const CANONICAL = "https://whatismyage.me/blog/better-alternative-to-calculator-net/";
 const TITLE = "Better Alternative to Calculator.net Age Tool | WhatIsMyAge.me";
 const DESC = "Discover the best age calculator for your needs — accurate, fast, and designed specifically for ease of use.";
 const HEADLINE = "Better Alternative to Calculator.net Age Tool";

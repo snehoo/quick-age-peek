@@ -2,7 +2,7 @@ import { ArticleShell, BackToBlog, AuthorBio,
   RelatedPosts, ByLine, BulletList} from "@/components/blog/ArticleLayout";
 import { useArticleMeta } from "@/components/blog/articleMeta";
 
-const CANONICAL = "https://whatismyage.me/blog/age-calculator-statistics";
+const CANONICAL = "https://whatismyage.me/blog/age-calculator-statistics/";
 const TITLE = "Age Calculator Statistics (2025)";
 const DESC =
   "50+ data points on age calculator usage, demographics, devices, regional demand, and AI/voice trends in 2025.";

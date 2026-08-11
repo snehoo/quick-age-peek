@@ -2,7 +2,7 @@ import { ArticleShell, BackToBlog, AuthorBio,
   RelatedPosts, ByLine} from "@/components/blog/ArticleLayout";
 import { useArticleMeta } from "@/components/blog/articleMeta";
 
-const CANONICAL = "https://whatismyage.me/blog/how-different-age-groups-behave-online-statistics";
+const CANONICAL = "https://whatismyage.me/blog/how-different-age-groups-behave-online-statistics/";
 const TITLE = "How Different Age Groups Behave Online Statistics (2025)";
 const DESC =
   "55+ data points on Gen Z, Millennials, screen time, mobile usage, and digital habits across age groups in 2025.";

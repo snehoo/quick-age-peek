@@ -28,7 +28,7 @@ const FAQ_ITEMS = [
 const meta = {
   title: "What Generation Am I? Complete Guide | whatismyage.me",
   description: "Find out which generation you belong to — Gen Z, Millennial, Gen X, Boomer — with birth year ranges, defining traits, and what makes each generation unique.",
-  canonical: "https://whatismyage.me/blog/what-generation-am-i",
+  canonical: "https://whatismyage.me/blog/what-generation-am-i/",
   publishedDate: "2026-06-24",
   headline: "What Generation Am I? The Complete Birth Year Guide",
 };

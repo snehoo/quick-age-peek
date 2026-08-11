@@ -8,7 +8,7 @@ import { useArticleMeta } from "@/components/blog/articleMeta";
 const meta = {
   title: "What Day Will I Be 10,000 Days Old? Find Your Exact Date",
   description: "The 10,000th day of your life is a milestone hiding in plain sight. Find out exactly when it arrives — and why this number says something profound about a human life.",
-  canonical: "https://whatismyage.me/blog/what-day-will-i-be-10000-days-old",
+  canonical: "https://whatismyage.me/blog/what-day-will-i-be-10000-days-old/",
   publishedDate: "2026-06-24",
   headline: "What Day Will I Be 10,000 Days Old?",
 };

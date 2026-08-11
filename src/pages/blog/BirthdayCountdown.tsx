@@ -18,7 +18,7 @@ import {
 } from "@/components/blog/ArticleLayout";
 import { useArticleMeta } from "@/components/blog/articleMeta";
 
-const CANONICAL = "https://whatismyage.me/blog/what-does-days-to-birthday-mean";
+const CANONICAL = "https://whatismyage.me/blog/what-does-days-to-birthday-mean/";
 const TITLE = "How Many Days Till My Birthday? Countdown Calculator";
 const DESC =
   "Find out exactly how many days until your birthday — enter your birth date for a live countdown, or count it yourself with the simple method explained here.";

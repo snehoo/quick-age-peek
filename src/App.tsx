@@ -67,6 +67,9 @@ import HowOldWillIBeIn2040 from "./pages/blog/HowOldWillIBeIn2040.tsx";
 import HowOldWillIBeIn2050 from "./pages/blog/HowOldWillIBeIn2050.tsx";
 import WhatDayWillIBe10000DaysOld from "./pages/blog/WhatDayWillIBe10000DaysOld.tsx";
 import WhenWillIBe1BillionSecondsOld from "./pages/blog/WhenWillIBe1BillionSecondsOld.tsx";
+import HowManyYearsIs1BillionSeconds from "./pages/blog/HowManyYearsIs1BillionSeconds.tsx";
+import WhatIsABirthdayTwin from "./pages/blog/WhatIsABirthdayTwin.tsx";
+import HowManyHoursInALifetime from "./pages/blog/HowManyHoursInALifetime.tsx";
 import HowOldAmI from "./pages/blog/HowOldAmI.tsx";
 import AgeCalculator from "./pages/blog/AgeCalculator.tsx";
 import AgeInDaysCalculator from "./pages/blog/AgeInDaysCalculator.tsx";
@@ -237,6 +240,12 @@ const App = () => (
           <Route path="/blog/what-day-will-i-be-10000-days-old/" element={<WhatDayWillIBe10000DaysOld />} />
           <Route path="/blog/when-will-i-be-1-billion-seconds-old" element={<WhenWillIBe1BillionSecondsOld />} />
           <Route path="/blog/when-will-i-be-1-billion-seconds-old/" element={<WhenWillIBe1BillionSecondsOld />} />
+          <Route path="/blog/how-many-years-is-1-billion-seconds" element={<HowManyYearsIs1BillionSeconds />} />
+          <Route path="/blog/how-many-years-is-1-billion-seconds/" element={<HowManyYearsIs1BillionSeconds />} />
+          <Route path="/blog/what-is-a-birthday-twin" element={<WhatIsABirthdayTwin />} />
+          <Route path="/blog/what-is-a-birthday-twin/" element={<WhatIsABirthdayTwin />} />
+          <Route path="/blog/how-many-hours-in-a-lifetime" element={<HowManyHoursInALifetime />} />
+          <Route path="/blog/how-many-hours-in-a-lifetime/" element={<HowManyHoursInALifetime />} />
 
           <Route path="/blog/age-calculator-for-legal-documents" element={<AgeCalculatorLegalDocuments />} />
           <Route path="/blog/age-calculator-for-legal-documents/" element={<AgeCalculatorLegalDocuments />} />

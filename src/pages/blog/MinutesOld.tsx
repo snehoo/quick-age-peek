@@ -6,7 +6,7 @@ import { BulletList } from "@/components/blog/ArticleLayout";
 const meta = {
   title: "How Many Minutes Old Am I? Calculate Your Age in Minutes | whatismyage.me",
   description: "How many minutes old are you? Probably more than you think. Find your age in minutes instantly, understand the formula, and discover what that enormous number really means.",
-  canonical: "https://whatismyage.me/blog/how-many-minutes-old-am-i",
+  canonical: "https://whatismyage.me/blog/how-many-minutes-old-am-i/",
   publishedDate: "2026-06-24",
   headline: "How Many Minutes Old Am I?",
 };

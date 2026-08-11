@@ -20,7 +20,7 @@ import {
 } from "@/components/blog/ArticleLayout";
 import { useArticleMeta } from "@/components/blog/articleMeta";
 
-const CANONICAL = "https://whatismyage.me/blog/calculatorsoup-vs-omnicalculator";
+const CANONICAL = "https://whatismyage.me/blog/calculatorsoup-vs-omnicalculator/";
 const TITLE =
   "CalculatorSoup vs OmniCalculator Age Calculator | whatismyage.me";
 const DESC =

@@ -16,7 +16,7 @@ import {
 } from "@/components/blog/ArticleLayout";
 import { useArticleMeta } from "@/components/blog/articleMeta";
 
-const CANONICAL = "https://whatismyage.me/blog/age-calculator";
+const CANONICAL = "https://whatismyage.me/blog/age-calculator/";
 const TITLE = "Age Calculator — The Complete Guide | whatismyage.me";
 const DESC = "The ultimate age calculator guide. Calculate your age in years, days, hours, minutes, seconds, heartbeats, and full moons. Learn why different measurements matter.";
 const HEADLINE = "Age Calculator — The Complete Guide";

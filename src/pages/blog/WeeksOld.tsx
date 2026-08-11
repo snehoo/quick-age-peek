@@ -6,7 +6,7 @@ import { BulletList } from "@/components/blog/ArticleLayout";
 const meta = {
   title: "How Many Weeks Old Am I? Calculate Your Age in Weeks | whatismyage.me",
   description: "How many weeks old are you? Find out instantly — plus the formula, week milestones to look forward to, and why thinking in weeks changes how you see your life.",
-  canonical: "https://whatismyage.me/blog/how-many-weeks-old-am-i",
+  canonical: "https://whatismyage.me/blog/how-many-weeks-old-am-i/",
   publishedDate: "2026-06-24",
   headline: "How Many Weeks Old Am I?",
 };

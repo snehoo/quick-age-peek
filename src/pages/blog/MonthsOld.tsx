@@ -6,7 +6,7 @@ import { BulletList } from "@/components/blog/ArticleLayout";
 const meta = {
   title: "How Many Months Old Am I? Calculate Your Age in Months | whatismyage.me",
   description: "Wondering how many months old you are? Get the formula, a quick reference table, and the fascinating reason months are one of the most meaningful ways to measure a human life.",
-  canonical: "https://whatismyage.me/blog/how-many-months-old-am-i",
+  canonical: "https://whatismyage.me/blog/how-many-months-old-am-i/",
   publishedDate: "2026-06-24",
   headline: "How Many Months Old Am I?",
 };

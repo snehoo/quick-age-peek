@@ -36,7 +36,7 @@ const FAQ_ITEMS = [
 ];
 
 const CANONICAL =
-  "https://whatismyage.me/blog/calculator-net-vs-calculatorsoup-age-calculator";
+  "https://whatismyage.me/blog/calculator-net-vs-calculatorsoup-age-calculator/";
 const TITLE =
   "Calculator.net vs CalculatorSoup Age Calculator | whatismyage.me";
 const DESC =

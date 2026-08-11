@@ -578,6 +578,69 @@ export const ROUTE_META = {
       },
     ],
   },
+  "/blog/how-many-years-is-1-billion-seconds": {
+    title: "How Many Years is 1 Billion Seconds? (Full Breakdown)",
+    description:
+      "1 billion seconds = 31.69 years. Here's the exact conversion, the formula, how old you'll be when you hit it, and what else takes roughly a billion seconds.",
+    canonical: `${SITE}/blog/how-many-years-is-1-billion-seconds/`,
+    ogType: "article",
+    faq: [
+      {
+        q: "How many years is 1 billion seconds?",
+        a: "1 billion seconds equals approximately 31.69 years — exactly 31 years, 8 months, and about 19 days, using the Gregorian calendar average of 365.2425 days per year.",
+      },
+      {
+        q: "How many days is 1 billion seconds?",
+        a: "1 billion seconds is approximately 11,574 days.",
+      },
+      {
+        q: "How many years is 2 billion seconds?",
+        a: "2 billion seconds is approximately 63.38 years.",
+      },
+    ],
+  },
+  "/blog/what-is-a-birthday-twin": {
+    title: "Birthday Twin Meaning: What Is a Birthday Twin & How to Find Yours",
+    description:
+      "A birthday twin is someone who shares your exact birth date (day and month) but was born in a different year. Here's what it means, famous examples, and how to find yours.",
+    canonical: `${SITE}/blog/what-is-a-birthday-twin/`,
+    ogType: "article",
+    faq: [
+      {
+        q: "What is a birthday twin?",
+        a: "A birthday twin is someone who shares your exact birth date — the same day and month — but was born in a different year. For example, if you were born on March 14, anyone else born on March 14 in any year is your birthday twin.",
+      },
+      {
+        q: "How common is it to share a birthday?",
+        a: "With roughly 8 billion people and 365 birthdays, about 21.9 million people share any given birthday on average. In a group of just 23 people, there's a 50% chance two people share a birthday.",
+      },
+      {
+        q: "What is the difference between a birthday twin and a real twin?",
+        a: "A birthday twin shares only the same calendar day and month as you, not a biological relationship or the same birth year. Real (biological) twins share the same parents and are born on the same day and year.",
+      },
+    ],
+  },
+  "/blog/how-many-hours-in-a-lifetime": {
+    title: "How Many Hours Are in a Human Lifetime? (The Full Breakdown)",
+    description:
+      "An average 80-year human life contains roughly 700,800 hours — but you spend about 233,600 of them asleep. Here's how the rest breaks down.",
+    canonical: `${SITE}/blog/how-many-hours-in-a-lifetime/`,
+    ogType: "article",
+    faq: [
+      {
+        q: "How many hours are in a human lifetime?",
+        a: "An average 80-year human life contains approximately 700,800 total hours. Of those, around 233,600 hours are spent sleeping, leaving roughly 467,200 waking hours.",
+      },
+      {
+        q: "How many waking hours does a person have in their lifetime?",
+        a: "Based on an 80-year lifespan with 8 hours of sleep per night, a person has approximately 467,200 waking hours in their lifetime.",
+      },
+      {
+        q: "How many hours old am I?",
+        a: "Multiply your age in years by 8,766 (the average number of hours per year including leap years). For example, a 30-year-old is approximately 262,800 hours old.",
+      },
+    ],
+  },
 };
 
 const escapeHtml = (s) =>

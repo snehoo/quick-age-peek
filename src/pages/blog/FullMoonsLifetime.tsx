@@ -29,7 +29,7 @@ const meta = {
   title: "How Many Full Moons in a Lifetime? | whatismyage.me",
   description:
     "There are roughly 13 full moons per year. Over an average lifetime you will see around 1,000. Discover the lunar cycle, blue moons, and your personal full moon count.",
-  canonical: "https://whatismyage.me/blog/how-many-full-moons-in-a-lifetime",
+  canonical: "https://whatismyage.me/blog/how-many-full-moons-in-a-lifetime/",
   publishedDate: "2026-06-24",
   headline: "How Many Full Moons Will You See in Your Lifetime?",
 };

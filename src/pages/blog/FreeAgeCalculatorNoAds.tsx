@@ -15,7 +15,7 @@ import {
 } from "@/components/blog/ArticleLayout";
 import { useArticleMeta } from "@/components/blog/articleMeta";
 
-const CANONICAL = "https://whatismyage.me/blog/free-age-calculator-no-ads";
+const CANONICAL = "https://whatismyage.me/blog/free-age-calculator-no-ads/";
 const TITLE = "Best Ad-Free Age Calculator Online | WhatIsMyAge.me";
 const DESC = "Discover the best age calculator for your needs — accurate, fast, and designed specifically for ease of use.";
 const HEADLINE = "Best Ad-Free Age Calculator Online";

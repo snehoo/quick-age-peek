@@ -94,7 +94,7 @@ const Figure = ({ src, alt, credit }: ImageBlock) => (
 );
 
 export const BornInYearArticle = (p: BornInYearProps) => {
-  const canonical = `https://whatismyage.me/blog/${p.slug}`;
+  const canonical = `https://whatismyage.me/blog/${p.slug}/`;
   const publishedDate = p.publishedDate || "2026-06-24";
   const currentYear = 2026;
   const approxAge = currentYear - p.year;

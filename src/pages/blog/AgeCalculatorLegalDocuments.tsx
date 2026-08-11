@@ -15,7 +15,7 @@ import {
 } from "@/components/blog/ArticleLayout";
 import { useArticleMeta } from "@/components/blog/articleMeta";
 
-const CANONICAL = "https://whatismyage.me/blog/age-calculator-for-legal-documents";
+const CANONICAL = "https://whatismyage.me/blog/age-calculator-for-legal-documents/";
 const TITLE = "Age Calculator for Legal Documents | WhatIsMyAge.me";
 const DESC = "Discover the best age calculator for your needs — accurate, fast, and designed specifically for ease of use.";
 const HEADLINE = "Age Calculator for Legal Documents";

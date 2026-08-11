@@ -16,7 +16,7 @@ import {
 } from "@/components/blog/ArticleLayout";
 import { useArticleMeta } from "@/components/blog/articleMeta";
 
-const CANONICAL = "https://whatismyage.me/blog/how-to-find-your-zodiac-sign-by-birth-date";
+const CANONICAL = "https://whatismyage.me/blog/how-to-find-your-zodiac-sign-by-birth-date/";
 const TITLE = "How to Find Your Zodiac Sign by Birth Date | whatismyage.me";
 const DESC =
   "Find your zodiac sign by birth date — covering Western, Vedic, and Chinese astrology. Discover what your sun sign, moon sign, and rising sign actually mean.";

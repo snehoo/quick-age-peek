@@ -8,7 +8,7 @@ import { useArticleMeta } from "@/components/blog/articleMeta";
 const meta = {
   title: "How Old Will I Be in 2040? Age Calculator by Birth Year",
   description: "Wondering how old you'll be in 2040? Find your age instantly with our complete birth year table — plus what the world could look like in fourteen years.",
-  canonical: "https://whatismyage.me/blog/how-old-will-i-be-in-2040",
+  canonical: "https://whatismyage.me/blog/how-old-will-i-be-in-2040/",
   publishedDate: "2026-06-24",
   headline: "How Old Will I Be in 2040?",
 };

@@ -15,7 +15,7 @@ import {
 } from "@/components/blog/ArticleLayout";
 import { useArticleMeta } from "@/components/blog/articleMeta";
 
-const CANONICAL = "https://whatismyage.me/blog/calculatorsoup-age-calculator-alternative";
+const CANONICAL = "https://whatismyage.me/blog/calculatorsoup-age-calculator-alternative/";
 const TITLE = "CalculatorSoup Age Calculator Alternative | WhatIsMyAge.me";
 const DESC = "Discover the best age calculator for your needs — accurate, fast, and designed specifically for ease of use.";
 const HEADLINE = "CalculatorSoup Age Calculator Alternative";

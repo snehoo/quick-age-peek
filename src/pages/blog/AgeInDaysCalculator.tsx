@@ -17,7 +17,7 @@ import {
 } from "@/components/blog/ArticleLayout";
 import { useArticleMeta } from "@/components/blog/articleMeta";
 
-const CANONICAL = "https://whatismyage.me/blog/age-in-days-calculator";
+const CANONICAL = "https://whatismyage.me/blog/age-in-days-calculator/";
 const TITLE = "Age in Days Calculator — Find Your Exact Day Count | whatismyage.me";
 const DESC = "Calculate your exact age in days with precision. Discover milestone days, track your day count, and see what your life's days reveal about time.";
 const HEADLINE = "Age in Days Calculator — Find Your Exact Day Count";

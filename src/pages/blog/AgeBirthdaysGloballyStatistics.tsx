@@ -2,7 +2,7 @@ import { ArticleShell, BackToBlog, AuthorBio,
   RelatedPosts, ByLine, BulletList } from "@/components/blog/ArticleLayout";
 import { useArticleMeta } from "@/components/blog/articleMeta";
 
-const CANONICAL = "https://whatismyage.me/blog/how-age-and-birthdays-distribute-globally-statistics";
+const CANONICAL = "https://whatismyage.me/blog/how-age-and-birthdays-distribute-globally-statistics/";
 const TITLE = "How Age and Birthdays Distribute Globally Statistics (2025)";
 const DESC =
   "52+ data points on global population age, birth trends, fertility, and birthday distribution patterns in 2025.";

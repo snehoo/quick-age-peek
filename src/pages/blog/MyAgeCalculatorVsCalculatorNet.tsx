@@ -19,7 +19,7 @@ import {
 } from "@/components/blog/ArticleLayout";
 import { useArticleMeta } from "@/components/blog/articleMeta";
 
-const CANONICAL = "https://whatismyage.me/blog/myagecalculator-vs-calculator-net";
+const CANONICAL = "https://whatismyage.me/blog/myagecalculator-vs-calculator-net/";
 const TITLE = "MyAgeCalculator vs Calculator.net | whatismyage.me";
 const DESC =
   "MyAgeCalculator vs Calculator.net: which finds your exact age fastest? We compare speed, features, timezone support & precision. Find your answer in seconds.";

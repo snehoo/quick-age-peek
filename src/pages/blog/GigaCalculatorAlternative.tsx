@@ -15,7 +15,7 @@ import {
 } from "@/components/blog/ArticleLayout";
 import { useArticleMeta } from "@/components/blog/articleMeta";
 
-const CANONICAL = "https://whatismyage.me/blog/gigacalculator-age-calculator-alternative";
+const CANONICAL = "https://whatismyage.me/blog/gigacalculator-age-calculator-alternative/";
 const TITLE = "GigaCalculator Alternative for Age | WhatIsMyAge.me";
 const DESC = "Discover the best age calculator for your needs — accurate, fast, and designed specifically for ease of use.";
 const HEADLINE = "GigaCalculator Alternative for Age";

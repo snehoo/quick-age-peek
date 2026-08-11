@@ -6,7 +6,7 @@ import { BulletList } from "@/components/blog/ArticleLayout";
 const meta = {
   title: "How Old Am I? Every Way to Calculate Your Exact Age (2026) | whatismyage.me",
   description: "How old are you, really? Beyond years — learn how to calculate your age in months, weeks, days, hours, minutes, and heartbeats. The complete guide with formulas, tables, and tools.",
-  canonical: "https://whatismyage.me/blog/how-old-am-i-complete-guide",
+  canonical: "https://whatismyage.me/blog/how-old-am-i-complete-guide/",
   publishedDate: "2026-06-24",
   headline: "How Old Am I? The Complete Guide to Calculating Your Age",
 };
