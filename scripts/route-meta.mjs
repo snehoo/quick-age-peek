@@ -234,9 +234,9 @@ export const ROUTE_META = {
     ogType: "article",
   },
   "/blog/gigacalculator-vs-omnicalculator": {
-    title: "GigaCalculator vs OmniCalculator — Best Age Calculator Face-Off | whatismyage.me",
+    title: "GigaCalculator vs OmniCalculator: Which Age Calculator Wins?",
     description:
-      "GigaCalculator vs OmniCalculator comparison: interface, leap year handling, timezone support, and calculation accuracy. Which free age tool is best?",
+      "GigaCalculator vs OmniCalculator: which age tool wins on accuracy, features, and speed? Full comparison to help you pick the best free age calculator.",
     canonical: `${SITE}/blog/gigacalculator-vs-omnicalculator/`,
     ogType: "article",
   },

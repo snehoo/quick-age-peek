@@ -3,7 +3,7 @@ import { useEffect } from "react";
 
 
 const CANONICAL = "https://whatismyage.me/blog/how-many-heartbeats-in-a-lifetime/";
-const TITLE = "How Many Heartbeats in a Human Lifetime?";
+const TITLE = "How Many Heartbeats in Your Lifetime — 2.5 Billion";
 const DESC =
   "The average human heart beats 2.5 billion times in a lifetime. Discover resting heart rate science, cardiac output, and how to calculate your personal heartbeat total.";
 
