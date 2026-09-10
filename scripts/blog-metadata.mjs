@@ -303,6 +303,16 @@ export function getBlogPosts() {
       title: "When Will I Be 1 Billion Seconds Old? Find Your Exact Date",
       description: "One billion seconds is roughly 31.7 years — a hidden milestone most people don't know they've crossed.",
     },
+    {
+      slug: "what-is-a-birthday-twin",
+      title: "Birthday Twin Meaning: What Is a Birthday Twin & How to Find Yours",
+      description: "A birthday twin shares your exact birth date but not your birth year. Here's what it means and how to find yours.",
+    },
+    {
+      slug: "how-many-hours-in-a-lifetime",
+      title: "How Many Hours Are in a Human Lifetime? (The Full Breakdown)",
+      description: "An average 80-year life contains roughly 700,800 hours — about 233,600 of them spent asleep. Here's the full breakdown.",
+    },
   ];
 }
 

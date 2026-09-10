@@ -16,6 +16,8 @@ import LifeClock from "./pages/blog/LifeClock.tsx";
 import BirthWeekday from "./pages/blog/BirthWeekday.tsx";
 import SecondsOld from "./pages/blog/SecondsOld.tsx";
 import BirthdayTwins from "./pages/blog/BirthdayTwins.tsx";
+import WhatIsABirthdayTwin from "./pages/blog/WhatIsABirthdayTwin.tsx";
+import HowManyHoursInALifetime from "./pages/blog/HowManyHoursInALifetime.tsx";
 import ZodiacByBirthDate from "./pages/blog/ZodiacByBirthDate.tsx";
 import BirthdayCountdown from "./pages/blog/BirthdayCountdown.tsx";
 import CalculatorNetVsCalculatorSoup from "./pages/blog/CalculatorNetVsCalculatorSoup.tsx";
@@ -143,6 +145,8 @@ const ServerApp = ({ url }: { url: string }) => {
             <Route path="/blog/how-old-will-i-be-in-2050" element={<HowOldWillIBeIn2050 />} />
             <Route path="/blog/what-day-will-i-be-10000-days-old" element={<WhatDayWillIBe10000DaysOld />} />
             <Route path="/blog/when-will-i-be-1-billion-seconds-old" element={<WhenWillIBe1BillionSecondsOld />} />
+            <Route path="/blog/what-is-a-birthday-twin" element={<WhatIsABirthdayTwin />} />
+            <Route path="/blog/how-many-hours-in-a-lifetime" element={<HowManyHoursInALifetime />} />
             <Route path="/blog/how-old-am-i" element={<HowOldAmI />} />
             <Route path="/blog/age-calculator" element={<AgeCalculator />} />
             <Route path="/blog/age-in-days-calculator" element={<AgeInDaysCalculator />} />
