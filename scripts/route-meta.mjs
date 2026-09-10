@@ -578,27 +578,6 @@ export const ROUTE_META = {
       },
     ],
   },
-  "/blog/how-many-years-is-1-billion-seconds": {
-    title: "How Many Years is 1 Billion Seconds? (Full Breakdown)",
-    description:
-      "1 billion seconds = 31.69 years. Here's the exact conversion, the formula, how old you'll be when you hit it, and what else takes roughly a billion seconds.",
-    canonical: `${SITE}/blog/how-many-years-is-1-billion-seconds/`,
-    ogType: "article",
-    faq: [
-      {
-        q: "How many years is 1 billion seconds?",
-        a: "1 billion seconds equals approximately 31.69 years — exactly 31 years, 8 months, and about 19 days, using the Gregorian calendar average of 365.2425 days per year.",
-      },
-      {
-        q: "How many days is 1 billion seconds?",
-        a: "1 billion seconds is approximately 11,574 days.",
-      },
-      {
-        q: "How many years is 2 billion seconds?",
-        a: "2 billion seconds is approximately 63.38 years.",
-      },
-    ],
-  },
   "/blog/what-is-a-birthday-twin": {
     title: "Birthday Twin Meaning: What Is a Birthday Twin & How to Find Yours",
     description:

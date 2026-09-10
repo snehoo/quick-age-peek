@@ -11,7 +11,7 @@ const meta = {
   description: "1 billion seconds = 31.69 years (31 years, 8 months, 8 days). Find your exact billion-second birthday and see 2B and 3B second milestones too.",
   canonical: "https://whatismyage.me/blog/when-will-i-be-1-billion-seconds-old/",
   publishedDate: "2026-06-24",
-  updatedDate: "2026-07-11",
+  updatedDate: "2026-09-10",
   headline: "1 Billion Seconds in Years: How Long Is It, and When Will You Hit It?",
 };
 
@@ -201,6 +201,18 @@ const WhenWillIBe1BillionSecondsOld = () => {
       />
       <Paragraph>The 2 billion second mark arrives at approximately <strong>63.4 years</strong> — a meaningful milestone in its own right, and one that <ExternalLink href="https://www.who.int/news-room/fact-sheets/detail/ageing-and-health">longevity researchers suggest</ExternalLink> future generations may routinely surpass in good health.</Paragraph>
       <Paragraph>And the <strong>π billion second mark</strong> — 3.14159... billion seconds — arrives at just under 100 years. Mathematically elegant, biologically remarkable.</Paragraph>
+
+      <H2>What Else Takes About 1 Billion Seconds?</H2>
+      <Paragraph>To put 31.69 years into context, here's what else spans roughly a billion seconds:</Paragraph>
+      <BulletList
+        items={[
+          <>The Roman Empire's peak period lasted roughly 500 years — about 16 billion seconds.</>,
+          <>The <ExternalLink href="https://en.wikipedia.org/wiki/Apollo_program">Apollo programme</ExternalLink>, from conception to Moon landing, took about 8 years — 252 million seconds.</>,
+          <>A human heart beats roughly 2.5 billion times in an 80-year life, so you hit 1 billion heartbeats around the same age you hit 1 billion seconds — read more on <Link to="/blog/how-many-heartbeats-in-a-lifetime/" className="text-primary underline">heartbeats in a lifetime</Link>.</>,
+          <>The internet (ARPANET) has existed for roughly 1.7 billion seconds as of 2024.</>,
+          <>A typical person sleeping 8 hours a night has slept for roughly 333 million of those seconds by their billion-second birthday.</>,
+        ]}
+      />
 
       <H2>How Many Seconds Old Are You Right Now?</H2>
       <Paragraph>Your current second count is:</Paragraph>

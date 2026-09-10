@@ -9,6 +9,17 @@ export default {
       return Response.redirect(newUrl.toString(), 301);
     }
 
+    // Consolidate duplicate "1 billion seconds" article into the established,
+    // internally-linked, indexed page (avoid near-duplicate content competing
+    // with itself in the index)
+    if (
+      url.pathname === '/blog/how-many-years-is-1-billion-seconds' ||
+      url.pathname === '/blog/how-many-years-is-1-billion-seconds/'
+    ) {
+      url.pathname = '/blog/when-will-i-be-1-billion-seconds-old/';
+      return Response.redirect(url.toString(), 301);
+    }
+
     // Enforce trailing slashes on blog posts (but not files)
     if (url.pathname.startsWith('/blog/') && !url.pathname.endsWith('/')) {
       const hasFileExtension = /\.\w+$/.test(url.pathname);
