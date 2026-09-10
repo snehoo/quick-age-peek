@@ -486,6 +486,22 @@ const posts = [
       "One billion seconds is roughly 31.7 years — a hidden milestone most people don't know they've crossed. Find out when yours arrives.",
     readTime: "7 min read",
   },
+  {
+    slug: "what-is-a-birthday-twin",
+    tag: "Birthdays",
+    title: "Birthday Twin Meaning: What Is a Birthday Twin & How to Find Yours",
+    excerpt:
+      "A birthday twin shares your exact birth date but not your birth year. Here's what the term means, how common it is, and how to find yours.",
+    readTime: "6 min read",
+  },
+  {
+    slug: "how-many-hours-in-a-lifetime",
+    tag: "Time Units",
+    title: "How Many Hours Are in a Human Lifetime? (The Full Breakdown)",
+    excerpt:
+      "An average 80-year life contains roughly 700,800 hours — but around 233,600 of them are spent asleep. Here's how the rest breaks down.",
+    readTime: "5 min read",
+  },
 ];
 
 const Blog = () => {

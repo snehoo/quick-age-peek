@@ -237,6 +237,7 @@ const WhenWillIBe1BillionSecondsOld = () => {
         <li>📅 <Link to="/blog/what-day-will-i-be-10000-days-old/" className="text-primary underline">What day will I be 10,000 days old?</Link></li>
         <li>🗓 <Link to="/blog/how-many-weeks-old-am-i/" className="text-primary underline">How many weeks old am I?</Link></li>
         <li>❤️ <Link to="/blog/how-many-heartbeats-in-a-lifetime/" className="text-primary underline">How many heartbeats in a lifetime?</Link></li>
+        <li>⏳ <Link to="/blog/how-many-hours-in-a-lifetime/" className="text-primary underline">How many hours are in a human lifetime?</Link></li>
         <li>🕰 <Link to="/blog/what-is-a-life-clock/" className="text-primary underline">What is a life clock?</Link></li>
         <li>🔮 <Link to="/blog/how-old-will-i-be-in-2050/" className="text-primary underline">How old will I be in 2050?</Link></li>
       </ul>

@@ -265,6 +265,7 @@ const BirthdayTwins = () => {
 
       <RelatedPosts
         posts={[
+          { tag: "Birthdays", title: "What Is a Birthday Twin? Birthday Twin Meaning Explained", href: "/blog/what-is-a-birthday-twin/" },
           { tag: "Life Reframe", title: "Life Clock: If Your Life Was a 24-Hour Day, What Time Is It?", href: "/blog/what-is-a-life-clock/" },
           { tag: "Time Milestone", title: "1 Billion Seconds in Years: When Will You Hit It?", href: "/blog/when-will-i-be-1-billion-seconds-old/" },
           { tag: "Science", title: "How Many Heartbeats in a Human Lifetime?", href: "/blog/how-many-heartbeats-in-a-lifetime/" },
