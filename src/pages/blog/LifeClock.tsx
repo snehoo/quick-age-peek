@@ -9,7 +9,7 @@ const meta = {
   canonical: "https://whatismyage.me/blog/what-is-a-life-clock/",
   headline: "Life Clock: If Your Life Was a 24-Hour Day, What Time Would It Be?",
   publishedDate: "2026-06-24",
-  updatedDate: "2026-07-11",
+  updatedDate: "2026-09-22",
 };
 
 // Age → life clock time assuming an 80-year lifespan
@@ -29,6 +29,17 @@ const clock = [
   ["3:00 PM – 6:00 PM", "Ages 50–60 · golden afternoon", "Experienced, purposeful, unhurried. The light is exceptional."],
   ["6:00 PM – 9:00 PM", "Ages 60–70 · evening", "Reflection. Depth. The most beautiful hour of the day for many."],
   ["9:00 PM – 12:00 AM", "Ages 70–80+ · night", "The day's work nearly done. Stars fully visible. Quiet satisfaction."],
+];
+
+const lifeClockFaq = [
+  {
+    q: "If my life was 24 hours, what time would it be?",
+    a: "Divide your current age by the lifespan you're assuming (80 years by default) and multiply by 24. A 38-year-old assuming 80 years would be at 11:24 AM — late morning, with a long afternoon and evening still ahead. Use the age-to-time table above to find your own answer, or calculate your date of birth at whatismyage.me for the exact figure.",
+  },
+  {
+    q: "What time is life right now, generally speaking?",
+    a: "There's no single answer — it depends entirely on your own age and the lifespan you assume. That's the point of the life clock: it turns an abstract number of years into a personal, intuitive time of day, unique to you rather than a universal figure.",
+  },
 ];
 
 const related = [
@@ -118,6 +129,14 @@ const LifeClock = () => {
       <Paragraph>Additionally, the life clock is not about <strong>time left to live</strong> in a morbid sense. Rather, it is about understanding the shape of a life in progress. Similarly, it is about recognising that 11 AM is not late — and that the afternoon, whenever it arrives, still contains enormous possibility.</Paragraph>
       <H2>How Your Life Clock Connects to Your Other Age Stats</H2>
       <Paragraph>The life clock is one of several powerful ways to reframe what your age actually means. Furthermore, your <Link to="/blog/how-many-heartbeats-in-a-lifetime/" className="text-primary underline">heartbeat total</Link> shows the biological machinery running behind those years. Your <Link to="/blog/when-will-i-be-1-billion-seconds-old/" className="text-primary underline">1 billion second milestone</Link> — which arrives in your early thirties — gives you another fixed, unrepeatable marker to hold on to. Additionally, your <Link to="/blog/birthday-twins-famous-people-born-on-your-birthday/" className="text-primary underline">famous birthday twins</Link> place you in a broader historical register. Together, these numbers paint a portrait of a life that a single number in years can never fully convey.</Paragraph>
+      <H2>Frequently Asked Questions</H2>
+      {lifeClockFaq.map(({ q, a }) => (
+        <div key={q}>
+          <H3>{q}</H3>
+          <Paragraph>{a}</Paragraph>
+        </div>
+      ))}
+
       <CtaBox title="What time is it on your life clock?">Enter your date of birth at whatismyage.me to find your exact life clock time — plus heartbeats, full moons, days alive, and your shareable life card.</CtaBox>
       <AuthorBio
         name="Snehal Patel"

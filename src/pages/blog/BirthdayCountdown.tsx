@@ -33,8 +33,19 @@ const Milestone = ({ label, children }: { label: string; children: React.ReactNo
   </div>
 );
 
+const countdownFaq = [
+  {
+    q: "What does 'days to birthday' or birthday countdown meaning actually mean?",
+    a: "It's simply the number of days between today and the next occurrence of your birth month and day — a running countdown that resets to a new number every year the day after your birthday passes. It carries no deeper significance on its own; what gives it meaning is what you choose to do with the time it represents.",
+  },
+  {
+    q: "How many days until my birthday, roughly, without calculating exactly?",
+    a: "A quick rule of thumb: if your birthday already happened this year, count the months remaining to that date next year; if it hasn't, count the months remaining this year. Each full month between today and your birthday is roughly 30 days — good enough for a ballpark figure before you get the exact count from a calculator.",
+  },
+];
+
 const BirthdayCountdown = () => {
-  useArticleMeta({ title: TITLE, description: DESC, canonical: CANONICAL, headline: HEADLINE, publishedDate: "2026-06-24", updatedDate: "2026-07-11" });
+  useArticleMeta({ title: TITLE, description: DESC, canonical: CANONICAL, headline: HEADLINE, publishedDate: "2026-06-24", updatedDate: "2026-09-22" });
 
   return (
     <ArticleShell>
@@ -230,6 +241,14 @@ const BirthdayCountdown = () => {
         . As a result, the countdown is not an isolated number. It is one thread in a complete portrait of
         a life in progress.
       </Paragraph>
+
+      <H2>Frequently Asked Questions</H2>
+      {countdownFaq.map(({ q, a }) => (
+        <div key={q}>
+          <H3>{q}</H3>
+          <Paragraph>{a}</Paragraph>
+        </div>
+      ))}
 
       <CtaBox title="How many days until your next birthday?">
         Enter your date of birth at whatismyage.me — birthday countdown, days alive, heartbeats, full

@@ -132,6 +132,10 @@ export const ROUTE_META = {
         q: "Does the life clock predict how long I will live?",
         a: "No. Unlike a life expectancy calculator, the life clock doesn't predict anything — it simply reframes where you stand within whatever lifespan you choose (70, 80, 90, or 100 years).",
       },
+      {
+        q: "What time is life right now, generally speaking?",
+        a: "There's no single answer — it depends entirely on your own age and the lifespan you assume. That's the point of the life clock: it turns an abstract number of years into a personal, intuitive time of day, unique to you rather than a universal figure.",
+      },
     ],
   },
   "/blog/what-day-of-the-week-was-i-born": {
@@ -202,6 +206,14 @@ export const ROUTE_META = {
       {
         q: "What is a half-birthday?",
         a: "Your half-birthday falls 182–183 days after your birthday — the exact midpoint of your personal year, and a popular milestone for people whose birthdays fall near major holidays.",
+      },
+      {
+        q: "What does 'days to birthday' or birthday countdown meaning actually mean?",
+        a: "It's simply the number of days between today and the next occurrence of your birth month and day — a running countdown that resets to a new number every year the day after your birthday passes. It carries no deeper significance on its own; what gives it meaning is what you choose to do with the time it represents.",
+      },
+      {
+        q: "How many days until my birthday, roughly, without calculating exactly?",
+        a: "A quick rule of thumb: if your birthday already happened this year, count the months remaining to that date next year; if it hasn't, count the months remaining this year. Each full month between today and your birthday is roughly 30 days — good enough for a ballpark figure before you get the exact count from a calculator.",
       },
     ],
   },
