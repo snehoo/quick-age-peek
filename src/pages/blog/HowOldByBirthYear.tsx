@@ -148,7 +148,7 @@ const HowOldByBirthYear = () => {
       <CtaBox title="Want your exact age?">
         <Paragraph>
           The <Link to="/" className="underline">age calculator</Link> gives your age in years,
-          months and days, and the <Link to="/life-clock" className="underline">life clock</Link>{" "}
+          months and days, and the <Link to="/blog/what-is-a-life-clock/" className="underline">life clock</Link>{" "}
           shows where you are in an average lifetime.
         </Paragraph>
       </CtaBox>

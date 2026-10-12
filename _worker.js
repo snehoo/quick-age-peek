@@ -20,6 +20,15 @@ export default {
       return Response.redirect(url.toString(), 301);
     }
 
+    // Retired one-page-per-birth-year articles (2026-10-12) -> one age table,
+    // landing on the matching row
+    const bornIn = url.pathname.match(/^\/blog\/how-old-am-i-if-i-was-born-in-(\d{4})\/?$/);
+    if (bornIn) {
+      url.pathname = '/blog/how-old-am-i-by-birth-year/';
+      url.hash = 'born-' + bornIn[1];
+      return Response.redirect(url.toString(), 301);
+    }
+
     // Enforce trailing slashes on blog posts (but not files)
     if (url.pathname.startsWith('/blog/') && !url.pathname.endsWith('/')) {
       const hasFileExtension = /\.\w+$/.test(url.pathname);

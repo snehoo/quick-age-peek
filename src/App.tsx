@@ -39,24 +39,6 @@ import AgeGroupsOnlineStatistics from "./pages/blog/AgeGroupsOnlineStatistics.ts
 import BodyOverTimeStatistics from "./pages/blog/BodyOverTimeStatistics.tsx";
 import AgeBirthdaysGloballyStatistics from "./pages/blog/AgeBirthdaysGloballyStatistics.tsx";
 import MeasureTimeAndLifeStatistics from "./pages/blog/MeasureTimeAndLifeStatistics.tsx";
-import BornIn1985 from "./pages/blog/BornIn1985.tsx";
-import BornIn1986 from "./pages/blog/BornIn1986.tsx";
-import BornIn1987 from "./pages/blog/BornIn1987.tsx";
-import BornIn1988 from "./pages/blog/BornIn1988.tsx";
-import BornIn1989 from "./pages/blog/BornIn1989.tsx";
-import BornIn1995 from "./pages/blog/BornIn1995.tsx";
-import BornIn1996 from "./pages/blog/BornIn1996.tsx";
-import BornIn1997 from "./pages/blog/BornIn1997.tsx";
-import BornIn1998 from "./pages/blog/BornIn1998.tsx";
-import BornIn1999 from "./pages/blog/BornIn1999.tsx";
-import BornIn2000 from "./pages/blog/BornIn2000.tsx";
-import BornIn2001 from "./pages/blog/BornIn2001.tsx";
-import BornIn2002 from "./pages/blog/BornIn2002.tsx";
-import BornIn1990 from "./pages/blog/BornIn1990.tsx";
-import BornIn1991 from "./pages/blog/BornIn1991.tsx";
-import BornIn1992 from "./pages/blog/BornIn1992.tsx";
-import BornIn1993 from "./pages/blog/BornIn1993.tsx";
-import BornIn1994 from "./pages/blog/BornIn1994.tsx";
 import HoursOld from "./pages/blog/HoursOld.tsx";
 import MinutesOld from "./pages/blog/MinutesOld.tsx";
 import MonthsOld from "./pages/blog/MonthsOld.tsx";
@@ -81,6 +63,7 @@ import CalculatorSoupAlternative from "./pages/blog/CalculatorSoupAlternative.ts
 import FreeAgeCalculatorNoAds from "./pages/blog/FreeAgeCalculatorNoAds.tsx";
 import GigaCalculatorAlternative from "./pages/blog/GigaCalculatorAlternative.tsx";
 import OmniCalculatorAlternative from "./pages/blog/OmniCalculatorAlternative.tsx";
+import HowOldByBirthYear from "./pages/blog/HowOldByBirthYear.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 // ─────────────────────────────────────────────────────────────────
@@ -182,42 +165,8 @@ const App = () => (
           <Route path="/blog/how-people-measure-time-and-life-statistics" element={<MeasureTimeAndLifeStatistics />} />
           <Route path="/blog/how-people-measure-time-and-life-statistics/" element={<MeasureTimeAndLifeStatistics />} />
 
-          <Route path="/blog/how-old-am-i-if-i-was-born-in-1985" element={<BornIn1985 />} />
-          <Route path="/blog/how-old-am-i-if-i-was-born-in-1985/" element={<BornIn1985 />} />
-          <Route path="/blog/how-old-am-i-if-i-was-born-in-1986" element={<BornIn1986 />} />
-          <Route path="/blog/how-old-am-i-if-i-was-born-in-1986/" element={<BornIn1986 />} />
-          <Route path="/blog/how-old-am-i-if-i-was-born-in-1987" element={<BornIn1987 />} />
-          <Route path="/blog/how-old-am-i-if-i-was-born-in-1987/" element={<BornIn1987 />} />
-          <Route path="/blog/how-old-am-i-if-i-was-born-in-1988" element={<BornIn1988 />} />
-          <Route path="/blog/how-old-am-i-if-i-was-born-in-1988/" element={<BornIn1988 />} />
-          <Route path="/blog/how-old-am-i-if-i-was-born-in-1989" element={<BornIn1989 />} />
-          <Route path="/blog/how-old-am-i-if-i-was-born-in-1989/" element={<BornIn1989 />} />
-          <Route path="/blog/how-old-am-i-if-i-was-born-in-1990" element={<BornIn1990 />} />
-          <Route path="/blog/how-old-am-i-if-i-was-born-in-1990/" element={<BornIn1990 />} />
-          <Route path="/blog/how-old-am-i-if-i-was-born-in-1991" element={<BornIn1991 />} />
-          <Route path="/blog/how-old-am-i-if-i-was-born-in-1991/" element={<BornIn1991 />} />
-          <Route path="/blog/how-old-am-i-if-i-was-born-in-1992" element={<BornIn1992 />} />
-          <Route path="/blog/how-old-am-i-if-i-was-born-in-1992/" element={<BornIn1992 />} />
-          <Route path="/blog/how-old-am-i-if-i-was-born-in-1993" element={<BornIn1993 />} />
-          <Route path="/blog/how-old-am-i-if-i-was-born-in-1993/" element={<BornIn1993 />} />
-          <Route path="/blog/how-old-am-i-if-i-was-born-in-1994" element={<BornIn1994 />} />
-          <Route path="/blog/how-old-am-i-if-i-was-born-in-1994/" element={<BornIn1994 />} />
-          <Route path="/blog/how-old-am-i-if-i-was-born-in-1995" element={<BornIn1995 />} />
-          <Route path="/blog/how-old-am-i-if-i-was-born-in-1995/" element={<BornIn1995 />} />
-          <Route path="/blog/how-old-am-i-if-i-was-born-in-1996" element={<BornIn1996 />} />
-          <Route path="/blog/how-old-am-i-if-i-was-born-in-1996/" element={<BornIn1996 />} />
-          <Route path="/blog/how-old-am-i-if-i-was-born-in-1997" element={<BornIn1997 />} />
-          <Route path="/blog/how-old-am-i-if-i-was-born-in-1997/" element={<BornIn1997 />} />
-          <Route path="/blog/how-old-am-i-if-i-was-born-in-1998" element={<BornIn1998 />} />
-          <Route path="/blog/how-old-am-i-if-i-was-born-in-1998/" element={<BornIn1998 />} />
-          <Route path="/blog/how-old-am-i-if-i-was-born-in-1999" element={<BornIn1999 />} />
-          <Route path="/blog/how-old-am-i-if-i-was-born-in-1999/" element={<BornIn1999 />} />
-          <Route path="/blog/how-old-am-i-if-i-was-born-in-2000" element={<BornIn2000 />} />
-          <Route path="/blog/how-old-am-i-if-i-was-born-in-2000/" element={<BornIn2000 />} />
-          <Route path="/blog/how-old-am-i-if-i-was-born-in-2001" element={<BornIn2001 />} />
-          <Route path="/blog/how-old-am-i-if-i-was-born-in-2001/" element={<BornIn2001 />} />
-          <Route path="/blog/how-old-am-i-if-i-was-born-in-2002" element={<BornIn2002 />} />
-          <Route path="/blog/how-old-am-i-if-i-was-born-in-2002/" element={<BornIn2002 />} />
+          <Route path="/blog/how-old-am-i-by-birth-year" element={<HowOldByBirthYear />} />
+          <Route path="/blog/how-old-am-i-by-birth-year/" element={<HowOldByBirthYear />} />
 
           <Route path="/blog/how-many-hours-old-am-i" element={<HoursOld />} />
           <Route path="/blog/how-many-hours-old-am-i/" element={<HoursOld />} />

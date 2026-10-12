@@ -376,132 +376,6 @@ export const ROUTE_META = {
     canonical: `${SITE}/blog/how-people-measure-time-and-life-statistics/`,
     ogType: "article",
   },
-  "/blog/how-old-am-i-if-i-was-born-in-1985": {
-    title: "Born in 1985? Calculate Your Age in 2026 | whatismyage.me",
-    description:
-      "Born in 1985? You're 40-41 in 2026. Calculate your exact age in days, heartbeats, and full moons. See age in all dimensions beyond years.",
-    canonical: `${SITE}/blog/how-old-am-i-if-i-was-born-in-1985/`,
-    ogType: "article",
-  },
-  "/blog/how-old-am-i-if-i-was-born-in-1986": {
-    title: "Born in 1986? Calculate Your Age in 2026 | whatismyage.me",
-    description:
-      "Born in 1986? You're 39-40 in 2026. Calculate your exact age in days, heartbeats, full moons. See beyond years to your complete age.",
-    canonical: `${SITE}/blog/how-old-am-i-if-i-was-born-in-1986/`,
-    ogType: "article",
-  },
-  "/blog/how-old-am-i-if-i-was-born-in-1987": {
-    title: "Born in 1987? Calculate Your Age in 2026 | whatismyage.me",
-    description:
-      "Born in 1987? You're 38-39 in 2026. Calculate your exact age in days, heartbeats, full moons. Discover all dimensions of your age.",
-    canonical: `${SITE}/blog/how-old-am-i-if-i-was-born-in-1987/`,
-    ogType: "article",
-  },
-  "/blog/how-old-am-i-if-i-was-born-in-1988": {
-    title: "Born in 1988? Calculate Your Age in 2026 | whatismyage.me",
-    description:
-      "Born in 1988? You're 37-38 in 2026. Calculate your exact age in days, heartbeats, full moons. See your life beyond years.",
-    canonical: `${SITE}/blog/how-old-am-i-if-i-was-born-in-1988/`,
-    ogType: "article",
-  },
-  "/blog/how-old-am-i-if-i-was-born-in-1989": {
-    title: "Born in 1989? Calculate Your Age in 2026 | whatismyage.me",
-    description:
-      "Born in 1989? You're 36-37 in 2026. Calculate your exact age in days, heartbeats, full moons. Discover complete age measurements.",
-    canonical: `${SITE}/blog/how-old-am-i-if-i-was-born-in-1989/`,
-    ogType: "article",
-  },
-  "/blog/how-old-am-i-if-i-was-born-in-1995": {
-    title: "Born in 1995? Calculate Your Age in 2026 | whatismyage.me",
-    description:
-      "Born in 1995? You're 30-31 in 2026. Calculate your exact age in days, heartbeats, full moons. See your life measured in all units.",
-    canonical: `${SITE}/blog/how-old-am-i-if-i-was-born-in-1995/`,
-    ogType: "article",
-  },
-  "/blog/how-old-am-i-if-i-was-born-in-1996": {
-    title: "Born in 1996? Calculate Your Age in 2026 | whatismyage.me",
-    description:
-      "Born in 1996? You're 29-30 in 2026. Calculate your exact age in days, heartbeats, full moons. Explore complete age dimensions.",
-    canonical: `${SITE}/blog/how-old-am-i-if-i-was-born-in-1996/`,
-    ogType: "article",
-  },
-  "/blog/how-old-am-i-if-i-was-born-in-1997": {
-    title: "Born in 1997? Calculate Your Age in 2026 | whatismyage.me",
-    description:
-      "Born in 1997? You're 28-29 in 2026. Calculate your exact age in days, heartbeats, full moons. See age beyond years.",
-    canonical: `${SITE}/blog/how-old-am-i-if-i-was-born-in-1997/`,
-    ogType: "article",
-  },
-  "/blog/how-old-am-i-if-i-was-born-in-1998": {
-    title: "Born in 1998? Calculate Your Age in 2026 | whatismyage.me",
-    description:
-      "Born in 1998? You're 27-28 in 2026. Calculate your exact age in days, heartbeats, full moons. Discover all age metrics.",
-    canonical: `${SITE}/blog/how-old-am-i-if-i-was-born-in-1998/`,
-    ogType: "article",
-  },
-  "/blog/how-old-am-i-if-i-was-born-in-1999": {
-    title: "Born in 1999? Calculate Your Age in 2026 | whatismyage.me",
-    description:
-      "Born in 1999? You're 26-27 in 2026. Calculate your exact age in days, heartbeats, full moons. See your life in numbers.",
-    canonical: `${SITE}/blog/how-old-am-i-if-i-was-born-in-1999/`,
-    ogType: "article",
-  },
-  "/blog/how-old-am-i-if-i-was-born-in-2000": {
-    title: "Born in 2000? Calculate Your Age in 2026 | whatismyage.me",
-    description:
-      "Born in 2000? You're 25-26 in 2026. Calculate your exact age in days, heartbeats, full moons. Explore complete age measurements.",
-    canonical: `${SITE}/blog/how-old-am-i-if-i-was-born-in-2000/`,
-    ogType: "article",
-  },
-  "/blog/how-old-am-i-if-i-was-born-in-2001": {
-    title: "Born in 2001? Calculate Your Age in 2026 | whatismyage.me",
-    description:
-      "Born in 2001? You're 24-25 in 2026. Calculate your exact age in days, heartbeats, full moons. See your life beyond years.",
-    canonical: `${SITE}/blog/how-old-am-i-if-i-was-born-in-2001/`,
-    ogType: "article",
-  },
-  "/blog/how-old-am-i-if-i-was-born-in-2002": {
-    title: "Born in 2002? Calculate Your Age in 2026 | whatismyage.me",
-    description:
-      "Born in 2002? You're 23-24 in 2026. Calculate your exact age in days, heartbeats, full moons. Discover age metrics that matter.",
-    canonical: `${SITE}/blog/how-old-am-i-if-i-was-born-in-2002/`,
-    ogType: "article",
-  },
-  "/blog/how-old-am-i-if-i-was-born-in-1990": {
-    title: "Born in 1990? Calculate Your Age in 2026 | whatismyage.me",
-    description:
-      "Born in 1990? You're 35-36 in 2026. Calculate your exact age in days, heartbeats, full moons. See your complete age measurement.",
-    canonical: `${SITE}/blog/how-old-am-i-if-i-was-born-in-1990/`,
-    ogType: "article",
-  },
-  "/blog/how-old-am-i-if-i-was-born-in-1991": {
-    title: "Born in 1991? Calculate Your Age in 2026 | whatismyage.me",
-    description:
-      "Born in 1991? You're 34-35 in 2026. Calculate your exact age in days, heartbeats, full moons. Discover age beyond years.",
-    canonical: `${SITE}/blog/how-old-am-i-if-i-was-born-in-1991/`,
-    ogType: "article",
-  },
-  "/blog/how-old-am-i-if-i-was-born-in-1992": {
-    title: "Born in 1992? Calculate Your Age in 2026 | whatismyage.me",
-    description:
-      "Born in 1992? You're 33-34 in 2026. Calculate your exact age in days, heartbeats, full moons. See all age dimensions.",
-    canonical: `${SITE}/blog/how-old-am-i-if-i-was-born-in-1992/`,
-    ogType: "article",
-  },
-  "/blog/how-old-am-i-if-i-was-born-in-1993": {
-    title: "Born in 1993? Calculate Your Age in 2026 | whatismyage.me",
-    description:
-      "Born in 1993? You're 32-33 in 2026. Calculate your exact age in days, heartbeats, full moons. Explore complete age metrics.",
-    canonical: `${SITE}/blog/how-old-am-i-if-i-was-born-in-1993/`,
-    ogType: "article",
-  },
-  "/blog/how-old-am-i-if-i-was-born-in-1994": {
-    title: "Born in 1994? Calculate Your Age in 2026 | whatismyage.me",
-    description:
-      "Born in 1994? You're 31-32 in 2026. Calculate your exact age in days, heartbeats, full moons. See your life in numbers.",
-    canonical: `${SITE}/blog/how-old-am-i-if-i-was-born-in-1994/`,
-    ogType: "article",
-  },
   "/blog/how-many-hours-old-am-i": {
     title: "How Many Hours Old Am I? Calculate Your Exact Hour Count | whatismyage.me",
     description:
@@ -631,6 +505,13 @@ export const ROUTE_META = {
         a: "Multiply your age in years by 8,766 (the average number of hours per year including leap years). For example, a 30-year-old is approximately 262,800 hours old.",
       },
     ],
+  },
+  "/blog/how-old-am-i-by-birth-year": {
+    title: "How Old Am I by Birth Year? Age Table | whatismyage.me",
+    description:
+      "Find your age from your birth year: a table for every year from 1960 to 2015, before and after your birthday, with your generation.",
+    canonical: `${SITE}/blog/how-old-am-i-by-birth-year/`,
+    ogType: "article",
   },
 };
 
