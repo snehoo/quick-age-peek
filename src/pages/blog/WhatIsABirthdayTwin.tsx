@@ -42,7 +42,7 @@ const WhatIsABirthdayTwin = () => (
 
     <H2>How Many People Share Your Birthday?</H2>
     <Paragraph>
-      With the world population at roughly 8 billion and 365 possible birthdays (ignoring leap day), on average <strong>approximately 21.9 million people</strong> share any given birthday. Of course, births are not evenly distributed — some dates are more common than others.
+      With the world population at about 8.2 billion ({ext("https://population.un.org/wpp/assets/Files/WPP2024_Summary-of-Results.pdf", "UN, 2024")}) and 365 possible birthdays (ignoring leap day), on average <strong>about 22 million people</strong> share any given birthday. That is a simple estimate: population divided by 365. Of course, births are not evenly distributed — some dates are more common than others.
     </Paragraph>
     <SimpleTable
       headers={["Birthday popularity", "Detail"]}
@@ -51,11 +51,11 @@ const WhatIsABirthdayTwin = () => (
         ["Least common birthday (US)", "December 25 — far fewer elective births on Christmas"],
         ["Average people per birthday", "~21.9 million worldwide"],
         ["In a room of 23 people", "50% chance two people share a birthday (Birthday Paradox)"],
-        ["In a room of 70 people", "99.9% chance of a shared birthday"],
+        ["In a room of 57 people", "Better than 99% chance of a shared birthday"],
       ]}
     />
     <Paragraph>
-      The {ext("https://en.wikipedia.org/wiki/Birthday_problem", "Birthday Paradox")} is a famous result in probability that shows how counterintuitively likely shared birthdays become in even small groups. In a classroom of 30 students, there's a 70% chance at least two students are birthday twins.
+      The {ext("https://math.hmc.edu/funfacts/birthday-problem/", "Birthday Paradox")} is a famous result in probability that shows how counterintuitively likely shared birthdays become in even small groups. In a classroom of 30 students, there's a 70% chance at least two students are birthday twins.
     </Paragraph>
 
     <H2>Famous Birthday Twins: Who Shares Your Birthday?</H2>

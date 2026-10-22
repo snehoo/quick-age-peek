@@ -38,11 +38,11 @@ const birthdayFaq = [
   },
   {
     q: "How many people share my birthday?",
-    a: "Approximately 22 million people alive today share your exact birth date. Across all of recorded human history, virtually every calendar day contains at least one famous person — so finding your birthday twin is not a matter of luck, just of looking.",
+    a: "About 22 million people alive today share your birth date, an estimate from the UN's 2024 world population of 8.2 billion divided by 365. Across all of recorded human history, virtually every calendar day contains at least one famous person — so finding your birthday twin is not a matter of luck, just of looking.",
   },
   {
     q: "What is the birthday paradox?",
-    a: "The birthday paradox is the counterintuitive probability result that in a group of just 23 people, there is a 50% chance that two people share a birthday. In a group of 70, that probability exceeds 99.9%. It feels surprising because we compare each person to ourselves (1 in 365 odds), not to every possible pair (253 pairs among 23 people).",
+    a: "The birthday paradox is the counterintuitive probability result that in a group of just 23 people, there is a 50% chance that two people share a birthday. With 57 people, the chance is better than 99%. It feels surprising because we compare each person to ourselves (1 in 365 odds), not to every possible pair (253 pairs among 23 people).",
   },
   {
     q: "Is a birthday twin the same as a time twin or astro twin?",
@@ -108,14 +108,14 @@ const BirthdayTwins = () => {
 
       <H2>What Is the Probability of Sharing a Birthday With a Famous Person?</H2>
       <Paragraph>
-        The <strong>birthday paradox</strong>, described in detail on <ExternalLink href="https://en.wikipedia.org/wiki/Birthday_problem">Wikipedia's birthday problem entry</ExternalLink>, is one of the most counterintuitive results in probability
+        The <strong>birthday paradox</strong>, worked through on <ExternalLink href="https://math.hmc.edu/funfacts/birthday-problem/">Harvey Mudd College's birthday problem page</ExternalLink>, is one of the most counterintuitive results in probability
         theory. Specifically, in a group of just 23 people, there is a 50% chance that two people share a
-        birthday. Moreover, in a group of 70, the probability rises above 99.9%.
+        birthday. Moreover, with 57 people the chance is better than 99%.
       </Paragraph>
 
       <div className="grid grid-cols-2 gap-3 my-7">
         <StatCard n="23" l="People needed for 50% chance of shared birthday" />
-        <StatCard n="70" l="People needed for 99.9% chance" />
+        <StatCard n="57" l="People for a better than 99% chance" />
         <StatCard n="~22 million" l="People alive today sharing your birth date" />
         <StatCard n="365" l="Days in a year — your birthday is 1 of them" />
       </div>

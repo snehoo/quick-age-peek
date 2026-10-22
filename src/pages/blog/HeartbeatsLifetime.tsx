@@ -3,9 +3,9 @@ import { useEffect } from "react";
 
 
 const CANONICAL = "https://whatismyage.me/blog/how-many-heartbeats-in-a-lifetime/";
-const TITLE = "How Many Heartbeats in Your Lifetime — 2.5 Billion";
+const TITLE = "How Many Heartbeats in a Lifetime? About 2.7 Billion";
 const DESC =
-  "The average human heart beats 2.5 billion times in a lifetime. Discover resting heart rate science, cardiac output, and how to calculate your personal heartbeat total.";
+  "At 70 beats a minute over the world's average life expectancy of 73.3 years, a heart beats about 2.7 billion times. See the maths and work out your own total.";
 
 const setMeta = (selector: string, attr: string, value: string) => {
   let el = document.querySelector(selector) as HTMLMetaElement | HTMLLinkElement | null;
@@ -94,7 +94,7 @@ const HeartbeatsLifetime = () => {
         {
           "@type": "Question",
           name: "How many heartbeats does a human have in a lifetime?",
-          acceptedAnswer: { "@type": "Answer", text: "The average human heart beats approximately 2.5 billion times in a lifetime. Based on a resting heart rate of 70 beats per minute and a life expectancy of 79 years, the calculation is: 70 bpm × 60 min × 24 hr × 365 days × 79 years ≈ 2,912,000,000 beats." },
+          acceptedAnswer: { "@type": "Answer", text: "At a resting heart rate of 70 beats per minute and the world's average life expectancy of 73.3 years (UN, 2024), the heart beats about 2.7 billion times: 70 × 60 × 24 × 365.25 × 73.3 ≈ 2,699,000,000. It is an estimate; a lifelong rate anywhere from 60 to 100 beats per minute gives about 2.3 to 3.9 billion." },
         },
         {
           "@type": "Question",
@@ -161,20 +161,20 @@ const HeartbeatsLifetime = () => {
           </p>
 
           <p className="text-foreground/90 leading-relaxed mb-5 text-[17px]">
-            The answer is staggering. By the time the average person reaches 80,
-            their heart will have completed approximately{" "}
-            <strong>2.5 to 3 billion beats</strong>. Not million. Billion. That
+            The answer is staggering. Over an average lifetime, the heart
+            completes roughly{" "}
+            <strong>2.3 to 3.9 billion beats</strong>, depending on its resting rate. Not million. Billion. That
             single number changes how most people think about the organ quietly
             working inside them every second of every day.
           </p>
 
           <div className="bg-card border-l-4 border-primary rounded-r-xl py-5 px-6 my-7">
             <div className="text-3xl sm:text-4xl font-bold text-primary">
-              ~2.85 billion
+              ~2.7 billion
             </div>
             <div className="text-xs text-muted-foreground mt-1">
-              Average lifetime heartbeats based on 70 BPM resting heart rate
-              over 77.5 years (CDC, 2022)
+              Estimated lifetime heartbeats at 70 BPM over 73.3 years, the world&apos;s
+              average life expectancy in 2024 (<a href="https://population.un.org/wpp/assets/Files/WPP2024_Summary-of-Results.pdf" target="_blank" rel="noopener noreferrer" className="text-primary underline">UN World Population Prospects</a>)
             </div>
           </div>
 
@@ -185,7 +185,7 @@ const HeartbeatsLifetime = () => {
             The calculation starts with your <strong>resting heart rate</strong>{" "}
             — the number of times your heart beats per minute while at rest. For
             most healthy adults, this figure ranges from 60 to 100 beats per
-            minute (BPM). Consequently, doctors commonly use 70–72 BPM as a
+            minute (BPM), according to <a href="https://medlineplus.gov/ency/article/003399.htm" target="_blank" rel="noopener noreferrer" className="text-primary underline">MedlinePlus</a>. Consequently, doctors commonly use 70–72 BPM as a
             reliable average for estimation purposes.
           </p>
 
@@ -200,7 +200,7 @@ const HeartbeatsLifetime = () => {
             Therefore, multiply 37.8 million by your age in years and you have a
             working estimate of your personal heartbeat total. For instance, a
             38-year-old has already crossed 1.43 billion beats. Moreover,
-            someone born in 1970 is rapidly approaching 2 billion.
+            someone born in 1970 has already passed 2 billion.
           </p>
 
           <div className="bg-card border border-border rounded-xl p-5 my-6">
