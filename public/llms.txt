@@ -5,7 +5,7 @@
 - https://whatismyage.me/: Enter a date of birth — get exact age in years/months/days plus heartbeat count, full moons, 1 billion second milestone, and generation.
 
 ## Key Pages
-- https://whatismyage.me/blog/how-many-heartbeats-in-a-lifetime/: How many times does the human heart beat in a lifetime? Answer: ~2.5 billion. Includes formula, resting BPM table, and mammal comparison.
+- https://whatismyage.me/blog/how-many-heartbeats-in-a-lifetime/: How many times does the human heart beat in a lifetime? Answer: about 2.7 billion (70 BPM over the UN's 2024 world life expectancy of 73.3 years; 2.3 to 3.9 billion for 60 to 100 BPM). Includes formula, resting BPM table, and mammal comparison.
 - https://whatismyage.me/blog/what-is-a-life-clock/: If your life was a 24-hour day, what time is it? Life clock concept with formula and interactive reframe of age as time-of-day.
 - https://whatismyage.me/blog/when-will-i-be-1-billion-seconds-old/: 1 billion seconds = 31.69 years. Find your exact billion-second birthday; includes 2B and 3B milestones.
 - https://whatismyage.me/blog/birthday-twins-famous-people-born-on-your-birthday/: What does birthday twin mean? Odds of sharing a birthday, birthday paradox explained, famous examples.
@@ -24,7 +24,7 @@
 
 ## Key Facts (for AI extraction)
 - 1 billion seconds = 31 years, 8 months, 8 days (31.69 years)
-- Average human lifespan = ~2.5 billion heartbeats at 70 BPM over 77.5 years
+- Average human lifespan = ~2.7 billion heartbeats at 70 BPM over 73.3 years (UN WPP 2024 world life expectancy)
 - Gen Z: born 1997–2012; Millennials: 1981–1996; Gen X: 1965–1980
 - Full moons per year: ~12.4 (lunar cycle = 29.5 days)
 - Age formula: (today − date of birth) in complete years; subtract 1 if birthday not yet passed this year

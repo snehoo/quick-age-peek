@@ -66,7 +66,7 @@ export function getBlogPosts() {
     {
       slug: "how-many-heartbeats-in-a-lifetime",
       title: "How Many Heartbeats Does a Human Have in a Lifetime?",
-      description: "The average human heart beats 2.5 billion times in a lifetime. Discover the science behind resting heart rate, cardiac output, and how to calculate...",
+      description: "At 70 beats a minute over the world's average life expectancy of 73.3 years, a heart beats about 2.7 billion times. See the maths and work out your own total.",
     },
     {
       slug: "how-many-full-moons-in-a-lifetime",

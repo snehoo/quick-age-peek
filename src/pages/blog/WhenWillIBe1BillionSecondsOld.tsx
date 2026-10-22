@@ -208,7 +208,7 @@ const WhenWillIBe1BillionSecondsOld = () => {
         items={[
           <>The Roman Empire's peak period lasted roughly 500 years — about 16 billion seconds.</>,
           <>The <ExternalLink href="https://en.wikipedia.org/wiki/Apollo_program">Apollo programme</ExternalLink>, from conception to Moon landing, took about 8 years — 252 million seconds.</>,
-          <>A human heart beats roughly 2.5 billion times in an 80-year life, so you hit 1 billion heartbeats around the same age you hit 1 billion seconds — read more on <Link to="/blog/how-many-heartbeats-in-a-lifetime/" className="text-primary underline">heartbeats in a lifetime</Link>.</>,
+          <>At 70 beats a minute, a heart reaches 1 billion beats at about 27 years old, a few years before you reach 1 billion seconds at about 31.7 — read more on <Link to="/blog/how-many-heartbeats-in-a-lifetime/" className="text-primary underline">heartbeats in a lifetime</Link>.</>,
           <>The internet (ARPANET) has existed for roughly 1.7 billion seconds as of 2024.</>,
           <>A typical person sleeping 8 hours a night has slept for roughly 333 million of those seconds by their billion-second birthday.</>,
         ]}

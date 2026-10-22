@@ -107,7 +107,7 @@ const posts = [
     tag: "Biology & Science",
     title: "How Many Heartbeats Does a Human Have in a Lifetime?",
     excerpt:
-      "The average human heart beats 2.5 billion times in a lifetime. Discover the science behind resting heart rate, cardiac output, and how to calculate your personal heartbeat total.",
+      "At 70 beats a minute over the world's average life expectancy of 73.3 years, a heart beats about 2.7 billion times. See the maths and work out your own total.",
     readTime: "6 min read",
   },
   {

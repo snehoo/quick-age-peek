@@ -53,7 +53,7 @@ const HowOldAmI = () => {
       <BulletList
         items={[
           "10,957 days old (and counting)",
-          "~2.5 billion heartbeats in your lifetime",
+          "~2.7 billion heartbeats in your lifetime",
           "~1,000 full moons witnessed",
           "950+ million seconds lived",
         ]}

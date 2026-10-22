@@ -66,7 +66,7 @@ const BodyOverTimeStatistics = () => {
 
       <H2>What Happens Inside Your Body Over a Lifetime?</H2>
       <P>
-        <strong>The human heart beats approximately 2.5 billion times over an average lifetime (<ExternalLink href="https://www.heart.org/">American Heart Association</ExternalLink>, Cardiovascular Statistics 2024).</strong> At the same time, people spend nearly one-third of their lives asleep—equivalent to over 26 years for the average person (<ExternalLink href="https://www.cdc.gov/sleep/index.html">CDC Sleep Study 2024</ExternalLink>). Meanwhile, total lifetime calorie expenditure exceeds 50 million kcal depending on activity levels (<ExternalLink href="https://www.who.int/">WHO Metabolic Health Data 2024</ExternalLink>).
+        <strong>The human heart beats about 2.7 billion times over an average lifetime, an estimate at 70 beats a minute over the world's average life expectancy of 73.3 years (<ExternalLink href="https://population.un.org/wpp/assets/Files/WPP2024_Summary-of-Results.pdf">UN World Population Prospects 2024</ExternalLink>).</strong> At the same time, people spend nearly one-third of their lives asleep—equivalent to over 26 years for the average person (<ExternalLink href="https://www.cdc.gov/sleep/index.html">CDC Sleep Study 2024</ExternalLink>). Meanwhile, total lifetime calorie expenditure exceeds 50 million kcal depending on activity levels (<ExternalLink href="https://www.who.int/">WHO Metabolic Health Data 2024</ExternalLink>).
       </P>
       <P>
         We aggregated data from the following sources, cross-referenced with peer-reviewed biological studies. Understanding what happens inside your body over time helps quantify aging, optimize health, and contextualize daily habits.
@@ -82,7 +82,7 @@ const BodyOverTimeStatistics = () => {
 
       <H2>Key Takeaways</H2>
       <ul className="list-disc pl-5 space-y-2 text-foreground/90 text-[17px] leading-relaxed mb-6">
-        <li><strong>2.5 billion heartbeats occur in a lifetime</strong> (AHA 2024).</li>
+        <li><strong>About 2.7 billion heartbeats occur in a lifetime</strong> (estimate: 70 BPM × 73.3 years).</li>
         <li>Humans sleep about <strong>26 years on average</strong> (CDC 2024).</li>
         <li>Average person sleeps <strong>2,500+ hours annually</strong> (CDC 2024).</li>
         <li><strong>50+ million calories burned over a lifetime</strong> (WHO 2024).</li>
@@ -102,7 +102,7 @@ const BodyOverTimeStatistics = () => {
       <Table
         headers={["Metric", "Value", "Source"]}
         rows={[
-          ["Total lifetime heartbeats", "~2.5 billion", "AHA 2024"],
+          ["Total lifetime heartbeats", "~2.7 billion", "Estimate: 70 BPM × 73.3 yrs (UN 2024)"],
           ["Average resting heart rate", "60–100 bpm", "AHA 2024"],
           ["Daily heartbeats", "~100,000", "AHA 2024"],
           ["Blood pumped daily", "~7,500 liters", "NIH 2024"],

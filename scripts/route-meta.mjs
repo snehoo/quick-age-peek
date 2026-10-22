@@ -68,15 +68,15 @@ export const ROUTE_META = {
     ogType: "website",
   },
   "/blog/how-many-heartbeats-in-a-lifetime": {
-    title: "How Many Heartbeats in Your Lifetime — 2.5 Billion",
+    title: "How Many Heartbeats in a Lifetime? About 2.7 Billion",
     description:
-      "Your heart beats 2.5 billion times in a lifetime. Calculate your exact heartbeat total by age — plus discover how resting heart rate affects your personal count.",
+      "At 70 beats a minute over the world's average life expectancy of 73.3 years, a heart beats about 2.7 billion times. See the maths and work out your own total.",
     canonical: `${SITE}/blog/how-many-heartbeats-in-a-lifetime/`,
     ogType: "article",
     faq: [
       {
         q: "How many times does your heart beat in a lifetime?",
-        a: "About 2.5 billion times over a typical 76-year lifespan, assuming an average resting heart rate of around 65 beats per minute. The exact number depends on your heart rate and how long you live.",
+        a: "About 2.7 billion times, an estimate based on a resting heart rate of 70 beats per minute over the world's average life expectancy of 73.3 years (UN, 2024). A lifelong rate of 60 to 100 beats per minute gives about 2.3 to 3.9 billion.",
       },
       {
         q: "How many heartbeats per day?",
