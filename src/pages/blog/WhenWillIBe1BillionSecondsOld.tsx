@@ -6,11 +6,11 @@ import { ArticleShell, BackToBlog, CtaBox, H2, H3, Lead, Paragraph, AuthorBio,
 import { useArticleMeta } from "@/components/blog/articleMeta";
 
 const meta = {
-  title: "1 Billion Seconds in Years: 31.7 Years — When Will You Hit It?",
+  title: "How Long Is 1 Billion Seconds? 31.7 Years, Broken Down",
   description: "1 billion seconds = 31.69 years (31 years, 8 months, 8 days). Find your exact billion-second birthday and see 2B and 3B second milestones too.",
   canonical: "https://whatismyage.me/blog/when-will-i-be-1-billion-seconds-old/",
   publishedDate: "2026-06-24",
-  updatedDate: "2026-09-10",
+  updatedDate: "2026-11-13",
   headline: "1 Billion Seconds in Years: How Long Is It, and When Will You Hit It?",
 };
 
@@ -76,11 +76,19 @@ const faqItems = [
   },
   {
     q: "How does 1 billion seconds compare to 1 million seconds?",
-    a: "1 million seconds is only 11.5 days. 1 billion seconds is 31.7 years. The factor of 1,000 between them is logarithmically enormous — yet our brains treat \"million\" and \"billion\" as roughly similar, which is why this milestone surprises almost everyone.",
+    a: "1 million seconds is only 11.6 days. 1 billion seconds is 31.7 years. The factor of 1,000 between them is logarithmically enormous — yet our brains treat \"million\" and \"billion\" as roughly similar, which is why this milestone surprises almost everyone.",
   },
   {
     q: "Is 1 billion seconds a meaningful milestone?",
     a: "Unlike an annual birthday — which repeats — your billion-second mark happens exactly once. It's defined not by a calendar convention but by the continuous tick of seconds since your first breath. That makes it a genuinely unrepeatable milestone in a way that a birthday isn't.",
+  },
+  {
+    q: "How long is 1 billion minutes?",
+    a: "About 1,901 years: 1,000,000,000 ÷ 60 ÷ 24 ÷ 365.25. A billion minutes ago, it was the early 2nd century AD.",
+  },
+  {
+    q: "How long would it take to count to a billion?",
+    a: "At one number per second without stopping, 31.7 years. In practice far longer: numbers like \"seven hundred and forty-two million\" take several seconds each to say, and you'd need to sleep.",
   },
 ];
 
@@ -97,7 +105,7 @@ const WhenWillIBe1BillionSecondsOld = () => {
         items={[
     "1 billion seconds = 31.69 years = 31 years, 8 months, 8 days (11,574 days).",
     "2 billion seconds = ~63.4 years; 3 billion seconds = ~95.1 years.",
-    "1 million seconds is only 11.5 days — the million-to-billion jump goes from under two weeks to over three decades.",
+    "1 million seconds is only 11.6 days — the million-to-billion jump goes from under two weeks to over three decades.",
     "You hit 1 billion seconds old at age 31 years and 8 months — find your exact date with the calculator.",
     "The next milestones: 1.5 billion seconds (~47.5 years) and 2 billion seconds (~63.4 years).",
         ]}
@@ -134,7 +142,7 @@ const WhenWillIBe1BillionSecondsOld = () => {
       <Paragraph>For comparison:</Paragraph>
       <BulletList
         items={[
-          <>1 <strong>million</strong> seconds = about 11.5 days</>,
+          <>1 <strong>million</strong> seconds = about 11.6 days</>,
           <>1 <strong>billion</strong> seconds = about 31.7 years</>,
           <>1 <strong>trillion</strong> seconds = about 31,710 years</>,
         ]}
@@ -204,10 +212,10 @@ const WhenWillIBe1BillionSecondsOld = () => {
       <Paragraph>To put 31.69 years into context, here's what else spans roughly a billion seconds:</Paragraph>
       <BulletList
         items={[
-          <>The Roman Empire's peak period lasted roughly 500 years — about 16 billion seconds.</>,
+          <>The Pax Romana, Rome's roughly 200-year stretch of relative peace, lasted about 6.3 billion seconds.</>,
           <>The <ExternalLink href="https://en.wikipedia.org/wiki/Apollo_program">Apollo programme</ExternalLink>, from conception to Moon landing, took about 8 years — 252 million seconds.</>,
           <>At 70 beats a minute, a heart reaches 1 billion beats at about 27 years old, a few years before you reach 1 billion seconds at about 31.7 — read more on <Link to="/blog/how-many-heartbeats-in-a-lifetime/" className="text-primary underline">heartbeats in a lifetime</Link>.</>,
-          <>The internet (ARPANET) has existed for roughly 1.7 billion seconds as of 2024.</>,
+          <>The internet (ARPANET) has existed for about 1.8 billion seconds as of 2026.</>,
           <>A typical person sleeping 8 hours a night has slept for roughly 333 million of those seconds by their billion-second birthday.</>,
         ]}
       />

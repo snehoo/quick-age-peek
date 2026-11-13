@@ -440,7 +440,7 @@ export const ROUTE_META = {
     ogType: "article",
   },
   "/blog/when-will-i-be-1-billion-seconds-old": {
-    title: "1 Billion Seconds in Years: 31.7 Years — When Will You Hit It?",
+    title: "How Long Is 1 Billion Seconds? 31.7 Years, Broken Down",
     description:
       "1 billion seconds equals 31.69 years — exactly 31 years, 8 months, and 8 days. See the conversion for 2 and 3 billion seconds, and find your exact billion-second birthday.",
     canonical: `${SITE}/blog/when-will-i-be-1-billion-seconds-old/`,
@@ -460,7 +460,7 @@ export const ROUTE_META = {
       },
       {
         q: "How long is 1 million vs 1 billion seconds?",
-        a: "1 million seconds is about 11.5 days, while 1 billion seconds is about 31.7 years — a factor-of-1,000 jump that takes you from under two weeks to over three decades.",
+        a: "1 million seconds is about 11.6 days, while 1 billion seconds is about 31.7 years — a factor-of-1,000 jump that takes you from under two weeks to over three decades.",
       },
     ],
   },
