@@ -29,6 +29,13 @@ export default {
       return Response.redirect(url.toString(), 301);
     }
 
+    // Top-level pages: permanent 301 to the slash form (the asset layer would
+    // otherwise answer with a 307)
+    if (['/blog', '/privacy', '/about', '/contact'].includes(url.pathname)) {
+      url.pathname += '/';
+      return Response.redirect(url.toString(), 301);
+    }
+
     // Enforce trailing slashes on blog posts (but not files)
     if (url.pathname.startsWith('/blog/') && !url.pathname.endsWith('/')) {
       const hasFileExtension = /\.\w+$/.test(url.pathname);

@@ -38,6 +38,31 @@ const ROUTES = [
   ...getAllBlogRoutes(),
 ];
 
+
+// FAQPage JSON-LD must match what the page shows. For any route whose static
+// meta emits a FAQPage block, rebuild it from the visible question/answer pairs
+// (an <h3> ending in "?" followed by a <p>) in the SSR body; drop it if the page
+// shows none. Keeps route-meta.mjs from drifting away from the page copy.
+const decode = (t) =>
+  t.replace(/<[^>]+>/g, "").replace(/&nbsp;/g, " ").replace(/&amp;/g, "&").replace(/&lt;/g, "<")
+   .replace(/&gt;/g, ">").replace(/&quot;/g, '"').replace(/&#x27;|&#39;/g, "'").replace(/\s+/g, " ").trim();
+function syncFaqJsonLd(html, body) {
+  const pairs = [];
+  for (const m of body.matchAll(/<h3[^>]*>([\s\S]*?)<\/h3>\s*<p[^>]*>([\s\S]*?)<\/p>/g)) {
+    const q = decode(m[1]);
+    const a = decode(m[2]);
+    if (q.endsWith("?") && a) pairs.push({ q, a });
+  }
+  return html.replace(/<script\s+type=["']application\/ld\+json["'][^>]*>([\s\S]*?)<\/script>\s*/gi, (block, json) => {
+    let data;
+    try { data = JSON.parse(json); } catch { return block; }
+    if (data?.["@type"] !== "FAQPage") return block;
+    if (!pairs.length) return "";
+    data.mainEntity = pairs.map(({ q, a }) => ({ "@type": "Question", name: q, acceptedAnswer: { "@type": "Answer", text: a } }));
+    return block.replace(json, () => JSON.stringify(data));
+  });
+}
+
 async function bundleSSR() {
   console.log("[prerender] Bundling SSR entry with esbuild…");
   await build({
@@ -134,6 +159,7 @@ async function run() {
     }
 
     let html = injectRouteMeta(template, route);
+    if (route.startsWith("/blog/")) html = syncFaqJsonLd(html, body);
 
     // Inject SSR HTML into the root div so crawlers see the full article.
     html = html.replace(
@@ -149,6 +175,24 @@ async function run() {
     mkdirSync(dirname(outPath), { recursive: true });
     writeFileSync(outPath, html, "utf-8");
     console.log(`[prerender] ✓ ${route}  (${(body.length / 1024).toFixed(1)} KB)`);
+  }
+
+  // dist/404.html: wrangler.jsonc sets not_found_handling "404-page", so unknown
+  // URLs get this page with a real 404 status instead of an empty body.
+  {
+    let body = "";
+    try { body = render("/__not-found__"); } catch (err) {
+      console.warn(`[prerender] ! 404 render failed: ${err?.message || err}`);
+    }
+    const html = template
+      .replace(/<title>[\s\S]*?<\/title>/i, "<title>Page not found | whatismyage.me</title>")
+      .replace(/<meta\s+name=["']robots["'][^>]*>/i, '<meta name="robots" content="noindex, follow" />')
+      .replace(/<link\s+rel=["']canonical["'][^>]*>\s*/gi, "")
+      .replace(/<meta\s+property=["']og:url["'][^>]*>\s*/gi, "")
+      .replace(/<script\s+type=["']application\/ld\+json["'][^>]*>[\s\S]*?<\/script>\s*/gi, "")
+      .replace(/<div\s+id=["']root["']\s*><\/div>/i, `<div id="root">${body}</div>`);
+    writeFileSync(resolve(distDir, "404.html"), html, "utf-8");
+    console.log(`[prerender] ✓ 404.html  (${(body.length / 1024).toFixed(1)} KB)`);
   }
 
   // Clean up SSR temp dir

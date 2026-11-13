@@ -81,39 +81,6 @@ const HeartbeatsLifetime = () => {
     });
     document.head.appendChild(bcLd);
 
-    // FAQPage JSON-LD
-    const faqExisting = document.getElementById("faq-jsonld");
-    if (faqExisting) faqExisting.remove();
-    const faqLd = document.createElement("script");
-    faqLd.type = "application/ld+json";
-    faqLd.id = "faq-jsonld";
-    faqLd.textContent = JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      mainEntity: [
-        {
-          "@type": "Question",
-          name: "How many heartbeats does a human have in a lifetime?",
-          acceptedAnswer: { "@type": "Answer", text: "At a resting heart rate of 70 beats per minute and the world's average life expectancy of 73.3 years (UN, 2024), the heart beats about 2.7 billion times: 70 × 60 × 24 × 365.25 × 73.3 ≈ 2,699,000,000. It is an estimate; a lifelong rate anywhere from 60 to 100 beats per minute gives about 2.3 to 3.9 billion." },
-        },
-        {
-          "@type": "Question",
-          name: "What is a normal resting heart rate?",
-          acceptedAnswer: { "@type": "Answer", text: "A normal resting heart rate for adults is 60–100 beats per minute. Well-trained athletes often have resting rates of 40–60 bpm because their hearts pump more blood per beat, requiring fewer beats overall." },
-        },
-        {
-          "@type": "Question",
-          name: "How many heartbeats per day does a human have?",
-          acceptedAnswer: { "@type": "Answer", text: "At a resting rate of 70 bpm, the heart beats approximately 100,800 times per day. At a higher rate of 80 bpm, that rises to about 115,200 beats per day." },
-        },
-        {
-          "@type": "Question",
-          name: "How many times does the heart beat per year?",
-          acceptedAnswer: { "@type": "Answer", text: "At 70 beats per minute, the heart beats approximately 36.8 million times per year (70 × 60 × 24 × 365 = 36,792,000)." },
-        },
-      ],
-    });
-    document.head.appendChild(faqLd);
 
     return () => {
       // restore site default canonical on unmount

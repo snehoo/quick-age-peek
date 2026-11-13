@@ -83,14 +83,14 @@ const Index = () => {
         <div className="space-x-3">
           <span>whatismyage.me</span>
           <span aria-hidden>·</span>
-          <a href="/blog" className="hover:text-foreground transition-colors">Blog</a>
+          <a href="/blog/" className="hover:text-foreground transition-colors">Blog</a>
           <span aria-hidden>·</span>
-          <a href="/privacy" className="hover:text-foreground transition-colors">
+          <a href="/privacy/" className="hover:text-foreground transition-colors">
             Privacy
           </a>
         </div>
         <nav aria-label="Blog posts" className="sr-only">
-          <a href="/blog">All blog posts</a>
+          <a href="/blog/">All blog posts</a>
           {BLOG_POSTS.map((p) => (
             <a key={p.slug} href={`/blog/${p.slug}/`}>
               {p.title}
